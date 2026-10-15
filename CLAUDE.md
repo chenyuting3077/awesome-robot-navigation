@@ -19,10 +19,27 @@
 ## 搜尋方式
 
 0. **先查重點來源**（最優先）：arXiv API 無法依機構篩選，所以先逐一查下列來源的近期發表，再做第 1 步。
-   - **NVIDIA**：research.nvidia.com/publications、NVIDIA 技術部落格、Isaac / Cosmos / GR00T 等發表，以及 WebSearch `NVIDIA <主題關鍵字> <年月>`。
+   - **NVIDIA**（每次都要查）：
+     - https://research.nvidia.com/research-area/robotics 、 https://research.nvidia.com/research-area/computer-vision ：依年份列出論文，只顯示年份，月份看論文網址 slug。網站常比 arXiv 晚上架，所以兩邊都要查。
+     - https://research.nvidia.com/publications ：全部論文，`?page=N` 翻頁，只能依會議篩選（例如 CoRL `?f%5B0%5D=publication_events%3A35`），不能依領域篩選。
+     - 實驗室：Seattle Robotics Lab https://research.nvidia.com/labs/srl 、GEAR https://research.nvidia.com/labs/gear/ 。
+     - 程式碼：https://github.com/NVlabs 。
+     - 再用 WebSearch `NVIDIA <主題關鍵字> <年月>` 補查 Isaac、Cosmos、GR00T 等產品線的技術報告。
+     - research.nvidia.com/labs/ 首頁會擋爬蟲（403），直接用上面的子頁。
    - **企業**：Google DeepMind、Meta FAIR、Physical Intelligence、Skild AI、Mistral、Alibaba（AMAP、DAMO）、ByteDance Seed、Tencent Robotics X、Huawei、Unitree、LimX、ANYbotics、Boston Dynamics。
-   - **實驗室**：ETH RSL / ASL、MIT SPARK、CMU RI（AirLab）、Stanford、UC Berkeley、UCSD（Xiaolong Wang）、Oxford DRS / ORI、Freiburg、TUM（Cremers）、HKU MaRS、HKUST、浙大 FAST Lab、清華、上海 AI Lab（InternRobotics）、KAIST。
-   - 查法：WebSearch `<機構> <主題關鍵字> <年月>`，或看該機構 publications 頁、GitHub org。
+   - **實驗室**（括號內為主要相關主題）：
+     - ETH RSL https://rsl.ethz.ch （四足、輪足）、ETH ASL https://asl.ethz.ch （SLAM、導航）
+     - MIT SPARK https://web.mit.edu/sparklab/ （SLAM、場景圖）
+     - CMU AirLab https://theairlab.org （SLAM、導航）
+     - Berkeley RAIL https://rail.eecs.berkeley.edu （導航基礎模型）
+     - UCSD Xiaolong Wang https://xiaolonw.github.io （腿式 VLA）
+     - PKU EPIC https://pku-epic.github.io （VLN）
+     - 上海 AI Lab InternRobotics https://github.com/InternRobotics （局部導航）
+     - Oxford VGG https://www.robots.ox.ac.uk/~vgg/ （3D 重建）、Oxford DRS https://dynamic.robots.ox.ac.uk （場景圖、SLAM）
+     - Freiburg https://rl.uni-freiburg.de （場景圖）、TUM CVG https://cvg.cit.tum.de （SLAM、3D）
+     - HKU MaRS https://mars.hku.hk （LiDAR SLAM）、浙大 FAST Lab https://github.com/ZJU-FAST-Lab （規劃）
+     - KAIST RaiLab https://railab.kaist.ac.kr （四足）
+   - 查法：看上列頁面近期發表，或 WebSearch `<機構> <主題關鍵字> <年月>`。
 1. **arXiv API 補漏**：每個主題用下表關鍵字查 `http://export.arxiv.org/api/query`，加 `submittedDate:[上次更新日 TO 今天]`，`sortBy=submittedDate`，`max_results=100`。抓不到 API 時改用 WebSearch，查詢加上年月。
 
    | 主題 | 分類 | 關鍵字（abs 或 ti，OR 串接） |
