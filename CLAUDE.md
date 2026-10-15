@@ -45,8 +45,9 @@
 
 1. 上次更新日期看最新月報的「最後更新」。
 2. 依主題加進 `topics/*.md` 的表格，新的放最上面。已收過的（以 arXiv ID 或 DOI 判斷）不重複加；有新版本或被會議／期刊接收時更新原列。
-3. 在 `digests/YYYY-MM.md`（當月，沒有就建立並加進 README 月報清單）加一段本次新增摘要，並更新「最後更新」日期。
-4. 開新 branch `update/YYYY-MM-DD`，commit，開 PR 到 main；不直接推 main。沒有新論文就不開 PR。
+3. 在 `digests/YYYY-MM.md`（當月，沒有就建立）加一段本次新增摘要，並更新「最後更新」日期。新月報要有「## 趨勢」段落，README 會抓它。
+4. 跑 `python3 scripts/build_readme.py` 重新產生 README。README 是產生的，不要手改。
+5. 開新 branch `update/YYYY-MM-DD`，commit，開 PR 到 main；不直接推 main。沒有新論文就不開 PR。
 
 ## 表格欄位
 
