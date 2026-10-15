@@ -1,98 +1,98 @@
-topic,arxiv,name,org,repo,note
-vln,2207.04429,LM-Nav,UC Berkeley,blazejosinski/lm_nav,用現成 LLM + VLM + ViNT 類導航模型組合，不需標註語言資料就能照指令走
-vln,2203.10421,CoW (CLIP on Wheels),Columbia,real-stanford/cow,把 CLIP 接上探索策略做 zero-shot 物件導航
-vln,2304.03047,ETPNav,,MarSaKi/ETPNav,連續環境 VLN 用線上拓撲圖做高層規劃
-vln,2305.16986,NavGPT,,GengzeZhou/NavGPT,純 LLM 推理做 VLN，把觀測轉文字
-vln,2312.03275,VLFM,Boston Dynamics AI Institute,bdaiinstitute/vlfm,VLM 算語意價值地圖引導 frontier 探索，Spot 實機 zero-shot 物件導航
-vln,2402.15852,NaVid,PKU,jzhzhang/NaVid-VLN-CE,只用單眼 RGB 影片的 VLM 做 VLN，不需地圖與深度
-vln,2407.07775,Mobility VLA,Google DeepMind,,長脈絡 VLM 看導覽影片建拓撲圖，再照多模態指令導航
-vln,2412.06224,Uni-NaVid,PKU,jzhzhang/Uni-NaVid,一個 VLM 統一 VLN、物件導航、問答、跟人等導航任務
-vln,2412.04453,NaVILA,UCSD / NVIDIA,AnjieCheng/NaVILA,VLM 輸出中層語言動作，低層腿式運動策略執行
-local-nav,2110.09460,FAR Planner,CMU,MichaelFYang/far_planner,未知環境中邊建可視圖邊規劃的快速路徑規劃
-local-nav,2210.03370,GNM,UC Berkeley,robodhruv/visualnav-transformer,跨多種機器人資料訓練的通用視覺導航模型
-local-nav,2302.11434,iPlanner,CMU / ETH,leggedrobotics/iPlanner,自監督學習的端到端局部規劃，以可微分代價取代標註
-local-nav,2306.14846,ViNT,UC Berkeley,robodhruv/visualnav-transformer,導航基礎模型：Transformer + 影像目標，可微調到新任務
-local-nav,2310.00982,ViPlanner,ETH,leggedrobotics/viplanner,加入語意的可微分局部規劃，腿式機器人實機
-local-nav,2310.07896,NoMaD,UC Berkeley,robodhruv/visualnav-transformer,diffusion policy 統一有目標導航與無目標探索
-local-nav,2412.03572,Navigation World Models,Meta,facebookresearch/nwm,可控影片生成的導航 world model，用想像軌跡做規劃
-local-nav,2505.08712,NavDP,Shanghai AI Lab,InternRobotics/NavDP,純模擬訓練 diffusion 導航策略 + 特權資訊引導，zero-shot sim-to-real
-semantic-map,2201.13360,Hydra,MIT SPARK,MIT-SPARK/Hydra,即時建立階層式 3D 場景圖（物件／房間／樓層）
-semantic-map,2210.05714,VLMaps,Freiburg / Google,vlmaps/vlmaps,把 VLM 特徵融合進 3D 地圖，可用語言查空間位置
-semantic-map,2211.15654,OpenScene,ETH / Google,pengsongyou/openscene,零樣本開放詞彙 3D 場景理解
-semantic-map,2302.07241,ConceptFusion,MIT / Toronto,concept-fusion/concept-fusion,把基礎模型特徵融合成開放集合 3D 地圖
-semantic-map,2303.09553,LERF,UC Berkeley,kerrj/lerf,把 CLIP 特徵嵌進 NeRF 做語言查詢
-semantic-map,2309.16650,ConceptGraphs,Toronto / MIT,concept-graphs/concept-graphs,用 2D 基礎模型建開放詞彙 3D 場景圖，支援 LLM 規劃
-semantic-map,2403.17846,HOV-SG,Freiburg,hovsg/HOV-SG,樓層／房間／物件階層開放詞彙場景圖，跨樓層語言導航
-semantic-map,2404.13696,Clio,MIT SPARK,MIT-SPARK/Clio,依任務決定物件粒度的場景圖（information bottleneck）
-quadruped,2107.04034,RMA,UC Berkeley / CMU,,快速自適應模組：以本體感知線上估計環境參數
-quadruped,2109.11978,Learning to Walk in Minutes,ETH,leggedrobotics/legged_gym,GPU 大規模平行 RL，幾分鐘訓練出運動策略（legged_gym）
-quadruped,2201.08117,Perceptive Locomotion in the Wild,ETH,,高度圖感知 + 本體感知的注意力融合，ANYmal 野外實機
-quadruped,2204.12876,Elevation Mapping CuPy,ETH,leggedrobotics/elevation_mapping_cupy,GPU 加速的機器人中心高度圖，多數感知式運動策略的輸入
-quadruped,2211.07638,Legged Locomotion with Egocentric Vision,CMU / Berkeley,,直接用深度影像端到端學運動，不建高度圖
-quadruped,2212.03238,Walk These Ways,MIT,Improbable-AI/walk-these-ways,多樣行為參數化的單一策略，可調步態
-quadruped,2301.10602,DreamWaQ,KAIST,,無外部感知的盲走策略，用隱式地形想像過複雜地形
-quadruped,2306.14874,ANYmal Parkour,ETH,,感知、移動、技能選擇分模組的跑酷導航
-quadruped,2309.05665,Robot Parkour Learning,Stanford / Shanghai Qi Zhi,ZiwenZhuang/parkour,低成本四足以深度相機學跑酷技能
-quadruped,2309.14341,Extreme Parkour,CMU,chengxuxin/extreme-parkour,單一神經網路以深度相機做極限跑酷
-quadruped,2401.17583,ABS,CMU,LeCAR-Lab/ABS,敏捷策略 + 學到的可達避碰價值函數，高速且安全
-wheel-legged,2203.14912,Multiple Adversarial Motion Priors,ETH,,多個 AMP 讓輪足機器人學會多種技能（站立、行走、滾動）
-wheel-legged,2405.01792,Wheeled-Legged Urban Navigation,ETH,,階層式 RL 導航 + 運動，都市公里級自主任務（Science Robotics）
-slam,2007.11898,ORB-SLAM3,Zaragoza,UZ-SLAMLab/ORB_SLAM3,視覺／視覺慣性／多地圖 SLAM 的標準基線（T-RO 2021）
-slam,2106.14386,Kimera-Multi,MIT SPARK,MIT-SPARK/Kimera-Multi,多機器人分散式度量-語意 SLAM
-slam,2107.06829,FAST-LIO2,HKU MaRS,hku-mars/FAST_LIO,直接點雲配準 + ikd-tree 的快速 LiDAR 慣性里程計
-slam,2108.10869,DROID-SLAM,Princeton,princeton-vl/DROID-SLAM,可微分 BA 的深度學習視覺 SLAM
-slam,2109.07982,R3LIVE,HKU MaRS,hku-mars/r3live,LiDAR-慣性-視覺緊耦合，即時彩色地圖
-slam,2112.12130,NICE-SLAM,ETH / Zhejiang,cvg/nice-slam,階層式神經隱式表示的稠密 SLAM
-slam,2208.04726,DPVO,Princeton,princeton-vl/DPVO,稀疏 patch 的深度視覺里程計，比 DROID 輕量
-slam,2209.15397,KISS-ICP,Bonn,PRBonn/kiss-icp,極簡、免調參的 point-to-point ICP LiDAR 里程計
-slam,2308.00688,AnyLoc,CMU / IIIT,AnyLoc/AnyLoc,用基礎模型特徵做通用視覺地點辨識
-slam,2312.02126,SplaTAM,CMU,spla-tam/SplaTAM,3D Gaussian Splatting 的 RGB-D SLAM
-slam,2312.06741,Gaussian Splatting SLAM,Imperial,muskie82/MonoGS,單眼即時 3DGS SLAM
-slam,2408.14035,FAST-LIVO2,HKU MaRS,hku-mars/FAST-LIVO2,LiDAR-慣性-視覺直接法緊耦合里程計
-slam,2412.12392,MASt3R-SLAM,Imperial,rmurai0610/MASt3R-SLAM,以 MASt3R 3D 重建先驗做即時稠密單眼 SLAM
-slam,2505.12549,VGGT-SLAM,MIT SPARK,MIT-SPARK/VGGT-SLAM,用 VGGT 子地圖 + SL(4) 流形優化的 feed-forward SLAM
-perception-3d,2103.13413,DPT,Intel,isl-org/DPT,ViT 做稠密預測，後續單眼深度模型的骨幹設計
-perception-3d,2109.07547,RAFT-Stereo,Princeton,princeton-vl/RAFT-Stereo,迭代更新的雙目深度估計
-perception-3d,2302.12288,ZoeDepth,Intel,isl-org/ZoeDepth,相對深度預訓練 + 公制深度頭，零樣本公制深度
-perception-3d,2308.04079,3D Gaussian Splatting,Inria,graphdeco-inria/gaussian-splatting,即時可微分高斯渲染，取代 NeRF 成為主流 3D 表示
-perception-3d,2312.02145,Marigold,ETH,prs-eth/Marigold,把影像 diffusion 模型轉成深度估計器
-perception-3d,2312.14132,DUSt3R,Naver Labs,naver/dust3r,免相機參數直接回歸 pointmap 的 3D 重建
-perception-3d,2401.10891,Depth Anything,HKU / TikTok,LiheYoung/Depth-Anything,大規模未標註資料訓練的單眼深度基礎模型
-perception-3d,2403.18913,UniDepth,ETH,lpiccinelli-eth/UniDepth,同時估計相機內參的通用公制深度
-perception-3d,2404.15506,Metric3D v2,HKUST 等,YvanYin/Metric3D,零樣本公制深度與法向量
-perception-3d,2406.09414,Depth Anything V2,HKU / TikTok,DepthAnything/Depth-Anything-V2,以合成資料標註提升細節的深度模型
-perception-3d,2406.09756,MASt3R,Naver Labs,naver/mast3r,DUSt3R 加特徵匹配頭，提升匹配與定位
-perception-3d,2410.19115,MoGe,Microsoft,microsoft/MoGe,單張影像估計仿射不變點雲
-perception-3d,2501.09898,FoundationStereo,NVIDIA,NVlabs/FoundationStereo,零樣本雙目深度基礎模型
-perception-3d,2501.12387,CUT3R,UC Berkeley / Google,CUT3R/CUT3R,持續狀態更新的串流 3D 重建
-perception-3d,2503.11651,VGGT,Oxford VGG / Meta,facebookresearch/vggt,單次前向同時估相機、深度、點圖、追蹤
-perception-3d,2507.13347,π³,Shanghai AI Lab 等,yyfz/Pi3,無參考視角的置換等變 feed-forward 重建
-perception-3d,2509.13414,MapAnything,Meta / CMU,facebookresearch/map-anything,可接受多種輸入（內參、位姿、深度）的通用 feed-forward 重建
-perception-3d,2511.10647,Depth Anything 3,ByteDance Seed,ByteDance-Seed/Depth-Anything-3,任意視角數的深度與位姿估計
-vision,2103.00020,CLIP,OpenAI,openai/CLIP,影像-文字對比預訓練，開放詞彙感知的起點
-vision,2111.06377,MAE,Meta,facebookresearch/mae,遮罩自編碼自監督預訓練
-vision,2205.06230,OWL-ViT,Google,google-research/scenic,用 CLIP 式骨幹做開放詞彙偵測
-vision,2303.05499,Grounding DINO,IDEA,IDEA-Research/GroundingDINO,語言引導的開放集合物件偵測
-vision,2303.15343,SigLIP,Google,google-research/big_vision,sigmoid 損失的影像-文字預訓練，多數 VLM 的視覺編碼器
-vision,2304.02643,SAM,Meta,facebookresearch/segment-anything,可提示的通用分割基礎模型
-vision,2304.07193,DINOv2,Meta,facebookresearch/dinov2,自監督視覺特徵，免微調可用於深度、分割、匹配
-vision,2304.08069,RT-DETR,Baidu,lyuwenyu/RT-DETR,即時 DETR 偵測器
-vision,2306.13643,LightGlue,ETH,cvg/LightGlue,快速自適應的特徵匹配，SLAM 前端常用
-vision,2307.07635,CoTracker,Meta / Oxford,facebookresearch/co-tracker,聯合追蹤大量點的影片點追蹤
-vision,2401.14159,Grounded SAM,IDEA,IDEA-Research/Grounded-Segment-Anything,Grounding DINO + SAM 組合做開放詞彙分割
-vision,2401.17270,YOLO-World,Tencent,AILab-CVC/YOLO-World,即時開放詞彙偵測
-vision,2408.00714,SAM 2,Meta,facebookresearch/sam2,支援影片的可提示分割
-vision,2508.10104,DINOv3,Meta,facebookresearch/dinov3,擴大規模並改善稠密特徵的自監督視覺模型
-vision,2511.16719,SAM 3,Meta,facebookresearch/sam3,以概念（文字／範例）提示的分割與追蹤
-real2sim,2106.14405,Habitat 2.0,Meta,facebookresearch/habitat-lab,可互動的室內重建場景模擬器，具身 AI 標準平台
-real2sim,2108.10470,Isaac Gym,NVIDIA,isaac-sim/IsaacGymEnvs,GPU 端到端物理模擬，大規模平行 RL
-real2sim,2201.05989,Instant-NGP,NVIDIA,NVlabs/instant-ngp,多解析度雜湊編碼，秒級訓練 NeRF
-real2sim,2301.04195,Orbit / Isaac Lab,NVIDIA / ETH,isaac-sim/IsaacLab,基於 Isaac Sim 的機器人學習框架
-real2sim,2302.04264,Nerfstudio,UC Berkeley,nerfstudio-project/nerfstudio,模組化 NeRF／3DGS 重建框架
-real2sim,2311.12775,SuGaR,ENPC,Anttwo/SuGaR,從 3DGS 抽出可編輯網格
-real2sim,2403.03949,RialTo,MIT,,真實場景重建成模擬環境，在模擬中強化學習修正策略
-real2sim,2403.17888,2D Gaussian Splatting,ShanghaiTech / Tübingen,hbb1/2d-gaussian-splatting,幾何準確的表面重建，可輸出網格
-real2sim,2409.06765,gsplat,UC Berkeley,nerfstudio-project/gsplat,開源 CUDA 高斯潑濺函式庫
-real2sim,2409.10161,SplatSim,CMU,,用 3DGS 取代模擬器渲染，縮小視覺 sim-to-real 差距
-real2sim,2501.03575,Cosmos,NVIDIA,NVIDIA/Cosmos,物理 AI 的 world foundation model 平台
-real2sim,2502.01536,VR-Robo,,,3DGS 重建場景做視覺導航與運動控制的 real-to-sim-to-real
+topic,arxiv,name,org,venue,repo,note
+vln,2207.04429,LM-Nav,UC Berkeley,CoRL 2022,blazejosinski/lm_nav,用現成 LLM + VLM + ViNT 類導航模型組合，不需標註語言資料就能照指令走
+vln,2203.10421,CoW (CLIP on Wheels),Columbia,CVPR 2023,real-stanford/cow,把 CLIP 接上探索策略做 zero-shot 物件導航
+vln,2304.03047,ETPNav,,TPAMI 2024,MarSaKi/ETPNav,連續環境 VLN 用線上拓撲圖做高層規劃
+vln,2305.16986,NavGPT,,AAAI 2024,GengzeZhou/NavGPT,純 LLM 推理做 VLN，把觀測轉文字
+vln,2312.03275,VLFM,Boston Dynamics AI Institute,ICRA 2024,bdaiinstitute/vlfm,VLM 算語意價值地圖引導 frontier 探索，Spot 實機 zero-shot 物件導航
+vln,2402.15852,NaVid,PKU,RSS 2024,jzhzhang/NaVid-VLN-CE,只用單眼 RGB 影片的 VLM 做 VLN，不需地圖與深度
+vln,2407.07775,Mobility VLA,Google DeepMind,CoRL 2024,,長脈絡 VLM 看導覽影片建拓撲圖，再照多模態指令導航
+vln,2412.06224,Uni-NaVid,PKU,RSS 2025,jzhzhang/Uni-NaVid,一個 VLM 統一 VLN、物件導航、問答、跟人等導航任務
+vln,2412.04453,NaVILA,UCSD / NVIDIA,RSS 2025,AnjieCheng/NaVILA,VLM 輸出中層語言動作，低層腿式運動策略執行
+local-nav,2110.09460,FAR Planner,CMU,IROS 2022,MichaelFYang/far_planner,未知環境中邊建可視圖邊規劃的快速路徑規劃
+local-nav,2210.03370,GNM,UC Berkeley,ICRA 2023,robodhruv/visualnav-transformer,跨多種機器人資料訓練的通用視覺導航模型
+local-nav,2302.11434,iPlanner,CMU / ETH,RSS 2023,leggedrobotics/iPlanner,自監督學習的端到端局部規劃，以可微分代價取代標註
+local-nav,2306.14846,ViNT,UC Berkeley,CoRL 2023,robodhruv/visualnav-transformer,導航基礎模型：Transformer + 影像目標，可微調到新任務
+local-nav,2310.00982,ViPlanner,ETH,ICRA 2024,leggedrobotics/viplanner,加入語意的可微分局部規劃，腿式機器人實機
+local-nav,2310.07896,NoMaD,UC Berkeley,ICRA 2024,robodhruv/visualnav-transformer,diffusion policy 統一有目標導航與無目標探索
+local-nav,2412.03572,Navigation World Models,Meta,CVPR 2025,facebookresearch/nwm,可控影片生成的導航 world model，用想像軌跡做規劃
+local-nav,2505.08712,NavDP,Shanghai AI Lab,ICRA 2026,InternRobotics/NavDP,純模擬訓練 diffusion 導航策略 + 特權資訊引導，zero-shot sim-to-real
+semantic-map,2201.13360,Hydra,MIT SPARK,RSS 2022,MIT-SPARK/Hydra,即時建立階層式 3D 場景圖（物件／房間／樓層）
+semantic-map,2210.05714,VLMaps,Freiburg / Google,ICRA 2023,vlmaps/vlmaps,把 VLM 特徵融合進 3D 地圖，可用語言查空間位置
+semantic-map,2211.15654,OpenScene,ETH / Google,CVPR 2023,pengsongyou/openscene,零樣本開放詞彙 3D 場景理解
+semantic-map,2302.07241,ConceptFusion,MIT / Toronto,RSS 2023,concept-fusion/concept-fusion,把基礎模型特徵融合成開放集合 3D 地圖
+semantic-map,2303.09553,LERF,UC Berkeley,ICCV 2023,kerrj/lerf,把 CLIP 特徵嵌進 NeRF 做語言查詢
+semantic-map,2309.16650,ConceptGraphs,Toronto / MIT,ICRA 2024,concept-graphs/concept-graphs,用 2D 基礎模型建開放詞彙 3D 場景圖，支援 LLM 規劃
+semantic-map,2403.17846,HOV-SG,Freiburg,RSS 2024,hovsg/HOV-SG,樓層／房間／物件階層開放詞彙場景圖，跨樓層語言導航
+semantic-map,2404.13696,Clio,MIT SPARK,RA-L 2024,MIT-SPARK/Clio,依任務決定物件粒度的場景圖（information bottleneck）
+quadruped,2107.04034,RMA,UC Berkeley / CMU,RSS 2021,,快速自適應模組：以本體感知線上估計環境參數
+quadruped,2109.11978,Learning to Walk in Minutes,ETH,CoRL 2021,leggedrobotics/legged_gym,GPU 大規模平行 RL，幾分鐘訓練出運動策略（legged_gym）
+quadruped,2201.08117,Perceptive Locomotion in the Wild,ETH,Science Robotics 2022,,高度圖感知 + 本體感知的注意力融合，ANYmal 野外實機
+quadruped,2204.12876,Elevation Mapping CuPy,ETH,IROS 2022,leggedrobotics/elevation_mapping_cupy,GPU 加速的機器人中心高度圖，多數感知式運動策略的輸入
+quadruped,2211.07638,Legged Locomotion with Egocentric Vision,CMU / Berkeley,CoRL 2022,,直接用深度影像端到端學運動，不建高度圖
+quadruped,2212.03238,Walk These Ways,MIT,CoRL 2022,Improbable-AI/walk-these-ways,多樣行為參數化的單一策略，可調步態
+quadruped,2301.10602,DreamWaQ,KAIST,ICRA 2023,,無外部感知的盲走策略，用隱式地形想像過複雜地形
+quadruped,2306.14874,ANYmal Parkour,ETH,Science Robotics 2024,,感知、移動、技能選擇分模組的跑酷導航
+quadruped,2309.05665,Robot Parkour Learning,Stanford / Shanghai Qi Zhi,CoRL 2023,ZiwenZhuang/parkour,低成本四足以深度相機學跑酷技能
+quadruped,2309.14341,Extreme Parkour,CMU,ICRA 2024,chengxuxin/extreme-parkour,單一神經網路以深度相機做極限跑酷
+quadruped,2401.17583,ABS,CMU,RSS 2024,LeCAR-Lab/ABS,敏捷策略 + 學到的可達避碰價值函數，高速且安全
+wheel-legged,2203.14912,Multiple Adversarial Motion Priors,ETH,ICRA 2023,,多個 AMP 讓輪足機器人學會多種技能（站立、行走、滾動）
+wheel-legged,2405.01792,Wheeled-Legged Urban Navigation,ETH,Science Robotics 2024,,階層式 RL 導航 + 運動，都市公里級自主任務
+slam,2007.11898,ORB-SLAM3,Zaragoza,T-RO 2021,UZ-SLAMLab/ORB_SLAM3,視覺／視覺慣性／多地圖 SLAM 的標準基線
+slam,2106.14386,Kimera-Multi,MIT SPARK,T-RO 2022,MIT-SPARK/Kimera-Multi,多機器人分散式度量-語意 SLAM
+slam,2107.06829,FAST-LIO2,HKU MaRS,T-RO 2022,hku-mars/FAST_LIO,直接點雲配準 + ikd-tree 的快速 LiDAR 慣性里程計
+slam,2108.10869,DROID-SLAM,Princeton,NeurIPS 2021,princeton-vl/DROID-SLAM,可微分 BA 的深度學習視覺 SLAM
+slam,2109.07982,R3LIVE,HKU MaRS,ICRA 2022,hku-mars/r3live,LiDAR-慣性-視覺緊耦合，即時彩色地圖
+slam,2112.12130,NICE-SLAM,ETH / Zhejiang,CVPR 2022,cvg/nice-slam,階層式神經隱式表示的稠密 SLAM
+slam,2208.04726,DPVO,Princeton,NeurIPS 2023,princeton-vl/DPVO,稀疏 patch 的深度視覺里程計，比 DROID 輕量
+slam,2209.15397,KISS-ICP,Bonn,RA-L 2023,PRBonn/kiss-icp,極簡、免調參的 point-to-point ICP LiDAR 里程計
+slam,2308.00688,AnyLoc,CMU / IIIT,RA-L 2024,AnyLoc/AnyLoc,用基礎模型特徵做通用視覺地點辨識
+slam,2312.02126,SplaTAM,CMU,CVPR 2024,spla-tam/SplaTAM,3D Gaussian Splatting 的 RGB-D SLAM
+slam,2312.06741,Gaussian Splatting SLAM,Imperial,CVPR 2024,muskie82/MonoGS,單眼即時 3DGS SLAM
+slam,2408.14035,FAST-LIVO2,HKU MaRS,T-RO 2025,hku-mars/FAST-LIVO2,LiDAR-慣性-視覺直接法緊耦合里程計
+slam,2412.12392,MASt3R-SLAM,Imperial,CVPR 2025,rmurai0610/MASt3R-SLAM,以 MASt3R 3D 重建先驗做即時稠密單眼 SLAM
+slam,2505.12549,VGGT-SLAM,MIT SPARK,NeurIPS 2025,MIT-SPARK/VGGT-SLAM,用 VGGT 子地圖 + SL(4) 流形優化的 feed-forward SLAM
+perception-3d,2103.13413,DPT,Intel,ICCV 2021,isl-org/DPT,ViT 做稠密預測，後續單眼深度模型的骨幹設計
+perception-3d,2109.07547,RAFT-Stereo,Princeton,3DV 2021,princeton-vl/RAFT-Stereo,迭代更新的雙目深度估計
+perception-3d,2302.12288,ZoeDepth,Intel,arXiv,isl-org/ZoeDepth,相對深度預訓練 + 公制深度頭，零樣本公制深度
+perception-3d,2308.04079,3D Gaussian Splatting,Inria,SIGGRAPH 2023,graphdeco-inria/gaussian-splatting,即時可微分高斯渲染，取代 NeRF 成為主流 3D 表示
+perception-3d,2312.02145,Marigold,ETH,CVPR 2024,prs-eth/Marigold,把影像 diffusion 模型轉成深度估計器
+perception-3d,2312.14132,DUSt3R,Naver Labs,CVPR 2024,naver/dust3r,免相機參數直接回歸 pointmap 的 3D 重建
+perception-3d,2401.10891,Depth Anything,HKU / TikTok,CVPR 2024,LiheYoung/Depth-Anything,大規模未標註資料訓練的單眼深度基礎模型
+perception-3d,2403.18913,UniDepth,ETH,CVPR 2024,lpiccinelli-eth/UniDepth,同時估計相機內參的通用公制深度
+perception-3d,2404.15506,Metric3D v2,HKUST 等,TPAMI 2024,YvanYin/Metric3D,零樣本公制深度與法向量
+perception-3d,2406.09414,Depth Anything V2,HKU / TikTok,NeurIPS 2024,DepthAnything/Depth-Anything-V2,以合成資料標註提升細節的深度模型
+perception-3d,2406.09756,MASt3R,Naver Labs,ECCV 2024,naver/mast3r,DUSt3R 加特徵匹配頭，提升匹配與定位
+perception-3d,2410.19115,MoGe,Microsoft,CVPR 2025,microsoft/MoGe,單張影像估計仿射不變點雲
+perception-3d,2501.09898,FoundationStereo,NVIDIA,CVPR 2025,NVlabs/FoundationStereo,零樣本雙目深度基礎模型
+perception-3d,2501.12387,CUT3R,UC Berkeley / Google,CVPR 2025,CUT3R/CUT3R,持續狀態更新的串流 3D 重建
+perception-3d,2503.11651,VGGT,Oxford VGG / Meta,CVPR 2025,facebookresearch/vggt,單次前向同時估相機、深度、點圖、追蹤
+perception-3d,2507.13347,π³,Shanghai AI Lab 等,arXiv,yyfz/Pi3,無參考視角的置換等變 feed-forward 重建
+perception-3d,2509.13414,MapAnything,Meta / CMU,arXiv,facebookresearch/map-anything,可接受多種輸入（內參、位姿、深度）的通用 feed-forward 重建
+perception-3d,2511.10647,Depth Anything 3,ByteDance Seed,arXiv,ByteDance-Seed/Depth-Anything-3,任意視角數的深度與位姿估計
+vision,2103.00020,CLIP,OpenAI,ICML 2021,openai/CLIP,影像-文字對比預訓練，開放詞彙感知的起點
+vision,2111.06377,MAE,Meta,CVPR 2022,facebookresearch/mae,遮罩自編碼自監督預訓練
+vision,2205.06230,OWL-ViT,Google,ECCV 2022,google-research/scenic,用 CLIP 式骨幹做開放詞彙偵測
+vision,2303.05499,Grounding DINO,IDEA,ECCV 2024,IDEA-Research/GroundingDINO,語言引導的開放集合物件偵測
+vision,2303.15343,SigLIP,Google,ICCV 2023,google-research/big_vision,sigmoid 損失的影像-文字預訓練，多數 VLM 的視覺編碼器
+vision,2304.02643,SAM,Meta,ICCV 2023,facebookresearch/segment-anything,可提示的通用分割基礎模型
+vision,2304.07193,DINOv2,Meta,TMLR 2024,facebookresearch/dinov2,自監督視覺特徵，免微調可用於深度、分割、匹配
+vision,2304.08069,RT-DETR,Baidu,CVPR 2024,lyuwenyu/RT-DETR,即時 DETR 偵測器
+vision,2306.13643,LightGlue,ETH,ICCV 2023,cvg/LightGlue,快速自適應的特徵匹配，SLAM 前端常用
+vision,2307.07635,CoTracker,Meta / Oxford,ECCV 2024,facebookresearch/co-tracker,聯合追蹤大量點的影片點追蹤
+vision,2401.14159,Grounded SAM,IDEA,arXiv,IDEA-Research/Grounded-Segment-Anything,Grounding DINO + SAM 組合做開放詞彙分割
+vision,2401.17270,YOLO-World,Tencent,CVPR 2024,AILab-CVC/YOLO-World,即時開放詞彙偵測
+vision,2408.00714,SAM 2,Meta,ICLR 2025,facebookresearch/sam2,支援影片的可提示分割
+vision,2508.10104,DINOv3,Meta,arXiv,facebookresearch/dinov3,擴大規模並改善稠密特徵的自監督視覺模型
+vision,2511.16719,SAM 3,Meta,arXiv,facebookresearch/sam3,以概念（文字／範例）提示的分割與追蹤
+real2sim,2106.14405,Habitat 2.0,Meta,NeurIPS 2021,facebookresearch/habitat-lab,可互動的室內重建場景模擬器，具身 AI 標準平台
+real2sim,2108.10470,Isaac Gym,NVIDIA,NeurIPS 2021,isaac-sim/IsaacGymEnvs,GPU 端到端物理模擬，大規模平行 RL
+real2sim,2201.05989,Instant-NGP,NVIDIA,SIGGRAPH 2022,NVlabs/instant-ngp,多解析度雜湊編碼，秒級訓練 NeRF
+real2sim,2301.04195,Orbit / Isaac Lab,NVIDIA / ETH,RA-L 2023,isaac-sim/IsaacLab,基於 Isaac Sim 的機器人學習框架
+real2sim,2302.04264,Nerfstudio,UC Berkeley,SIGGRAPH 2023,nerfstudio-project/nerfstudio,模組化 NeRF／3DGS 重建框架
+real2sim,2311.12775,SuGaR,ENPC,CVPR 2024,Anttwo/SuGaR,從 3DGS 抽出可編輯網格
+real2sim,2403.03949,RialTo,MIT,RSS 2024,,真實場景重建成模擬環境，在模擬中強化學習修正策略
+real2sim,2403.17888,2D Gaussian Splatting,ShanghaiTech / Tübingen,SIGGRAPH 2024,hbb1/2d-gaussian-splatting,幾何準確的表面重建，可輸出網格
+real2sim,2409.06765,gsplat,UC Berkeley,JMLR 2025,nerfstudio-project/gsplat,開源 CUDA 高斯潑濺函式庫
+real2sim,2409.10161,SplatSim,CMU,ICRA 2025,,用 3DGS 取代模擬器渲染，縮小視覺 sim-to-real 差距
+real2sim,2501.03575,Cosmos,NVIDIA,arXiv,NVIDIA/Cosmos,物理 AI 的 world foundation model 平台
+real2sim,2502.01536,VR-Robo,,RA-L 2025,,3DGS 重建場景做視覺導航與運動控制的 real-to-sim-to-real

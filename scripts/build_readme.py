@@ -4,7 +4,6 @@
 topics/ 與 data/ 是資料來源，README 由本腳本產生，不要手改。
 """
 import csv
-import datetime
 import json
 import re
 from pathlib import Path
@@ -15,7 +14,7 @@ TOPICS = [
     "slam", "perception-3d", "vision", "real2sim",
 ]
 
-# 分級門檻：引用數會隨年份累積，所以另列年均引用給新論文比較
+# 分級門檻：(名稱, 引用數, star 數)，任一達標即可
 TIERS = [("奠基", 1000, 10000), ("主流", 300, 1000)]
 
 HEADER = """# Robot Nav Survey
@@ -27,7 +26,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 - 每三天由排程 agent 依 [CLAUDE.md](CLAUDE.md) 的規則搜尋新論文並開 PR，審過再 merge。
 - 手動更新：在 repo 裡開 Claude Code，說「更新論文整理」。
 - 每個主題分三段：在解決的問題、經典（近五年，依引用與 star 分級）、最新論文。
-- 分級：**奠基** 引用 ≥ 1000 或 star ≥ 10k；**主流** 引用 ≥ 300 或 star ≥ 1k；其餘為**新興**。引用來自 Semantic Scholar，star 來自 GitHub。
+- 分級：**奠基** 引用 ≥ 1000 或 star ≥ 10k；**主流** 引用 ≥ 300 或 star ≥ 1k；其餘為**新興**。引用來自 Semantic Scholar，star 來自 GitHub。「年」是 arXiv 首次公開年份，「來源」是正式刊登的會議或期刊。
 
 ## 定期追蹤的來源
 
@@ -56,22 +55,21 @@ def tier(cites: int, stars: int) -> str:
 
 
 def classics_table(rows, metrics) -> str:
-    this_year = datetime.date.today().year
     items = []
     for r in rows:
         p = metrics["papers"].get(r["arxiv"]) or {}
         cites = p.get("citationCount") or 0
         year = p.get("year") or int("20" + r["arxiv"][:2])
         stars = metrics["stars"].get(r["repo"]) or 0
-        items.append((r, year, cites, stars, tier(cites, stars), cites // max(this_year - year, 1)))
+        items.append((r, year, cites, stars, tier(cites, stars)))
     order = {"奠基": 0, "主流": 1, "新興": 2}
     items.sort(key=lambda x: (order[x[4]], -x[2]))
 
-    lines = ["| 分級 | 年 | 論文 | 機構 | 重點 | 引用 | 年均 | Star |", "|---|---|---|---|---|---|---|---|"]
-    for r, year, cites, stars, t, per_year in items:
+    lines = ["| 分級 | 年 | 論文 | 機構 | 重點 | 來源 | 引用 | Star |", "|---|---|---|---|---|---|---|---|"]
+    for r, year, cites, stars, t in items:
         paper = f"[{r['name']}](https://arxiv.org/abs/{r['arxiv']})"
         star = f"[{stars:,}](https://github.com/{r['repo']})" if r["repo"] else ""
-        lines.append(f"| {t} | {year} | {paper} | {r['org']} | {r['note']} | {cites:,} | {per_year:,} | {star} |")
+        lines.append(f"| {t} | {year} | {paper} | {r['org']} | {r['note']} | {r['venue']} | {cites:,} | {star} |")
     return "\n".join(lines)
 
 
