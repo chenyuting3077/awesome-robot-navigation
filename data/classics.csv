@@ -1,8 +1,8 @@
 topic,arxiv,name,org,venue,repo,note
 vln,2207.04429,LM-Nav,UC Berkeley,CoRL 2022,blazejosinski/lm_nav,用現成 LLM + VLM + ViNT 類導航模型組合，不需標註語言資料就能照指令走
 vln,2203.10421,CoW (CLIP on Wheels),Columbia,CVPR 2023,real-stanford/cow,把 CLIP 接上探索策略做 zero-shot 物件導航
-vln,2304.03047,ETPNav,,TPAMI 2024,MarSaKi/ETPNav,連續環境 VLN 用線上拓撲圖做高層規劃
-vln,2305.16986,NavGPT,,AAAI 2024,GengzeZhou/NavGPT,純 LLM 推理做 VLN，把觀測轉文字
+vln,2304.03047,ETPNav,UCAS / CASIA 等,TPAMI 2024,MarSaKi/ETPNav,連續環境 VLN 用線上拓撲圖做高層規劃
+vln,2305.16986,NavGPT,Adelaide / ANU,AAAI 2024,GengzeZhou/NavGPT,純 LLM 推理做 VLN，把觀測轉文字
 vln,2312.03275,VLFM,Boston Dynamics AI Institute,ICRA 2024,bdaiinstitute/vlfm,VLM 算語意價值地圖引導 frontier 探索，Spot 實機 zero-shot 物件導航
 vln,2402.15852,NaVid,PKU,RSS 2024,jzhzhang/NaVid-VLN-CE,只用單眼 RGB 影片的 VLM 做 VLN，不需地圖與深度
 vln,2407.07775,Mobility VLA,Google DeepMind,CoRL 2024,,長脈絡 VLM 看導覽影片建拓撲圖，再照多模態指令導航
@@ -95,4 +95,4 @@ real2sim,2403.17888,2D Gaussian Splatting,ShanghaiTech / Tübingen,SIGGRAPH 2024
 real2sim,2409.06765,gsplat,UC Berkeley,JMLR 2025,nerfstudio-project/gsplat,開源 CUDA 高斯潑濺函式庫
 real2sim,2409.10161,SplatSim,CMU,ICRA 2025,,用 3DGS 取代模擬器渲染，縮小視覺 sim-to-real 差距
 real2sim,2501.03575,Cosmos,NVIDIA,arXiv,NVIDIA/Cosmos,物理 AI 的 world foundation model 平台
-real2sim,2502.01536,VR-Robo,,RA-L 2025,,3DGS 重建場景做視覺導航與運動控制的 real-to-sim-to-real
+real2sim,2502.01536,VR-Robo,Tsinghua,RA-L 2025,,3DGS 重建場景做視覺導航與運動控制的 real-to-sim-to-real
