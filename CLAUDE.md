@@ -18,6 +18,8 @@
 
 ## 搜尋方式
 
+改動來源清單時，同步改 `scripts/build_readme.py` 裡 README 的「定期追蹤的來源」。
+
 0. **先查重點來源**（最優先）：arXiv API 無法依機構篩選，所以先逐一查下列來源的近期發表，再做第 1 步。
    - **NVIDIA**（每次都要查）：
      - https://research.nvidia.com/research-area/robotics 、 https://research.nvidia.com/research-area/computer-vision ：依年份列出論文，只顯示年份，月份看論文網址 slug。網站常比 arXiv 晚上架，所以兩邊都要查。
