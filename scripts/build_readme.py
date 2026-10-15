@@ -27,6 +27,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 - 手動更新：在 repo 裡開 Claude Code，說「更新論文整理」。
 - 每個主題分三段：在解決的問題、經典（近五年，依引用與 star 分級）、最新論文。
 - 分級：**奠基** 引用 ≥ 1000 或 star ≥ 10k；**主流** 引用 ≥ 300 或 star ≥ 1k；其餘為**新興**。引用來自 Semantic Scholar，star 來自 GitHub。「年」是 arXiv 首次公開年份，「來源」是正式刊登的會議或期刊。
+- 程式碼標「未公開」：論文頁、arXiv 頁與 GitHub 搜尋都找不到作者釋出的官方程式碼（第三方重現不算）。
 
 ## 定期追蹤的來源
 
@@ -68,7 +69,9 @@ def classics_table(rows, metrics) -> str:
     lines = ["| 分級 | 年 | 論文 | 機構 | 重點 | 來源 | 引用 | Star |", "|---|---|---|---|---|---|---|---|"]
     for r, year, cites, stars, t in items:
         paper = f"[{r['name']}](https://arxiv.org/abs/{r['arxiv']})"
-        star = f"[{stars:,}](https://github.com/{r['repo']})" if r["repo"] else ""
+        if r["project"]:
+            paper += f" · [專案頁]({r['project']})"
+        star = f"[{stars:,}](https://github.com/{r['repo']})" if r["repo"] else "未公開"
         lines.append(f"| {t} | {year} | {paper} | {r['org']} | {r['note']} | {r['venue']} | {cites:,} | {star} |")
     return "\n".join(lines)
 
