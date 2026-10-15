@@ -18,7 +18,12 @@
 
 ## 搜尋方式
 
-1. **arXiv API 為主**：每個主題用下表關鍵字查 `http://export.arxiv.org/api/query`，加 `submittedDate:[上次更新日 TO 今天]`，`sortBy=submittedDate`，`max_results=100`。抓不到 API 時改用 WebSearch，查詢加上年月。
+0. **先查重點來源**（最優先）：arXiv API 無法依機構篩選，所以先逐一查下列來源的近期發表，再做第 1 步。
+   - **NVIDIA**：research.nvidia.com/publications、NVIDIA 技術部落格、Isaac / Cosmos / GR00T 等發表，以及 WebSearch `NVIDIA <主題關鍵字> <年月>`。
+   - **企業**：Google DeepMind、Meta FAIR、Physical Intelligence、Skild AI、Mistral、Alibaba（AMAP、DAMO）、ByteDance Seed、Tencent Robotics X、Huawei、Unitree、LimX、ANYbotics、Boston Dynamics。
+   - **實驗室**：ETH RSL / ASL、MIT SPARK、CMU RI（AirLab）、Stanford、UC Berkeley、UCSD（Xiaolong Wang）、Oxford DRS / ORI、Freiburg、TUM（Cremers）、HKU MaRS、HKUST、浙大 FAST Lab、清華、上海 AI Lab（InternRobotics）、KAIST。
+   - 查法：WebSearch `<機構> <主題關鍵字> <年月>`，或看該機構 publications 頁、GitHub org。
+1. **arXiv API 補漏**：每個主題用下表關鍵字查 `http://export.arxiv.org/api/query`，加 `submittedDate:[上次更新日 TO 今天]`，`sortBy=submittedDate`，`max_results=100`。抓不到 API 時改用 WebSearch，查詢加上年月。
 
    | 主題 | 分類 | 關鍵字（abs 或 ti，OR 串接） |
    |---|---|---|
@@ -32,8 +37,8 @@
    | vision | cs.CV | "open-vocabulary detection", "open-vocabulary segmentation", "vision foundation model" |
    | real2sim | cs.RO, cs.CV | "real-to-sim", real2sim, "digital twin" AND robot, "Gaussian splatting" AND simulation |
 
-2. **補充來源**（WebSearch）：Science Robotics、RA-L、T-RO 新刊；當期 CoRL / RSS / ICRA / IROS / CVPR 接收論文；廠商發表（NVIDIA、Google DeepMind、Mistral、Meta、Unitree、LimX、ANYbotics 等的模型、權重、技術報告）。
-3. **篩選**：arXiv 量大，每主題每次最多收 5 篇，優先順序：有實機實驗 > 開源程式或權重 > 標準 benchmark 上宣稱 SOTA > 知名實驗室。純 benchmark 微幅改進、只在遙測或醫療影像上驗證的不收。
+2. **補充來源**（WebSearch）：Science Robotics、RA-L、T-RO 新刊；當期 CoRL / RSS / ICRA / IROS / CVPR 接收論文。
+3. **篩選**：每主題每次最多收 5 篇，NVIDIA 的不佔名額。名額優先給第 0 步名單內的機構，其次依：有實機實驗 > 開源程式或權重 > 標準 benchmark 上宣稱 SOTA。純 benchmark 微幅改進、只在遙測或醫療影像上驗證的不收。機構以 arXiv 摘要頁或論文首頁的作者單位為準，「機構」欄要填。
 4. **確認**：收錄前 WebFetch arXiv 摘要頁，「讀到」至少是 `摘要`；抓不到摘要頁的才寫 `標題`。
 
 ## 每次更新
