@@ -293,7 +293,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 2026-04 | [FreeOcc](https://arxiv.org/abs/2604.28115) | HKUST (GZ) / MBZUAI | 免訓練、具身、開放詞彙 occupancy 預測 | arXiv |
 | 2026-04 | [Feed-forward 3D scene modeling survey](https://arxiv.org/abs/2604.14025) | Zhejiang / NTU / Monash / ETH / Tübingen | feed-forward 3D 重建綜述，涵蓋 Point3R、IncVGGT、ZipMap 等串流／增量版本 | arXiv |
 | 2026-02 | [VGG-T³](https://arxiv.org/abs/2602.23361) | NVIDIA / Toronto | 大規模離線 feed-forward 重建 | arXiv |
-| 2025-11 | [AMB3R](https://arxiv.org/abs/2511.20343) | UCL | feed-forward 公制尺度重建 + 稀疏體素後端，不微調即可延伸到 VO／SLAM（CVPR 2026） | CVPR 2026 |
+| 2025-11 | [AMB3R](https://arxiv.org/abs/2511.20343) | UCL | feed-forward 公制尺度重建 + 稀疏體素後端，不微調即可延伸到 VO／SLAM | CVPR 2026 |
 
 ## 電腦視覺（偵測、分割、視覺基礎模型）
 
