@@ -1,5 +1,14 @@
 # 局部導航策略（diffusion / world model）
 
+## 在解決的問題
+
+- 從感測器直接輸出可行軌跡，取代手調的代價地圖與規劃器參數。
+- 泛化到沒見過的環境與機體：靠跨機體資料或大規模模擬訓練。
+- 多解行為（岔路要選一邊）用 diffusion 表達；預測動作後果再規劃則走向 world model。
+- 安全保證：學習式策略沒有碰撞保證，常另外疊安全濾波器。
+
+## 最新論文
+
 | 日期 | 論文 | 機構 | 重點 | 數據 | 讀到 |
 |---|---|---|---|---|---|
 | 2026-10 | [LiteNWM](https://arxiv.org/abs/2610.12368) | | 輕量潛空間 world model，可機上跑 | 實機未見場景 SR 43.3%（NoMaD）→ 83.3% | 摘要 |
@@ -10,4 +19,3 @@
 | 2026-06 | [NavWAM](https://arxiv.org/abs/2606.13494) | | goal-conditioned world action model | | 標題 |
 | 2026-05 | [NavOL](https://arxiv.org/abs/2605.11762) | | diffusion 導航策略在 IsaacLab 線上模仿學習，解 NavDP 離線資料限制 | | 標題 |
 | 2026-03 | [Beyond Imitation](https://arxiv.org/abs/2603.12868) | | RL 微調 diffusion 導航策略 | | 標題 |
-| 2025-05 | [NavDP](https://arxiv.org/abs/2505.08712) | | 純模擬訓練 + 特權資訊引導，zero-shot sim-to-real 跨機體 | | 摘要 |

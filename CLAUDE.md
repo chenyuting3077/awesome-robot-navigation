@@ -66,6 +66,13 @@
 4. 跑 `python3 scripts/build_readme.py` 重新產生 README。README 是產生的，不要手改。
 5. 開新 branch `update/YYYY-MM-DD`，commit，開 PR 到 main；不直接推 main。沒有新論文就不開 PR。
 
+## 檔案格式
+
+- `topics/*.md` 固定兩段：`## 在解決的問題`（條列）與 `## 最新論文`（表格）。新論文只加在「最新論文」表。
+- 經典論文放 `data/classics.csv`，不放主題檔；同一篇不要同時出現在兩處。
+- 每月第一次更新時跑 `python3 scripts/fetch_metrics.py` 刷新引用數與 star，並把「最新論文」中發表滿一年、且引用 ≥ 300 或 star ≥ 1k 的論文移到 `classics.csv`（從主題檔刪除該列）。
+- 「在解決的問題」只在領域出現新的主要問題或舊問題被解決時改。
+
 ## 表格欄位
 
 `| 日期 | 論文 | 機構 | 重點 | 數據 | 讀到 |`

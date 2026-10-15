@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
-"""把 topics/*.md 與最新月報組成一頁到底的 README.md。
+"""把 topics/*.md、data/classics.csv（+ metrics.json）與最新月報組成一頁到底的 README.md。
 
-topics/ 是唯一資料來源，README 由本腳本產生，不要手改。
+topics/ 與 data/ 是資料來源，README 由本腳本產生，不要手改。
 """
+import csv
+import datetime
+import json
 import re
 from pathlib import Path
 
@@ -12,14 +15,19 @@ TOPICS = [
     "slam", "perception-3d", "vision", "real2sim",
 ]
 
+# 分級門檻：引用數會隨年份累積，所以另列年均引用給新論文比較
+TIERS = [("奠基", 1000, 10000), ("主流", 300, 1000)]
+
 HEADER = """# Robot Nav Survey
 
 AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim 前沿論文整理，每三天自動更新。
 
-<!-- 本檔由 scripts/build_readme.py 產生，請改 topics/ 或 digests/ 後重跑 -->
+<!-- 本檔由 scripts/build_readme.py 產生，請改 topics/、data/ 或 digests/ 後重跑 -->
 
 - 每三天由排程 agent 依 [CLAUDE.md](CLAUDE.md) 的規則搜尋新論文並開 PR，審過再 merge。
 - 手動更新：在 repo 裡開 Claude Code，說「更新論文整理」。
+- 每個主題分三段：在解決的問題、經典（近五年，依引用與 star 分級）、最新論文。
+- 分級：**奠基** 引用 ≥ 1000 或 star ≥ 10k；**主流** 引用 ≥ 300 或 star ≥ 1k；其餘為**新興**。引用來自 Semantic Scholar，star 來自 GitHub。
 """
 
 
@@ -29,25 +37,61 @@ def anchor(title: str) -> str:
     return s.replace(" ", "-")
 
 
+def tier(cites: int, stars: int) -> str:
+    for name, c, s in TIERS:
+        if cites >= c or stars >= s:
+            return name
+    return "新興"
+
+
+def classics_table(rows, metrics) -> str:
+    this_year = datetime.date.today().year
+    items = []
+    for r in rows:
+        p = metrics["papers"].get(r["arxiv"]) or {}
+        cites = p.get("citationCount") or 0
+        year = p.get("year") or int("20" + r["arxiv"][:2])
+        stars = metrics["stars"].get(r["repo"]) or 0
+        items.append((r, year, cites, stars, tier(cites, stars), cites // max(this_year - year, 1)))
+    order = {"奠基": 0, "主流": 1, "新興": 2}
+    items.sort(key=lambda x: (order[x[4]], -x[2]))
+
+    lines = ["| 分級 | 年 | 論文 | 機構 | 重點 | 引用 | 年均 | Star |", "|---|---|---|---|---|---|---|---|"]
+    for r, year, cites, stars, t, per_year in items:
+        paper = f"[{r['name']}](https://arxiv.org/abs/{r['arxiv']})"
+        star = f"[{stars:,}](https://github.com/{r['repo']})" if r["repo"] else ""
+        lines.append(f"| {t} | {year} | {paper} | {r['org']} | {r['note']} | {cites:,} | {per_year:,} | {star} |")
+    return "\n".join(lines)
+
+
 def main() -> None:
+    classics = list(csv.DictReader((ROOT / "data" / "classics.csv").open()))
+    metrics = json.loads((ROOT / "data" / "metrics.json").read_text())
+
     sections = []
     for name in TOPICS:
-        lines = (ROOT / "topics" / f"{name}.md").read_text().strip().splitlines()
-        title = lines[0].lstrip("# ").strip()
-        body = "\n".join(lines[1:]).strip()
-        sections.append((title, body))
+        text = (ROOT / "topics" / f"{name}.md").read_text().strip()
+        title, body = text.split("\n", 1)
+        problems, latest = body.split("## 最新論文", 1)
+        problems = problems.replace("## 在解決的問題", "").strip()
+        rows = [r for r in classics if r["topic"] == name]
+        parts = [f"## {title.lstrip('# ').strip()}", "### 在解決的問題", problems]
+        if rows:
+            parts += [f"### 經典（近五年，資料日期 {metrics['fetched']}）", classics_table(rows, metrics)]
+        parts += ["### 最新論文", latest.strip()]
+        sections.append((title.lstrip("# ").strip(), "\n\n".join(parts)))
 
     digests = sorted((ROOT / "digests").glob("*.md"), reverse=True)
-    latest = digests[0]
-    trend = latest.read_text().split("## 趨勢", 1)[1].split("\n## ", 1)[0].strip()
-    updated = re.search(r"最後更新：(\S+)", latest.read_text()).group(1)
+    latest = digests[0].read_text()
+    trend = latest.split("## 趨勢", 1)[1].split("\n## ", 1)[0].strip()
+    updated = re.search(r"最後更新：(\S+)", latest).group(1)
 
     out = [HEADER, f"最後更新：{updated}\n", "## 目錄\n"]
-    out.append(f"- [本月趨勢（{latest.stem}）](#本月趨勢{anchor(latest.stem)})")
+    out.append(f"- [本月趨勢（{digests[0].stem}）](#本月趨勢{anchor(digests[0].stem)})")
     out += [f"- [{t}](#{anchor(t)})" for t, _ in sections]
     out.append("- [月報](#月報)\n")
-    out.append(f"## 本月趨勢（{latest.stem}）\n\n{trend}\n")
-    out += [f"## {t}\n\n{b}\n" for t, b in sections]
+    out.append(f"## 本月趨勢（{digests[0].stem}）\n\n{trend}\n")
+    out += [f"{s}\n" for _, s in sections]
     out.append("## 月報\n")
     out += [f"- [{d.stem}](digests/{d.name})" for d in digests]
 
