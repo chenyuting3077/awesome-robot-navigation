@@ -1,0 +1,3 @@
+__pycache__/
+# harvest.py 的中間結果，每月重撈
+data/candidates.json
