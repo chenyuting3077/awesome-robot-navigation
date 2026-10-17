@@ -27,7 +27,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 
 <!-- 本檔由 scripts/build_readme.py 產生，請改 topics/、data/ 或 digests/ 後重跑 -->
 
-- 每三天由排程 agent 依 [CLAUDE.md](CLAUDE.md) 的規則搜尋新論文並開 PR，審過再 merge。
+- 每三天由排程 agent 依 [update-survey](.claude/skills/update-survey/SKILL.md) 的流程搜尋新論文並開 PR，審過再 merge。
 - 手動更新：在 repo 裡開 Claude Code，說「更新論文整理」。
 - 每個主題分三段：在解決的問題、重要論文（2021 年起，開創性的不限年份）、最新論文。
 - 程式碼標「未公開」：論文頁、arXiv 頁與 GitHub 搜尋都找不到作者釋出的官方程式碼（第三方重現不算）。
@@ -50,7 +50,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 
 ## 定期追蹤的來源
 
-完整查法與關鍵字見 [CLAUDE.md](CLAUDE.md#搜尋方式)。
+完整查法與關鍵字見 [sources.md](.claude/skills/update-survey/sources.md)。
 
 - **NVIDIA Research**（每次必查）：[Robotics](https://research.nvidia.com/research-area/robotics)、[Computer Vision](https://research.nvidia.com/research-area/computer-vision)、[Seattle Robotics Lab](https://research.nvidia.com/labs/srl)、[GEAR](https://research.nvidia.com/labs/gear/)、[NVlabs GitHub](https://github.com/NVlabs)
 - **企業**：Google DeepMind、Meta FAIR、Physical Intelligence、Skild AI、Mistral、Alibaba、ByteDance Seed、Tencent Robotics X、Huawei、Unitree、LimX、ANYbotics、Boston Dynamics
