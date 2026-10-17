@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""抓 data/classics.csv 每篇的引用數（Semantic Scholar）與 GitHub star，存到 data/metrics.json。
+"""抓 data/classics.csv 每篇的引用數（Semantic Scholar）、GitHub star、HF 按讚數與 arXiv 備註，存到 data/metrics.json。
+
+arXiv 的 Comments／journal_ref 給 check_data.py 核對刊登處的會議與年份。
 
 Semantic Scholar 未登入時共用限流，常回 429，所以用指數退避重試；
 有 S2_API_KEY 環境變數就帶上。GitHub 優先用 gh CLI（已登入，限額高），沒有就用
@@ -15,6 +17,7 @@ import time
 import urllib.error
 from pathlib import Path
 
+from enrich import arxiv_batch
 from net import fetch_json
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -76,7 +79,9 @@ def main():
         if n % 50 == 0:
             print(f"HF 按讚數 {n}/{len(hf_ids)}", flush=True)
         time.sleep(0.3)
-    out = {"fetched": datetime.date.today().isoformat(), "papers": papers, "stars": stars, "hf": hf}
+    print(f"arXiv 備註：{len(hf_ids)} 篇", flush=True)
+    arxiv = {i: {k: v[k] for k in ("comments", "journal_ref")} for i, v in arxiv_batch(hf_ids).items()}
+    out = {"fetched": datetime.date.today().isoformat(), "papers": papers, "stars": stars, "hf": hf, "arxiv": arxiv}
     (ROOT / "data" / "metrics.json").write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n")
     for i in ids:
         if papers[i] is None:

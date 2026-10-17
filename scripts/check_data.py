@@ -14,6 +14,15 @@ ROOT = Path(__file__).resolve().parent.parent
 TAGS = {"獲獎", "基準", "機構", "推薦"}
 COLS = 7  # | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 ARXIV = re.compile(r"arxiv\.org/abs/(\d{4}\.\d{4,5})")
+DOI = re.compile(r"(?:doi\.org/|/doi/)(10\.\d{4,9}/[^\s)]+)")
+# arXiv Comments／journal_ref 裡的「會議 年份」，用來核對 venue 的年份（S2 的年份是 arXiv 年份，不能拿來比）
+ARXIV_VENUE = re.compile(r"\b(CVPR|ICCV|ECCV|NeurIPS|NIPS|ICLR|ICML|CoRL|RSS|ICRA|IROS|RA-?L|T-?RO|IJRR|TPAMI|3DV|WACV|AAAI)"
+                         r"\s*'?(20\d{2}|\d{2})\b")
+ALIAS = {"NIPS": "NeurIPS", "RAL": "RA-L", "TRO": "T-RO"}
+# 跳過：workshop、投稿中，以及期刊延伸版（備註寫的是前作會議）
+SKIP_NOTE = re.compile(r"workshop|review|submitted|submission|extend", re.I)
+# 期刊只比名稱：arXiv 備註常寫接收年，刊登年份以卷號為準（例：AnyLoc 備註 RA-L 2023，卷號是 2024）
+JOURNALS = {"RA-L", "T-RO", "IJRR", "TPAMI"}
 # Semantic Scholar 的 venue 全名 -> classics.csv 用的縮寫；只列常見的，用來抓憑記憶填錯的刊登處
 S2_VENUE = {
     "Computer Vision and Pattern Recognition": "CVPR", "International Conference on Computer Vision": "ICCV",
@@ -35,12 +44,12 @@ def check_topics(topics, errors):
         if "## 在解決的問題" not in text or "## 最新論文" not in text:
             errors.append(f"{path.name}：缺「## 在解決的問題」或「## 最新論文」")
             continue
-        table = text.split("## 最新論文", 1)[1]
-        for n, line in enumerate(table.splitlines(), 1):
+        start = text[:text.index("## 最新論文")].count("\n")
+        for n, line in enumerate(text.splitlines()[start:], start + 1):
             if not line.startswith("|") or line.startswith("| 日期") or line.startswith("| ---"):
                 continue
             cells = [c.strip() for c in line.strip().strip("|").split("|")]
-            where = f"{path.name}「最新論文」第 {n} 行"
+            where = f"{path.name} 第 {n} 行"
             if len(cells) != COLS:
                 errors.append(f"{where}：{len(cells)} 欄，應為 {COLS} 欄")
                 continue
@@ -56,11 +65,15 @@ def check_topics(topics, errors):
                 errors.append(f"{where}：程式碼欄應為 [GitHub](...) 或「未公開」，現在是「{code}」")
             if m := ARXIV.search(paper):
                 seen[m.group(1)] = where
+            elif m := DOI.search(paper):
+                seen[f"DOI:{m.group(1)}"] = where
     return seen
 
 
 def check_classics(topics, in_topics, errors):
     ids = {}
+    if b"\r" in (ROOT / "data" / "classics.csv").read_bytes():  # csv.writer 預設寫 CRLF，混進來 diff 會整行變動
+        errors.append("classics.csv：有 CRLF 換行，請用 csv.writer(..., lineterminator=\"\\n\")")
     for n, r in enumerate(csv.DictReader((ROOT / "data" / "classics.csv").open()), 2):
         where = f"classics.csv 第 {n} 行（{r['name']}）"
         if r["topic"] not in topics:
@@ -87,17 +100,29 @@ def check_classics(topics, in_topics, errors):
 
 
 def venue_warnings() -> list[str]:
-    """classics.csv 的 venue 與 Semantic Scholar 不一致時提醒；S2 也常缺或寫 arXiv，所以只警告不擋。"""
+    """classics.csv 的 venue 與 Semantic Scholar、arXiv Comments 不一致時提醒；兩者都常缺或不準，所以只警告不擋。"""
     path = ROOT / "data" / "metrics.json"
     if not path.exists():
         return []
-    papers = json.loads(path.read_text())["papers"]
+    metrics = json.loads(path.read_text())
+    papers, arxiv = metrics["papers"], metrics.get("arxiv", {})
     out = []
     for r in csv.DictReader((ROOT / "data" / "classics.csv").open()):
         s2 = ((papers.get(r["id"]) or {}).get("venue") or "")
         abbr = next((a for full, a in S2_VENUE.items() if full.lower() in s2.lower()), None)
-        if abbr and not r["venue"].startswith(abbr):
+        if abbr and abbr not in r["venue"]:
             out.append(f"{r['name']}：classics.csv 寫「{r['venue']}」，Semantic Scholar 是「{s2}」")
+        ax = arxiv.get(r["id"]) or {}
+        note = f"{ax.get('journal_ref', '')} {ax.get('comments', '')}"
+        note = re.sub(r"present\w* at \S+\s*\d*", "", note, flags=re.I)  # RA-L 論文常另在 ICRA/IROS 發表
+        if SKIP_NOTE.search(note):
+            continue
+        for conf, year in ARXIV_VENUE.findall(note):
+            conf = ALIAS.get(conf.replace("-", ""), conf)
+            year = year if len(year) == 4 else f"20{year}"
+            if (conf in JOURNALS and conf not in r["venue"]) or (conf not in JOURNALS and f"{conf} {year}" not in r["venue"]):
+                out.append(f"{r['name']}：classics.csv 寫「{r['venue']}」，arXiv 備註是「{note.strip()[:80]}」")
+                break
     return out
 
 

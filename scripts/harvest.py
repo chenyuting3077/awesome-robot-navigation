@@ -52,7 +52,7 @@ ANCHORS = {
     "local-nav": ["2306.14846", "2310.07896"],  # ViNT、NoMaD
     "semantic-map": ["2309.16650", "2210.05714"],  # ConceptGraphs、VLMaps
     "quadruped": ["2109.11978", "2201.08117"],  # Learning to Walk in Minutes、Perceptive Locomotion
-    "wheel-legged": ["2405.01792"],
+    "wheel-legged": ["2405.01792"],  # ETH 輪足自主導航與運動
     "slam": ["2107.06829", "2108.10869"],  # FAST-LIO2、DROID-SLAM
     "perception-3d": ["2312.14132"],  # DUSt3R
     "spatial": ["1912.08830", "2412.14171"],  # ScanRefer、VSI-Bench
@@ -63,11 +63,15 @@ def citing(aid: str):
     headers = {"x-api-key": key} if (key := os.environ.get("S2_API_KEY")) else {}
     offset = 0
     while offset is not None:
+        limit = min(1000, 9999 - offset)  # 2026-10 實測：offset + limit 須 < 10000，否則回錯誤
+        if limit <= 0:
+            print(f"  {aid} 引用超過 1 萬篇，只撈到前 9999 篇；換一篇較窄的錨點", flush=True)
+            return
         url = (f"https://api.semanticscholar.org/graph/v1/paper/ARXIV:{aid}/citations?"
-               f"{urllib.parse.urlencode({'fields': FIELDS, 'limit': 1000, 'offset': offset})}")
+               f"{urllib.parse.urlencode({'fields': FIELDS, 'limit': limit, 'offset': offset})}")
         res = fetch_json(url, headers=headers)
         yield from (c["citingPaper"] for c in res.get("data", []))
-        offset = res.get("next")  # S2 上限 offset 9999，錨點引用數控制在這以內
+        offset = res.get("next")
         time.sleep(3)
 
 
