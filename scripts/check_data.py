@@ -5,6 +5,7 @@
 機構留空；沒有官方程式碼卻沒標「未公開」。
 """
 import csv
+import json
 import re
 import sys
 from pathlib import Path
@@ -13,6 +14,17 @@ ROOT = Path(__file__).resolve().parent.parent
 TAGS = {"獲獎", "基準", "機構", "推薦"}
 COLS = 7  # | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 ARXIV = re.compile(r"arxiv\.org/abs/(\d{4}\.\d{4,5})")
+# Semantic Scholar 的 venue 全名 -> classics.csv 用的縮寫；只列常見的，用來抓憑記憶填錯的刊登處
+S2_VENUE = {
+    "Computer Vision and Pattern Recognition": "CVPR", "International Conference on Computer Vision": "ICCV",
+    "European Conference on Computer Vision": "ECCV", "Neural Information Processing Systems": "NeurIPS",
+    "International Conference on Learning Representations": "ICLR", "International Conference on Machine Learning": "ICML",
+    "Conference on Robot Learning": "CoRL", "Robotics: Science and Systems": "RSS",
+    "International Conference on Robotics and Automation": "ICRA", "Intelligent RObots and Systems": "IROS",
+    "Robotics and Automation Letters": "RA-L", "Transactions on robotics": "T-RO", "Science Robotics": "Science Robotics",
+    "Int. J. Robotics Res.": "IJRR", "international journal of robotics research": "IJRR",
+    "Transactions on Field Robotics": "T-FR", "Pattern Analysis and Machine Intelligence": "TPAMI",
+}
 
 
 def check_topics(topics, errors):
@@ -74,6 +86,21 @@ def check_classics(topics, in_topics, errors):
             errors.append(f"{where}：tag「機構」要求開源，但 repo 空白")
 
 
+def venue_warnings() -> list[str]:
+    """classics.csv 的 venue 與 Semantic Scholar 不一致時提醒；S2 也常缺或寫 arXiv，所以只警告不擋。"""
+    path = ROOT / "data" / "metrics.json"
+    if not path.exists():
+        return []
+    papers = json.loads(path.read_text())["papers"]
+    out = []
+    for r in csv.DictReader((ROOT / "data" / "classics.csv").open()):
+        s2 = ((papers.get(r["id"]) or {}).get("venue") or "")
+        abbr = next((a for full, a in S2_VENUE.items() if full.lower() in s2.lower()), None)
+        if abbr and not r["venue"].startswith(abbr):
+            out.append(f"{r['name']}：classics.csv 寫「{r['venue']}」，Semantic Scholar 是「{s2}」")
+    return out
+
+
 def check(topics) -> list[str]:
     errors = []
     in_topics = check_topics(topics, errors)
@@ -86,5 +113,7 @@ if __name__ == "__main__":
     from build_readme import TOPICS
 
     errs = check(TOPICS)
+    if warns := venue_warnings():
+        print("刊登處待確認（查 arXiv journal_ref、專案頁或論文集後改 venue）：\n" + "\n".join(warns) + "\n")
     print("\n".join(errs) or "OK")
     sys.exit(1 if errs else 0)

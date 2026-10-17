@@ -45,6 +45,32 @@ QUERIES = {
 }
 
 
+# 錨點論文：撈引用它們的高引用論文，補關鍵字的盲點（2026-10 關鍵字漏掉 VSI-Bench、Omni3D、ScanRefer）。
+# 選領域專屬、引用數數千以內的；vision、real2sim 的代表作（CLIP、SAM、Isaac Gym）被引用太廣，撈回來多是雜訊，所以不設。
+ANCHORS = {
+    "vln": ["1711.07280", "2004.02857"],  # R2R、VLN-CE
+    "local-nav": ["2306.14846", "2310.07896"],  # ViNT、NoMaD
+    "semantic-map": ["2309.16650", "2210.05714"],  # ConceptGraphs、VLMaps
+    "quadruped": ["2109.11978", "2201.08117"],  # Learning to Walk in Minutes、Perceptive Locomotion
+    "wheel-legged": ["2405.01792"],
+    "slam": ["2107.06829", "2108.10869"],  # FAST-LIO2、DROID-SLAM
+    "perception-3d": ["2312.14132"],  # DUSt3R
+    "spatial": ["1912.08830", "2412.14171"],  # ScanRefer、VSI-Bench
+}
+
+
+def citing(aid: str):
+    headers = {"x-api-key": key} if (key := os.environ.get("S2_API_KEY")) else {}
+    offset = 0
+    while offset is not None:
+        url = (f"https://api.semanticscholar.org/graph/v1/paper/ARXIV:{aid}/citations?"
+               f"{urllib.parse.urlencode({'fields': FIELDS, 'limit': 1000, 'offset': offset})}")
+        res = fetch_json(url, headers=headers)
+        yield from (c["citingPaper"] for c in res.get("data", []))
+        offset = res.get("next")  # S2 上限 offset 9999，錨點引用數控制在這以內
+        time.sleep(3)
+
+
 def search(query: str):
     headers = {}
     if key := os.environ.get("S2_API_KEY"):
@@ -71,14 +97,16 @@ def main():
         if topic in out:  # 中斷後重跑時跳過已完成的主題；要全部重撈就先刪檔
             continue
         found = {}
-        for k, q in enumerate(queries, 1):
-            print(f"{topic} 查詢 {k}/{len(queries)}：{q}", flush=True)
-            for p in search(q):
+        sources = [(f"查詢「{q}」", search, q) for q in queries]
+        sources += [(f"引用 {a}", citing, a) for a in ANCHORS.get(topic, [])]
+        for k, (label, fn, arg) in enumerate(sources, 1):
+            print(f"{topic} {k}/{len(sources)}：{label}", flush=True)
+            for p in fn(arg):
                 year, cites = p.get("year"), p.get("citationCount") or 0
                 if year is None or cites < THRESHOLD.get(year, 10**9):
                     continue
                 aid = (p.get("externalIds") or {}).get("ArXiv")
-                key = aid or p["paperId"]
+                key = aid or p.get("paperId")
                 found[key] = {"arxiv": aid, "doi": (p.get("externalIds") or {}).get("DOI"), "title": p["title"], "year": year,
                               "citations": cites, "venue": p.get("venue") or ""}
             time.sleep(3)
