@@ -6,16 +6,19 @@ topics/ 與 data/ 是資料來源，README 由本腳本產生，不要手改。
 import csv
 import json
 import re
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from harvest import THRESHOLD  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 TOPICS = [
     "vln", "local-nav", "semantic-map", "quadruped", "wheel-legged",
     "slam", "perception-3d", "vision", "real2sim",
 ]
-
-# 分級門檻：(名稱, 引用數, star 數)，任一達標即可
-TIERS = [("奠基", 1000, 10000), ("主流", 300, 1000)]
+STAR_BAR = 500  # 收錄條件「Star」
+HF_BAR = 20  # 收錄條件「HF」：約是 2026-10 候選中按讚數的前 15%
 
 HEADER = """# Robot Nav Survey
 
@@ -25,9 +28,24 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 
 - 每三天由排程 agent 依 [CLAUDE.md](CLAUDE.md) 的規則搜尋新論文並開 PR，審過再 merge。
 - 手動更新：在 repo 裡開 Claude Code，說「更新論文整理」。
-- 每個主題分三段：在解決的問題、經典（近五年，依引用與 star 分級）、最新論文。
-- 分級：**奠基** 引用 ≥ 1000 或 star ≥ 10k；**主流** 引用 ≥ 300 或 star ≥ 1k；其餘為**新興**。引用來自 Semantic Scholar，star 來自 GitHub。「年」是 arXiv 首次公開年份，「來源」是正式刊登的會議或期刊。
+- 每個主題分三段：在解決的問題、重要論文（2021 年起，開創性的不限年份）、最新論文。
 - 程式碼標「未公開」：論文頁、arXiv 頁與 GitHub 搜尋都找不到作者釋出的官方程式碼（第三方重現不算）。
+
+## 怎樣算重要論文
+
+符合任一條就收錄，「理由」欄標出符合哪幾條：
+
+| 理由 | 條件 |
+|---|---|
+| 引用 | 引用數達年份門檻：2021–22 年 ≥ 300、2023 年 ≥ 150、2024 年 ≥ 80、2025 年 ≥ 30（Semantic Scholar） |
+| Star | 官方 repo star ≥ 500 |
+| HF | Hugging Face Papers 按讚數 ≥ 20 |
+| 獲獎 | 頂會最佳論文（含入圍）或 oral，或刊在 Science Robotics、T-RO |
+| 基準 | 提出被廣泛採用的 benchmark、資料集，或常被當比較基準的方法 |
+| 機構 | [定期追蹤的來源](#定期追蹤的來源)名單內機構發表，且有實機實驗與開源 |
+| 推薦 | 人工推薦 |
+
+候選由 `scripts/harvest.py` 依主題關鍵字從 Semantic Scholar 撈出，再人工確認相關性。分級：**奠基** 引用達門檻 4 倍、star ≥ 10k，或 2021 年前的開創性論文；**主流** 達引用或 Star 條件；其餘（只符合獲獎、基準、機構、推薦）為**新興**。「年」是 arXiv 首次公開年份，「來源」是正式刊登的會議或期刊。
 
 ## 定期追蹤的來源
 
@@ -36,7 +54,8 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 - **NVIDIA Research**（每次必查）：[Robotics](https://research.nvidia.com/research-area/robotics)、[Computer Vision](https://research.nvidia.com/research-area/computer-vision)、[Seattle Robotics Lab](https://research.nvidia.com/labs/srl)、[GEAR](https://research.nvidia.com/labs/gear/)、[NVlabs GitHub](https://github.com/NVlabs)
 - **企業**：Google DeepMind、Meta FAIR、Physical Intelligence、Skild AI、Mistral、Alibaba、ByteDance Seed、Tencent Robotics X、Huawei、Unitree、LimX、ANYbotics、Boston Dynamics
 - **實驗室**：[ETH RSL](https://rsl.ethz.ch)、[ETH ASL](https://asl.ethz.ch)、[MIT SPARK](https://web.mit.edu/sparklab/)、[CMU AirLab](https://theairlab.org)、[Berkeley RAIL](https://rail.eecs.berkeley.edu)、[UCSD Xiaolong Wang](https://xiaolonw.github.io)、[PKU EPIC](https://pku-epic.github.io)、[InternRobotics](https://github.com/InternRobotics)、[Oxford VGG](https://www.robots.ox.ac.uk/~vgg/)、[Oxford DRS](https://dynamic.robots.ox.ac.uk)、[Freiburg](https://rl.uni-freiburg.de)、[TUM CVG](https://cvg.cit.tum.de)、[HKU MaRS](https://mars.hku.hk)、[ZJU FAST Lab](https://github.com/ZJU-FAST-Lab)、[KAIST RaiLab](https://railab.kaist.ac.kr)
-- **arXiv**：cs.RO、cs.CV，依主題關鍵字查上次更新後的新投稿
+- **arXiv**：cs.RO、cs.CV 的每日 RSS 與 API，依主題關鍵字查上次更新後的新投稿
+- **Hugging Face Daily Papers**：社群每日精選，按讚數是收錄條件之一
 - **期刊**：Science Robotics、RA-L、T-RO
 - **會議**：CoRL、RSS、ICRA、IROS、CVPR（接收論文公布時）
 """
@@ -48,31 +67,60 @@ def anchor(title: str) -> str:
     return s.replace(" ", "-")
 
 
-def tier(cites: int, stars: int) -> str:
-    for name, c, s in TIERS:
-        if cites >= c or stars >= s:
-            return name
+def reasons(year: int, cites: int, stars: int, upvotes: int, venue: str, tags: str) -> list[str]:
+    out = []
+    if year in THRESHOLD and cites >= THRESHOLD[year]:
+        out.append("引用")
+    if stars >= STAR_BAR:
+        out.append("Star")
+    if upvotes >= HF_BAR:
+        out.append("HF")
+    manual = [t for t in tags.split(";") if t]
+    # 刊在這兩本期刊直接算「獲獎」；頂會最佳論文、oral 要人工標
+    if venue.startswith(("Science Robotics", "T-RO")) and "獲獎" not in manual:
+        out.append("獲獎")
+    return out + manual
+
+
+def tier(year: int, cites: int, stars: int) -> str:
+    bar = THRESHOLD.get(year)
+    if year < 2021 or stars >= 10000 or (bar and cites >= 4 * bar):
+        return "奠基"
+    if stars >= STAR_BAR or (bar and cites >= bar):
+        return "主流"
     return "新興"
+
+
+def paper_link(r) -> str:
+    if r["url"]:
+        href = r["url"]
+    elif r["id"].startswith("DOI:"):
+        href = f"https://doi.org/{r['id'][4:]}"
+    else:
+        href = f"https://arxiv.org/abs/{r['id']}"
+    link = f"[{r['name']}]({href})"
+    return link + (f" · [專案頁]({r['project']})" if r["project"] else "")
 
 
 def classics_table(rows, metrics) -> str:
     items = []
     for r in rows:
-        p = metrics["papers"].get(r["arxiv"]) or {}
+        p = metrics["papers"].get(r["id"]) or {}
         cites = p.get("citationCount") or 0
-        year = p.get("year") or int("20" + r["arxiv"][:2])
+        year = p.get("year") or (int("20" + r["id"][:2]) if r["id"][:2].isdigit() else 0)
         stars = metrics["stars"].get(r["repo"]) or 0
-        items.append((r, year, cites, stars, tier(cites, stars)))
+        upvotes = metrics.get("hf", {}).get(r["id"]) or 0
+        items.append((r, year, cites, stars, upvotes, tier(year, cites, stars)))
     order = {"奠基": 0, "主流": 1, "新興": 2}
-    items.sort(key=lambda x: (order[x[4]], -x[2]))
+    items.sort(key=lambda x: (order[x[5]], -x[2]))
 
-    lines = ["| 分級 | 年 | 論文 | 機構 | 重點 | 來源 | 引用 | Star |", "|---|---|---|---|---|---|---|---|"]
-    for r, year, cites, stars, t in items:
-        paper = f"[{r['name']}](https://arxiv.org/abs/{r['arxiv']})"
-        if r["project"]:
-            paper += f" · [專案頁]({r['project']})"
+    lines = ["| 分級 | 理由 | 年 | 論文 | 機構 | 重點 | 來源 | 引用 | Star |",
+             "|---|---|---|---|---|---|---|---|---|"]
+    for r, year, cites, stars, upvotes, t in items:
         star = f"[{stars:,}](https://github.com/{r['repo']})" if r["repo"] else "未公開"
-        lines.append(f"| {t} | {year} | {paper} | {r['org']} | {r['note']} | {r['venue']} | {cites:,} | {star} |")
+        why = "、".join(reasons(year, cites, stars, upvotes, r["venue"], r["tags"]))
+        lines.append(f"| {t} | {why} | {year or ''} | {paper_link(r)} | {r['org']} | {r['note']} "
+                     f"| {r['venue']} | {cites:,} | {star} |")
     return "\n".join(lines)
 
 
@@ -89,7 +137,7 @@ def main() -> None:
         rows = [r for r in classics if r["topic"] == name]
         parts = [f"## {title.lstrip('# ').strip()}", "### 在解決的問題", problems]
         if rows:
-            parts += [f"### 經典（近五年，資料日期 {metrics['fetched']}）", classics_table(rows, metrics)]
+            parts += [f"### 重要論文（資料日期 {metrics['fetched']}）", classics_table(rows, metrics)]
         parts += ["### 最新論文", latest.strip()]
         sections.append((title.lstrip("# ").strip(), "\n\n".join(parts)))
 

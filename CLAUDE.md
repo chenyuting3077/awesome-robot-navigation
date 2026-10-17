@@ -42,7 +42,11 @@
      - HKU MaRS https://mars.hku.hk （LiDAR SLAM）、浙大 FAST Lab https://github.com/ZJU-FAST-Lab （規劃）
      - KAIST RaiLab https://railab.kaist.ac.kr （四足）
    - 查法：看上列頁面近期發表，或 WebSearch `<機構> <主題關鍵字> <年月>`。
-1. **arXiv API 補漏**：每個主題用下表關鍵字查 `http://export.arxiv.org/api/query`，加 `submittedDate:[上次更新日 TO 今天]`，`sortBy=submittedDate`，`max_results=100`。抓不到 API 時改用 WebSearch，查詢加上年月。
+1. **arXiv 新投稿**：
+   - 主要用 RSS：`https://rss.arxiv.org/rss/cs.RO`、`https://rss.arxiv.org/rss/cs.CV`，一次請求拿到當天全部新投稿，再用下表關鍵字比對標題與摘要。RSS 只有當天，距上次更新超過一天的日子用下一項補。
+   - 補查漏掉的日期用 arXiv API：`https://export.arxiv.org/api/query`（只能用 https，http 在雲端連不上），`search_query` 加 `submittedDate:[上次更新日 TO 今天]`，`sortBy=submittedDate`，`max_results=100`。請求間隔 3 秒以上，429 就退避重試；被擋住時在 PR 註明哪幾天沒查到。
+   - **HF Daily Papers**：`https://huggingface.co/api/daily_papers?date=YYYY-MM-DD` 逐日查，挑與範圍相關的；按讚數是收錄條件「HF」的依據。
+   - WebFetch 失敗時改用 curl。
 
    | 主題 | 分類 | 關鍵字（abs 或 ti，OR 串接） |
    |---|---|---|
@@ -58,7 +62,7 @@
 
 2. **補充來源**（WebSearch）：Science Robotics、RA-L、T-RO 新刊；當期 CoRL / RSS / ICRA / IROS / CVPR 接收論文。
 3. **篩選**：每主題每次最多收 5 篇，NVIDIA 的不佔名額。名額優先給第 0 步名單內的機構，其次依：有實機實驗 > 開源程式或權重 > 標準 benchmark 上宣稱 SOTA。純 benchmark 微幅改進、只在遙測或醫療影像上驗證的不收。機構以 arXiv 摘要頁或論文首頁的作者單位為準，「機構」欄要填。
-4. **確認**：收錄前 WebFetch arXiv 摘要頁。只看到標題、讀不到摘要的，「重點」只寫標題看得出的內容，不寫方法細節。
+4. **補資料**：收錄的論文用 `python3 scripts/enrich.py 輸出.json <arXiv 編號...>` 一次補齊摘要、備註、HF 的程式碼／專案頁、機構（來源分工寫在腳本開頭）。只看到標題、讀不到摘要的，「重點」只寫標題看得出的內容，不寫方法細節。
 
 ## 每次更新
 
@@ -71,8 +75,16 @@
 ## 檔案格式
 
 - `topics/*.md` 固定兩段：`## 在解決的問題`（條列）與 `## 最新論文`（表格）。新論文只加在「最新論文」表。
-- 經典論文放 `data/classics.csv`，不放主題檔；同一篇不要同時出現在兩處。`venue` 欄格式同「來源」欄；`repo` 欄只填官方 repo（`owner/name`），沒有就留空，README 會顯示「未公開」；`project` 欄填專案頁，沒有留空；Semantic Scholar 的年份是 arXiv 年份，刊登年份以期刊卷號或會議論文集為準。
-- 每月第一次更新時跑 `python3 scripts/fetch_metrics.py` 刷新引用數與 star，並把「最新論文」中發表滿一年、且引用 ≥ 300 或 star ≥ 1k 的論文移到 `classics.csv`（從主題檔刪除該列）。
+- 重要論文放 `data/classics.csv`，不放主題檔；同一篇不要同時出現在兩處。收錄條件見 README「怎樣算重要論文」，引用門檻在 `scripts/harvest.py` 的 `THRESHOLD`。
+  - `id`：arXiv 編號，沒有 arXiv 就寫 `DOI:...`；都沒有（部落格、技術報告）留空並填 `url`。
+  - `venue` 格式同「來源」欄；Semantic Scholar 的年份是 arXiv 年份，刊登年份以期刊卷號或會議論文集為準。
+  - `repo` 只填官方 repo（`owner/name`），沒有留空，README 顯示「未公開」；`project` 填專案頁，沒有留空。
+  - `tags`：人工判斷的收錄理由，`;` 分隔，只能用 `獲獎`、`基準`、`機構`、`推薦`。「引用」「Star」「HF」由腳本依數據自動判斷，刊在 Science Robotics、T-RO 自動算「獲獎」，不用填。
+- 每月第一次更新時：
+  1. 跑 `python3 scripts/harvest.py`（先刪 `data/candidates.json` 才會全部重撈），把候選中與範圍相關、還沒收錄的加進 `classics.csv`。CV 類候選很多，只收機器人用得到的。
+  2. 跑 `python3 scripts/fetch_metrics.py` 刷新引用數與 star。
+  3. 「最新論文」中已達引用或 Star 條件的移到 `classics.csv`，並從主題檔刪除該列。
+- 使用者推薦的論文一律收進 `classics.csv`，`tags` 加 `推薦`。
 - 「在解決的問題」只在領域出現新的主要問題或舊問題被解決時改。
 
 ## 表格欄位

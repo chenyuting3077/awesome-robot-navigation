@@ -21,24 +21,33 @@ S2_URL = "https://api.semanticscholar.org/graph/v1/paper/batch?fields=title,year
 
 
 def request_json(req: urllib.request.Request, tries: int = 8):
+    # 429、5xx、逾時與斷線都重試；HF API 偶爾讀取逾時，S2 未登入常回 429
     for i in range(tries):
         try:
             return json.load(urllib.request.urlopen(req, timeout=60))
         except urllib.error.HTTPError as e:
-            if e.code != 429 or i == tries - 1:
+            if (e.code != 429 and e.code < 500) or i == tries - 1:
                 raise
-            time.sleep(2 ** i)
+        except (TimeoutError, urllib.error.URLError):
+            if i == tries - 1:
+                raise
+        time.sleep(min(2 ** i, 60))
 
 
-def fetch_papers(arxiv_ids):
+def s2_id(pid: str) -> str:
+    # classics.csv 的 id：arXiv 編號，或 `DOI:...`
+    return pid if pid.startswith("DOI:") else f"ARXIV:{pid}"
+
+
+def fetch_papers(ids):
     headers = {"Content-Type": "application/json"}
     if key := os.environ.get("S2_API_KEY"):
         headers["x-api-key"] = key
-    body = json.dumps({"ids": [f"ARXIV:{a}" for a in arxiv_ids]}).encode()
+    body = json.dumps({"ids": [s2_id(i) for i in ids]}).encode()
     res = request_json(urllib.request.Request(S2_URL, data=body, headers=headers))
     return {
-        a: (None if p is None else {k: p[k] for k in ("title", "year", "venue", "citationCount")})
-        for a, p in zip(arxiv_ids, res)
+        i: (None if p is None else {k: p[k] for k in ("title", "year", "venue", "citationCount")})
+        for i, p in zip(ids, res)
     }
 
 
@@ -57,16 +66,31 @@ def fetch_stars(repo):
         return None
 
 
+def fetch_hf_upvotes(aid):
+    # Hugging Face Papers 的按讚數；沒收錄的論文回 None（多半是 2023 年前或冷門的）
+    try:
+        p = request_json(urllib.request.Request(f"https://huggingface.co/api/papers/{aid}"))
+        return p.get("upvotes")
+    except urllib.error.HTTPError:
+        return None
+
+
 def main():
     rows = list(csv.DictReader((ROOT / "data" / "classics.csv").open()))
-    papers = fetch_papers([r["arxiv"] for r in rows])
+    ids = [r["id"] for r in rows if r["id"]]  # 沒有 id 的（部落格、技術報告）不查引用
+    papers = fetch_papers(ids)
     repos = sorted({r["repo"] for r in rows if r["repo"]})
     stars = {repo: fetch_stars(repo) for repo in repos}
-    out = {"fetched": datetime.date.today().isoformat(), "papers": papers, "stars": stars}
+    hf = {}
+    for i in ids:
+        if not i.startswith("DOI:"):
+            hf[i] = fetch_hf_upvotes(i)
+            time.sleep(0.3)
+    out = {"fetched": datetime.date.today().isoformat(), "papers": papers, "stars": stars, "hf": hf}
     (ROOT / "data" / "metrics.json").write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n")
-    for r in rows:
-        if papers[r["arxiv"]] is None:
-            print(f"找不到：{r['arxiv']} {r['name']}")
+    for i in ids:
+        if papers[i] is None:
+            print(f"找不到：{i}")
     for repo, s in stars.items():
         if s is None:
             print(f"抓不到 star：{repo}")
