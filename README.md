@@ -550,7 +550,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 
 | 分級 | 理由 | 年 | 論文 | 機構 | 重點 | 來源 | 引用 | Star |
 |---|---|---|---|---|---|---|---|---|
-| 奠基 | 引用、HF | 2024 | [SpatialVLM](https://arxiv.org/abs/2401.12168) · [專案頁](https://spatial-vlm.github.io/) | Google DeepMind / MIT / Stanford | 用網路圖片加深度與物件偵測自動合成大規模 3D 空間問答，讓 VLM 能回答距離、大小等定量問題 | CVPR 2024 | 1,124 | 未公開 |
+| 奠基 | 引用、HF | 2024 | [SpatialVLM](https://arxiv.org/abs/2401.12168) · [專案頁](https://spatial-vlm.github.io/) | Google DeepMind / Google Research | 用網路圖片加深度與物件偵測自動合成大規模 3D 空間問答，讓 VLM 能回答距離、大小等定量問題 | CVPR 2024 | 1,124 | 未公開 |
 | 奠基 | 引用、Star、HF、基準 | 2024 | [VSI-Bench](https://arxiv.org/abs/2412.14171) · [專案頁](https://vision-x-nyu.github.io/thinking-in-space.github.io/) | NYU / Yale / Stanford | 從室內影片測 MLLM 空間記憶與推理的 benchmark，發現模型會在內部形成局部認知地圖 | CVPR 2025 | 843 | [748](https://github.com/vision-x-nyu/thinking-in-space) |
 | 奠基 | 基準 | 2019 | [ScanRefer](https://arxiv.org/abs/1912.08830) · [專案頁](https://daveredrum.github.io/ScanRefer/) | TUM / Simon Fraser Univ. | 第一個 RGB-D 掃描上的 3D 語言 grounding 資料集與基線 | ECCV 2020 | 673 | [305](https://github.com/daveredrum/ScanRefer) |
 | 奠基 | 引用 | 2024 | [SpatialRGPT](https://arxiv.org/abs/2406.01584) · [專案頁](https://www.anjiecheng.me/SpatialRGPT) | UC San Diego / NVIDIA | 以區域提示加深度輸入，讓 VLM 對指定區域做相對方向與距離推理 | NeurIPS 2024 | 435 | [340](https://github.com/AnjieCheng/SpatialRGPT) |
@@ -594,7 +594,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用 | 2025 | [G2VLM](https://arxiv.org/abs/2511.21688) · [專案頁](https://gordonhu608.github.io/g2vlm.github.io/) | Shanghai AI Lab / HKU 等 | 同一個 VLM 同時做 3D 重建與空間推理，幾何特徵直接支援問答 | arXiv | 47 | [360](https://github.com/InternRobotics/G2VLM) |
 | 主流 | 引用 | 2025 | [3D-R1](https://arxiv.org/abs/2507.23478) · [專案頁](https://aigeeksgroup.github.io/3D-R1) | PKU | 合成 3D 推理資料加 GRPO 強化學習，提升 3D VLM 的推理 | arXiv | 47 | [417](https://github.com/AIGeeksGroup/3D-R1) |
 | 主流 | 引用、HF、基準 | 2025 | [OST-Bench](https://arxiv.org/abs/2507.07984) · [專案頁](https://rbler1234.github.io/OSTBench.github.io/) | Shanghai AI Lab / HKU 等 | 邊走邊看的線上時空理解 benchmark，模擬機器人探索時的空間記憶 | NeurIPS 2025 | 33 | [83](https://github.com/OpenRobotLab/OST-Bench) |
-| 主流 | 引用 | 2025 | [SR-3D](https://arxiv.org/abs/2509.13317) · [專案頁](https://www.anjiecheng.me/sr3d) | NVIDIA / UC San Diego | 在 2D 特徵加 3D 位置編碼，可在任一視角框選區域並跨視角推理 | arXiv | 33 | [31](https://github.com/AnjieCheng/SR-3D) |
+| 主流 | 引用 | 2025 | [SR-3D](https://arxiv.org/abs/2509.13317) · [專案頁](https://www.anjiecheng.me/sr3d) | UC San Diego / MIT / NVIDIA | 在 2D 特徵加 3D 位置編碼，可在任一視角框選區域並跨視角推理 | arXiv | 33 | [31](https://github.com/AnjieCheng/SR-3D) |
 | 主流 | 引用 | 2025 | [3DLLM-Mem](https://arxiv.org/abs/2505.22657) · [專案頁](https://3dllm-mem.github.io) | UCLA / Google Research | 給具身 3D LLM 長期時空記憶，在多房間任務中選擇性取用過去觀察 | NeurIPS 2025 | 31 | 未公開 |
 | 主流 | Star、HF | 2023 | [3D-LLM](https://arxiv.org/abs/2307.12981) · [專案頁](https://vis-www.cs.umass.edu/3dllm/) | UCLA / UMass Amherst / MIT-IBM Watson AI Lab | 把多視角 2D 特徵提升成 3D 特徵輸入 LLM，一個模型做 3D 問答、描述、grounding | NeurIPS 2023 | 0 | [1,215](https://github.com/UMass-Embodied-AGI/3D-LLM) |
 

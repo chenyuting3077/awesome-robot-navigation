@@ -390,7 +390,7 @@ quadruped,DOI:10.1126/scirobotics.ade2256,Locomotion on Deformable Terrain,KAIST
 local-nav,2409.15634,NavRL,CMU,RA-L 2025,Zhefan-Xu/NavRL,,,推薦,PPO + 安全護盾的動態環境導航（原為無人機，方法可用於地面）
 vln,2108.11544,VLN Survey and Taxonomy,未確認,Neural Computing and Applications 2024,,,,推薦,VLN 任務分類與方法綜述
 real2sim,,World Labs Atlas,World Labs,部落格 2026,,,https://www.worldlabs.ai/blog/atlas,推薦,文字／影像／影片／3D 通用模型，可從手機影片重建場景並生成模擬用 RGB-D
-spatial,2401.12168,SpatialVLM,Google DeepMind / MIT / Stanford,CVPR 2024,,https://spatial-vlm.github.io/,,,用網路圖片加深度與物件偵測自動合成大規模 3D 空間問答，讓 VLM 能回答距離、大小等定量問題
+spatial,2401.12168,SpatialVLM,Google DeepMind / Google Research,CVPR 2024,,https://spatial-vlm.github.io/,,,用網路圖片加深度與物件偵測自動合成大規模 3D 空間問答，讓 VLM 能回答距離、大小等定量問題
 spatial,2307.12981,3D-LLM,UCLA / UMass Amherst / MIT-IBM Watson AI Lab,NeurIPS 2023,UMass-Embodied-AGI/3D-LLM,https://vis-www.cs.umass.edu/3dllm/,,,把多視角 2D 特徵提升成 3D 特徵輸入 LLM，一個模型做 3D 問答、描述、grounding
 spatial,2111.08897,ARKitScenes,Apple,NeurIPS 2021 Datasets and Benchmarks,apple/ARKitScenes,,,基準,用 iPad LiDAR 拍的大規模室內 RGB-D 資料集，附高精度雷射掃描與 3D 框
 spatial,2112.10482,ScanQA,Kyoto Univ. / RIKEN AIP,CVPR 2022,ATR-DBI/ScanQA,,,基準,提出 3D 問答任務與資料集：在室內掃描上回答空間問題並定位相關物件
@@ -426,7 +426,7 @@ spatial,2511.21688,G2VLM,Shanghai AI Lab / HKU 等,arXiv,InternRobotics/G2VLM,ht
 spatial,2507.23478,3D-R1,PKU,arXiv,AIGeeksGroup/3D-R1,https://aigeeksgroup.github.io/3D-R1,,,合成 3D 推理資料加 GRPO 強化學習，提升 3D VLM 的推理
 spatial,2505.22657,3DLLM-Mem,UCLA / Google Research,NeurIPS 2025,,https://3dllm-mem.github.io,,,給具身 3D LLM 長期時空記憶，在多房間任務中選擇性取用過去觀察
 spatial,2507.07984,OST-Bench,Shanghai AI Lab / HKU 等,NeurIPS 2025,OpenRobotLab/OST-Bench,https://rbler1234.github.io/OSTBench.github.io/,,基準,邊走邊看的線上時空理解 benchmark，模擬機器人探索時的空間記憶
-spatial,2509.13317,SR-3D,NVIDIA / UC San Diego,arXiv,AnjieCheng/SR-3D,https://www.anjiecheng.me/sr3d,,,在 2D 特徵加 3D 位置編碼，可在任一視角框選區域並跨視角推理
+spatial,2509.13317,SR-3D,UC San Diego / MIT / NVIDIA,arXiv,AnjieCheng/SR-3D,https://www.anjiecheng.me/sr3d,,,在 2D 特徵加 3D 位置編碼，可在任一視角框選區域並跨視角推理
 spatial,2511.05491,VST,ByteDance Seed,arXiv,Yangr116/VST,https://yangr116.github.io/vst_project/,,,以空間感知與空間推理兩段資料漸進訓練 VLM，不改架構提升空間能力
 spatial,2412.14171,VSI-Bench,NYU / Yale / Stanford,CVPR 2025,vision-x-nyu/thinking-in-space,https://vision-x-nyu.github.io/thinking-in-space.github.io/,,基準,從室內影片測 MLLM 空間記憶與推理的 benchmark，發現模型會在內部形成局部認知地圖
 spatial,2207.10660,Omni3D / Cube R-CNN,Meta AI,CVPR 2023,facebookresearch/omni3d,https://garrickbrazil.com/omni3d,,基準,整合室內外多資料集的單張影像 3D 偵測基準，Cube R-CNN 跨相機與場景通用
