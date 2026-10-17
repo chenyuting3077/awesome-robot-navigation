@@ -11,11 +11,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from harvest import THRESHOLD  # noqa: E402
+from check_data import check  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 TOPICS = [
     "vln", "local-nav", "semantic-map", "quadruped", "wheel-legged",
-    "slam", "perception-3d", "vision", "real2sim",
+    "slam", "perception-3d", "spatial", "vision", "real2sim",
 ]
 STAR_BAR = 500  # 收錄條件「Star」
 HF_BAR = 20  # 收錄條件「HF」：約是 2026-10 候選中按讚數的前 15%
@@ -125,6 +126,8 @@ def classics_table(rows, metrics) -> str:
 
 
 def main() -> None:
+    if errors := check(TOPICS):
+        sys.exit("資料格式錯誤，README 未產生：\n" + "\n".join(errors))
     classics = list(csv.DictReader((ROOT / "data" / "classics.csv").open()))
     metrics = json.loads((ROOT / "data" / "metrics.json").read_text())
 

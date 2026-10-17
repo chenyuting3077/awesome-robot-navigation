@@ -7,10 +7,10 @@
 import json
 import os
 import time
-import urllib.error
 import urllib.parse
-import urllib.request
 from pathlib import Path
+
+from net import fetch_json
 
 ROOT = Path(__file__).resolve().parent.parent
 URL = "https://api.semanticscholar.org/graph/v1/paper/search/bulk"
@@ -34,6 +34,9 @@ QUERIES = {
              '"place recognition"', '"loop closure"', '"bundle adjustment"'],
     "perception-3d": ['"depth estimation"', '"stereo matching"', '"multi-view stereo"', '"3D reconstruction"',
                       '"gaussian splatting"', '"occupancy prediction"', 'pointmap', '"novel view synthesis"'],
+    "spatial": ['"3D object detection" indoor', '"open-vocabulary 3D detection"', '"3D instance segmentation"',
+                '"3D visual grounding"', '"3D question answering"', '"3D large language model"',
+                '"spatial reasoning" vision-language', '"spatial understanding" multimodal', '"3D scene understanding"'],
     "vision": ['"open-vocabulary detection"', '"open-vocabulary segmentation"', '"open-vocabulary object detection"',
                '"segment anything"', '"vision foundation model"', '"self-supervised" visual representation',
                '"feature matching"', '"point tracking"', '"real-time object detection"'],
@@ -53,15 +56,7 @@ def search(query: str):
         if token:
             params["token"] = token
         url = f"{URL}?{urllib.parse.urlencode(params)}"
-        # 未登入時與所有匿名使用者共用限額，429 很常見，退避上限拉到 60 秒
-        for i in range(15):
-            try:
-                res = json.load(urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=60))
-                break
-            except urllib.error.HTTPError as e:
-                if e.code != 429 or i == 14:
-                    raise
-                time.sleep(min(2 ** i, 60))
+        res = fetch_json(url, headers=headers)
         yield from res.get("data", [])
         token = res.get("token")
         if not token:
@@ -76,7 +71,8 @@ def main():
         if topic in out:  # 中斷後重跑時跳過已完成的主題；要全部重撈就先刪檔
             continue
         found = {}
-        for q in queries:
+        for k, q in enumerate(queries, 1):
+            print(f"{topic} 查詢 {k}/{len(queries)}：{q}", flush=True)
             for p in search(q):
                 year, cites = p.get("year"), p.get("citationCount") or 0
                 if year is None or cites < THRESHOLD.get(year, 10**9):

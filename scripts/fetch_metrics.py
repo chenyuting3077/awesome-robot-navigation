@@ -13,25 +13,12 @@ import shutil
 import subprocess
 import time
 import urllib.error
-import urllib.request
 from pathlib import Path
+
+from net import fetch_json
 
 ROOT = Path(__file__).resolve().parent.parent
 S2_URL = "https://api.semanticscholar.org/graph/v1/paper/batch?fields=title,year,venue,citationCount"
-
-
-def request_json(req: urllib.request.Request, tries: int = 8):
-    # 429、5xx、逾時與斷線都重試；HF API 偶爾讀取逾時，S2 未登入常回 429
-    for i in range(tries):
-        try:
-            return json.load(urllib.request.urlopen(req, timeout=60))
-        except urllib.error.HTTPError as e:
-            if (e.code != 429 and e.code < 500) or i == tries - 1:
-                raise
-        except (TimeoutError, urllib.error.URLError):
-            if i == tries - 1:
-                raise
-        time.sleep(min(2 ** i, 60))
 
 
 def s2_id(pid: str) -> str:
@@ -44,7 +31,7 @@ def fetch_papers(ids):
     if key := os.environ.get("S2_API_KEY"):
         headers["x-api-key"] = key
     body = json.dumps({"ids": [s2_id(i) for i in ids]}).encode()
-    res = request_json(urllib.request.Request(S2_URL, data=body, headers=headers))
+    res = fetch_json(S2_URL, data=body, headers=headers)
     return {
         i: (None if p is None else {k: p[k] for k in ("title", "year", "venue", "citationCount")})
         for i, p in zip(ids, res)
@@ -60,8 +47,7 @@ def fetch_stars(repo):
     if token := os.environ.get("GITHUB_TOKEN"):
         headers["Authorization"] = f"Bearer {token}"
     try:
-        return request_json(urllib.request.Request(f"https://api.github.com/repos/{repo}",
-                                                   headers=headers))["stargazers_count"]
+        return fetch_json(f"https://api.github.com/repos/{repo}", headers=headers)["stargazers_count"]
     except urllib.error.HTTPError:
         return None
 
@@ -69,23 +55,27 @@ def fetch_stars(repo):
 def fetch_hf_upvotes(aid):
     # Hugging Face Papers 的按讚數；沒收錄的論文回 None（多半是 2023 年前或冷門的）
     try:
-        p = request_json(urllib.request.Request(f"https://huggingface.co/api/papers/{aid}"))
+        p = fetch_json(f"https://huggingface.co/api/papers/{aid}", tries=4)
         return p.get("upvotes")
-    except urllib.error.HTTPError:
+    except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError):  # 單篇失敗不中斷整批
         return None
 
 
 def main():
     rows = list(csv.DictReader((ROOT / "data" / "classics.csv").open()))
     ids = [r["id"] for r in rows if r["id"]]  # 沒有 id 的（部落格、技術報告）不查引用
+    print(f"Semantic Scholar：{len(ids)} 篇", flush=True)
     papers = fetch_papers(ids)
     repos = sorted({r["repo"] for r in rows if r["repo"]})
+    print(f"GitHub star：{len(repos)} 個 repo", flush=True)
     stars = {repo: fetch_stars(repo) for repo in repos}
+    hf_ids = [i for i in ids if not i.startswith("DOI:")]
     hf = {}
-    for i in ids:
-        if not i.startswith("DOI:"):
-            hf[i] = fetch_hf_upvotes(i)
-            time.sleep(0.3)
+    for n, i in enumerate(hf_ids, 1):
+        hf[i] = fetch_hf_upvotes(i)
+        if n % 50 == 0:
+            print(f"HF 按讚數 {n}/{len(hf_ids)}", flush=True)
+        time.sleep(0.3)
     out = {"fetched": datetime.date.today().isoformat(), "papers": papers, "stars": stars, "hf": hf}
     (ROOT / "data" / "metrics.json").write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n")
     for i in ids:
