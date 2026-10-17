@@ -37,7 +37,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 - **期刊**：Science Robotics、RA-L、T-RO
 - **會議**：CoRL、RSS、ICRA、IROS、CVPR（接收論文公布時）
 
-最後更新：2026-10-15
+最後更新：2026-10-16
 
 ## 目錄
 
@@ -152,6 +152,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 
 | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-10 | [AVALON](https://arxiv.org/abs/2610.21586) | HKU | 只需平面圖與地點線索，以人給的分層拓撲記憶做節點驗證式導航，不建全域 SLAM 圖；人與機器人共同更新記憶 | Unitree Go2 實機 12.81 m 任務 46.4 s（5/5），比 DimOS-Go2 少 40.9% 時間 | 未公開 | arXiv |
 | 2026-07 | [Robostral Navigate](https://arxiv.org/abs/2607.20785) · [專案頁](https://mistral.ai/news/robostral-navigate) | Mistral AI | 8B VLM 只用單眼 RGB，在畫面上指出下一個目標點；目標不在視野時輸出局部座標位移 | R2R-CE val-unseen SR 76.6%；online RL +3.2% | 未公開 | arXiv、Mistral 官網 |
 | 2026-07 | [ABot-N1](https://arxiv.org/abs/2607.10383) · [專案頁](https://amap-cvlab.github.io/ABot-Navigation/ABot-N1/) | Alibaba AMAP | 慢 VLM 推理出影像錨點，快模組轉成連續 waypoint；同一架構做 point/object/POI/指令/跟人五種任務 | 室內 95.4%、室外 92.9% SR；POI 抵達 77.3% | [GitHub](https://github.com/amap-cvlab/ABot-Navigation) | arXiv |
 | 2026-07 | [GemNav](https://arxiv.org/abs/2607.06882) | CSIRO | MLLM 輸出離散 token 當導航動作 |  | 未公開 | arXiv |
@@ -421,6 +422,8 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 
 | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-10 | [Line-Augmented cuVSLAM](https://arxiv.org/abs/2610.20958) | Analog Devices、NVIDIA | 在 NVIDIA cuVSLAM 加線特徵（Plücker 參數化、點線殘差進 Gauss-Newton 位姿解與滑窗 BA），點特徵稀少時自動加重線的權重，針對倉庫等低紋理場景 | RGB-D：TUM Freiburg3 22 條序列 ATE 降 38.5%，Replica 8 條降 30.1% | 未公開 | arXiv |
+| 2026-10 | [LIN-SLAM](https://arxiv.org/abs/2610.21199) | Beihang Univ. | 幾何 LiDAR-IMU 高頻估計接神經隱式追蹤、持續建圖與全域優化，讓神經隱式 SLAM 能在機上即時跑 | 12 條序列（32／64／128 線）平均 ATE 最低；Unitree Go2 + Jetson Orin NX 跑 1.47 km 室內，終點閉合誤差 0.141 m | 未公開 | arXiv |
 | 2026-09 | [AMB3R-SLAM](https://arxiv.org/abs/2609.19518) · [專案頁](https://hengyiwang.github.io/projects/amber-slam) | UCL | 單眼即時 SLAM，輕量前端 + 局部／中層／全域三層後端；不做 BA，所以不依賴靜態場景假設；也可吃雙目、RGB-D、LiDAR | 單張消費級 GPU 跑超過 1 萬幀；VBR、Oxford Spires ATE 比前 SOTA 低 70% 以上；加 LiDAR 後 KITTI、VBR 誤差小於 1 m | [GitHub](https://github.com/HengyiWang/amb3r-slam) | arXiv |
 | 2026-09 | [VGGT-GS SLAM](https://arxiv.org/abs/2609.19628) | NUS | 免校正單眼 3DGS SLAM，用 VGGT 的位姿與深度初始化子地圖，再聯合優化位姿、地圖、內參 |  | 未公開 | arXiv |
 | 2026-09 | [Degeneracy-Orthogonal Geometric Constraints for LiDAR SLAM](https://arxiv.org/abs/2609.36753) | Sookmyung Women's Univ. | 處理隧道、管道這類沿軸向特徵貧乏、LiDAR odometry 會漂移的場景 |  | 未公開 | arXiv |
@@ -674,6 +677,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 
 | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-10 | [GRASE](https://arxiv.org/abs/2610.21498) | 西安交通大學、福州大學、Adobe、西湖大學 | 把影片當持續參照的 agent 流程：渲染結果與影像不符就回頭修正房間結構與物件擺放，而非一次到底 |  | 未公開 | arXiv |
 | 2026-10 | [Digital Twin-Driven Real2Sim2Real](https://arxiv.org/abs/2610.08339) | TUM / Hyundai / MORAI | 自駕場景成對重建，以模擬器條件生成訓練影像（非物理互動場景） |  | 未公開 | arXiv |
 | 2026-09 | [ReVeal](https://arxiv.org/abs/2609.23910) | Purdue / Samsung SDS | 考慮重建品質的 real-to-sim VLA 策略評估 |  | 未公開 | arXiv |
 | 2026-06 | [ArtiTwinSplat](https://arxiv.org/abs/2606.24628) | ETH / Microsoft / Bonn | 手持 RGB-D 影片重建可互動數位分身（3DGS），輸出碰撞網格、門／抽屜關節、URDF，可直接匯入 Isaac Sim |  | 未公開 | arXiv |
