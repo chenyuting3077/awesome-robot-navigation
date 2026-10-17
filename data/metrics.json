@@ -67,12 +67,6 @@
    "venue": "IEEE International Conference on Robotics and Automation",
    "citationCount": 312
   },
-  "2302.11434": {
-   "title": "iPlanner: Imperative Path Planning",
-   "year": 2023,
-   "venue": "Robotics: Science and Systems Conference",
-   "citationCount": 98
-  },
   "2306.14846": {
    "title": "ViNT: A Foundation Model for Visual Navigation",
    "year": 2023,
@@ -179,7 +173,7 @@
    "title": "Legged Locomotion in Challenging Terrains using Egocentric Vision",
    "year": 2022,
    "venue": "Conference on Robot Learning",
-   "citationCount": 369
+   "citationCount": 368
   },
   "2212.03238": {
    "title": "Walk These Ways: Tuning Robot Control for Generalization with Multiplicity of Behavior",
@@ -217,12 +211,6 @@
    "venue": "Robotics: Science and Systems Conference",
    "citationCount": 183
   },
-  "2203.14912": {
-   "title": "Advanced Skills through Multiple Adversarial Motion Priors in Reinforcement Learning",
-   "year": 2022,
-   "venue": "IEEE International Conference on Robotics and Automation",
-   "citationCount": 119
-  },
   "2405.01792": {
    "title": "Learning robust autonomous navigation and locomotion for wheeled-legged robots",
    "year": 2024,
@@ -239,7 +227,7 @@
    "title": "Kimera-Multi: Robust, Distributed, Dense Metric-Semantic SLAM for Multi-Robot Systems",
    "year": 2021,
    "venue": "IEEE Transactions on robotics",
-   "citationCount": 348
+   "citationCount": 349
   },
   "2107.06829": {
    "title": "FAST-LIO2: Fast Direct LiDAR-Inertial Odometry",
@@ -299,7 +287,7 @@
    "title": "FAST-LIVO2: Fast, Direct LiDAR–Inertial–Visual Odometry",
    "year": 2024,
    "venue": "IEEE Transactions on robotics",
-   "citationCount": 279
+   "citationCount": 280
   },
   "2412.12392": {
    "title": "MASt3R-SLAM: Real-Time Dense SLAM with 3D Reconstruction Priors",
@@ -347,7 +335,7 @@
    "title": "DUSt3R: Geometric 3D Vision Made Easy",
    "year": 2023,
    "venue": "Computer Vision and Pattern Recognition",
-   "citationCount": 2037
+   "citationCount": 2038
   },
   "2401.10891": {
    "title": "Depth Anything: Unleashing the Power of Large-Scale Unlabeled Data",
@@ -401,7 +389,7 @@
    "title": "VGGT: Visual Geometry Grounded Transformer",
    "year": 2025,
    "venue": "Computer Vision and Pattern Recognition",
-   "citationCount": 2022
+   "citationCount": 2021
   },
   "2507.13347": {
    "title": "$\\pi^3$: Permutation-Equivariant Visual Geometry Learning",
@@ -431,7 +419,7 @@
    "title": "Masked Autoencoders Are Scalable Vision Learners",
    "year": 2021,
    "venue": "Computer Vision and Pattern Recognition",
-   "citationCount": 13210
+   "citationCount": 13208
   },
   "2205.06230": {
    "title": "Simple Open-Vocabulary Object Detection with Vision Transformers",
@@ -461,7 +449,7 @@
    "title": "DINOv2: Learning Robust Visual Features without Supervision",
    "year": 2023,
    "venue": "Trans. Mach. Learn. Res.",
-   "citationCount": 11340
+   "citationCount": 11341
   },
   "2304.08069": {
    "title": "DETRs Beat YOLOs on Real-time Object Detection",
@@ -503,13 +491,13 @@
    "title": "DINOv3",
    "year": 2025,
    "venue": "",
-   "citationCount": 1754
+   "citationCount": 1756
   },
   "2511.16719": {
    "title": "SAM 3: Segment Anything with Concepts",
    "year": 2025,
    "venue": "arXiv.org",
-   "citationCount": 1255
+   "citationCount": 1256
   },
   "2106.14405": {
    "title": "Habitat 2.0: Training Home Assistants to Rearrange their Habitat",
@@ -1085,7 +1073,7 @@
    "title": "Kimera: From SLAM to spatial perception with 3D dynamic scene graphs",
    "year": 2021,
    "venue": "Int. J. Robotics Res.",
-   "citationCount": 407
+   "citationCount": 408
   },
   "2107.00822": {
    "title": "F-LOAM : Fast LiDAR Odometry and Mapping",
@@ -1115,7 +1103,7 @@
    "title": "A Survey on Active Simultaneous Localization and Mapping: State of the Art and New Frontiers",
    "year": 2022,
    "venue": "IEEE Transactions on robotics",
-   "citationCount": 366
+   "citationCount": 367
   },
   "2109.13494": {
    "title": "Scan Context++: Structural Place Recognition Robust to Rotation and Lateral Variations in Urban Environments",
@@ -1181,7 +1169,7 @@
    "title": "Swarm-SLAM: Sparse Decentralized Collaborative Simultaneous Localization and Mapping Framework for Multi-Robot Systems",
    "year": 2023,
    "venue": "IEEE Robotics and Automation Letters",
-   "citationCount": 214
+   "citationCount": 215
   },
   "2402.03246": {
    "title": "SGS-SLAM: Semantic Gaussian Splatting For Neural Dense SLAM",
@@ -1211,7 +1199,7 @@
    "title": "VGGT-Long: Chunk it, Loop it, Align it – Pushing VGGT’s Limits on Kilometer-scale Long RGB Sequences",
    "year": 2025,
    "venue": "IEEE International Conference on Robotics and Automation",
-   "citationCount": 150
+   "citationCount": 151
   },
   "2403.12550": {
    "title": "Rgbd Gs-icp Slam",
@@ -1415,7 +1403,7 @@
    "title": "Rapid locomotion via reinforcement learning",
    "year": 2022,
    "venue": "Robotics: Science and Systems Conference",
-   "citationCount": 421
+   "citationCount": 422
   },
   "2208.08373": {
    "title": "Perceptive Locomotion Through Nonlinear Model-Predictive Control",
@@ -1427,7 +1415,7 @@
    "title": "Optimization-Based Control for Dynamic Legged Robots",
    "year": 2022,
    "venue": "IEEE Transactions on robotics",
-   "citationCount": 314
+   "citationCount": 315
   },
   "2309.15462": {
    "title": "DTC: Deep Tracking Control",
@@ -1541,13 +1529,13 @@
    "title": "Unifying Flow, Stereo and Depth Estimation",
    "year": 2022,
    "venue": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
-   "citationCount": 436
+   "citationCount": 437
   },
   "2203.11483": {
    "title": "Practical Stereo Matching via Cascaded Recurrent Network with Adaptive Correlation",
    "year": 2022,
    "venue": "Computer Vision and Pattern Recognition",
-   "citationCount": 429
+   "citationCount": 430
   },
   "2104.00681": {
    "title": "NeuralRecon: Real-Time Coherent 3D Reconstruction from Monocular Video",
@@ -1631,7 +1619,7 @@
    "title": "MASt3R-SfM: A Fully-Integrated Solution for Unconstrained Structure-from-Motion",
    "year": 2024,
    "venue": "International Conference on 3D Vision",
-   "citationCount": 200
+   "citationCount": 201
   },
   "2507.11539": {
    "title": "Streaming 4D Visual Geometry Transformer",
@@ -2009,19 +1997,19 @@
    "title": "YOLOv7: Trainable Bag-of-Freebies Sets New State-of-the-Art for Real-Time Object Detectors",
    "year": 2022,
    "venue": "Computer Vision and Pattern Recognition",
-   "citationCount": 11452
+   "citationCount": 11451
   },
   "2405.14458": {
    "title": "YOLOv10: Real-Time End-to-End Object Detection",
    "year": 2024,
    "venue": "Neural Information Processing Systems",
-   "citationCount": 6250
+   "citationCount": 6251
   },
   "2104.00680": {
    "title": "LoFTR: Detector-Free Local Feature Matching with Transformers",
    "year": 2021,
    "venue": "Computer Vision and Pattern Recognition",
-   "citationCount": 2153
+   "citationCount": 2154
   },
   "2104.13921": {
    "title": "Open-vocabulary Object Detection via Vision and Language Knowledge Distillation",
@@ -2207,7 +2195,7 @@
    "title": "ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI",
    "year": 2024,
    "venue": "arXiv.org",
-   "citationCount": 361
+   "citationCount": 362
   },
   "2506.09985": {
    "title": "V-JEPA 2: Self-Supervised Video Models Enable Understanding, Prediction and Planning",
@@ -2279,7 +2267,7 @@
    "title": "InternScenes: A Large-scale Simulatable Indoor Scene Dataset with Realistic Layouts",
    "year": 2025,
    "venue": "Neural Information Processing Systems",
-   "citationCount": 30
+   "citationCount": 31
   },
   "2502.13187": {
    "title": "A Survey of Sim-to-Real Methods in RL: Progress, Prospects and Challenges with Foundation Models",
@@ -2352,15 +2340,279 @@
    "year": 2021,
    "venue": "Neural computing & applications (Print)",
    "citationCount": 90
+  },
+  "2401.12168": {
+   "title": "SpatialVLM: Endowing Vision-Language Models with Spatial Reasoning Capabilities",
+   "year": 2024,
+   "venue": "Computer Vision and Pattern Recognition",
+   "citationCount": 1124
+  },
+  "2307.12981": null,
+  "2111.08897": {
+   "title": "ARKitScenes: A Diverse Real-World Dataset For 3D Indoor Scene Understanding Using Mobile RGB-D Data",
+   "year": 2021,
+   "venue": "NeurIPS Datasets and Benchmarks",
+   "citationCount": 545
+  },
+  "2112.10482": {
+   "title": "ScanQA: 3D Question Answering for Spatial Scene Understanding",
+   "year": 2021,
+   "venue": "Computer Vision and Pattern Recognition",
+   "citationCount": 506
+  },
+  "2406.01584": {
+   "title": "SpatialRGPT: Grounded Spatial Reasoning in Vision Language Model",
+   "year": 2024,
+   "venue": "Neural Information Processing Systems",
+   "citationCount": 435
+  },
+  "2205.00363": {
+   "title": "Visual Spatial Reasoning",
+   "year": 2022,
+   "venue": "Transactions of the Association for Computational Linguistics",
+   "citationCount": 400
+  },
+  "2203.01509": {
+   "title": "SoftGroup for 3D Instance Segmentation on Point Clouds",
+   "year": 2022,
+   "venue": "Computer Vision and Pattern Recognition",
+   "citationCount": 370
+  },
+  "2311.18651": {
+   "title": "LL3DA: Visual Interactive Instruction Tuning for Omni-3D Understanding, Reasoning, and Planning",
+   "year": 2023,
+   "venue": "Computer Vision and Pattern Recognition",
+   "citationCount": 296
+  },
+  "2505.23747": {
+   "title": "Spatial-MLLM: Boosting MLLM Capabilities in Visual-based Spatial Intelligence",
+   "year": 2025,
+   "venue": "Neural Information Processing Systems",
+   "citationCount": 257
+  },
+  "2312.08168": {
+   "title": "Chat-Scene: Bridging 3D Scene and Large Language Models with Object Identifiers",
+   "year": 2023,
+   "venue": "Neural Information Processing Systems",
+   "citationCount": 240
+  },
+  "2505.23764": {
+   "title": "MMSI-Bench: A Benchmark for Multi-Image Spatial Intelligence",
+   "year": 2025,
+   "venue": "arXiv.org",
+   "citationCount": 217
+  },
+  "2309.05251": {
+   "title": "Multi3DRefer: Grounding Text Description to Multiple 3D Objects",
+   "year": 2023,
+   "venue": "IEEE International Conference on Computer Vision",
+   "citationCount": 211
+  },
+  "2411.16537": {
+   "title": "RoboSpatial: Teaching Spatial Understanding to 2D and 3D Vision-Language Models for Robotics",
+   "year": 2024,
+   "venue": "Computer Vision and Pattern Recognition",
+   "citationCount": 209
+  },
+  "2312.16170": {
+   "title": "EmbodiedScan: A Holistic Multi-Modal 3D Perception Suite Towards Embodied AI",
+   "year": 2023,
+   "venue": "Computer Vision and Pattern Recognition",
+   "citationCount": 209
+  },
+  "2409.18125": {
+   "title": "LLaVA-3D: A Simple Yet Effective Pathway to Empowering LMMs with 3D Capabilities",
+   "year": 2024,
+   "venue": "IEEE International Conference on Computer Vision",
+   "citationCount": 201
+  },
+  "2505.20279": {
+   "title": "VLM-3R: Vision-Language Models Augmented with Instruction-Aligned 3D Reconstruction",
+   "year": 2025,
+   "venue": "arXiv.org",
+   "citationCount": 187
+  },
+  "2401.09340": {
+   "title": "SceneVerse: Scaling 3D Vision-Language Learning for Grounded Scene Understanding",
+   "year": 2024,
+   "venue": "European Conference on Computer Vision",
+   "citationCount": 175
+  },
+  "2412.00493": {
+   "title": "Video-3D LLM: Learning Position-Aware Video Representation for 3D Scene Understanding",
+   "year": 2024,
+   "venue": "Computer Vision and Pattern Recognition",
+   "citationCount": 175
+  },
+  "2506.04308": {
+   "title": "RoboRefer: Towards Spatial Referring with Reasoning in Vision-Language Models for Robotics",
+   "year": 2025,
+   "venue": "Neural Information Processing Systems",
+   "citationCount": 166
+  },
+  "2503.22976": {
+   "title": "From Flatland to Space: Teaching Vision-Language Models to Perceive and Reason in 3D",
+   "year": 2025,
+   "venue": "Neural Information Processing Systems",
+   "citationCount": 147
+  },
+  "2505.24625": {
+   "title": "Learning from Videos for 3D World: Enhancing MLLMs with 3D Vision Geometry Priors",
+   "year": 2025,
+   "venue": "Neural Information Processing Systems",
+   "citationCount": 140
+  },
+  "2405.10370": {
+   "title": "Grounded 3D-LLM with Referent Tokens",
+   "year": 2024,
+   "venue": "arXiv.org",
+   "citationCount": 128
+  },
+  "2501.01428": {
+   "title": "GPT4Scene: Understand 3D Scenes from Videos with Vision-Language Models",
+   "year": 2025,
+   "venue": "arXiv.org",
+   "citationCount": 123
+  },
+  "2506.03135": {
+   "title": "OmniSpatial: Towards Comprehensive Spatial Reasoning Benchmark for Vision Language Models",
+   "year": 2025,
+   "venue": "arXiv.org",
+   "citationCount": 121
+  },
+  "2503.13111": {
+   "title": "MM-Spatial: Exploring 3D Spatial Understanding in Multimodal LLMs",
+   "year": 2025,
+   "venue": "IEEE International Conference on Computer Vision",
+   "citationCount": 94
+  },
+  "2506.07491": {
+   "title": "SpatialLM: Training Large Language Models for Structured Indoor Modeling",
+   "year": 2025,
+   "venue": "Neural Information Processing Systems",
+   "citationCount": 92
+  },
+  "2412.04383": {
+   "title": "SeeGround: See and Ground for Zero-Shot Open-Vocabulary 3D Visual Grounding",
+   "year": 2024,
+   "venue": "Computer Vision and Pattern Recognition",
+   "citationCount": 90
+  },
+  "2504.20024": {
+   "title": "SpatialReasoner: Towards Explicit and Generalizable 3D Spatial Reasoning",
+   "year": 2025,
+   "venue": "Neural Information Processing Systems",
+   "citationCount": 80
+  },
+  "2501.10074": {
+   "title": "SpatialCoT: Advancing Spatial Reasoning through Coordinate Alignment and Chain-of-Thought for Embodied Task Planning",
+   "year": 2025,
+   "venue": "arXiv.org",
+   "citationCount": 73
+  },
+  "2503.00513": {
+   "title": "Inst3D-LMM: Instance-Aware 3D Scene Understanding with Multi-modal Instruction Tuning",
+   "year": 2025,
+   "venue": "Computer Vision and Pattern Recognition",
+   "citationCount": 64
+  },
+  "2502.16652": {
+   "title": "Dr. Splat: Directly Referring 3D Gaussian Splatting via Direct Language Embedding Registration",
+   "year": 2025,
+   "venue": "Computer Vision and Pattern Recognition",
+   "citationCount": 66
+  },
+  "2507.12508": {
+   "title": "MindJourney: Test-Time Scaling with World Models for Spatial Reasoning",
+   "year": 2025,
+   "venue": "Neural Information Processing Systems",
+   "citationCount": 57
+  },
+  "2511.21688": {
+   "title": "G2VLM: Geometry Grounded Vision Language Model with Unified 3D Reconstruction and Spatial Reasoning",
+   "year": 2025,
+   "venue": "arXiv.org",
+   "citationCount": 47
+  },
+  "2507.23478": {
+   "title": "3D-R1: Enhancing Reasoning in 3D VLMs for Unified Scene Understanding",
+   "year": 2025,
+   "venue": "arXiv.org",
+   "citationCount": 47
+  },
+  "2505.22657": {
+   "title": "3DLLM-Mem: Long-Term Spatial-Temporal Memory for Embodied 3D Large Language Model",
+   "year": 2025,
+   "venue": "Neural Information Processing Systems",
+   "citationCount": 31
+  },
+  "2507.07984": {
+   "title": "OST-Bench: Evaluating the Capabilities of MLLMs in Online Spatio-temporal Scene Understanding",
+   "year": 2025,
+   "venue": "Neural Information Processing Systems",
+   "citationCount": 33
+  },
+  "2509.13317": {
+   "title": "3D Aware Region Prompted Vision Language Model",
+   "year": 2025,
+   "venue": "arXiv.org",
+   "citationCount": 33
+  },
+  "2511.05491": {
+   "title": "Visual Spatial Tuning",
+   "year": 2025,
+   "venue": "arXiv.org",
+   "citationCount": 93
+  },
+  "2412.14171": {
+   "title": "Thinking in Space: How Multimodal Large Language Models See, Remember, and Recall Spaces",
+   "year": 2024,
+   "venue": "Computer Vision and Pattern Recognition",
+   "citationCount": 843
+  },
+  "2207.10660": {
+   "title": "Omni3D: A Large Benchmark and Model for 3D Object Detection in the Wild",
+   "year": 2022,
+   "venue": "Computer Vision and Pattern Recognition",
+   "citationCount": 227
+  },
+  "2210.03105": {
+   "title": "Mask3D: Mask Transformer for 3D Semantic Instance Segmentation",
+   "year": 2022,
+   "venue": "IEEE International Conference on Robotics and Automation",
+   "citationCount": 480
+  },
+  "1912.08830": {
+   "title": "ScanRefer: 3D Object Localization in RGB-D Scans using Natural Language",
+   "year": 2019,
+   "venue": "European Conference on Computer Vision",
+   "citationCount": 673
+  },
+  "2311.12871": {
+   "title": "An Embodied Generalist Agent in 3D World",
+   "year": 2023,
+   "venue": "International Conference on Machine Learning",
+   "citationCount": 463
+  },
+  "2511.04670": {
+   "title": "Cambrian-S: Towards Spatial Supersensing in Video",
+   "year": 2025,
+   "venue": "arXiv.org",
+   "citationCount": 154
   }
  },
  "stars": {
   "3DAgentWorld/OpenGS-SLAM": 215,
   "3DAgentWorld/S3PO-GS": 137,
+  "3dlg-hcvc/M3DRef-CLIP": 98,
+  "AIGeeksGroup/3D-R1": 417,
   "AIGeeksGroup/MobileVLA-R1": 117,
   "AIGeeksGroup/Nav-R1": 132,
   "AILab-CVC/YOLO-World": 6584,
+  "ATR-DBI/ScanQA": 165,
   "AnjieCheng/NaVILA": 720,
+  "AnjieCheng/SR-3D": 31,
+  "AnjieCheng/SpatialRGPT": 340,
   "Anttwo/SuGaR": 3537,
   "AnyLoc/AnyLoc": 645,
   "Atten4Vis/LW-DETR": 514,
@@ -2374,17 +2626,17 @@
   "DefaultRui/VLN-VER": 143,
   "DengKaiCQ/VGGT-Long": 909,
   "DennisRotondi/FunGraph": 19,
-  "DepthAnything/Depth-Anything-V2": 8967,
+  "DepthAnything/Depth-Anything-V2": 8968,
   "DepthAnything/PromptDA": 1174,
-  "DepthAnything/Video-Depth-Anything": 2265,
-  "Feliciaxyao/NavMorph": 93,
+  "DepthAnything/Video-Depth-Anything": 2268,
+  "Feliciaxyao/NavMorph": 94,
   "Fudan-MAGIC-Lab/VINGS-Mono": 305,
   "Gaozzzz/3D-Gaussian-Map-VLN": 10,
   "Gaozzzz/Uncertainty-Aware-VLN": 10,
   "GengzeZhou/NavGPT": 352,
   "GengzeZhou/NavGPT-2": 256,
   "GigaAI-research/EmbodieDreamer": 34,
-  "GradientSpaces/LoopSplat": 399,
+  "GradientSpaces/LoopSplat": 400,
   "GradientSpaces/WildGS-SLAM": 658,
   "HCPLab-SYSU/LH-VLN": 267,
   "HKUST-Aerial-Robotics/FUEL": 1496,
@@ -2402,18 +2654,23 @@
   "Improbable-AI/walk-these-ways": 1465,
   "Inception3D/TTT3R": 735,
   "Insta360-Research-Team/DEFOM-Stereo": 306,
-  "Intellindust-AI-Lab/DEIMv2": 2062,
+  "Intellindust-AI-Lab/DEIMv2": 2061,
   "InternRobotics/AnySplat": 955,
+  "InternRobotics/EmbodiedScan": 680,
+  "InternRobotics/G2VLM": 360,
   "InternRobotics/InternNav": 1135,
   "InternRobotics/InternScenes": 276,
   "InternRobotics/NavDP": 813,
   "Jianghanxiao/PhysTwin": 469,
+  "JonasSchult/Mask3D": 748,
   "Junyi42/monst3r": 1390,
+  "LaVi-Lab/VG-LLM": 260,
+  "LaVi-Lab/Video-3D-LLM": 224,
   "Lab-of-AI-and-Robotics/GS_ICP_SLAM": 540,
   "LeCAR-Lab/ABS": 633,
   "LeCAR-Lab/SPI-Active": 230,
   "LeCAR-Lab/dial-mpc": 1011,
-  "LiheYoung/Depth-Anything": 8236,
+  "LiheYoung/Depth-Anything": 8237,
   "LongchaoDa/AwesomeSim2Real": 201,
   "Lu-Feng/CricaVPR": 173,
   "Lu-Feng/SelaVPR": 269,
@@ -2421,9 +2678,9 @@
   "MIT-SPARK/Clio": 263,
   "MIT-SPARK/Hydra": 1180,
   "MIT-SPARK/Khronos": 547,
-  "MIT-SPARK/Kimera": 2136,
+  "MIT-SPARK/Kimera": 2137,
   "MIT-SPARK/Kimera-Multi": 417,
-  "MIT-SPARK/VGGT-SLAM": 1159,
+  "MIT-SPARK/VGGT-SLAM": 1160,
   "MIV-XJTU/JanusVLN": 599,
   "MTU3D/MTU3D": 275,
   "MarSaKi/ETPNav": 496,
@@ -2433,13 +2690,18 @@
   "MrZihan/HNR-VLN": 110,
   "NHirose/OmniVLA": 358,
   "NIRVANALAN/STream3R": 412,
-  "NVIDIA/Cosmos": 12052,
+  "NVIDIA/Cosmos": 12053,
   "NVlabs/DigitalTwinArt": 74,
-  "NVlabs/Fast-FoundationStereo": 1535,
+  "NVlabs/Fast-FoundationStereo": 1536,
   "NVlabs/FoundationStereo": 2951,
   "NVlabs/RADIO": 1973,
+  "NVlabs/RoboSpatial": 153,
   "NVlabs/instant-ngp": 17577,
+  "Open3DA/LL3DA": 320,
   "OpenMask3D/openmask3d": 273,
+  "OpenRobotLab/Grounded_3D-LLM": 137,
+  "OpenRobotLab/MMSI-Bench": 109,
+  "OpenRobotLab/OST-Bench": 83,
   "OpenRobotLab/Re3Sim": 181,
   "OpenRobotLab/StreamVLN": 628,
   "PKU-EPIC/MaskClustering": 133,
@@ -2453,7 +2715,7 @@
   "Parskatt/romav2": 745,
   "QVPR/Patch-NetVLAD": 601,
   "Qi-Zhangyang/GPT4Scene-and-VLN-R1": 543,
-  "RT-DETRs/RT-DETRv4": 660,
+  "RT-DETRs/RT-DETRv4": 661,
   "Ram81/goat-bench": 165,
   "RayFronts/RayFronts": 149,
   "Robbyant/lingbot-depth": 1674,
@@ -2462,7 +2724,7 @@
   "SYSU-RoboticsLab/NaviD": 59,
   "SYSU-STAR/ApexNav": 474,
   "ShihuaHuang95/DEIM": 1635,
-  "ShuhongLL/SGS-SLAM": 675,
+  "ShuhongLL/SGS-SLAM": 683,
   "SpatialVision/Prior-Depth-Anything": 533,
   "SysCV/sam-hq": 4264,
   "THU-MIG/yolov10": 11336,
@@ -2472,24 +2734,31 @@
   "TixiaoShan/LVI-SAM": 1888,
   "ToniRV/NeRF-SLAM": 1266,
   "UCSB-AI/awesome-vision-language-navigation": 610,
+  "UMass-Embodied-AGI/3D-LLM": 1215,
   "UMass-Embodied-AGI/3D-Mem": 279,
-  "UX-Decoder/Segment-Everything-Everywhere-All-At-Once": 4793,
-  "UZ-SLAMLab/ORB_SLAM3": 9150,
+  "UMass-Embodied-AGI/MindJourney": 154,
+  "UX-Decoder/Segment-Everything-Everywhere-All-At-Once": 4792,
+  "UZ-SLAMLab/ORB_SLAM3": 9151,
   "VAST-AI-Research/TripoSplat": 1389,
+  "VITA-Group/VLM-3R": 450,
   "Vid2Sim/Vid2Sim": 292,
   "VinAIResearch/Open3DIS": 138,
   "VladimirYugay/Gaussian-SLAM": 1185,
   "WongKinYiu/yolov7": 14157,
   "XiaohanLei/GaussNav": 220,
   "YOUNG-bit/open_semantic_slam": 315,
+  "Yangr116/VST": 213,
   "YanyuanQiao/Open-Nav": 187,
   "YkiWu/Point3R": 201,
   "YuLiu-LY/ArtGS": 82,
   "YvanYin/Metric3D": 2329,
+  "ZCMax/LLaVA-3D": 392,
   "ZhangCYG/OpenFunGraph": 57,
   "Zhefan-Xu/NavRL": 1643,
+  "Zhoues/RoboRefer": 268,
   "ZiboKNOW/BeliefMapNav": 51,
   "ZiwenZhuang/parkour": 1134,
+  "ZzZZCHS/Chat-Scene": 222,
   "aharley/alltracker": 432,
   "allenai/PoliFormer": 106,
   "allenai/embodied-clip": 131,
@@ -2497,6 +2766,8 @@
   "amaralibey/MixVPR": 337,
   "amaralibey/bag-of-queries": 195,
   "ant-research/FLARE": 728,
+  "apple/ARKitScenes": 971,
+  "apple/ml-cubifyanything": 448,
   "apple/ml-depth-pro": 5756,
   "autonomousvision/unimatch": 1383,
   "bagh2178/SG-Nav": 355,
@@ -2508,6 +2779,8 @@
   "buaa-colalab/OctoNav-R1": 78,
   "buaavrcg/LEGaussians": 174,
   "bytedance/R2Former": 104,
+  "cambrian-mllm/cambrian-s": 571,
+  "cambridgeltl/visual-spatial-reasoning": 150,
   "castacks/tartanairpy": 128,
   "chen-judge/AO-Planner": 49,
   "chen-judge/MapGPT": 138,
@@ -2527,31 +2800,36 @@
   "cvg/pixel-perfect-sfm": 1494,
   "cvg/pixloc": 802,
   "danijar/daydreamer": 466,
+  "daveredrum/ScanRefer": 305,
   "dcharatan/pixelsplat": 1284,
+  "diankun-wu/Spatial-MLLM": 494,
   "donydchen/mvsplat": 1312,
+  "embodied-generalist/embodied-generalist": 490,
   "eriksandstroem/Point-SLAM": 486,
   "ethz-mrl/OKVIS2-X": 418,
   "eureka-research/DrEureka": 946,
   "expectorlin/NavCoT": 144,
   "facebookresearch/EdgeTAM": 998,
   "facebookresearch/co-tracker": 5156,
-  "facebookresearch/dinov2": 13434,
-  "facebookresearch/dinov3": 11561,
+  "facebookresearch/dinov2": 13435,
+  "facebookresearch/dinov3": 11563,
   "facebookresearch/fast3r": 1592,
   "facebookresearch/habitat-lab": 3162,
   "facebookresearch/habitat-matterport3d-dataset": 216,
   "facebookresearch/mae": 8361,
   "facebookresearch/map-anything": 3823,
   "facebookresearch/mvdust3r": 605,
-  "facebookresearch/nwm": 698,
+  "facebookresearch/nwm": 699,
+  "facebookresearch/omni3d": 854,
   "facebookresearch/perception_models": 2387,
-  "facebookresearch/sam-3d-objects": 7526,
-  "facebookresearch/sam2": 20013,
-  "facebookresearch/sam3": 11999,
+  "facebookresearch/sam-3d-objects": 7527,
+  "facebookresearch/sam2": 20014,
+  "facebookresearch/sam3": 12000,
   "facebookresearch/segment-anything": 55030,
   "facebookresearch/vggsfm": 1429,
-  "facebookresearch/vggt": 14517,
-  "facebookresearch/vjepa2": 4778,
+  "facebookresearch/vggt": 14519,
+  "facebookresearch/vjepa2": 4779,
+  "fudan-zvg/spar": 97,
   "fuxiao0719/GeoWizard": 943,
   "gangweix/IGEV": 691,
   "gangweix/igev-plusplus": 328,
@@ -2559,16 +2837,17 @@
   "gaoxiang12/faster-lio": 1644,
   "gisbi-kim/scancontext_tro": 346,
   "gmberton/EigenPlaces": 163,
-  "gmberton/MegaLoc": 307,
+  "gmberton/MegaLoc": 309,
   "google-deepmind/mujoco_playground": 2255,
   "google-deepmind/tapnet": 2223,
   "google-research/Splat-SLAM": 363,
   "google-research/big_vision": 3553,
   "google-research/omniglue": 711,
   "google-research/scenic": 3844,
-  "graphdeco-inria/gaussian-splatting": 24221,
+  "graphdeco-inria/gaussian-splatting": 24225,
   "guikunchen/Awesome3DGS": 114,
   "gunagg/zson": 110,
+  "hanxunyu/Inst3D-LMM": 134,
   "haofeixu/gmflow": 804,
   "haosulab/ManiSkill": 3425,
   "hbb1/2d-gaussian-splatting": 3312,
@@ -2584,18 +2863,20 @@
   "hren20/NaiviBridger": 83,
   "hrh6666/MoE-Loco": 61,
   "idiap/ESLAM": 224,
+  "iris0329/SeeGround": 224,
   "isaac-sim/IsaacGymEnvs": 2952,
   "isaac-sim/IsaacLab": 8366,
   "isl-org/DPT": 2330,
   "isl-org/MiDaS": 5419,
   "isl-org/ZoeDepth": 2838,
   "jacobkrantz/VLN-CE": 892,
+  "johnson111788/SpatialReasoner": 45,
   "jzhzhang/NaVid-VLN-CE": 455,
   "jzhzhang/Uni-NaVid": 359,
+  "kaist-ami/Dr-Splat": 107,
   "kerrj/lerf": 734,
   "leggedrobotics/elevation_mapping_cupy": 1126,
   "leggedrobotics/fdm": 357,
-  "leggedrobotics/iPlanner": 370,
   "leggedrobotics/legged_gym": 3145,
   "leggedrobotics/robotic_world_model": 690,
   "leggedrobotics/viplanner": 677,
@@ -2604,7 +2885,8 @@
   "lpiccinelli-eth/UniK3D": 755,
   "lpiccinelli-eth/unidepth": 1272,
   "luccachiang/GSWorld": 230,
-  "lyuwenyu/RT-DETR": 5599,
+  "lyuwenyu/RT-DETR": 5600,
+  "manycore-research/SpatialLM": 5090,
   "maturk/dn-splatter": 847,
   "mega-sam/mega-sam": 1367,
   "megvii-research/CREStereo": 638,
@@ -2619,9 +2901,9 @@
   "naver/mast3r": 3132,
   "naver/must3r": 344,
   "naver/pow3r": 244,
-  "nepfaff/scalable-real2sim": 164,
+  "nepfaff/scalable-real2sim": 165,
   "nerfstudio-project/gsplat": 5801,
-  "nerfstudio-project/nerfstudio": 12076,
+  "nerfstudio-project/nerfstudio": 12078,
   "nianticlabs/mvsanywhere": 341,
   "nv-tlabs/3dgrut": 2461,
   "nv-tlabs/GEN3C": 1436,
@@ -2638,15 +2920,17 @@
   "princeton-vl/infinigen": 7334,
   "prs-eth/Marigold": 3240,
   "pypose/bae": 371,
+  "qizekun/OmniSpatial": 95,
   "qureshinomaan/SplatSim": 161,
   "rail-berkeley/crossformer": 283,
   "real-stanford/cow": 158,
-  "real-to-sim-to-real/RialToPolicyLearning": 222,
+  "real-to-sim-to-real/RialToPolicyLearning": 223,
   "rmurai0610/MASt3R-SLAM": 3218,
-  "robbyant/lingbot-map": 18112,
+  "robbyant/lingbot-map": 18115,
   "robodhruv/visualnav-transformer": 1327,
   "sair-lab/AirSLAM": 1211,
   "scannetpp/scannetpp": 411,
+  "scene-verse/SceneVerse": 291,
   "serizba/salad": 384,
   "sharinka0715/semantic-gaussians": 280,
   "sheng00125/LIV-GaussMap": 160,
@@ -2655,9 +2939,11 @@
   "sled-group/chat-with-nerf": 322,
   "spla-tam/SplaTAM": 2212,
   "sxyxs/SmartWay-Code": 20,
+  "thangvubk/SoftGroup": 461,
   "uynitsuj/real2render2real": 376,
   "vdorbala/LGX": 72,
   "verlab/accelerated_features": 1747,
+  "vision-x-nyu/thinking-in-space": 748,
   "vlmaps/vlmaps": 729,
   "vlongle/articulate-anything": 224,
   "wasahaiah/TRG-planner": 31,
@@ -2695,7 +2981,6 @@
   "2412.04453": 0,
   "2110.09460": null,
   "2210.03370": 0,
-  "2302.11434": null,
   "2306.14846": 7,
   "2310.00982": 0,
   "2310.07896": 0,
@@ -2720,7 +3005,6 @@
   "2309.05665": null,
   "2309.14341": 0,
   "2401.17583": 26,
-  "2203.14912": null,
   "2405.01792": null,
   "2007.11898": 0,
   "2106.14386": null,
@@ -3068,6 +3352,50 @@
   "2605.16355": 3,
   "2010.11561": null,
   "2409.15634": null,
-  "2108.11544": null
+  "2108.11544": null,
+  "2401.12168": 30,
+  "2307.12981": 40,
+  "2111.08897": 0,
+  "2112.10482": 0,
+  "2406.01584": 0,
+  "2205.00363": 0,
+  "2203.01509": null,
+  "2311.18651": 0,
+  "2505.23747": 68,
+  "2312.08168": 0,
+  "2505.23764": 3,
+  "2309.05251": 0,
+  "2411.16537": 1,
+  "2312.16170": 1,
+  "2409.18125": 34,
+  "2505.20279": 5,
+  "2401.09340": 20,
+  "2412.00493": 17,
+  "2506.04308": 43,
+  "2503.22976": 3,
+  "2505.24625": 9,
+  "2405.10370": 12,
+  "2501.01428": 0,
+  "2506.03135": 41,
+  "2503.13111": 7,
+  "2506.07491": 54,
+  "2412.04383": 4,
+  "2504.20024": 0,
+  "2501.10074": 1,
+  "2503.00513": 2,
+  "2502.16652": 2,
+  "2507.12508": 27,
+  "2511.21688": 9,
+  "2507.23478": 17,
+  "2505.22657": null,
+  "2507.07984": 44,
+  "2509.13317": 14,
+  "2511.05491": 53,
+  "2412.14171": 24,
+  "2207.10660": 1,
+  "2210.03105": 0,
+  "1912.08830": 0,
+  "2311.12871": 8,
+  "2511.04670": 40
  }
 }
