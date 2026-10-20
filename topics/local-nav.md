@@ -1,4 +1,4 @@
-# 局部導航策略（diffusion / world model）
+# 局部導航與規劃（diffusion / world model / 探索）
 
 ## 在解決的問題
 

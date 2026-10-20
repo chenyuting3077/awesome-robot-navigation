@@ -15,8 +15,8 @@ from check_data import check  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 TOPICS = [
-    "vln", "local-nav", "semantic-map", "quadruped", "wheel-legged",
-    "slam", "perception-3d", "spatial", "vision", "real2sim",
+    "vln", "local-nav", "quadruped", "wheel-legged",
+    "slam", "reconstruction", "perception-3d", "semantic-map", "spatial", "vision", "real2sim",
 ]
 STAR_BAR = 500  # 收錄條件「Star」
 HF_BAR = 20  # 收錄條件「HF」：約是 2026-10 候選中按讚數的前 15%
@@ -46,7 +46,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 機構 | [定期追蹤的來源](#定期追蹤的來源)名單內機構發表，且有實機實驗與開源 |
 | 推薦 | 人工推薦 |
 
-候選由 `scripts/harvest.py` 依主題關鍵字從 Semantic Scholar 撈出，再人工確認相關性。分級：**奠基** 引用達門檻 4 倍、star ≥ 10k，或 2021 年前的開創性論文；**主流** 達引用或 Star 條件；其餘（只符合獲獎、基準、機構、推薦）為**新興**。「年」是 arXiv 首次公開年份，「來源」是正式刊登的會議或期刊。
+候選由 `scripts/harvest.py` 依主題關鍵字從 Semantic Scholar 撈出，再人工確認相關性；頂會得獎名單另外逐一查官網補收。首次公開超過一年仍只有 arXiv 預印本的，除非官方 repo star ≥ 500，否則不收。分級：**奠基** 引用達門檻 4 倍、star ≥ 10k，或 2021 年前的開創性論文；**主流** 達引用或 Star 條件；其餘（只符合獲獎、基準、機構、推薦）為**新興**。「年」是 arXiv 首次公開年份，「來源」是正式刊登的會議或期刊。
 
 ## 定期追蹤的來源
 
