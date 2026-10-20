@@ -12,4 +12,3 @@
 | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 | --- | --- | --- | --- | --- | --- | --- |
 | 2026-05 | [LEXI-SG](https://arxiv.org/abs/2605.13741) · [專案頁](https://ori-drs.github.io/lexisg-web/) | Oxford | 只用單眼 RGB 建開放詞彙 3D 場景圖，以房間為單位 feed-forward 重建 | 評估在 HM3D 與自錄辦公室序列，未做實機導航 | 未公開 | RA-L 2026 |
-| 2026-03 | [OGScene3D](https://arxiv.org/abs/2603.16301) | SJTU / UTN / Cambridge / NTU | 邊探索邊增量建場景圖，confidence-aware Gaussian 語意表示 |  | [GitHub](https://github.com/IRMVLab/OGScene3D) | arXiv |

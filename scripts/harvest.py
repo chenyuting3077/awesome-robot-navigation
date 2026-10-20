@@ -31,11 +31,14 @@ QUERIES = {
     "quadruped": ['quadruped', '"legged robot"', '"legged locomotion"', '"quadrupedal"'],
     "wheel-legged": ['"wheel-legged"', '"wheeled-legged"', '"legged-wheeled"', '"wheeled bipedal"'],
     "slam": ['SLAM', '"visual odometry"', '"lidar odometry"', '"lidar-inertial"', '"visual-inertial"',
-             '"place recognition"', '"loop closure"', '"bundle adjustment"'],
-    "perception-3d": ['"depth estimation"', '"stereo matching"', '"multi-view stereo"', '"3D reconstruction"',
-                      '"gaussian splatting"', '"occupancy prediction"', 'pointmap', '"novel view synthesis"'],
-    "spatial": ['"3D object detection" indoor', '"open-vocabulary 3D detection"', '"3D instance segmentation"',
-                '"3D visual grounding"', '"3D question answering"', '"3D large language model"',
+             '"place recognition"', '"loop closure"', '"bundle adjustment"', '"point cloud registration"'],
+    "reconstruction": ['"3D reconstruction"', '"structure from motion"', '"gaussian splatting"', 'pointmap',
+                       '"novel view synthesis"', '"feed-forward reconstruction"', '"surface reconstruction" point cloud',
+                       '"point cloud completion"'],
+    "perception-3d": ['"depth estimation"', '"stereo matching"', '"multi-view stereo"', '"occupancy prediction"'],
+    "det3d": ['"3D object detection" indoor', '"open-vocabulary 3D detection"', '"3D instance segmentation"',
+              '"point cloud" segmentation', '"point cloud" backbone', '"point cloud" self-supervised'],
+    "spatial": ['"3D visual grounding"', '"3D question answering"', '"3D large language model"',
                 '"spatial reasoning" vision-language', '"spatial understanding" multimodal', '"3D scene understanding"'],
     "vision": ['"open-vocabulary detection"', '"open-vocabulary segmentation"', '"open-vocabulary object detection"',
                '"segment anything"', '"vision foundation model"', '"self-supervised" visual representation',
@@ -54,7 +57,7 @@ ANCHORS = {
     "quadruped": ["2109.11978", "2201.08117"],  # Learning to Walk in Minutes、Perceptive Locomotion
     "wheel-legged": ["2405.01792"],  # ETH 輪足自主導航與運動
     "slam": ["2107.06829", "2108.10869"],  # FAST-LIO2、DROID-SLAM
-    "perception-3d": ["2312.14132"],  # DUSt3R
+    "reconstruction": ["2312.14132"],  # DUSt3R
     "spatial": ["1912.08830", "2412.14171"],  # ScanRefer、VSI-Bench
 }
 

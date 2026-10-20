@@ -10,7 +10,7 @@
      - 程式碼：https://github.com/NVlabs 。
      - 再用 WebSearch `NVIDIA <主題關鍵字> <年月>` 補查 Isaac、Cosmos、GR00T 等產品線的技術報告。
      - research.nvidia.com/labs/ 首頁會擋爬蟲（403），直接用上面的子頁。
-   - **企業**：Google DeepMind、Meta FAIR、Physical Intelligence、Skild AI、Mistral、Alibaba（AMAP、DAMO）、ByteDance Seed、Tencent Robotics X、Huawei、Unitree、LimX、ANYbotics、Boston Dynamics。
+   - **企業**：Google DeepMind、Meta FAIR、Physical Intelligence、Skild AI、Mistral、Alibaba（AMAP、DAMO）、ByteDance Seed、Tencent Robotics X、Huawei、Unitree、LimX、ANYbotics、Boston Dynamics；另 Waymo、Sony AI、Adobe、Samsung、Baidu、Microsoft、Apple 的研究單位也算名單內（不必每次查）。
    - **實驗室**（括號內為主要相關主題）：
      - ETH RSL https://rsl.ethz.ch （四足、輪足）、ETH ASL https://asl.ethz.ch （SLAM、導航）
      - MIT SPARK https://web.mit.edu/sparklab/ （SLAM、場景圖）
@@ -38,10 +38,28 @@
    | quadruped | cs.RO | (quadruped OR legged) AND (perceptive OR navigation OR terrain) |
    | wheel-legged | cs.RO | "wheel-legged", "wheeled-legged", "legged-wheeled" |
    | slam | cs.RO, cs.CV | SLAM, "visual odometry", "LiDAR-inertial", "place recognition", relocalization |
-   | perception-3d | cs.CV, cs.RO | "depth estimation", "feed-forward reconstruction", "3D reconstruction" AND (VGGT OR pointmap), occupancy |
-   | spatial | cs.CV, cs.RO | "3D object detection" AND (indoor OR open-vocabulary), "3D visual grounding", "spatial reasoning" AND (VLM OR "vision-language"), "3D LLM" |
+   | reconstruction | cs.CV, cs.RO | "feed-forward reconstruction", "3D reconstruction" AND (VGGT OR pointmap), "structure from motion", "Gaussian splatting" |
+   | perception-3d | cs.CV, cs.RO | "depth estimation", "stereo matching", occupancy |
+   | det3d | cs.CV, cs.RO | "3D object detection" AND (indoor OR open-vocabulary), "3D instance segmentation", "point cloud" AND (segmentation OR backbone) |
+   | spatial | cs.CV, cs.RO | "3D visual grounding", "spatial reasoning" AND (VLM OR "vision-language"), "3D LLM" |
    | vision | cs.CV | "open-vocabulary detection", "open-vocabulary segmentation", "vision foundation model" |
    | real2sim | cs.RO, cs.CV | "real-to-sim", real2sim, "digital twin" AND robot, "Gaussian splatting" AND simulation |
 
 2. **補充來源**（WebSearch）：Science Robotics、RA-L、T-RO 新刊；當期 CoRL / RSS / ICRA / IROS / CVPR 接收論文。
-3. **篩選**：每主題每次最多收 5 篇，NVIDIA 的不佔名額。名額優先給第 0 步名單內的機構，其次依：有實機實驗 > 開源程式或權重 > 標準 benchmark 上宣稱 SOTA。純 benchmark 微幅改進、只在遙測或醫療影像上驗證的不收。機構以 arXiv 摘要頁或論文首頁的作者單位為準，「機構」欄要填。
+3. **篩選**：只有 arXiv、還沒正式刊登的論文，只收第 0 步名單內的企業與實驗室（官方 repo star ≥ 500 或使用者推薦的除外）；已被會議或期刊接收的不限機構。每主題每次最多收 5 篇，NVIDIA 的不佔名額。名額優先給第 0 步名單內的機構，其次依：有實機實驗 > 開源程式或權重 > 標準 benchmark 上宣稱 SOTA。純 benchmark 微幅改進、只在遙測或醫療影像上驗證的不收。機構以 arXiv 摘要頁或論文首頁的作者單位為準，「機構」欄要填。
+
+## 得獎名單（擴充重要論文時查）
+
+查 CVPR、ICCV、ECCV、3DV、ICRA、IROS、CoRL、RSS 的最佳論文（含入圍、honorable mention、各類別獎），符合範圍的收進 `classics.csv` 並標 `獲獎`。2021–2026 已全面查過一次（2026-10），之後每年各會議公布後補當年度。
+
+| 會議 | 來源 | 坑 |
+|---|---|---|
+| CVPR | `cvpr.thecvf.com/Conferences/<年>/News/...`、候選 `cvpr.thecvf.com/virtual/<年>/events/AwardCandidates<年>` | 2022 finalists、2024 candidates 沒有官方清單；IEEE TCPAMI 獎項頁有年份與獎項標錯，別當來源 |
+| ICCV / ECCV | `iccv<年>.thecvf.com`、`eccv<年>.ecva.net/virtual/<年>/awards_detail` | ICCV 候選名單多半不公開，只能從 ICCV Daily（rsipvision.com）零星找到 |
+| 3DV | `3dvconf.github.io/<年>/awards/` 與同目錄 `award_candidates.csv` | 2021、2024 官網沒有得獎頁，只能靠大學新聞；2023 停辦 |
+| ICRA | `<年>.ieee-icra.org/awards/`；2021 只有 RAS 獎項手冊 PDF；2022、2023 用 Robohub 轉載 | 官網常只列入圍，得獎者要等會後 |
+| IROS | `<年>.ieee-iros.org/program/awards/`；2023 用 AIhub 轉載 | curl 直接抓官網會 403，改用 WebFetch；2021 網域已失效、2024 官網與 PaperCept 都擋；2025 只列入圍、不分獎項 |
+| CoRL / RSS | `<年>.corl.org/program/awards`、`roboticsconference.org/<年>/program/awards/` | CoRL 2022 網域已轉走；RSS 2023、2024 官網只列入圍 |
+
+- 得獎與否以官網為準；只有二手報導（新聞、X、實驗室網站）的寫成入圍，不寫得獎。
+- 純操作、純人形、純自駕、無人機、純渲染品質改進的不收，即使得獎。
