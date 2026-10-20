@@ -33,8 +33,10 @@ def fetch_papers(ids):
     headers = {"Content-Type": "application/json"}
     if key := os.environ.get("S2_API_KEY"):
         headers["x-api-key"] = key
-    body = json.dumps({"ids": [s2_id(i) for i in ids]}).encode()
-    res = fetch_json(S2_URL, data=body, headers=headers)
+    res = []
+    for k in range(0, len(ids), 500):
+        body = json.dumps({"ids": [s2_id(i) for i in ids[k:k + 500]]}).encode()
+        res += fetch_json(S2_URL, data=body, headers=headers)
     return {
         i: (None if p is None else {k: p[k] for k in ("title", "year", "venue", "citationCount")})
         for i, p in zip(ids, res)
