@@ -23,7 +23,7 @@ description: 更新這個論文整理 repo 時使用：定期（每三天）加�
 3. 用 `scripts/enrich.py` 補資料，寫進 `data/classics.csv`；使用者推薦的一律收，`tags` 加 `推薦`。
 4. 「最新論文」中已達引用或 Star 條件的移到 `classics.csv`，並從主題檔刪除該列。
 5. 跑 `python3 scripts/fetch_metrics.py` 刷新引用數、star、HF 按讚數，再跑 `python3 scripts/check_data.py`，處理「刊登處待確認」的警告。
-6. 一項收錄條件都不符合的移出（條件見 README「怎樣算重要論文」，門檻在 `scripts/harvest.py` 的 `THRESHOLD`）。首次公開超過一年仍只有 arXiv、官方 repo star < 500 的也移出，`推薦` 的除外；移出前先確認有沒有已被接收但 venue 沒更新。
+6. 一項收錄條件都不符合的移出（條件見 README「怎樣算重要論文」，門檻在 `scripts/harvest.py` 的 `THRESHOLD`）。只有 arXiv 的論文須來自 `sources.md` 第 0 步名單內機構，首次公開超過一年仍只有 arXiv 的也移出；官方 repo star ≥ 500 或 `推薦` 的除外。移出前先確認有沒有已被接收但 venue 沒更新。
 7. 產生 README，開 PR。
 
 完成條件：PR 說明列出新增篇數、移出的論文與原因、哪些欄位沒查證。

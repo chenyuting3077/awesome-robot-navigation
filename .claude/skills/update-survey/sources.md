@@ -10,7 +10,7 @@
      - 程式碼：https://github.com/NVlabs 。
      - 再用 WebSearch `NVIDIA <主題關鍵字> <年月>` 補查 Isaac、Cosmos、GR00T 等產品線的技術報告。
      - research.nvidia.com/labs/ 首頁會擋爬蟲（403），直接用上面的子頁。
-   - **企業**：Google DeepMind、Meta FAIR、Physical Intelligence、Skild AI、Mistral、Alibaba（AMAP、DAMO）、ByteDance Seed、Tencent Robotics X、Huawei、Unitree、LimX、ANYbotics、Boston Dynamics。
+   - **企業**：Google DeepMind、Meta FAIR、Physical Intelligence、Skild AI、Mistral、Alibaba（AMAP、DAMO）、ByteDance Seed、Tencent Robotics X、Huawei、Unitree、LimX、ANYbotics、Boston Dynamics；另 Waymo、Sony AI、Adobe、Samsung、Baidu、Microsoft、Apple 的研究單位也算名單內（不必每次查）。
    - **實驗室**（括號內為主要相關主題）：
      - ETH RSL https://rsl.ethz.ch （四足、輪足）、ETH ASL https://asl.ethz.ch （SLAM、導航）
      - MIT SPARK https://web.mit.edu/sparklab/ （SLAM、場景圖）
@@ -40,12 +40,13 @@
    | slam | cs.RO, cs.CV | SLAM, "visual odometry", "LiDAR-inertial", "place recognition", relocalization |
    | reconstruction | cs.CV, cs.RO | "feed-forward reconstruction", "3D reconstruction" AND (VGGT OR pointmap), "structure from motion", "Gaussian splatting" |
    | perception-3d | cs.CV, cs.RO | "depth estimation", "stereo matching", occupancy |
-   | spatial | cs.CV, cs.RO | "3D object detection" AND (indoor OR open-vocabulary), "3D visual grounding", "spatial reasoning" AND (VLM OR "vision-language"), "3D LLM" |
+   | det3d | cs.CV, cs.RO | "3D object detection" AND (indoor OR open-vocabulary), "3D instance segmentation", "point cloud" AND (segmentation OR backbone) |
+   | spatial | cs.CV, cs.RO | "3D visual grounding", "spatial reasoning" AND (VLM OR "vision-language"), "3D LLM" |
    | vision | cs.CV | "open-vocabulary detection", "open-vocabulary segmentation", "vision foundation model" |
    | real2sim | cs.RO, cs.CV | "real-to-sim", real2sim, "digital twin" AND robot, "Gaussian splatting" AND simulation |
 
 2. **補充來源**（WebSearch）：Science Robotics、RA-L、T-RO 新刊；當期 CoRL / RSS / ICRA / IROS / CVPR 接收論文。
-3. **篩選**：每主題每次最多收 5 篇，NVIDIA 的不佔名額。名額優先給第 0 步名單內的機構，其次依：有實機實驗 > 開源程式或權重 > 標準 benchmark 上宣稱 SOTA。純 benchmark 微幅改進、只在遙測或醫療影像上驗證的不收。機構以 arXiv 摘要頁或論文首頁的作者單位為準，「機構」欄要填。
+3. **篩選**：只有 arXiv、還沒正式刊登的論文，只收第 0 步名單內的企業與實驗室（官方 repo star ≥ 500 或使用者推薦的除外）；已被會議或期刊接收的不限機構。每主題每次最多收 5 篇，NVIDIA 的不佔名額。名額優先給第 0 步名單內的機構，其次依：有實機實驗 > 開源程式或權重 > 標準 benchmark 上宣稱 SOTA。純 benchmark 微幅改進、只在遙測或醫療影像上驗證的不收。機構以 arXiv 摘要頁或論文首頁的作者單位為準，「機構」欄要填。
 
 ## 得獎名單（擴充重要論文時查）
 
