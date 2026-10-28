@@ -512,6 +512,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 新興 | 獲獎 | 2025 | [Anisotropic Rotation Averaging](https://arxiv.org/abs/2503.07353) | Lund / Chalmers | 把量測的各向異性不確定性放進旋轉平均，並給出可驗證全域最優的鬆弛解 | ICCV 2025 | 3 | 未公開 |
 | 新興 | 獲獎 | 2026 | [LSRM](https://arxiv.org/abs/2604.05182) | Meta Reality Labs | 大幅擴大 transformer 上下文中的物件與影像 token，讓 feed-forward 物件重建逼近稠密最佳化品質 | ECCV 2026 | 3 | 未公開 |
 | 新興 | 獲獎 | 2026 | [Global-Aware Edge Prioritization](https://arxiv.org/abs/2602.21963) | CTU Prague / ETH | SfM 位姿圖初始化時考慮全域一致性來挑選候選邊，取代只看 kNN 檢索 | CVPR 2026 | 1 | 未公開 |
+| 新興 | 推薦 | 2026 | [Foundation4D](https://arxiv.org/abs/2610.30340) · [專案頁](https://research.nvidia.com/labs/sil/projects/foundation4d/) | NVIDIA | 多相機行車影片共用時空分解注意力骨幹，一次 feed-forward 出深度、3D 偵測、語意 occupancy 與高斯重建，預測的幾何與軌跡可當無 LiDAR 的 NuRec 重建先驗 | NVIDIA Research、arXiv | 0 | 未公開 |
 
 ### 最新論文
 
@@ -816,6 +817,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 新興 | 獲獎 | 2025 | [LAPA](https://arxiv.org/abs/2512.04213) · [專案頁](https://ostadabbas.github.io/lapa.github.io/) | Northeastern | 端到端 transformer 同時做外觀匹配與幾何約束，多相機點追蹤不再拆成偵測、關聯、追蹤 | 3DV 2026 | 5 | [8](https://github.com/ostadabbas/Look-Around-and-Pay-Attention-LAPA-) |
 | 新興 | 獲獎、基準 | 2026 | [GuideTWSI](https://arxiv.org/abs/2603.07060) | UMass Amherst / UT Austin / Maine | 合成加真實的導盲磚分割資料集，用於視障者導航輔助 | ICRA 2026 | 2 | 未公開 |
 | 新興 | 獲獎 | 2026 | [Day-to-Night Agri Translation](https://arxiv.org/abs/2607.12065) | Kennesaw State / Lincoln | 非監督式日轉夜跨模態影像轉換，用白天標註訓練夜間農業視覺導航 | IROS 2026 | 0 | 未公開 |
+| 新興 | 獲獎、推薦 | 2026 | [DeFM](https://arxiv.org/abs/2601.18923) · [專案頁](https://de-fm.github.io/) | ETH RSL / NVIDIA / UC Berkeley | DINO 式自蒸餾只在 6000 萬張深度圖上預訓練，加保留公制尺度的三通道正規化，再蒸餾成 3M 參數 CNN，凍結即可接導航、運動與操作策略 | T-RO 2026 | 0 | [0](https://github.com/leggedrobotics/defm) |
 
 ### 最新論文
 
