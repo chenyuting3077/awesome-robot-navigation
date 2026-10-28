@@ -1,10 +1,10 @@
 # Robot Nav Survey
 
-AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim 前沿論文整理，每三天自動更新。
+AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim 前沿論文整理，每週一、四自動更新。
 
 <!-- 本檔由 scripts/build_readme.py 產生，請改 topics/、data/ 或 digests/ 後重跑 -->
 
-- 每三天由排程 agent 依 [update-survey](.claude/skills/update-survey/SKILL.md) 的流程搜尋新論文並開 PR，審過再 merge。
+- 每週一、四由排程 agent 依 [update-survey](.claude/skills/update-survey/SKILL.md) 的流程搜尋新論文並開 PR，`build_readme.py` 通過後自動 merge。
 - 手動更新：在 repo 裡開 Claude Code，說「更新論文整理」。
 - 每個主題分三段：在解決的問題、重要論文（2021 年起，開創性的不限年份）、最新論文。
 - 程式碼標「未公開」：論文頁、arXiv 頁與 GitHub 搜尋都找不到作者釋出的官方程式碼（第三方重現不算）。
