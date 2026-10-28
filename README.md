@@ -37,7 +37,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 - **期刊**：Science Robotics、RA-L、T-RO
 - **會議**：CoRL、RSS、ICRA、IROS、CVPR（接收論文公布時）
 
-最後更新：2026-10-20
+最後更新：2026-10-28
 
 ## 目錄
 
@@ -211,6 +211,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 
 | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-10 | [RangeNav](https://arxiv.org/abs/2610.29845) · [專案頁](https://rangenav.github.io/) | ETH Zurich RSL / NVIDIA | 用導航對齊目標（距離圖重建 + 語意分割 + BEV 預測）預訓練 183k 參數 LiDAR range-image 編碼器，凍結後給 RL 策略用 | 模擬中加入語意與 BEV 監督，成功率平均比只做重建高 32.03 / 23.73 pp（訓練環境 / OOD 環境）；Unitree B2-W 零樣本實機通過人群、低光與工地 | 未公開 | arXiv |
 | 2026-10 | [LiteNWM](https://arxiv.org/abs/2610.12368) | Nanjing Univ. / Imperial / Sony AI | 輕量潛空間 world model，可機上跑 | 實機未見場景 SR 43.3%（NoMaD）→ 83.3% | 未公開 | arXiv |
 | 2026-07 | [X-NavDP](https://arxiv.org/abs/2607.28560) · [專案頁](https://yty-sky.github.io/x-navdp-project-page) | Shanghai AI Lab / Fudan / SYSU | NavDP 泛化到新行為與新機體（group Q-score reweighted matching） |  | 未公開 | arXiv |
 
@@ -301,6 +302,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 
 | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-10 | [RAIWAY](https://arxiv.org/abs/2610.33172) | KAIST | 20 吋大輪雙足輪機器人；在模擬中把多接觸事件蒸餾成潛變量，部署時只用本體感測推估，不需接觸感測 | 實機通過陡坡、碎石、釘面、岩地，與最高 15 cm 階高的戶外階梯 | 未公開 | RA-L 2026 |
 | 2026-02 | [Sparse MoE multi-mode locomotion](https://www.frontiersin.org/journals/robotics-and-ai/articles/10.3389/frobt.2026.1788395/full) | Beijing Institute of Technology | 雙足輪；稀疏 MoE RL，在滾動與越障間自動切換 |  | 未公開 | Frontiers in Robotics and AI 2026 |
 
 ## SLAM 與定位
@@ -513,6 +515,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 
 | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-10 | [ACE-Zero + PGO](https://arxiv.org/abs/2610.35501) · [專案頁](https://eldentse.github.io/visual_localization_pgo_public/) | dConstruct Robotics / NUS | 在 ACE-Zero 上加 pose graph optimization，由預測的 scene coordinate 取相對位姿，並以對極與光流一致性估信心來抑制錯誤修正 |  | 未公開 | CVPR 2026 |
 | 2026-04 | [Feed-forward 3D scene modeling survey](https://arxiv.org/abs/2604.14025) · [專案頁](https://ff3d-survey.github.io) | Zhejiang / NTU / Monash / ETH / Tübingen | feed-forward 3D 重建綜述，涵蓋 Point3R、IncVGGT、ZipMap 等串流／增量版本 |  | [GitHub](https://github.com/ziplab/Awesome-Feed-Forward-3D) | arXiv |
 | 2026-02 | [VGG-T³](https://arxiv.org/abs/2602.23361) · [專案頁](https://research.nvidia.com/labs/dvl/projects/vgg-ttt) | NVIDIA / Toronto | 大規模離線 feed-forward 重建 |  | [GitHub](https://github.com/nv-dvl/vgg-ttt) | CVPR 2026 |
 | 2025-11 | [AMB3R](https://arxiv.org/abs/2511.20343) · [專案頁](https://hengyiwang.github.io/projects/amber) | UCL | feed-forward 公制尺度重建 + 稀疏體素後端，不微調即可延伸到 VO／SLAM |  | [GitHub](https://github.com/HengyiWang/amb3r) | CVPR 2026 |
@@ -620,6 +623,8 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 
 | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-10 | [OASIS](https://arxiv.org/abs/2610.30589) · [專案頁](https://starry-curry-30.github.io/oasis-project) | Beihang Univ. | 以少量穩定語意錨點節點建立線上地圖，每個節點整合語意描述、視覺特徵與幾何，支援開放詞彙檢索並在場景變動後重新定位被移動的物件 |  | [GitHub](https://github.com/starry-curry-30/OASIS) | ACM MM 2026 |
+| 2026-10 | [AOV-GS](https://arxiv.org/abs/2610.29374) | MIPT / AIRI | 主動 3D Gaussian 建圖：以 SAM 實例的 CLIP 嵌入新穎度重排候選視角，不需人工標註遮罩 | 同樣 SAM-CLIP 下語言場 mIoU 比純幾何探索高 1.3 pp（Replica 34.6%）、1.8 pp（Matterport3D 23.1%） | [GitHub](https://github.com/OptimusFaber/AOV-GS) | AIST 2026 |
 | 2026-05 | [LEXI-SG](https://arxiv.org/abs/2605.13741) · [專案頁](https://ori-drs.github.io/lexisg-web/) | Oxford | 只用單眼 RGB 建開放詞彙 3D 場景圖，以房間為單位 feed-forward 重建 | 評估在 HM3D 與自錄辦公室序列，未做實機導航 | 未公開 | RA-L 2026 |
 
 ## 3D 偵測與分割（點雲骨幹、3D 偵測、語意／實例分割）
@@ -674,6 +679,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 
 | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-10 | [F2G-Pose](https://arxiv.org/abs/2610.31623) · [專案頁](https://jrryzh.github.io/F2G-Pose/) | Fudan Univ. / Shanghai Innovation Institute | 凍結 RADIO 基礎特徵抬升到局部點雲，單次 feed-forward 同時預測類別層級位姿、尺寸與補全形狀 | SOPE、ROPE 達 SOTA（作者自報）；位姿推論 28 FPS | [GitHub](https://github.com/jrryzh/F2G-Pose) | NeurIPS 2026 |
 
 ## 3D 空間理解（3D grounding、空間推理 VLM、3D-LLM）
 
@@ -732,6 +738,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 
 | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-10 | [P³-VLM](https://arxiv.org/abs/2610.28018) · [專案頁](https://p3vlm.insait.ai/) | INSAIT, Sofia Univ. | 指出 3D VLM 依賴 bounding box 造成語意洩漏，改用單一 3D 點當 prompt，三路徑（位置、任務、情境）架構、不需偵測器 | 點提示下 location-grounded captioning 52.1%（作者稱 SOTA）；盲 LLM 在 Nr3D 從 36.4% 降到 18.0% | 未公開 | NeurIPS 2026 |
 
 ## 電腦視覺（偵測、分割、視覺基礎模型）
 
