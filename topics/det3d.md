@@ -10,3 +10,4 @@
 
 | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-10 | [F2G-Pose](https://arxiv.org/abs/2610.31623) · [專案頁](https://jrryzh.github.io/F2G-Pose/) | Fudan Univ. / Shanghai Innovation Institute | 凍結 RADIO 基礎特徵抬升到局部點雲，單次 feed-forward 同時預測類別層級位姿、尺寸與補全形狀 | SOPE、ROPE 達 SOTA（作者自報）；位姿推論 28 FPS | [GitHub](https://github.com/jrryzh/F2G-Pose) | NeurIPS 2026 |
