@@ -315,6 +315,7 @@ reconstruction,2406.06521,PGSR,Zhejiang / SenseTime,TVCG 2024,,https://zju3dv.gi
 reconstruction,2503.14558,SuperPC,University at Buffalo,CVPR 2025,,,,,單一 diffusion 模型同時處理點雲補全、上採樣、去噪與上色，避免各任務串接誤差
 reconstruction,2503.16318,Dynamic Point Maps,Oxford VGG,ICCV 2025,,https://www.robots.ox.ac.uk/~vgg/research/dynamic-point-maps/,,,把 DUSt3R 的點圖擴展為帶時間的動態點圖，一次得到動態場景的幾何與運動
 reconstruction,2311.00626,nvblox,NVIDIA / ETH,ICRA 2024,nvidia-isaac/nvblox,,,推薦,GPU 加速的增量式 TSDF／ESDF 建圖，即時產出供路徑規劃用的距離場
+reconstruction,2610.30340,Foundation4D,NVIDIA,NVIDIA Research、arXiv,,https://research.nvidia.com/labs/sil/projects/foundation4d/,,推薦,多相機行車影片共用時空分解注意力骨幹，一次 feed-forward 出深度、3D 偵測、語意 occupancy 與高斯重建，預測的幾何與軌跡可當無 LiDAR 的 NuRec 重建先驗
 local-nav,2103.04918,Embodied AI Survey,A*STAR / NTU,TETCI 2022,,,,,從模擬器出發整理具身 AI 研究任務的綜述
 local-nav,2306.16740,Social Nav Eval Guidelines,未確認,THRI 2025,,,,,社交導航演算法評估的原則、指標與情境建議
 local-nav,2404.00210,VLM-Social-Nav,George Mason / UMD,RA-L 2025,,,,,用 VLM 打分當社交合規成本項引導導航
@@ -387,6 +388,7 @@ vision,2409.17146,Molmo,AI2 / University of Washington,CVPR 2025,allenai/molmo,,
 vision,2601.10611,Molmo2,AI2,CVPR 2026,allenai/molmo2,,,獲獎,把 Molmo 延伸到影片理解與時空 grounding，資料與權重全開放
 vision,2603.07060,GuideTWSI,UMass Amherst / UT Austin / Maine,ICRA 2026,,,,獲獎;基準,合成加真實的導盲磚分割資料集，用於視障者導航輔助
 vision,DOI:10.1109/ICRA57147.2024.10611342,Evidential OOD Segmentation,MIT / ARL,ICRA 2024,,,,獲獎,不需 OOD 樣本，以證據式深度學習估計語意分割的逐像素不確定性，偵測未知障礙
+vision,2601.18923,DeFM,ETH RSL / NVIDIA / UC Berkeley,T-RO 2026,leggedrobotics/defm,https://de-fm.github.io/,,推薦,DINO 式自蒸餾只在 6000 萬張深度圖上預訓練，加保留公制尺度的三通道正規化，再蒸餾成 3M 參數 CNN，凍結即可接導航、運動與操作策略
 real2sim,2405.05941,SIMPLER,UCSD / Stanford / Google DeepMind 等,CoRL 2024,simpler-env/SimplerEnv,,,基準;機構,縮小視覺與控制差距，用模擬評估真實操作策略
 real2sim,2410.00425,ManiSkill3,UCSD / Hillbot,arXiv,haosulab/ManiSkill,http://maniskill.ai/,,基準,GPU 平行模擬與渲染的通用操作平台
 real2sim,2506.09985,V-JEPA 2,Meta,arXiv,facebookresearch/vjepa2,,,機構,網路影片自監督預訓練，少量機器人資料即可規劃
