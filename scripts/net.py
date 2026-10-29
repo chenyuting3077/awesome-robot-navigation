@@ -8,7 +8,7 @@ import time
 import urllib.error
 import urllib.request
 
-UA = {"User-Agent": "robot-nav-survey/1.0 (https://github.com/chenyuting3077/robot-nav-survey)"}
+UA = {"User-Agent": "mobile-robot-survey/1.0 (https://github.com/chenyuting3077/mobile-robot-survey)"}
 
 
 def fetch(url: str, data: bytes | None = None, headers: dict | None = None, tries: int = 15) -> bytes:
