@@ -34,6 +34,7 @@ description: 更新這個論文整理 repo 時使用：定期（每週一、四�
 - 重要論文只放 `data/classics.csv`，不放主題檔。
   - `id`：arXiv 編號，沒有就寫 `DOI:...`；都沒有（部落格、技術報告）留空並填 `url`。
   - `repo` 只填官方 repo（`owner/name`），沒有留空；`project` 填專案頁，沒有留空。
+  - `sub`：slam、reconstruction 必填子分類，可用值在 `scripts/check_data.py` 的 `SUBS`；其他主題留空。
   - `tags` 是人工判斷的收錄理由：`獲獎`、`基準`、`機構`、`推薦`。「引用」「Star」「HF」由腳本依數據判斷；Science Robotics、T-RO 自動算「獲獎」。
 - 刊登處（`venue` 與「來源」欄）以 arXiv 的 Comments／journal_ref、專案頁、會議論文集為準，查不到就寫 `arXiv`，不憑記憶填。格式：會議或期刊縮寫加年份（`RSS 2026`、`RA-L 2026`）；只有預印本寫 `arXiv`；企業發表寫網站（`NVIDIA Research`），同時有 arXiv 就用頓號並列。會議、期刊名不寫進「重點」。年份以期刊卷號或論文集為準，不用 Semantic Scholar 的 arXiv 年份。
 

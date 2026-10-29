@@ -11,13 +11,14 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from harvest import THRESHOLD  # noqa: E402
-from check_data import check  # noqa: E402
+from check_data import SUBS, check  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 TOPICS = [
     "vln", "local-nav", "quadruped", "wheel-legged",
     "slam", "reconstruction", "perception-3d", "semantic-map", "det3d", "spatial", "vision", "real2sim",
 ]
+PAGES = {"quadruped", "wheel-legged"}
 STAR_BAR = 500  # 收錄條件「Star」
 HF_BAR = 20  # 收錄條件「HF」：約是 2026-10 候選中按讚數的前 15%
 
@@ -60,6 +61,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 - **期刊**：Science Robotics、RA-L、T-RO
 - **會議**：CoRL、RSS、ICRA、IROS、CVPR（接收論文公布時）
 """
+DOC_NOTE = "<!-- 本檔由 scripts/build_readme.py 產生，請改 topics/、data/ 後重跑 -->\n\n"
 
 
 def anchor(title: str) -> str:
@@ -135,14 +137,21 @@ def main() -> None:
     for name in TOPICS:
         text = (ROOT / "topics" / f"{name}.md").read_text().strip()
         title, body = text.split("\n", 1)
+        title = title.lstrip("# ").strip()
         problems, latest = body.split("## 最新論文", 1)
         problems = problems.replace("## 在解決的問題", "").strip()
         rows = [r for r in classics if r["topic"] == name]
-        parts = [f"## {title.lstrip('# ').strip()}", "### 在解決的問題", problems]
+        h = "#" if name in PAGES else "##"
+        parts = [f"{h} {title}", f"{h}# 在解決的問題", problems]
         if rows:
-            parts += [f"### 重要論文（資料日期 {metrics['fetched']}）", classics_table(rows, metrics)]
-        parts += ["### 最新論文", latest.strip()]
-        sections.append((title.lstrip("# ").strip(), "\n\n".join(parts)))
+            parts.append(f"{h}# 重要論文（資料日期 {metrics['fetched']}）")
+            for sub in SUBS.get(name, [""]):
+                group = [r for r in rows if r["sub"] == sub]
+                parts += ([f"{h}## {sub}"] if sub else []) + [classics_table(group, metrics)]
+        parts += [f"{h}# 最新論文", latest.strip()]
+        if name in PAGES:
+            (ROOT / "docs" / f"{name}.md").write_text(DOC_NOTE + "\n\n".join(parts) + "\n")
+        sections.append((title, name, "\n\n".join(parts)))
 
     digests = sorted((ROOT / "digests").glob("*.md"), reverse=True)
     latest = digests[0].read_text()
@@ -151,10 +160,10 @@ def main() -> None:
 
     out = [HEADER, f"最後更新：{updated}\n", "## 目錄\n"]
     out.append(f"- [本月趨勢（{digests[0].stem}）](#本月趨勢{anchor(digests[0].stem)})")
-    out += [f"- [{t}](#{anchor(t)})" for t, _ in sections]
+    out += [f"- [{t}](docs/{n}.md)" if n in PAGES else f"- [{t}](#{anchor(t)})" for t, n, _ in sections]
     out.append("- [月報](#月報)\n")
     out.append(f"## 本月趨勢（{digests[0].stem}）\n\n{trend}\n")
-    out += [f"{s}\n" for _, s in sections]
+    out += [f"{s}\n" for _, n, s in sections if n not in PAGES]
     out.append("## 月報\n")
     out += [f"- [{d.stem}](digests/{d.name})" for d in digests]
 

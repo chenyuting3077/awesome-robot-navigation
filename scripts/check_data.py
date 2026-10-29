@@ -12,6 +12,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TAGS = {"獲獎", "基準", "機構", "推薦"}
+SUBS = {
+    "slam": ["視覺與慣性里程計、SLAM", "LiDAR、雷達與多感測器融合", "NeRF／3DGS 稠密 SLAM", "地點辨識與重定位",
+             "點雲配準", "多機器人與長期地圖", "資料集、綜述與工具"],
+    "reconstruction": ["feed-forward 重建", "SfM 與相機位姿", "3DGS／NeRF 表示與渲染", "動態與 4D",
+                       "表面、TSDF 與點雲補全", "資料集與綜述"],
+}
 COLS = 7  # | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 ARXIV = re.compile(r"arxiv\.org/abs/(\d{4}\.\d{4,5})")
 DOI = re.compile(r"(?:doi\.org/|/doi/)(10\.\d{4,9}/[^\s)]+)")
@@ -78,6 +84,8 @@ def check_classics(topics, in_topics, errors):
         where = f"classics.csv 第 {n} 行（{r['name']}）"
         if r["topic"] not in topics:
             errors.append(f"{where}：topic「{r['topic']}」不在 TOPICS")
+        if r["sub"] not in SUBS.get(r["topic"], [""]):
+            errors.append(f"{where}：sub「{r['sub']}」不在 {r['topic']} 的子分類 {SUBS.get(r['topic'], ['（不分）'])}")
         for col in ("name", "org", "venue", "note"):
             if not r[col].strip():
                 errors.append(f"{where}：{col} 空白")
