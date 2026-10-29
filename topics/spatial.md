@@ -10,4 +10,5 @@
 
 | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 | --- | --- | --- | --- | --- | --- | --- |
+| 2026-10 | [ClusterSplat](https://arxiv.org/abs/2610.36462) · [專案頁](https://jaesung8.github.io/clustersplat/) | KAIST | 在 3DGS 中做 3D grounding，不用閾值或 top-ratio 過濾，改以語意叢集選出目標 Gaussian，同時輸出 2D 遮罩與 3D Gaussian 集合 | ScanRefer 3D mIoU 23.33、mAcc@0.25 43.38（作者稱優於 LangSplat、OpenGaussian） | 未公開 | NeurIPS 2026 |
 | 2026-10 | [P³-VLM](https://arxiv.org/abs/2610.28018) · [專案頁](https://p3vlm.insait.ai/) | INSAIT, Sofia Univ. | 指出 3D VLM 依賴 bounding box 造成語意洩漏，改用單一 3D 點當 prompt，三路徑（位置、任務、情境）架構、不需偵測器 | 點提示下 location-grounded captioning 52.1%（作者稱 SOTA）；盲 LLM 在 Nr3D 從 36.4% 降到 18.0% | 未公開 | NeurIPS 2026 |
