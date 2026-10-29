@@ -1,4 +1,4 @@
-# Robot Nav Survey
+# Mobile Robot Survey
 
 AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim 前沿論文整理，每週一、四自動更新。
 
