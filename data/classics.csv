@@ -508,7 +508,7 @@ spatial,2412.04383,SeeGround,HKUST(GZ) / NUS / A*STAR,CVPR 2025,iris0329/SeeGrou
 spatial,2504.20024,SpatialReasoner,Johns Hopkins 等,NeurIPS 2025,johnson111788/SpatialReasoner,https://spatial-reasoner.github.io,,,讓 VLM 推理時先寫出明確的 3D 位置與方向，再據此回答,
 spatial,2503.00513,Inst3D-LMM,Zhejiang,CVPR 2025,hanxunyu/Inst3D-LMM,,,,以實例為單位融合 2D 語意與 3D 幾何，一個模型做多種 3D 理解任務,
 semantic-map,2502.16652,Dr. Splat,POSTECH / KAIST / NVIDIA,CVPR 2025,kaist-ami/Dr-Splat,,,,把語言特徵直接登錄到 3D Gaussian 上，不必逐視角渲染特徵，查詢更快,
-semantic-map,2608.19059,LT-Mem,DGIST,IROS 2026,,,,獲獎;推薦,多 session SLAM 對齊物件後，依物件變動程度選擇覆寫、保留或多假設，保存跨 session 的物件身分與歷史，可回答「某物去過哪裡」,
+semantic-map,2608.19059,LT-Mem,DGIST,IROS 2026,yumin1102/LT-Mem,https://lt-mem.github.io/,,獲獎;推薦,多 session SLAM 對齊物件後，依物件變動程度選擇覆寫、保留或多假設，保存跨 session 的物件身分與歷史，可回答「某物去過哪裡」,
 semantic-map,2504.08603,FindAnything,TUM / Imperial,ICRA 2026,,,,獲獎,把視覺語言特徵併入物件中心的體素子地圖，即時、可擴展的開放詞彙探索建圖,
 semantic-map,2409.13682,ReMEmbR,NVIDIA / USC / UT Austin,ICRA 2025,NVIDIA-AI-IOT/remembr,https://nvidia-ai-iot.github.io/remembr/,,推薦,VILA 把機器人影片轉成帶位置與時間的描述存進向量資料庫，LLM 迴圈檢索回答長時間部署中的空間、時間與描述性問題,
 spatial,2507.12508,MindJourney,UMass Amherst / JHU / Microsoft 等,NeurIPS 2025,UMass-Embodied-AGI/MindJourney,https://umass-embodied-agi.github.io/MindJourney/,,,推理時用影片 world model 想像換視角後的畫面，提升 VLM 空間推理，不需重新訓練,
