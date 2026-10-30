@@ -586,7 +586,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用 | 2025 | [FunGraph](https://arxiv.org/abs/2503.07909) · [專案頁](https://fungraph.github.io) | Univ. of Stuttgart / Bonn | 偵測可操作部件的功能感知 3D 場景圖 | IROS 2025 | 31 | [19](https://github.com/DennisRotondi/FunGraph) |
 | 主流 | 引用 | 2025 | [OpenGS-SLAM](https://arxiv.org/abs/2503.01646) | BIT | Gaussian 投票濺射的開放集合物件級語意 SLAM | ICRA 2025 | 31 | [315](https://github.com/YOUNG-bit/open_semantic_slam) |
 | 新興 | 獲獎 | 2025 | [FindAnything](https://arxiv.org/abs/2504.08603) | TUM / Imperial | 把視覺語言特徵併入物件中心的體素子地圖，即時、可擴展的開放詞彙探索建圖 | ICRA 2026 | 16 | 未公開 |
-| 新興 | 獲獎、推薦 | 2026 | [LT-Mem](https://arxiv.org/abs/2608.19059) | DGIST | 多 session SLAM 對齊物件後，依物件變動程度選擇覆寫、保留或多假設，保存跨 session 的物件身分與歷史，可回答「某物去過哪裡」 | IROS 2026 | 0 | 未公開 |
+| 新興 | 獲獎、推薦 | 2026 | [LT-Mem](https://arxiv.org/abs/2608.19059) · [專案頁](https://lt-mem.github.io/) | DGIST | 多 session SLAM 對齊物件後，依物件變動程度選擇覆寫、保留或多假設，保存跨 session 的物件身分與歷史，可回答「某物去過哪裡」 | IROS 2026 | 0 | [0](https://github.com/yumin1102/LT-Mem) |
 
 ### 最新論文
 
