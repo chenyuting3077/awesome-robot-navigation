@@ -14,7 +14,7 @@ from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_readme import ROOT, STAR_BAR, paper_stats, tier  # noqa: E402
+from build_readme import ROOT, paper_stats, score, tier  # noqa: E402
 from harvest import THRESHOLD  # noqa: E402
 
 CAP = 30  # 2026-11 試算：受保護論文讓電腦視覺、3D 重建略超過 30
@@ -49,7 +49,7 @@ def main() -> None:
                 continue
             year, cites, stars = paper_stats(r, metrics)
             if year in THRESHOLD and tier(year, cites, stars) != "奠基":
-                pool.append((cites / THRESHOLD[year] + stars / STAR_BAR, r))
+                pool.append((score(year, cites, stars), r))
         pool.sort(key=lambda x: x[0])
         for score, r in pool[:max(0, n - CAP)]:
             moved[id(r)] = OVER

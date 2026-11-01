@@ -48,12 +48,12 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 推薦 | 人工推薦 |
 | 知名 | 人工認定的代表性方法，不封存也不佔主題上限 |
 
-候選由 `scripts/harvest.py` 依主題關鍵字從 Semantic Scholar 撈出，再人工確認相關性；頂會得獎名單另外逐一查官網補收。只有 arXiv 預印本的，只收[定期追蹤的來源](#定期追蹤的來源)名單內機構的論文，且首次公開超過一年仍未刊登就移出；官方 repo star ≥ 500 或人工推薦的除外。分級：**奠基** 引用達門檻 4 倍、star ≥ 10k，或 2021 年前的開創性論文；**主流** 達引用或 Star 條件；其餘（只符合獲獎、基準、機構、推薦、知名）為**新興**。「年」是 arXiv 首次公開年份，「來源」是正式刊登的會議或期刊。
+候選由 `scripts/harvest.py` 依主題關鍵字從 Semantic Scholar 撈出，再人工確認相關性；頂會得獎名單另外逐一查官網補收。只有 arXiv 預印本的，只收[定期追蹤的來源](#定期追蹤的來源)名單內機構的論文，且首次公開超過一年仍未刊登就移出；官方 repo star ≥ 500 或人工推薦的除外。分級：**奠基** 引用達門檻 4 倍、star ≥ 10k，或 2021 年前的開創性論文；**主流** 達引用或 Star 條件；其餘（只符合獲獎、基準、機構、推薦、知名）為**新興**。同一級內依分數（「引用 ÷ 該年門檻」加「star ÷ 500」）由高到低排序。「年」是 arXiv 首次公開年份，「來源」是正式刊登的會議或期刊。
 
 為了控制篇數，符合下列條件的論文移到[封存區](docs/archive.md)，不刪除；標「推薦」「基準」「知名」的不封存。
 
 - 新興論文公開滿兩個年度，引用與 star 都仍未滿 100。
-- 主題超過 30 篇時，封存分數最低的。分數是「引用 ÷ 該年門檻」加「star ÷ 500」，奠基論文與當年度論文不納入淘汰。
+- 主題超過 30 篇時，封存分數最低的，奠基論文與當年度論文不納入淘汰。
 
 ## 定期追蹤的來源
 
@@ -119,6 +119,12 @@ def tier(year: int, cites: int, stars: int) -> str:
     return "新興"
 
 
+def score(year: int, cites: int, stars: int) -> float:
+    # 門檻只定到 2021–2025，範圍外的年份用最接近的門檻，當年度與舊論文才排得進來
+    bar = THRESHOLD[min(max(year, min(THRESHOLD)), max(THRESHOLD))]
+    return cites / bar + stars / STAR_BAR
+
+
 def paper_link(r) -> str:
     if r["url"]:
         href = r["url"]
@@ -143,7 +149,7 @@ def classics_table(rows, metrics) -> str:
         upvotes = metrics.get("hf", {}).get(r["id"]) or 0
         items.append((r, year, cites, stars, upvotes, tier(year, cites, stars)))
     order = {"奠基": 0, "主流": 1, "新興": 2}
-    items.sort(key=lambda x: (order[x[5]], -x[2]))
+    items.sort(key=lambda x: (order[x[5]], -score(x[1], x[2], x[3])))
 
     lines = ["| 分級 | 理由 | 年 | 論文 | 機構 | 重點 | 來源 | 引用 | Star |",
              "|---|---|---|---|---|---|---|---|---|"]
