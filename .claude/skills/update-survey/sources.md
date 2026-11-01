@@ -22,7 +22,10 @@
      - Oxford VGG https://www.robots.ox.ac.uk/~vgg/ （3D 重建）、Oxford DRS https://dynamic.robots.ox.ac.uk （場景圖、SLAM）
      - Freiburg https://rl.uni-freiburg.de （場景圖）、TUM CVG https://cvg.cit.tum.de （SLAM、3D）
      - HKU MaRS https://mars.hku.hk （LiDAR SLAM）、浙大 FAST Lab https://github.com/ZJU-FAST-Lab （規劃）
-     - KAIST RaiLab https://railab.kaist.ac.kr （四足）
+     - KAIST RaiLab https://railab.kaist.ac.kr （四足）、KAIST Urban Robotics Lab https://urobot.kaist.ac.kr/ （LiDAR、SLAM）、SPARO Lab https://github.com/sparolab （LiDAR、SLAM）
+     - HKUST Aerial Robotics https://uav.hkust.edu.hk/ （SLAM、規劃）、OpenDriveLab https://opendrivelab.com （端到端、資料集，偏自駕，純自駕不收）、CUHK LaVi Lab https://github.com/LaVi-Lab （3D 空間理解）
+     - ZJU3DV https://github.com/zju3dv （3D 視覺、重建）、SYSU STAR https://robotics-star.com/ （導航、規劃）、清華 AIR Discover Lab https://github.com/AIR-DISCOVER （模擬、導航）、CUHK 深圳 GAP-LAB https://gaplab.cuhk.edu.cn/ （3D 重建）、HIT nROS-Lab https://github.com/HITSZ-NRSL （SLAM）
+     - ETH CVG https://cvg.ethz.ch （3D 視覺、SLAM）、Princeton VL https://pvl.cs.princeton.edu （SLAM、深度）、Bonn PRBonn https://www.ipb.uni-bonn.de （LiDAR、SLAM）、CMU LeCAR https://lecar-lab.github.io/ （足式控制）
    - 查法：看上列頁面近期發表，或 WebSearch `<機構> <主題關鍵字> <年月>`。
 1. **arXiv 新投稿**：
    - 主要用 RSS：`https://rss.arxiv.org/rss/cs.RO`、`https://rss.arxiv.org/rss/cs.CV`，一次請求拿到當天全部新投稿，再用下表關鍵字比對標題與摘要。RSS 只有當天，距上次更新超過一天的日子用下一項補。
