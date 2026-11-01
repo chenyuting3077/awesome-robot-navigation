@@ -25,6 +25,11 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 
 候選由 `scripts/harvest.py` 依主題關鍵字從 Semantic Scholar 撈出，再人工確認相關性；頂會得獎名單另外逐一查官網補收。只有 arXiv 預印本的，只收[定期追蹤的來源](#定期追蹤的來源)名單內機構的論文，且首次公開超過一年仍未刊登就移出；官方 repo star ≥ 500 或人工推薦的除外。分級：**奠基** 引用達門檻 4 倍、star ≥ 10k，或 2021 年前的開創性論文；**主流** 達引用或 Star 條件；其餘（只符合獲獎、基準、機構、推薦）為**新興**。「年」是 arXiv 首次公開年份，「來源」是正式刊登的會議或期刊。
 
+為了控制篇數，符合下列條件的論文移到[封存區](docs/archive.md)，不刪除；標「推薦」「基準」的不封存。
+
+- 新興論文公開滿兩個年度，引用與 star 都仍未滿 100。
+- 主題超過 60 篇時，封存分數最低的。分數是「引用 ÷ 該年門檻」加「star ÷ 500」，奠基論文與當年度論文不納入淘汰。
+
 ## 定期追蹤的來源
 
 完整查法與關鍵字見 [sources.md](.claude/skills/update-survey/sources.md)。
@@ -54,6 +59,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 - [3D 空間理解（3D grounding、空間推理 VLM、3D-LLM）](#3d-空間理解3d-grounding空間推理-vlm3d-llm)
 - [電腦視覺（偵測、分割、視覺基礎模型）](#電腦視覺偵測分割視覺基礎模型)
 - [模擬與 Real2Sim](#模擬與-real2sim)
+- [封存區](docs/archive.md)
 - [月報](#月報)
 
 ## 本月趨勢（2026-11）
@@ -90,9 +96,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用、Star、獲獎、推薦 | 2023 | [VLFM](https://arxiv.org/abs/2312.03275) · [專案頁](http://naoki.io/vlfm) | Boston Dynamics AI Institute | VLM 算語意價值地圖引導 frontier 探索，Spot 實機 zero-shot 物件導航 | ICRA 2024 | 453 | [826](https://github.com/bdaiinstitute/vlfm) |
 | 主流 | 引用 | 2021 | [HAMT](https://arxiv.org/abs/2110.13309) · [專案頁](https://cshizhe.github.io/projects/vln_hamt.html) | Inria / ENS | 階層式 ViT 編碼完整全景歷史取代 RNN 記憶 | NeurIPS 2021 | 434 | [152](https://github.com/cshizhe/VLN-HAMT) |
 | 主流 | 引用 | 2022 | [CoW (CLIP on Wheels)](https://arxiv.org/abs/2203.10421) · [專案頁](https://cow.cs.columbia.edu/) | Columbia | 把 CLIP 接上探索策略做 zero-shot 物件導航 | CVPR 2023 | 365 | [158](https://github.com/real-stanford/cow) |
-| 主流 | 引用 | 2022 | [ZSON](https://arxiv.org/abs/2206.12403) | Georgia Tech | CLIP 目標嵌入讓 ImageNav 策略零樣本找物件 | NeurIPS 2022 | 352 | [110](https://github.com/gunagg/zson) |
 | 主流 | 引用、獲獎 | 2022 | [DUET](https://arxiv.org/abs/2202.11742) · [專案頁](https://cshizhe.github.io/projects/vln_duet.html) | Inria / ENS / IIIT Hyderabad | 線上拓撲圖做全域規劃，搭配局部細粒度跨模態推理 | CVPR 2022 | 327 | [293](https://github.com/cshizhe/VLN-DUET) |
-| 主流 | 引用 | 2021 | [EmbCLIP](https://arxiv.org/abs/2111.09888) | AI2 | 只換 CLIP 視覺骨幹不加任務設計就超越多項導航基線 | CVPR 2022 | 304 | [131](https://github.com/allenai/embodied-clip) |
 | 主流 | 引用 | 2023 | [ETPNav](https://arxiv.org/abs/2304.03047) | UCAS / CASIA 等 | 連續環境 VLN 用線上拓撲圖做高層規劃 | TPAMI 2024 | 298 | [497](https://github.com/MarSaKi/ETPNav) |
 | 主流 | 引用 | 2023 | [ESC](https://arxiv.org/abs/2301.13166) | UC Santa Cruz / Samsung Research | LLM 常識轉成軟性邏輯約束引導 frontier 探索 | ICML 2023 | 298 | 未公開 |
 | 主流 | 引用 | 2024 | [Uni-NaVid](https://arxiv.org/abs/2412.06224) · [專案頁](https://pku-epic.github.io/Uni-NaVid/) | PKU | 一個 VLM 統一 VLN、物件導航、問答、跟人等導航任務 | RSS 2025 | 232 | [359](https://github.com/jzhzhang/Uni-NaVid) |
@@ -102,11 +106,8 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用 | 2023 | [GridMM](https://arxiv.org/abs/2307.12907) | ICT-CAS / UCAS | 動態成長的俯視網格記憶地圖結構化已訪環境 | ICCV 2023 | 205 | [107](https://github.com/MrZihan/GridMM) |
 | 主流 | 引用、獲獎、基準 | 2023 | [ScaleVLN](https://arxiv.org/abs/2307.15644) | Shanghai AI Lab / Adelaide / UNC 等 | 用 1200+ 場景合成 490 萬筆 VLN 訓練資料 | ICCV 2023 | 189 | [228](https://github.com/wz0919/ScaleVLN) |
 | 主流 | 引用 | 2024 | [MapGPT](https://arxiv.org/abs/2401.07314) · [專案頁](https://chen-judge.github.io/MapGPT/) | HKU / SYSU / Meituan | 線上拓撲地圖轉成提示讓 GPT 做全域路徑規劃 | ACL 2024 | 171 | [138](https://github.com/chen-judge/MapGPT) |
-| 主流 | 引用 | 2023 | [GOAT](https://arxiv.org/abs/2311.06430) | UIUC / CMU / Georgia Tech 等 | 多模態目標、終身記憶的通用導航系統，實機長時間部署 | RSS 2024 | 164 | 未公開 |
-| 主流 | 引用 | 2023 | [LGX](https://arxiv.org/abs/2303.03480) | UMD | LLM 序列決策加開放詞彙偵測找語言描述的目標物 | RA-L 2024 | 163 | [72](https://github.com/vdorbala/LGX) |
 | 主流 | 引用、基準 | 2024 | [GOAT-Bench](https://arxiv.org/abs/2404.06609) · [專案頁](https://mukulkhanna.github.io/goat-bench) | Georgia Tech / CMU / UIUC 等 | 多模態目標的終身導航基準 | CVPR 2024 | 155 | [165](https://github.com/Ram81/goat-bench) |
 | 主流 | 引用 | 2024 | [NavGPT-2](https://arxiv.org/abs/2407.12366) | Adelaide / Adobe / UNC 等 | 凍結 LLM 的 VLM 特徵接拓撲圖策略，保留可解釋推理 | ECCV 2024 | 153 | [257](https://github.com/GengzeZhou/NavGPT-2) |
-| 主流 | 引用 | 2023 | [PixNav](https://arxiv.org/abs/2309.10309) · [專案頁](https://sites.google.com/view/pixnav/) | Southeast Univ. / PKU / Shanghai AI Lab | 以像素為目標的導航技能銜接基礎模型與底層移動 | ICRA 2024 | 152 | [139](https://github.com/wzcai99/Pixel-Navigator) |
 | 主流 | 引用 | 2024 | [NavCoT](https://arxiv.org/abs/2403.07376) | SYSU / Huawei Noah's Ark | LLM 自我引導解耦推理（想像、篩選、預測）並參數高效微調 | TPAMI 2025 | 152 | [144](https://github.com/expectorlin/NavCoT) |
 | 主流 | 引用 | 2024 | [OpenFMNav](https://arxiv.org/abs/2402.10670) · [專案頁](https://yuxuank.com/OpenFMNav/) | PKU / Notre Dame | LLM 解析自由指令加 VLM 建語意地圖做開放集物件導航 | NAACL 2024 Findings | 135 | [64](https://github.com/yxKryptonite/OpenFMNav) |
 | 主流 | 引用、基準 | 2024 | [HM3D-OVON](https://arxiv.org/abs/2409.14296) · [專案頁](http://naoki.io/portfolio/ovon.html) | Georgia Tech / Meta | 379 類開放詞彙物件導航資料集與基準 | IROS 2024 | 123 | [149](https://github.com/naokiyokoyama/ovon) |
@@ -115,15 +116,11 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用 | 2025 | [NavFoM](https://arxiv.org/abs/2509.12129) · [專案頁](https://pku-epic.github.io/NavFoM-Web/) | PKU / Galbot / USTC 等 | 跨載具跨任務導航基礎模型，800 萬筆多機種資料訓練 | ICLR 2026 | 110 | 未公開 |
 | 主流 | 引用 | 2024 | [LH-VLN](https://arxiv.org/abs/2412.09082) · [專案頁](https://hcplab-sysu.github.io/LH-VLN/) | SYSU | 多階段長程 VLN 任務，含自動資料生成平台與基準 | CVPR 2025 | 107 | [267](https://github.com/HCPLab-SYSU/LH-VLN) |
 | 主流 | 引用 | 2024 | [AO-Planner](https://arxiv.org/abs/2407.05890) · [專案頁](https://chen-judge.github.io/AO-Planner/) | HKU / SYSU / Meituan | VLM 預測可行走路徑點，補上連續 VLN 底層控制 | AAAI 2025 | 106 | [49](https://github.com/chen-judge/AO-Planner) |
-| 主流 | 引用 | 2024 | [Mobility VLA](https://arxiv.org/abs/2407.07775) | Google DeepMind | 長脈絡 VLM 看導覽影片建拓撲圖，再照多模態指令導航 | CoRL 2024 | 103 | 未公開 |
 | 主流 | 引用 | 2024 | [Open-Nav](https://arxiv.org/abs/2409.18794) · [專案頁](https://sites.google.com/view/opennav) | Adelaide / SCUT | 開源 LLM 搭配時空 CoT 做連續環境零樣本 VLN | ICRA 2025 | 103 | [187](https://github.com/YanyuanQiao/Open-Nav) |
 | 主流 | 引用 | 2024 | [VER](https://arxiv.org/abs/2403.14158) | Zhejiang | 多視角 2D 特徵聚合成 3D 體素表示環境 | CVPR 2024 | 99 | [143](https://github.com/DefaultRui/VLN-VER) |
 | 主流 | 引用、推薦 | 2025 | [MapNav](https://arxiv.org/abs/2502.13451) | HKUST(GZ) / BAAI / Tsinghua | 標註語意俯視地圖取代歷史影格當 VLM 記憶 | ACL 2025 | 97 | [34](https://github.com/linglingxiansen/MapNav) |
 | 主流 | 引用、Star、HF、機構、推薦 | 2025 | [DualVLN](https://arxiv.org/abs/2512.08186) · [專案頁](https://internrobotics.github.io/internvla-n1-dualvln.github.io/) | Shanghai AI Lab / Zhejiang / Tsinghua 等 | VLM 慢速預測路徑點、輕量策略快速執行的雙系統 VLN | arXiv | 97 | [1,142](https://github.com/InternRobotics/InternNav) |
-| 主流 | 引用 | 2024 | [HNR](https://arxiv.org/abs/2404.01943) | ICT-CAS / UCAS | 神經輻射表示預測候選點未來特徵做前瞻探索 | CVPR 2024 | 94 | [110](https://github.com/MrZihan/HNR-VLN) |
 | 主流 | 引用 | 2025 | [MTU3D](https://arxiv.org/abs/2507.04047) · [專案頁](https://mtu3d.github.io) | Tsinghua / BIGAI / BIT 等 | 3D 視覺定位與主動探索合一，支援多種目標模態 | ICCV 2025 | 91 | [275](https://github.com/MTU3D/MTU3D) |
-| 主流 | 引用、獲獎 | 2024 | [PoliFormer](https://arxiv.org/abs/2406.20083) · [專案頁](https://poliformer.allen.ai) | AI2 | 大規模 RL 訓練 Transformer 策略，RGB 直接轉實機 | CoRL 2024 | 89 | [106](https://github.com/allenai/PoliFormer) |
-| 主流 | 引用 | 2024 | [GOAT (causal VLN)](https://arxiv.org/abs/2404.10241) | Tongji | 因果推論去除視覺、語言、歷史中的資料偏差 | CVPR 2024 | 86 | [104](https://github.com/CrystalSixone/VLN-GOAT) |
 | 主流 | 引用、推薦 | 2024 | [CA-Nav](https://arxiv.org/abs/2412.10137) · [專案頁](https://chenkehan21.github.io/CA-Nav-project/) | CASIA / UCAS | 零樣本 VLN-CE 拆成約束感知的子指令完成流程 | TPAMI 2025 | 81 | [85](https://github.com/Chenkehan21/CA-Nav-code) |
 | 主流 | 引用、Star | 2025 | [VLN-R1](https://arxiv.org/abs/2506.17221) · [專案頁](https://vlnr1.github.io) | Shanghai AI Lab / HKU | LVLM 以 GRPO 強化微調直接輸出連續導航動作 | arXiv | 79 | [544](https://github.com/Qi-Zhangyang/GPT4Scene-and-VLN-R1) |
 | 主流 | 引用 | 2025 | [ApexNav](https://arxiv.org/abs/2504.14478) · [專案頁](https://robotics-star.com/ApexNav) | HKUST(GZ) / SUSTech | 依語意線索強弱切換探索策略，目標中心融合抗誤檢 | RA-L 2025 | 76 | [474](https://github.com/SYSU-STAR/ApexNav) |
@@ -133,23 +130,15 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用、機構 | 2025 | [OmniVLA](https://arxiv.org/abs/2509.19480) · [專案頁](https://omnivla-nav.github.io/) | UC Berkeley / Toyota / Princeton | 語言、座標、影像多種目標模態共用的導航 VLA | ICRA 2026 | 61 | [362](https://github.com/NHirose/OmniVLA) |
 | 主流 | 引用 | 2025 | [VLN-PE](https://arxiv.org/abs/2507.13019) · [專案頁](https://crystalsixone.github.io/vln_pe.github.io/) | Tongji / Shanghai AI Lab / SJTU | 支援人形、四足、輪式的物理真實 VLN 平台與評測 | ICCV 2025 | 47 | 未公開 |
 | 主流 | 引用 | 2025 | [OctoNav](https://arxiv.org/abs/2506.09839) · [專案頁](https://buaa-colalab.github.io/OctoNav) | Beihang / NUS / PKU 等 | 多模態多能力自由指令基準，加先思考再行動的 R1 模型 | CVPR 2026 | 43 | [78](https://github.com/buaa-colalab/OctoNav-R1) |
-| 主流 | 引用 | 2025 | [SmartWay](https://arxiv.org/abs/2503.10069) · [專案頁](https://sxyxs.github.io/smartway/) | Adelaide | 強化路徑點預測器加可回溯的 MLLM 導航器 | IROS 2025 | 41 | [20](https://github.com/sxyxs/SmartWay-Code) |
 | 主流 | 引用、推薦 | 2025 | [CorrectNav](https://arxiv.org/abs/2508.10416) | PKU | 從錯誤軌跡自動產生自我修正資料反覆後訓練 | AAAI 2026 | 38 | [33](https://github.com/owlet914/CorrectNav) |
 | 主流 | 引用、獲獎 | 2025 | [Dynam3D](https://arxiv.org/abs/2505.11383) | NUS | 動態分層 3D token 當 VLM 輸入，隨環境更新 | NeurIPS 2025 | 37 | [95](https://github.com/MrZihan/Dynam3D) |
-| 主流 | 引用 | 2025 | [BeliefMapNav](https://arxiv.org/abs/2506.06487) | SJTU / UMich | 3D 體素信念地圖估計目標分布，結合序列路徑規劃 | NeurIPS 2025 | 34 | [51](https://github.com/ZiboKNOW/BeliefMapNav) |
-| 主流 | 引用 | 2025 | [OpenIN](https://arxiv.org/abs/2501.04279) · [專案頁](https://openin-nav.github.io) | BIT | 載體關係場景圖追蹤會移動的物件實例 | RA-L 2025 | 31 | 未公開 |
-| 主流 | 引用 | 2025 | [MoRE](https://arxiv.org/abs/2503.08007) | Zhejiang / Westlake / Monash 等 | 多 LoRA 專家 VLA 搭配 RL 微調，用混合品質資料 | ICRA 2025 | 30 | 未公開 |
-| 新興 | 獲獎 | 2022 | [ViKiNG](https://arxiv.org/abs/2202.11271) · [專案頁](https://sites.google.com/view/viking-release) | UC Berkeley | 學習式局部可通行性加上衛星圖、路網等地理提示做啟發式搜尋，實機走到公里級目標 | RSS 2022 | 115 | 未公開 |
 | 新興 | 推薦 | 2021 | [VLN Survey and Taxonomy](https://arxiv.org/abs/2108.11544) | 未確認 | VLN 任務分類與方法綜述 | Neural Computing and Applications 2024 | 91 | 未公開 |
 | 新興 | 推薦 | 2026 | [HSAN](https://arxiv.org/abs/2606.01565) | HUST / NTU / UCL | 分層語意場景圖加最佳傳輸做連續環境 VLN 規劃 | NeurIPS 2025 | 24 | 未公開 |
-| 新興 | 獲獎 | 2025 | [SocialNav](https://arxiv.org/abs/2511.21135) · [專案頁](https://amap-eai.github.io/SocialNav/) | Amap Alibaba | 「大腦-動作」階層架構，以 700 萬筆 SocNav 資料訓練遵守社會規範的導航基礎模型 | CVPR 2026 | 22 | 未公開 |
 | 新興 | 推薦 | 2025 | [MobileVLA-R1](https://arxiv.org/abs/2511.17889) · [專案頁](https://aigeeksgroup.github.io/MobileVLA-R1/) | PKU | CoT 對齊加 GRPO 讓四足 VLA 推理並連續控制 | ECCV 2026 | 16 | [118](https://github.com/AIGeeksGroup/MobileVLA-R1) |
 | 新興 | 推薦 | 2025 | [3D Gaussian Map VLN](https://arxiv.org/abs/2605.26500) | Zhejiang | 線上建 3D 高斯地圖並做開放集語意分組 | ICCV 2025 | 13 | [10](https://github.com/Gaozzzz/3D-Gaussian-Map-VLN) |
 | 新興 | 獲獎、推薦 | 2025 | [VL-Nav](https://arxiv.org/abs/2502.00931) | Univ. at Buffalo / CMU | 神經符號：3D 場景圖與影像記憶輔助 VLM 拆解任務 | IROS 2026 | 11 | 未公開 |
 | 新興 | 推薦 | 2026 | [NaVIDA](https://arxiv.org/abs/2601.18188) | SUSTech / MBZUAI / SpatialTemporal AI | 加入逆動力學監督，學動作如何改變觀測 | arXiv | 10 | [35](https://github.com/waynechu1021/NAVIDA) |
 | 新興 | 推薦 | 2026 | [HSGM](https://arxiv.org/abs/2606.00095) | ECNU / Bosch / KAUST | 分層語意幾何地圖把 3D 資訊轉成 VLM 可用格式 | CVPR 2026 | 10 | [41](https://github.com/Teacher-Tom/HSGM_public) |
-| 新興 | 獲獎 | 2024 | [MiniVLN](https://arxiv.org/abs/2409.18800) | CASIA | 兩階段漸進式知識蒸餾，小模型保有 VLN 表現以利部署 | ICRA 2025 | 10 | 未公開 |
-| 新興 | 獲獎 | 2023 | [Dynamic Navigation Goal from Dialogue](https://doi.org/10.1109/IROS55552.2023.10342509) | Shanghai Inst. of Tech. / Tsinghua 等 | 從自然語言對話中抽取會移動的目標（如人）的位置作為導航目標 | IROS 2023 | 7 | 未公開 |
 | 新興 | 推薦 | 2026 | [Uncertainty-Aware Gaussian Map](https://arxiv.org/abs/2605.26503) | Zhejiang / Huawei | 語意高斯地圖顯式建模幾何、語意、外觀不確定性 | arXiv | 4 | [10](https://github.com/Gaozzzz/Uncertainty-Aware-VLN) |
 | 新興 | 機構、推薦 | 2026 | [WildOS](https://arxiv.org/abs/2602.19308) · [專案頁](https://leggedrobotics.github.io/wildos/) | NASA JPL / ETH 等 | 戶外長程物件搜尋：稀疏導航圖加基礎模型可通行性推理 | T-FR 2026 | 3 | [159](https://github.com/nasa-jpl/nebula2-wildos) |
 | 新興 | 獲獎 | 2026 | [SoftNav](https://arxiv.org/abs/2607.14586) | Shandong / Zhejiang | 3D 場景改以 embedding token 直接注入 VLM，取代轉成文字描述 | IROS 2026 | 1 | 未公開 |
@@ -204,11 +193,8 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用、獲獎、機構 | 2025 | [FDM](https://arxiv.org/abs/2504.19322) · [專案頁](https://leggedrobotics.github.io/fdm.github.io/) | ETH / NVIDIA / MPI-IS | 學習感知前向動力學模型評估路徑安全性 | RSS 2025 | 32 | [360](https://github.com/leggedrobotics/fdm) |
 | 新興 | 獲獎 | 2021 | [Legged-Aerial Subterranean Exploration](https://arxiv.org/abs/2111.06482) | NTNU | 四足與無人機協同探索地下環境，以圖式規劃與通訊感知的資料交換分配探索 | ICRA 2022 | 122 | 未公開 |
 | 新興 | 獲獎、基準 | 2022 | [TartanDrive](https://arxiv.org/abs/2205.01791) | CMU AirLab | ATV 越野駕駛約 20 萬筆、7 種感測器的資料集，用於學習越野動力學模型 | ICRA 2022 | 108 | [127](https://github.com/castacks/tartan_drive) |
-| 新興 | 獲獎 | 2023 | [Sequential Neural Barriers](https://arxiv.org/abs/2307.03015) | （論文未列單位） | 依序學習神經控制障壁函數，動態障礙物數量增加時仍能擴展且對分布漂移較穩 | IROS 2023 | 29 | 未公開 |
 | 新興 | 獲獎 | 2025 | [Realm](https://arxiv.org/abs/2502.15162) | Chongqing / Sichuan / I2R | 未知環境中直接以感測資料建立視線連通約束，多機器人導航時保持彼此可見 | ICRA 2025 | 15 | 未公開 |
 | 新興 | 獲獎 | 2025 | [Arm-Pushing Interactive Navigation](https://arxiv.org/abs/2503.01474) | HKUST(GZ) / HKUST | 腿式機械臂學習用手臂推開障礙物，在窄空間開出較短路徑 | IROS 2025 | 13 | 未公開 |
-| 新興 | 獲獎 | 2022 | [Confidence-based Nav under Occlusion](https://doi.org/10.1109/ICRA46639.2022.9812090) | KAIST | 感測器被髒污遮擋時，以信心度驅動 RL 主動探索確保可見度 | ICRA 2022 | 12 | 未公開 |
-| 新興 | 獲獎 | 2024 | [Hiking Trail Navigation](https://arxiv.org/abs/2409.15671) | West Virginia University | 語意分割判斷步道、幾何分析判斷可通行，必要時可離開步道 | IROS 2025 | 4 | 未公開 |
 
 ### 最新論文
 
@@ -251,12 +237,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用、Star、獲獎 | 2024 | [MegaSaM](https://arxiv.org/abs/2412.04463) · [專案頁](https://mega-sam.github.io/) | Google DeepMind / UC Berkeley / Univ. of Michigan | 動態影片也能穩定估計相機與深度的 SLAM 系統 | CVPR 2025 | 268 | [1,367](https://github.com/mega-sam/mega-sam) |
 | 主流 | 引用、Star、獲獎 | 2024 | [AirSLAM](https://arxiv.org/abs/2408.03520) · [專案頁](https://sairlab.org/airslam/) | NTU / Univ. at Buffalo 等 | 學習式點線特徵搭配傳統後端的抗光照視覺 SLAM | T-RO 2025 | 123 | [1,211](https://github.com/sair-lab/AirSLAM) |
 | 主流 | 引用、Star | 2024 | [DPV-SLAM](https://arxiv.org/abs/2408.01654) | Princeton | DPVO 加上迴環的單 GPU 低記憶體深度視覺 SLAM | ECCV 2024 | 115 | [1,136](https://github.com/princeton-vl/DPVO) |
-| 主流 | 引用、獲獎 | 2025 | [OKVIS2-X](https://arxiv.org/abs/2510.04612) | TUM | 可選配稠密深度、LiDAR 與 GNSS 的關鍵幀 VI-SLAM | T-RO 2025 | 31 | [421](https://github.com/ethz-mrl/OKVIS2-X) |
-| 新興 | 獲獎 | 2022 | [EDPLVO](https://doi.org/10.1109/ICRA46639.2022.9812133) | Meituan / UNC / CMU | 把共線約束有效納入直接法，點線並用的高效直接視覺里程計 | ICRA 2022 | 40 | 未公開 |
-| 新興 | 獲獎 | 2024 | [MAC-VO](https://arxiv.org/abs/2409.09479) | CMU / SJTU | 學出度量感知的匹配不確定性，同時用來挑關鍵點與加權位姿圖殘差 | ICRA 2025 | 33 | 未公開 |
-| 新興 | 獲獎 | 2025 | [Back on Track](https://arxiv.org/abs/2504.14516) · [專案頁](https://wrchen530.github.io/projects/batrack/) | TUM / Oxford / Microsoft | 用 3D 點追蹤把動態點的運動拆成相機與物體分量，讓 BA 能直接處理動態影片 | ICCV 2025 | 26 | 未公開 |
-| 新興 | 獲獎 | 2022 | [Data-driven Event Feature Tracking](https://arxiv.org/abs/2211.12826) | UZH RPG | 第一個資料驅動的事件相機特徵追蹤器，有無影像幀都能用，自監督適應真實資料 | CVPR 2023、TPAMI 2025 | 16 | 未公開 |
-| 新興 | 獲獎 | 2024 | [Square-Root Filter VINS](https://doi.org/10.1109/ICRA57147.2024.10610916) | University of Delaware | 改用平方根共變異數濾波，在嵌入式裝置上更快且數值更穩 | ICRA 2024 | 10 | 未公開 |
+| 主流 | Star、獲獎 | 2024 | [MAC-VO](https://arxiv.org/abs/2409.09479) | CMU / SJTU | 學出度量感知的匹配不確定性，同時用來挑關鍵點與加權位姿圖殘差 | ICRA 2025 | 33 | [948](https://github.com/MAC-VO/MAC-VO) |
 | 新興 | 獲獎 | 2026 | [KISS-IMU](https://arxiv.org/abs/2603.06205) · [專案頁](https://sparolab.github.io/research/kiss_imu) | Inha University | 不需真值的自監督慣性里程計，以運動平衡學習與不確定性感知推論提升泛化 | ICRA 2026 | 1 | 未公開 |
 
 #### LiDAR、雷達與多感測器融合
@@ -270,20 +251,12 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用、Star | 2021 | [R3LIVE](https://arxiv.org/abs/2109.07982) | HKU MaRS | LiDAR-慣性-視覺緊耦合，即時彩色地圖 | ICRA 2022 | 428 | [2,475](https://github.com/hku-mars/r3live) |
 | 主流 | 引用、Star | 2022 | [Faster-LIO](https://doi.org/10.1109/LRA.2022.3152830) | HKU / Idriverplus 等 | 以平行稀疏增量體素取代 ikd-tree，LIO 更快 | RA-L 2022 | 423 | [1,645](https://github.com/gaoxiang12/faster-lio) |
 | 主流 | 引用、Star | 2021 | [F-LOAM](https://arxiv.org/abs/2107.00822) | NTU | 兩階段失真補償取代迭代的快速 LiDAR 里程計 | IROS 2021 | 403 | [1,145](https://github.com/wh200720041/floam) |
+| 主流 | Star、獲獎 | 2021 | [CT-ICP](https://arxiv.org/abs/2109.12979) | MINES ParisTech / Kitware | 每幀以起訖兩個位姿連續插值處理掃描畸變，加上回環偵測組成完整 LiDAR SLAM | ICRA 2022 | 295 | [908](https://github.com/jedeschaud/ct_icp) |
 | 主流 | 引用、Star、獲獎、推薦 | 2024 | [FAST-LIVO2](https://arxiv.org/abs/2408.14035) | HKU MaRS | LiDAR-慣性-視覺直接法緊耦合里程計 | T-RO 2025 | 282 | [4,780](https://github.com/hku-mars/FAST-LIVO2) |
 | 主流 | 引用、Star | 2023 | [Point-LIO](https://doi.org/10.1002/aisy.202200459) | HKU MaRS | 逐點更新的高頻寬 LIO，可承受劇烈運動與 IMU 飽和 | Advanced Intelligent Systems 2023 | 274 | [1,360](https://github.com/hku-mars/Point-LIO) |
 | 主流 | 引用、Star、獲獎 | 2024 | [PIN-SLAM](https://arxiv.org/abs/2401.09101) | Bonn | 點式隱式神經地圖可隨迴環彈性變形的 LiDAR SLAM | T-RO 2024 | 132 | [630](https://github.com/PRBonn/PIN_SLAM) |
 | 主流 | 引用、Star | 2024 | [iG-LIO](https://doi.org/10.1109/LRA.2024.3349915) | Zhejiang | 增量 GICP 緊耦合 LIO，兼顧速度與精度 | RA-L 2024 | 104 | [524](https://github.com/zijiechenrobotics/ig_lio) |
-| 主流 | 引用 | 2025 | [Adaptive-LIO](https://arxiv.org/abs/2503.05077) | 未確認 | 依環境自適應分段與地圖解析度的 LiDAR 慣性里程計 | IoT-J 2025 | 36 | [272](https://github.com/chengwei0427/Adaptive-LIO) |
-| 主流 | 引用 | 2025 | [Ground-Fusion++](https://arxiv.org/abs/2507.08364) | Chongqing / Nankai / ZJUT 等 | GNSS、RGB-D、LiDAR、IMU、輪速的模組化融合 | IROS 2025 | 34 | [228](https://github.com/sjtuyinjie/Ground-Fusion2) |
 | 主流 | 引用、Star | 2025 | [KISS-SLAM](https://arxiv.org/abs/2503.12660) | Bonn / Sapienza | 延續 KISS-ICP 免調參、泛化強的 LiDAR SLAM 基線 | IROS 2025 | 33 | [541](https://github.com/PRBonn/kiss-slam) |
-| 新興 | 獲獎 | 2021 | [CT-ICP](https://arxiv.org/abs/2109.12979) | MINES ParisTech / Kitware | 每幀以起訖兩個位姿連續插值處理掃描畸變，加上回環偵測組成完整 LiDAR SLAM | ICRA 2022 | 295 | 未公開 |
-| 新興 | 獲獎 | 2022 | [Localizability Estimation](https://arxiv.org/abs/2203.05698) | ETH RSL | 從點雲直接學習各方向的可定位性，隧道等退化場景提前偵測並調整 LiDAR 定位 | IROS 2022 | 53 | 未公開 |
-| 新興 | 獲獎 | 2021 | [Ground Encoding](https://arxiv.org/abs/2103.15317) | CMU | 把透地雷達訊號學成因子圖量測模型，不需事前地圖或 GPS 就能定位 | IROS 2021 | 20 | 未公開 |
-| 新興 | 獲獎 | 2021 | [Unsupervised LiDAR Features](https://arxiv.org/abs/2102.11261) | University of Toronto | 在高斯變分推論框架內非監督學習 LiDAR 特徵，與軌跡估計共用單一目標 | RA-L 2021 | 16 | 未公開 |
-| 新興 | 獲獎 | 2025 | [Ground-Optimized 4D Radar-Inertial Odometry](https://arxiv.org/abs/2502.08093) | SNU | 地面最佳化的雜訊濾除，加上以高斯過程連續積分速度的雷達慣性里程計 | ICRA 2025 | 13 | 未公開 |
-| 新興 | 獲獎 | 2021 | [Interval-Based Visual-LiDAR Fusion](https://doi.org/10.1109/LRA.2021.3057572) | Leibniz University Hannover | 以區間分析保守建模 LiDAR 距離指派給影像特徵的不確定性 | RA-L 2021 | 12 | 未公開 |
-| 新興 | 獲獎 | 2025 | [Doppler Correspondence](https://arxiv.org/abs/2502.11461) | UNIST / KAIST | 用 4D LiDAR／雷達的 Doppler 速度直接建立對應，掃描匹配不需迭代，在隧道、惡劣天氣更穩 | RSS 2025 | 6 | 未公開 |
 
 #### NeRF／3DGS 稠密 SLAM
 
@@ -297,7 +270,6 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用、Star | 2022 | [NeRF-SLAM](https://arxiv.org/abs/2210.13641) | MIT SPARK | 稠密單目 SLAM 提供位姿與深度不確定度即時訓練 NeRF | IROS 2023 | 397 | [1,266](https://github.com/ToniRV/NeRF-SLAM) |
 | 主流 | 引用 | 2023 | [Co-SLAM](https://arxiv.org/abs/2304.14377) · [專案頁](https://hengyiwang.github.io/projects/CoSLAM) | UCL | 座標編碼與雜湊網格混合表示的神經 RGB-D SLAM | CVPR 2023 | 389 | [475](https://github.com/HengyiWang/Co-SLAM) |
 | 主流 | 引用 | 2023 | [Point-SLAM](https://arxiv.org/abs/2304.04278) | ETH / KU Leuven / Univ. of Amsterdam | 依資訊密度動態佈點的神經點雲稠密 SLAM | ICCV 2023 | 326 | [486](https://github.com/eriksandstroem/Point-SLAM) |
-| 主流 | 引用 | 2022 | [ESLAM](https://arxiv.org/abs/2211.11704) · [專案頁](https://www.idiap.ch/paper/eslam/) | Idiap / EPFL / ams OSRAM | 多尺度軸對齊特徵平面表示 SDF 的高效稠密 SLAM | CVPR 2023 | 306 | [224](https://github.com/idiap/ESLAM) |
 | 主流 | 引用、Star | 2023 | [Photo-SLAM](https://arxiv.org/abs/2311.16728) · [專案頁](https://huajianup.github.io/research/Photo-SLAM/) | HKUST / SYSU | 特徵點定位搭配超原語 Gaussian 的即時寫實建圖 | CVPR 2024 | 293 | [780](https://github.com/HuajianUP/Photo-SLAM) |
 | 主流 | 引用、Star | 2023 | [Gaussian-SLAM](https://arxiv.org/abs/2312.10070) · [專案頁](https://vladimiryugay.github.io/gaussian_slam) | Univ. of Amsterdam | 子地圖組織 3D Gaussian 的可擴展寫實 RGB-D SLAM | arXiv | 278 | [1,185](https://github.com/VladimirYugay/Gaussian-SLAM) |
 | 主流 | 引用、獲獎 | 2023 | [NICER-SLAM](https://arxiv.org/abs/2302.03594) · [專案頁](https://nicer-slam.github.io) | ETH / MPI-IS / Lund 等 | 僅用 RGB 並以單目先驗監督的神經隱式稠密 SLAM | 3DV 2024 | 277 | [217](https://github.com/cvg/nicer-slam) |
@@ -305,16 +277,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用、Star | 2024 | [SGS-SLAM](https://arxiv.org/abs/2402.03246) | DUT / Univ. of Tokyo / Columbia 等 | 多通道優化外觀幾何語意的 Gaussian 語意 SLAM | ECCV 2024 | 204 | [730](https://github.com/ShuhongLL/SGS-SLAM) |
 | 主流 | 引用、Star | 2024 | [GS-ICP SLAM](https://arxiv.org/abs/2403.12550) | SKKU | G-ICP 與 3DGS 共用 Gaussian 地圖的高速 SLAM | ECCV 2024 | 140 | [540](https://github.com/Lab-of-AI-and-Robotics/GS_ICP_SLAM) |
 | 主流 | 引用 | 2024 | [Splat-SLAM](https://arxiv.org/abs/2405.16544) | Google / ETH / Univ. of Amsterdam 等 | 全域優化追蹤並隨之變形 Gaussian 地圖的純 RGB SLAM | CVPRW 2025 | 121 | [363](https://github.com/google-research/Splat-SLAM) |
-| 主流 | 引用 | 2024 | [LoopSplat](https://arxiv.org/abs/2408.10154) · [專案頁](https://loopsplat.github.io/) | Stanford / Univ. of Amsterdam / ETH | 直接配準 3DGS 子地圖做迴環的 Gaussian SLAM | 3DV 2025 | 107 | [400](https://github.com/GradientSpaces/LoopSplat) |
-| 主流 | 引用 | 2024 | [CG-SLAM](https://arxiv.org/abs/2403.16095) · [專案頁](https://zju3dv.github.io/cg-slam) | Zhejiang | 不確定度感知且幾何一致的 Gaussian 場 RGB-D SLAM | ECCV 2024 | 104 | [125](https://github.com/hjr37/CG-SLAM) |
 | 主流 | 引用、Star | 2025 | [WildGS-SLAM](https://arxiv.org/abs/2504.03886) · [專案頁](https://wildgs-slam.github.io/) | ETH / Microsoft / Stanford | DINOv2 不確定度圖剔除動態物的單目 3DGS SLAM | CVPR 2025 | 100 | [658](https://github.com/GradientSpaces/WildGS-SLAM) |
-| 主流 | 引用 | 2024 | [LIV-GaussMap](https://arxiv.org/abs/2401.14857) | HKUST / HKUST (GZ) 等 | LiDAR 慣性視覺融合的即時 Gaussian 輻射場建圖 | RA-L 2024 | 81 | [160](https://github.com/sheng00125/LIV-GaussMap) |
-| 主流 | 引用 | 2025 | [S3PO-GS](https://arxiv.org/abs/2507.03737) · [專案頁](https://3dagentworld.github.io/S3PO-GS/) | HKUST (GZ) | 以 3DGS 點圖錨定追蹤避免尺度漂移的戶外單目 SLAM | ICCV 2025 | 36 | [138](https://github.com/3DAgentWorld/S3PO-GS) |
-| 主流 | 引用、Star、獲獎、機構 | 2025 | [GS-LIVO](https://arxiv.org/abs/2501.08672) | HKUST / HKU MaRS / SJTU | 可在嵌入式即時運行的 LiDAR 慣性視覺 Gaussian 建圖 | T-RO 2025 | 32 | [505](https://github.com/HKUST-Aerial-Robotics/GS-LIVO) |
-| 主流 | 引用 | 2025 | [OpenGS-SLAM (outdoor)](https://arxiv.org/abs/2502.15633) · [專案頁](https://3dagentworld.github.io/opengs-slam/) | HKUST (GZ) | 點圖回歸加自適應尺度的戶外純 RGB Gaussian SLAM | ICRA 2025 | 32 | [215](https://github.com/3DAgentWorld/OpenGS-SLAM) |
-| 主流 | 引用、獲獎 | 2025 | [VINGS-Mono](https://arxiv.org/abs/2501.08286) · [專案頁](https://vings-mono.github.io/) | Fudan | 視覺慣性單目 Gaussian SLAM 擴展到公里級戶外 | T-RO 2025 | 31 | [306](https://github.com/Fudan-MAGIC-Lab/VINGS-Mono) |
-| 新興 | 獲獎 | 2023 | [NGEL-SLAM](https://arxiv.org/abs/2311.09525) | Zhejiang | 特徵式追蹤加回環確保全域一致，多個神經隱式子地圖做低延遲稠密建圖 | ICRA 2024 | 39 | 未公開 |
-| 新興 | 獲獎 | 2023 | [iMODE](https://doi.org/10.1109/ICRA48891.2023.10161538) | Imperial | 以稀疏 SLAM 位姿與深度監督，即時從頭訓練單目稠密語意神經場 | ICRA 2023 | 16 | 未公開 |
 
 #### 地點辨識與重定位
 
@@ -322,52 +285,33 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 |---|---|---|---|---|---|---|---|---|
 | 主流 | 引用、Star | 2021 | [Patch-NetVLAD](https://arxiv.org/abs/2103.01486) | QUT | 從 NetVLAD 殘差取多尺度局部描述子做地點辨識重排序 | CVPR 2021 | 497 | [601](https://github.com/QVPR/Patch-NetVLAD) |
 | 主流 | 引用、Star | 2021 | [PixLoc](https://arxiv.org/abs/2103.09213) · [專案頁](https://psarlin.com/pixloc/) | ETH / Chalmers / Microsoft 等 | 對齊多尺度深度特徵的場景無關相機定位 | CVPR 2021 | 360 | [802](https://github.com/cvg/pixloc) |
-| 主流 | 引用、獲獎、機構 | 2021 | [Scan Context++](https://arxiv.org/abs/2109.13494) | KAIST / NAVER LABS / SNU | 對旋轉與橫向位移穩健的 LiDAR 結構地點描述子 | T-RO 2022 | 358 | [347](https://github.com/gisbi-kim/scancontext_tro) |
 | 主流 | 引用 | 2023 | [MixVPR](https://arxiv.org/abs/2303.02190) | Laval | 以 MLP 特徵混合聚合全域描述子的視覺地點辨識 | WACV 2023 | 322 | [337](https://github.com/amaralibey/MixVPR) |
 | 主流 | 引用、Star | 2023 | [AnyLoc](https://arxiv.org/abs/2308.00688) · [專案頁](https://anyloc.github.io/) | CMU / IIIT | 用基礎模型特徵做通用視覺地點辨識 | RA-L 2024 | 321 | [646](https://github.com/AnyLoc/AnyLoc) |
 | 主流 | 引用 | 2023 | [SALAD](https://arxiv.org/abs/2311.15937) | Zaragoza | 以最佳傳輸與 dustbin 重構 NetVLAD 聚合 | CVPR 2024 | 257 | [385](https://github.com/serizba/salad) |
-| 主流 | 引用 | 2023 | [EigenPlaces](https://arxiv.org/abs/2308.10832) | PoliTo | 依主成分方向分群取多視角訓練的視角穩健 VPR | ICCV 2023 | 181 | [163](https://github.com/gmberton/EigenPlaces) |
-| 主流 | 引用 | 2023 | [R2Former](https://arxiv.org/abs/2304.03410) | ByteDance / UCF | 單一 Transformer 統一檢索與重排序的地點辨識 | CVPR 2023 | 171 | [104](https://github.com/bytedance/R2Former) |
-| 主流 | 引用 | 2024 | [CricaVPR](https://arxiv.org/abs/2402.19231) | Tsinghua / Peng Cheng Lab / UCAS | 批次內跨影像注意力學習相關性感知的 VPR 表示 | CVPR 2024 | 116 | [173](https://github.com/Lu-Feng/CricaVPR) |
-| 主流 | 引用 | 2024 | [BoQ](https://arxiv.org/abs/2405.07364) | Laval | 以一組可學習全域查詢聚合特徵的單階段 VPR | CVPR 2024 | 106 | [195](https://github.com/amaralibey/bag-of-queries) |
-| 主流 | 引用 | 2024 | [SelaVPR](https://arxiv.org/abs/2402.14505) | Tsinghua / Peng Cheng Lab / UCAS | 以輕量 adapter 做全域與局部調適的基礎模型 VPR | ICLR 2024 | 101 | [269](https://github.com/Lu-Feng/SelaVPR) |
-| 主流 | 引用、獲獎 | 2024 | [BTC](https://doi.org/10.1109/TRO.2024.3353076) | HKU MaRS | 二值 + 三角形組合描述子的 3D LiDAR 地點辨識 | T-RO 2024 | 84 | [373](https://github.com/hku-mars/btc_descriptor) |
 | 主流 | 引用 | 2025 | [MegaLoc](https://arxiv.org/abs/2502.17237) | PoliTo / Focoos AI | 合併多資料集訓練的通用影像檢索定位模型 | CVPRW 2025 | 83 | [311](https://github.com/gmberton/MegaLoc) |
-| 新興 | 獲獎 | 2023 | [Semantic Object Map Localization](https://arxiv.org/abs/2303.04658) | MIT | 以物件語意地圖做跨視角配準，不依賴道路特徵，在非都市環境做全域定位與重定位 | IROS 2023 | 16 | 未公開 |
-| 新興 | 獲獎 | 2024 | [Censible](https://doi.org/10.1109/ICRA57147.2024.10611697) | Caltech / JPL | 行星車全域定位框架，取代人工比對軌道影像 | ICRA 2024 | 13 | 未公開 |
-| 新興 | 獲獎 | 2023 | [Cross-View Place Recognition](https://doi.org/10.1109/IROS55552.2023.10341898) | University of Maryland | 保留視覺、空間、幾何資訊的語意地點辨識，用於空地協同的跨視角跨模態定位 | IROS 2023 | 10 | 未公開 |
 
 #### 點雲配準
 
 | 分級 | 理由 | 年 | 論文 | 機構 | 重點 | 來源 | 引用 | Star |
 |---|---|---|---|---|---|---|---|---|
 | 主流 | 引用、Star | 2022 | [GeoTransformer](https://arxiv.org/abs/2202.06688) | NUDT / TUM 等 | 以超點間的幾何結構編碼做無關鍵點匹配，低重疊配準不需 RANSAC 也很穩 | CVPR 2022 | 518 | [984](https://github.com/qinzheng93/GeoTransformer) |
-| 主流 | 引用 | 2021 | [PointDSC](https://arxiv.org/abs/2103.05465) | HKUST / CityU | 把空間一致性做成可學習的離群點剔除，提升特徵式點雲配準的穩健度 | CVPR 2021 | 399 | 未公開 |
-| 主流 | 引用 | 2021 | [CoFiNet](https://arxiv.org/abs/2110.14076) | NUDT / TUM / Siemens | 由粗到細的對應：先在超點層級匹配再細化到點，不依賴重複性關鍵點 | NeurIPS 2021 | 376 | 未公開 |
-| 主流 | 引用 | 2022 | [REGTR](https://arxiv.org/abs/2203.14517) | NUS | 用 transformer 直接輸出對應點，免最近鄰匹配與 RANSAC，端到端點雲配準 | CVPR 2022 | 315 | 未公開 |
 | 主流 | 引用、Star、獲獎 | 2023 | [MAC (Maximal Cliques)](https://arxiv.org/abs/2305.10854) | Northwestern Polytechnical | 放寬最大團限制，從相容圖中挖出多個極大團產生位姿假設，點雲配準更穩 | CVPR 2023 | 220 | [545](https://github.com/zhangxy0517/3D-Registration-with-Maximal-Cliques) |
-| 新興 | 獲獎 | 2025 | [FUSER](https://arxiv.org/abs/2512.09373) | NTU / Nanjing / Nankai / Alibaba | 一次處理所有掃描直接回歸全域位姿，免成對匹配，再以 SE(3)^N diffusion 精修 | CVPR 2026 | 6 | 未公開 |
-| 新興 | 獲獎 | 2023 | [GMCR](https://arxiv.org/abs/2303.04032) | TUM / Glasgow / Radboud | 以圖式最大共識估計做點雲配準，在高離群比例下仍穩健 | ICRA 2023 | 6 | 未公開 |
 
 #### 多機器人與長期地圖
 
 | 分級 | 理由 | 年 | 論文 | 機構 | 重點 | 來源 | 引用 | Star |
 |---|---|---|---|---|---|---|---|---|
 | 主流 | 引用、Star、機構 | 2021 | [Kimera](https://arxiv.org/abs/2101.06894) | MIT SPARK | 從度量語意 SLAM 建出分層 3D 動態場景圖 | IJRR 2021 | 413 | [2,141](https://github.com/MIT-SPARK/Kimera) |
-| 主流 | 引用、獲獎 | 2021 | [Kimera-Multi](https://arxiv.org/abs/2106.14386) | MIT SPARK | 多機器人分散式度量-語意 SLAM | T-RO 2022 | 350 | [417](https://github.com/MIT-SPARK/Kimera-Multi) |
 | 主流 | 引用、Star | 2023 | [Swarm-SLAM](https://arxiv.org/abs/2301.06230) · [專案頁](https://lajoiepy.github.io/cslam_documentation/html/index.html) | Polytechnique Montréal | 稀疏去中心化的多機器人協作 SLAM | RA-L 2024 | 217 | [715](https://github.com/MISTLab/Swarm-SLAM) |
 | 主流 | 引用、Star、獲獎、機構 | 2024 | [Khronos](https://arxiv.org/abs/2402.13817) | MIT SPARK | 統一處理短期動態與長期變化的時空度量語意 SLAM | RSS 2024 | 99 | [547](https://github.com/MIT-SPARK/Khronos) |
-| 新興 | 獲獎 | 2023 | [MESA](https://arxiv.org/abs/2310.12320) | CMU | 在流形上的共識 ADMM 後端，多機器人非同步分散式最佳化 SLAM | ICRA 2024 | 20 | 未公開 |
 
 #### 資料集、綜述與工具
 
 | 分級 | 理由 | 年 | 論文 | 機構 | 重點 | 來源 | 引用 | Star |
 |---|---|---|---|---|---|---|---|---|
-| 主流 | 引用、獲獎 | 2022 | [Active SLAM Survey](https://arxiv.org/abs/2207.00254) | Zaragoza / MIT SPARK / UCSD 等 | 主動 SLAM 與多機器人協作探索的綜述 | T-RO 2023 | 367 | 未公開 |
 | 主流 | 引用、Star、基準 | 2021 | [M2DGR](https://arxiv.org/abs/2112.13659) | SJTU | 地面機器人多感測器多場景 SLAM 資料集 | RA-L 2022 | 318 | [1,215](https://github.com/SJTU-ViSYS/M2DGR) |
 | 主流 | 引用、獲獎 | 2024 | [SLAM in Extreme Environments (SubT)](https://doi.org/10.1109/TRO.2023.3323938) | NASA JPL / CMU / ETH 等 | DARPA SubT 各隊 SLAM 系統與地下環境經驗總整理 | T-RO 2024 | 240 | 未公開 |
-| 主流 | 引用 | 2023 | [LiDAR Odometry Survey](https://arxiv.org/abs/2312.17487) | SNU | 依感測器融合方式分類的 LiDAR 里程計綜述 | Intelligent Service Robotics 2024 | 152 | 未公開 |
-| 主流 | 引用、獲獎 | 2024 | [NeRF/3DGS SLAM Survey](https://arxiv.org/abs/2402.13255) | Bologna / ETH / Univ. of Amsterdam 等 | NeRF 與 3DGS 在 SLAM 應用的綜述 | T-RO 2026 | 145 | 未公開 |
+| 主流 | 引用、Star、獲獎 | 2024 | [NeRF/3DGS SLAM Survey](https://arxiv.org/abs/2402.13255) | Bologna / ETH / Univ. of Amsterdam 等 | NeRF 與 3DGS 在 SLAM 應用的綜述 | T-RO 2026 | 145 | [2,157](https://github.com/doongli/awesome-implicit-nerf-slam) |
 | 主流 | 引用、基準 | 2024 | [MCD](https://arxiv.org/abs/2403.11496) | NTU / KTH 等 | 跨歐亞三校園多感測器且含語意標註的資料集 | CVPR 2024 | 99 | 未公開 |
 | 主流 | 引用、推薦 | 2025 | [LiDAR-IMU-Camera Fusion SLAM Review](https://doi.org/10.1007/s10462-025-11187-w) | 未確認 | LiDAR、IMU、相機融合 SLAM 的系統性綜述 | Artificial Intelligence Review 2025 | 75 | 未公開 |
 | 新興 | 獲獎、基準 | 2021 | [VIODE](https://arxiv.org/abs/2102.05965) | EPFL / Tokyo | 模擬無人機在漸增動態物體場景中的 VIO 資料集，專測動態環境穩健度 | RA-L 2021 | 63 | 未公開 |
@@ -436,9 +380,6 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用、Star | 2023 | [VGGSfM](https://arxiv.org/abs/2312.04563) · [專案頁](https://vggsfm.github.io/) | Oxford VGG / Meta | 全流程可微分的深度 SfM，取代增量式配對與三角化 | CVPR 2024 | 289 | [1,429](https://github.com/facebookresearch/vggsfm) |
 | 主流 | 引用、Star、獲獎 | 2024 | [MASt3R-SfM](https://arxiv.org/abs/2409.19152) | Naver Labs Europe | 以 MASt3R 匹配與檢索建構免調參的全整合 SfM | 3DV 2025 | 202 | [3,134](https://github.com/naver/mast3r) |
 | 主流 | 引用 | 2025 | [Light3R-SfM](https://arxiv.org/abs/2501.14914) | NVIDIA / Vector Institute / Univ. of Toronto | 以可學習潛在全域對齊取代 BA 的前向 SfM | CVPR 2025 | 53 | 未公開 |
-| 新興 | 獲獎 | 2021 | [Learning to Solve Hard Minimal Problems](https://arxiv.org/abs/2112.03424) | Georgia Tech / CTU Prague | 學習挑選起始問題解對做同倫延拓，只算出需要的那個解，大幅加速難的最小問題求解 | CVPR 2022 | 42 | 未公開 |
-| 新興 | 獲獎 | 2025 | [FastMap](https://arxiv.org/abs/2505.04612) · [專案頁](https://jiahao.ai/fastmap) | TTIC / Toyota Research Institute | 只用一階最佳化的全域 SfM，GPU 上比 COLMAP、GLOMAP 快約 10 倍、位姿精度相當 | 3DV 2026 | 7 | 未公開 |
-| 新興 | 獲獎 | 2025 | [Anisotropic Rotation Averaging](https://arxiv.org/abs/2503.07353) | Lund / Chalmers | 把量測的各向異性不確定性放進旋轉平均，並給出可驗證全域最優的鬆弛解 | ICCV 2025 | 3 | 未公開 |
 | 新興 | 獲獎 | 2026 | [Global-Aware Edge Prioritization](https://arxiv.org/abs/2602.21963) | CTU Prague / ETH | SfM 位姿圖初始化時考慮全域一致性來挑選候選邊，取代只看 kNN 檢索 | CVPR 2026 | 1 | 未公開 |
 
 #### 3DGS／NeRF 表示與渲染
@@ -483,7 +424,6 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用、Star | 2023 | [AdaPoinTr](https://arxiv.org/abs/2301.04545) | Tsinghua | PoinTr 加自適應查詢與去噪任務，補全更快更準，並延伸到場景級補全 | TPAMI 2023 | 192 | [868](https://github.com/yuxumin/PoinTr) |
 | 主流 | 引用、Star、推薦 | 2023 | [NKSR](https://arxiv.org/abs/2305.19590) · [專案頁](https://research.nvidia.com/labs/toronto-ai/NKSR/) | NVIDIA | 以神經核場從帶雜訊的大規模點雲重建表面，稀疏體素加梯度擬合，可一次處理整個場景並泛化到未見過的資料 | CVPR 2023 | 156 | [1,002](https://github.com/nv-tlabs/nksr) |
 | 主流 | Star、推薦 | 2023 | [nvblox](https://arxiv.org/abs/2311.00626) · [專案頁](https://nvidia-isaac.github.io/nvblox) | NVIDIA / ETH | GPU 加速的增量式 TSDF／ESDF 建圖，即時產出供路徑規劃用的距離場 | ICRA 2024 | 98 | [1,324](https://github.com/nvidia-isaac/nvblox) |
-| 主流 | 引用 | 2025 | [SuperPC](https://arxiv.org/abs/2503.14558) | University at Buffalo | 單一 diffusion 模型同時處理點雲補全、上採樣、去噪與上色，避免各任務串接誤差 | CVPR 2025 | 30 | 未公開 |
 
 #### 資料集與綜述
 
@@ -550,8 +490,6 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用、推薦 | 2025 | [MVSAnywhere](https://arxiv.org/abs/2503.22430) · [專案頁](https://nianticlabs.github.io/mvsanywhere/) | Niantic / Univ. of Zaragoza / UCL 等 | 可變視角數並自估深度範圍的零樣本多視角立體 | CVPR 2025 | 37 | [341](https://github.com/nianticlabs/mvsanywhere) |
 | 主流 | 引用 | 2025 | [MonSter++](https://arxiv.org/abs/2501.08643) | HUST | 單眼深度先驗雙分支融合，統一雙目與多視角立體 | TPAMI 2026 | 37 | 未公開 |
 | 主流 | 引用 | 2025 | [EmbodiedOcc++](https://arxiv.org/abs/2504.09540) · [專案頁](https://pkuhaowang.github.io/EmbodiedOcc2/) | PKU | 平面正則與不確定性取樣改進室內高斯佔據預測 | ACM MM 2025 | 34 | [33](https://github.com/PKUHaoWang/EmbodiedOcc2) |
-| 新興 | 獲獎 | 2021 | [Binary TTC](https://arxiv.org/abs/2101.04777) | NVIDIA / UCSB | 把碰撞時間估計改成逐像素二元分類（是否在時限內碰撞），單目、免校正即可當時間柵欄 | CVPR 2021 | 40 | 未公開 |
-| 新興 | 獲獎 | 2021 | [Neural Disparity Refinement](https://arxiv.org/abs/2110.15367) · [專案頁](https://cvlab-unibo.github.io/neural-disparity-refinement-web) | Bologna | 連續式視差精修網路，可輸出任意解析度，適合手機上高低解析度不對稱的雙目 | 3DV 2021 | 34 | 未公開 |
 | 新興 | 獲獎 | 2025 | [Zero-Shot Scene Flow](https://arxiv.org/abs/2501.10357) · [專案頁](https://research.nvidia.com/labs/lpr/zero_msf/) | NVIDIA / Brown | 聯合估幾何與運動並大規模混合資料訓練，單目場景流首次能 zero-shot 泛化 | CVPR 2025 | 24 | 未公開 |
 | 新興 | 獲獎 | 2026 | [Indoor Open-Vocab Occupancy](https://arxiv.org/abs/2602.22667) | HKUST(GZ) | 針對室內密集幾何與細粒度語意，從單目影像預測開放詞彙 3D occupancy | CVPR 2026 | 8 | 未公開 |
 | 新興 | 獲獎、推薦 | 2026 | [GlassRecon](https://arxiv.org/abs/2604.18336) · [專案頁](https://jarvisyjw.github.io/GlassRecon/) | HKUST / HKU / SUSTech / ASTRI | 免訓練，用局部 RANSAC 把深度基礎模型對齊到感測器深度，避開玻璃區的錯誤量測並補回公制尺度 | IROS 2026 | 2 | [9](https://github.com/jarvisyjw/GlassRecon) |
@@ -661,10 +599,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用、Star、HF | 2025 | [Concerto](https://arxiv.org/abs/2510.23607) · [專案頁](https://pointcept.github.io/Concerto/) | HKU / CUHK / HIT(SZ) | 2D-3D 聯合自監督學習，單用點雲也能喚起與影像一致的空間表示 | NeurIPS 2025 | 50 | [542](https://github.com/Pointcept/Concerto) |
 | 主流 | 引用 | 2025 | [DITR (DINO in the Room)](https://arxiv.org/abs/2503.18944) · [專案頁](https://vision.rwth-aachen.de/ditr) | RWTH Aachen / Bosch | 把 DINOv2 影像特徵投影到點雲注入 3D 分割骨幹，或在無影像時用來蒸餾 | 3DV 2026 | 48 | [116](https://github.com/VisualComputingInstitute/DITR) |
 | 主流 | Star、獲獎 | 2022 | [EPro-PnP](https://arxiv.org/abs/2203.13254) | Tongji / Alibaba | 把 PnP 輸出改成位姿機率分布，使 2D-3D 對應能端到端學習，用於單目物件位姿估計 | CVPR 2022 | 3 | [1,177](https://github.com/tjiiv-cprg/EPro-PnP) |
-| 新興 | 獲獎 | 2022 | [InterObject3D](https://arxiv.org/abs/2204.07183) | ETH / RWTH Aachen | 使用者點擊迭代修正的互動式 3D 實例分割，可泛化到訓練外類別 | ICRA 2023 | 35 | 未公開 |
-| 新興 | 獲獎 | 2021 | [Category-level Pose and Shape](https://arxiv.org/abs/2104.08383) | MIT | 給類別 CAD 庫的主動形狀模型，以可驗證全域最優的凸鬆弛同時解物件位姿與形狀，對離群點穩健 | RSS 2021 | 29 | 未公開 |
 | 新興 | 獲獎 | 2025 | [Chorus](https://arxiv.org/abs/2512.17817) · [專案頁](https://gaussianworld.github.io/Chorus) | Amsterdam / ETH / INSAIT | 從多個 2D 基礎模型蒸餾，學出 feed-forward 的 3DGS 場景編碼器，提供通用 3D 特徵 | CVPR 2026 | 12 | 未公開 |
-| 新興 | 獲獎 | 2024 | [HEGN](https://doi.org/10.1109/ICRA57147.2024.10610562) | Siemens / TUM | 階層式等變圖網路做含縮放的 9DoF 點雲配準，用於類別級位姿估計 | ICRA 2024 | 1 | 未公開 |
 | 新興 | 獲獎 | 2025 | [SNAP](https://arxiv.org/abs/2510.11565) · [專案頁](https://neu-vi.github.io/SNAP/) | Northeastern / MathWorks | 跨室內、室外、空拍點雲的互動式 3D 分割，同時支援點選與文字提示 | 3DV 2026 | 0 | 未公開 |
 
 ### 最新論文
@@ -804,8 +739,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用、Star | 2025 | [RoMa v2](https://arxiv.org/abs/2511.15706) | Linköping / Chalmers / Amsterdam 等 | 改良架構與訓練，更快更準的稠密匹配 | ECCV 2026 | 60 | [746](https://github.com/Parskatt/romav2) |
 | 主流 | 引用、Star | 2025 | [RT-DETRv4](https://arxiv.org/abs/2510.25257) | PKU | 訓練時蒸餾基礎模型特徵，推論零額外成本 | ECCV 2026 | 39 | [663](https://github.com/RT-DETRs/RT-DETRv4) |
 | 主流 | 引用、Star | 2025 | [EdgeTAM](https://arxiv.org/abs/2501.07256) | Meta / NTU | 2D 空間感知器壓縮記憶，讓 SAM 2 手機即時 | CVPR 2025 | 31 | [1,001](https://github.com/facebookresearch/EdgeTAM) |
-| 新興 | 獲獎 | 2023 | [OvSGTR](https://arxiv.org/abs/2311.10988) | CASIA / PolyU | 物件與關係都開放詞彙的場景圖生成，以視覺概念對齊並保留知識避免遺忘 | ECCV 2024 | 50 | 未公開 |
-| 新興 | 獲獎 | 2024 | [Evidential OOD Segmentation](https://doi.org/10.1109/ICRA57147.2024.10611342) | MIT / ARL | 不需 OOD 樣本，以證據式深度學習估計語意分割的逐像素不確定性，偵測未知障礙 | ICRA 2024 | 26 | 未公開 |
+| 新興 | 獲獎 | 2023 | [OvSGTR](https://arxiv.org/abs/2311.10988) | CASIA / PolyU | 物件與關係都開放詞彙的場景圖生成，以視覺概念對齊並保留知識避免遺忘 | ECCV 2024 | 50 | [104](https://github.com/gpt4vision/OvSGTR) |
 | 新興 | 獲獎 | 2025 | [LAPA](https://arxiv.org/abs/2512.04213) · [專案頁](https://ostadabbas.github.io/lapa.github.io/) | Northeastern | 端到端 transformer 同時做外觀匹配與幾何約束，多相機點追蹤不再拆成偵測、關聯、追蹤 | 3DV 2026 | 5 | [8](https://github.com/ostadabbas/Look-Around-and-Pay-Attention-LAPA-) |
 | 新興 | 獲獎、基準 | 2026 | [GuideTWSI](https://arxiv.org/abs/2603.07060) | UMass Amherst / UT Austin / Maine | 合成加真實的導盲磚分割資料集，用於視障者導航輔助 | ICRA 2026 | 2 | 未公開 |
 | 新興 | 獲獎 | 2026 | [Day-to-Night Agri Translation](https://arxiv.org/abs/2607.12065) | Kennesaw State / Lincoln | 非監督式日轉夜跨模態影像轉換，用白天標註訓練夜間農業視覺導航 | IROS 2026 | 0 | 未公開 |
@@ -870,7 +804,6 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用、機構 | 2025 | [GSWorld](https://arxiv.org/abs/2510.20813) · [專案頁](https://3dgsworld.github.io) | UCSD / UCLA / Meta | GSDF 格式結合 3DGS 與物理引擎的閉環操作模擬 | ICRA 2026 | 31 | [230](https://github.com/luccachiang/GSWorld) |
 | 主流 | 引用、HF、基準 | 2025 | [InternScenes](https://arxiv.org/abs/2509.10813) · [專案頁](https://marjordcpz.github.io/InternScenes.github.io/) | Shanghai AI Lab / SJTU / Beihang 等 | 含真實佈局與小物件的大規模可模擬室內場景 | NeurIPS 2025 | 31 | [276](https://github.com/InternRobotics/InternScenes) |
 | 主流 | Star、推薦 | 2026 | [TripoSplat](https://arxiv.org/abs/2605.16355) | Tsinghua / VAST | 高斯中心由學到的密度取樣，利於生成式建模 | SIGGRAPH 2026 | 4 | [1,398](https://github.com/VAST-AI-Research/TripoSplat) |
-| 新興 | 獲獎 | 2022 | [NeRF2Real](https://arxiv.org/abs/2210.04932) · [專案頁](https://sites.google.com/view/nerf2real/home) | DeepMind | 手機影片建 NeRF 取得接觸幾何與新視角渲染，在模擬中訓練視覺策略後轉移到實機 | ICRA 2023 | 80 | 未公開 |
 | 新興 | 推薦 | 2026 | [SimFoundry](https://arxiv.org/abs/2606.28276) · [專案頁](https://research.nvidia.com/labs/gear/simfoundry/) | NVIDIA / Stanford / Georgia Tech / UT Austin 等 | 單支真實場景影片自動拆成遮罩、深度、2D→3D 物件網格與 3DGS 背景並做物理檢查，各模組可隨基礎模型替換，另生成 digital cousins 擴增訓練 | NVIDIA Research、arXiv | 23 | [427](https://github.com/NVlabs/SimFoundry) |
 | 新興 | 推薦 | 2026 | [GATOR](https://arxiv.org/abs/2610.11215) · [專案頁](https://research.nvidia.com/labs/lpr/gator/) | NVIDIA / Simon Fraser | 從雜亂場景的隨手拍照片生成完整物件與場景相對位姿，再由 agent 在 Blender 編輯網格、只保留與原圖相符的修改，免重訓生成器 | NVIDIA Research、arXiv | 0 | 未公開 |
 

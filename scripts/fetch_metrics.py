@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""抓 data/classics.csv 每篇的引用數（Semantic Scholar）、GitHub star、HF 按讚數與 arXiv 備註，存到 data/metrics.json。
+"""抓 data/classics.csv 與 archive.csv 每篇的引用數（Semantic Scholar）、GitHub star、HF 按讚數與 arXiv 備註，存到 data/metrics.json。
 
 arXiv 的 Comments／journal_ref 給 check_data.py 核對刊登處的會議與年份。
 
@@ -67,7 +67,7 @@ def fetch_hf_upvotes(aid):
 
 
 def main():
-    rows = list(csv.DictReader((ROOT / "data" / "classics.csv").open()))
+    rows = [r for name in ("classics", "archive") for r in csv.DictReader((ROOT / "data" / f"{name}.csv").open())]
     ids = [r["id"] for r in rows if r["id"]]  # 沒有 id 的（部落格、技術報告）不查引用
     print(f"Semantic Scholar：{len(ids)} 篇", flush=True)
     papers = fetch_papers(ids)
