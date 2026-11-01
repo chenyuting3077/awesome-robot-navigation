@@ -15,5 +15,7 @@
 | 2026-09 | [FILT3R](https://arxiv.org/abs/2603.18493) | KAIST | 串流重建的狀態更新改用 token 空間的 Kalman 式增益，免訓練即可外掛，改善長序列穩定度 |  | [GitHub](https://github.com/jinotter3/FILT3R) | ECCV 2026 |
 | 2026-09 | [OVGGT](https://arxiv.org/abs/2603.05959) · [專案頁](https://vaisr.github.io/OVGGT/) | NTU / NTUST | 壓縮 KV cache 並保護座標關鍵 token，免訓練把串流 VGGT 的記憶體與計算量壓到固定額度 |  | [GitHub](https://github.com/VAISR/OVGGT) | ECCV 2026 |
 | 2026-04 | [Feed-forward 3D scene modeling survey](https://arxiv.org/abs/2604.14025) · [專案頁](https://ff3d-survey.github.io) | Zhejiang / NTU / Monash / ETH / Tübingen | feed-forward 3D 重建綜述，涵蓋 Point3R、IncVGGT、ZipMap 等串流／增量版本 |  | [GitHub](https://github.com/ziplab/Awesome-Feed-Forward-3D) | arXiv |
+| 2026-02 | [LongStream](https://arxiv.org/abs/2602.13172) · [專案頁](https://3dagentworld.github.io/longstream/) | Horizon Robotics / CSU / ZJU | 快取一致訓練加定期刷新，抑制超長序列的注意力偏差，達到公里級公制尺度串流重建 | 18 FPS | [GitHub](https://github.com/3DAgentWorld/LongStream) | CVPR 2026 |
 | 2026-02 | [VGG-T³](https://arxiv.org/abs/2602.23361) · [專案頁](https://research.nvidia.com/labs/dvl/projects/vgg-ttt) | NVIDIA / Toronto | 大規模離線 feed-forward 重建 |  | [GitHub](https://github.com/nv-dvl/vgg-ttt) | CVPR 2026 |
+| 2026-01 | [V-DPM](https://arxiv.org/abs/2601.09499) | Oxford VGG | 把 VGGT 延伸到動態點雲圖，同時恢復動態深度與每個點的 3D 運動 |  | [GitHub](https://github.com/eldar/vdpm) | arXiv |
 | 2025-11 | [AMB3R](https://arxiv.org/abs/2511.20343) · [專案頁](https://hengyiwang.github.io/projects/amber) | UCL | feed-forward 公制尺度重建 + 稀疏體素後端，不微調即可延伸到 VO／SLAM |  | [GitHub](https://github.com/HengyiWang/amb3r) | CVPR 2026 |
