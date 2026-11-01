@@ -46,6 +46,8 @@
    | real2sim | cs.RO, cs.CV | "real-to-sim", real2sim, "digital twin" AND robot, "Gaussian splatting" AND simulation |
 
 2. **補充來源**（WebSearch）：Science Robotics、T-RO、IJRR、RA-L、JFR、TPAMI、IJCV 新刊；當期 RSS / CoRL / ICRA / IROS / CVPR / ICCV / ECCV / 3DV / SIGGRAPH / NeurIPS / ICLR / ICML 接收論文。
+   **會議接收名單**：名單一公布就逐一比對，不只靠 arXiv 關鍵字。2026-11 抽樣 RSS、ECCV 2026，人工判定範圍內 146 篇只收到 10 篇，其中 6 篇 venue 還停在 arXiv。可用來源：`roboticsconference.org/<年>/program/papers/`、`www.roboticsproceedings.org/rss<屆>/index.html`、`eccv.ecva.net/virtual/<年>/papers.html`。接收論文常沒有寫進 arXiv Comments，也可能換標題（LingBot-Map 官方名單上沒有 LingBot），所以比對時要連 `metrics.json` 的標題一起看。arXiv 標題搜尋 47/135 查不到，要再用 Semantic Scholar `paper/search/match` 補。
+
 3. **篩選**：只有 arXiv、還沒正式刊登的論文，只收第 0 步名單內的企業與實驗室（官方 repo star ≥ 500 或使用者推薦的除外）；已被會議或期刊接收的不限機構。每主題每次最多收 5 篇，NVIDIA 的不佔名額。名額優先給第 0 步名單內的機構，其次依：有實機實驗 > 開源程式或權重 > 標準 benchmark 上宣稱 SOTA。純 benchmark 微幅改進、只在遙測或醫療影像上驗證的不收。機構以 arXiv 摘要頁或論文首頁的作者單位為準，「機構」欄要填。
 
 ## 得獎名單（擴充重要論文時查）
