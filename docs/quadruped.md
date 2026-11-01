@@ -24,6 +24,7 @@
 | 主流 | 引用、Star、獲獎 | 2023 | [Robot Parkour Learning](https://arxiv.org/abs/2309.05665) · [專案頁](https://robot-parkour.github.io) | Stanford / Shanghai Qi Zhi | 低成本四足以深度相機學跑酷技能 | CoRL 2023 | 352 | [1,142](https://github.com/ZiwenZhuang/parkour) |
 | 主流 | 引用、Star | 2022 | [Walk These Ways](https://arxiv.org/abs/2212.03238) · [專案頁](https://gmargo11.github.io/walk-these-ways/) | MIT | 多樣行為參數化的單一策略，可調步態 | CoRL 2022 | 349 | [1,470](https://github.com/Improbable-AI/walk-these-ways) |
 | 主流 | 引用、獲獎 | 2022 | [Legged Optimization Control Survey](https://arxiv.org/abs/2211.11644) | Notre Dame / UPenn / LAAS-CNRS 等 | 回顧足式機器人模型式最佳化控制的綜述 | T-RO 2024 | 322 | 未公開 |
+| 主流 | 引用、獲獎、知名 | 2022 | [Perceptive NMPC](https://arxiv.org/abs/2208.08373) | ETH | 以凸落腳區約束嵌入全身 NMPC 的感知式運動 | T-RO 2023 | 320 | 未公開 |
 | 主流 | 引用 | 2023 | [DreamWaQ](https://arxiv.org/abs/2301.10602) · [專案頁](https://sites.google.com/view/dreamwaq) | KAIST | 無外部感知的盲走策略，用隱式地形想像過複雜地形 | ICRA 2023 | 266 | 未公開 |
 | 主流 | 引用、獲獎 | 2023 | [Locomotion on Deformable Terrain](https://doi.org/10.1126/scirobotics.ade2256) | KAIST | 在沙地等可變形地形上的四足 RL 運動，模擬可變形接觸 | Science Robotics 2023 | 262 | 未公開 |
 | 主流 | Star | 2022 | [Elevation Mapping CuPy](https://arxiv.org/abs/2204.12876) · [專案頁](https://leggedrobotics.github.io/elevation_mapping_cupy/) | ETH | GPU 加速的機器人中心高度圖，多數感知式運動策略的輸入 | IROS 2022 | 212 | [1,154](https://github.com/leggedrobotics/elevation_mapping_cupy) |
@@ -42,6 +43,7 @@
 | 主流 | 引用 | 2025 | [TRG-planner](https://arxiv.org/abs/2501.01806) · [專案頁](https://trg-planner.github.io/) | KAIST | 以穿越風險圖兼顧地形安全與距離的路徑規劃 | RA-L 2025 | 37 | [31](https://github.com/wasahaiah/TRG-planner) |
 | 主流 | 引用、機構 | 2025 | [SPI-Active](https://arxiv.org/abs/2505.14266) · [專案頁](https://lecar-lab.github.io/spi-active_/) | CMU / Google DeepMind | 取樣式系統辨識加主動探索縮小 sim-to-real 差距 | CoRL 2025 | 34 | [231](https://github.com/LeCAR-Lab/SPI-Active) |
 | 主流 | 引用、獲獎 | 2025 | [Unified Force-Position Policy](https://arxiv.org/abs/2505.20829) · [專案頁](https://unified-force.github.io/) | BUPT / BIGAI | 不靠力感測器，單一策略同時建模接觸力與位置控制，用於四足帶手臂的接觸型移動操作 | CoRL 2025 | 32 | 未公開 |
+| 新興 | 獲獎、知名 | 2022 | [AMP for Locomotion](https://arxiv.org/abs/2203.15103) | UC Berkeley / Google | 用對抗式動作先驗取代繁瑣的手調獎勵，四足實機學出自然且節能的步態 | IROS 2022 | 206 | 未公開 |
 | 新興 | 獲獎 | 2026 | [DAWN](https://arxiv.org/abs/2609.29092) · [專案頁](https://dawn-parkour.github.io/) | KOREATECH | 在 world model 裡學習去除深度雜訊，跑酷策略不需手調深度濾波器 | IROS 2026 | 1 | 未公開 |
 
 ## 最新論文

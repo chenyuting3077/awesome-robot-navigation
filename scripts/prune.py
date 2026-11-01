@@ -20,7 +20,8 @@ from harvest import THRESHOLD  # noqa: E402
 CAP = 30  # 2026-11 試算：受保護論文讓電腦視覺、3D 重建略超過 30
 LOW = 100  # 規則一的引用與 star 門檻
 GRACE = 2  # 公開滿幾個年度才適用規則一
-KEEP = {"推薦", "基準"}
+KEEP = {"推薦", "基準", "知名"}
+UNCAPPED = "知名"  # 只佔主頁、不佔名額；算進上限的話，移回一篇就會多擠掉一篇
 STALE = "新興滿兩年未達門檻"
 OVER = "超過主題上限"
 
@@ -40,7 +41,8 @@ def main() -> None:
         if tier(year, cites, stars) == "新興" and year <= now - GRACE and cites < LOW and stars < LOW:
             moved[id(r)] = STALE
 
-    for topic, n in Counter(r["topic"] for r in rows if id(r) not in moved).items():
+    capped = [r for r in rows if id(r) not in moved and UNCAPPED not in r["tags"].split(";")]
+    for topic, n in Counter(r["topic"] for r in capped).items():
         pool = []
         for r in rows:
             if r["topic"] != topic or id(r) in moved or set(r["tags"].split(";")) & KEEP:

@@ -11,7 +11,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TAGS = {"獲獎", "基準", "機構", "推薦"}
+TAGS = {"獲獎", "基準", "機構", "推薦", "知名"}
 SUBS = {
     "slam": ["視覺與慣性里程計、SLAM", "LiDAR、雷達與多感測器融合", "NeRF／3DGS 稠密 SLAM", "地點辨識與重定位",
              "點雲配準", "多機器人與長期地圖", "資料集、綜述與工具"],
