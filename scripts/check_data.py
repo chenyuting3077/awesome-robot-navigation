@@ -11,7 +11,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TAGS = {"獲獎", "基準", "機構", "推薦"}
+TAGS = {"獲獎", "基準", "機構", "推薦", "知名"}
 SUBS = {
     "slam": ["視覺與慣性里程計、SLAM", "LiDAR、雷達與多感測器融合", "NeRF／3DGS 稠密 SLAM", "地點辨識與重定位",
              "點雲配準", "多機器人與長期地圖", "資料集、綜述與工具"],
@@ -110,19 +110,31 @@ def check_classics(topics, in_topics, errors):
             errors.append(f"archive.csv（{r['name']}）：id 同時在 classics.csv，移回時要從 archive.csv 刪除")
 
 
+def all_papers() -> list[dict]:
+    out = []
+    for name in ("classics", "archive"):
+        for r in csv.DictReader((ROOT / "data" / f"{name}.csv").open()):
+            out.append({"id": r["id"], "name": r["name"], "venue": r["venue"], "where": f"{name}.csv"})
+    for path in sorted((ROOT / "topics").glob("*.md")):
+        for line in path.read_text().splitlines():
+            if m := re.match(r"\| \d{4}-\d{2} \| \[([^\]]+)\]\(https://arxiv\.org/abs/([\d.]+)\)", line):
+                out.append({"id": m[2], "name": m[1], "venue": line.strip().strip("|").split("|")[6].strip(), "where": path.name})
+    return out
+
+
 def venue_warnings() -> list[str]:
-    """classics.csv 的 venue 與 Semantic Scholar、arXiv Comments 不一致時提醒；兩者都常缺或不準，所以只警告不擋。"""
+    """重要論文、封存區與最新論文的刊登處，與 Semantic Scholar、arXiv Comments 不一致時提醒；兩者都常缺或不準，所以只警告不擋。"""
     path = ROOT / "data" / "metrics.json"
     if not path.exists():
         return []
     metrics = json.loads(path.read_text())
     papers, arxiv = metrics["papers"], metrics.get("arxiv", {})
     out = []
-    for r in csv.DictReader((ROOT / "data" / "classics.csv").open()):
+    for r in all_papers():
         s2 = ((papers.get(r["id"]) or {}).get("venue") or "")
         abbr = next((a for full, a in S2_VENUE.items() if full.lower() in s2.lower()), None)
         if abbr and abbr not in r["venue"]:
-            out.append(f"{r['name']}：classics.csv 寫「{r['venue']}」，Semantic Scholar 是「{s2}」")
+            out.append(f"{r['name']}：{r['where']} 寫「{r['venue']}」，Semantic Scholar 是「{s2}」")
         ax = arxiv.get(r["id"]) or {}
         note = f"{ax.get('journal_ref', '')} {ax.get('comments', '')}"
         note = re.sub(r"present\w* at \S+\s*\d*", "", note, flags=re.I)  # RA-L 論文常另在 ICRA/IROS 發表
@@ -132,7 +144,7 @@ def venue_warnings() -> list[str]:
             conf = ALIAS.get(conf.replace("-", ""), conf)
             year = year if len(year) == 4 else f"20{year}"
             if (conf in JOURNALS and conf not in r["venue"]) or (conf not in JOURNALS and f"{conf} {year}" not in r["venue"]):
-                out.append(f"{r['name']}：classics.csv 寫「{r['venue']}」，arXiv 備註是「{note.strip()[:80]}」")
+                out.append(f"{r['name']}：{r['where']} 寫「{r['venue']}」，arXiv 備註是「{note.strip()[:80]}」")
                 break
     return out
 

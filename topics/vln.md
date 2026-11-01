@@ -12,12 +12,12 @@
 
 | 日期 | 論文 | 機構 | 重點 | 數據 | 程式碼 | 來源 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 2026-05 | [OmniNavBench](https://arxiv.org/abs/2605.09441) | SJTU / Anyverse Dynamics | 跨技能與跨機體的統一導航 benchmark：同一 episode 串接 6 類子任務，含人形、四足、輪式 | 170 環境、1779 條人工遙控專家軌跡 | [GitHub](https://github.com/AutoLab-SAI-SJTU/OmniNavBench) | RSS 2026 |
-| 2026-03 | [OpenFrontier](https://arxiv.org/abs/2603.05377) · [專案頁](https://boysun045.github.io/OpenFrontier-Project/) | ETH Zurich / Microsoft / Bonn | 把導航視為稀疏子目標辨識，用視覺 frontier 當語意錨點，不需稠密語意地圖與任務訓練；有實機部署 |  | [GitHub](https://github.com/cvg/OpenFrontier) | RSS 2026 |
-| 2026-03 | [AgentVLN](https://arxiv.org/abs/2603.17670) | NUAA | 把 VLM 當大腦、感知與規劃拆成技能庫，3D waypoint 投影回影像當視覺提示，可部署在邊緣平台 |  | [GitHub](https://github.com/Allenxinn/AgentVLN) | ECCV 2026 |
-| 2026-02 | [LongNav-R1](https://arxiv.org/abs/2602.12351) | University of Michigan | 把導航改寫成 VLA 與環境的多輪對話，用線上多輪 RL 依不同 horizon 估優勢；有實機零微調驗證 | Qwen3-VL-2B 成功率 64.3% → 73.0%（4000 條 rollout） | [GitHub](https://github.com/UMich-CURLY/LongNav-R1) | RSS 2026 |
-| 2025-10 | [MM-Nav](https://arxiv.org/abs/2510.03142) · [專案頁](https://pku-epic.github.io/MM-Nav-Web/) | PKU / Galbot | 360° 多視角 VLA，向三個分別擅長抵達、穿窄、閃避的 RL 專家學，依各能力表現動態調訓練比例；有實機實驗 |  | 未公開 | ECCV 2026 |
 | 2026-10 | [AVALON](https://arxiv.org/abs/2610.21586) | HKU | 只需平面圖與地點線索，以人給的分層拓撲記憶做節點驗證式導航，不建全域 SLAM 圖；人與機器人共同更新記憶 | Unitree Go2 實機 12.81 m 任務 46.4 s（5/5），比 DimOS-Go2 少 40.9% 時間 | 未公開 | arXiv |
+| 2026-09 | [AgentVLN](https://arxiv.org/abs/2603.17670) | NUAA | 把 VLM 當大腦、感知與規劃拆成技能庫，3D waypoint 投影回影像當視覺提示，可部署在邊緣平台 |  | [GitHub](https://github.com/Allenxinn/AgentVLN) | ECCV 2026 |
+| 2026-09 | [MM-Nav](https://arxiv.org/abs/2510.03142) · [專案頁](https://pku-epic.github.io/MM-Nav-Web/) | PKU / Galbot | 360° 多視角 VLA，向三個分別擅長抵達、穿窄、閃避的 RL 專家學，依各能力表現動態調訓練比例；有實機實驗 |  | 未公開 | ECCV 2026 |
 | 2026-07 | [Robostral Navigate](https://arxiv.org/abs/2607.20785) · [專案頁](https://mistral.ai/news/robostral-navigate) | Mistral AI | 8B VLM 只用單眼 RGB，在畫面上指出下一個目標點；目標不在視野時輸出局部座標位移 | R2R-CE val-unseen SR 76.6%；online RL +3.2% | 未公開 | arXiv、Mistral 官網 |
 | 2026-07 | [ABot-N1](https://arxiv.org/abs/2607.10383) · [專案頁](https://amap-cvlab.github.io/ABot-Navigation/ABot-N1/) | Alibaba AMAP | 慢 VLM 推理出影像錨點，快模組轉成連續 waypoint；同一架構做 point/object/POI/指令/跟人五種任務 | 室內 95.4%、室外 92.9% SR；POI 抵達 77.3% | [GitHub](https://github.com/amap-cvlab/ABot-Navigation) | arXiv |
+| 2026-05 | [OmniNavBench](https://arxiv.org/abs/2605.09441) | SJTU / Anyverse Dynamics | 跨技能與跨機體的統一導航 benchmark：同一 episode 串接 6 類子任務，含人形、四足、輪式 | 170 環境、1779 條人工遙控專家軌跡 | [GitHub](https://github.com/AutoLab-SAI-SJTU/OmniNavBench) | RSS 2026 |
 | 2026-04 | [Robot Navigation via Foundation Language Models: A Review](https://dl.acm.org/doi/10.1145/3802539) | ECNU / HIT 等 | ACM CSUR 綜述 |  | 未公開 | ACM Computing Surveys 2026 |
+| 2026-03 | [OpenFrontier](https://arxiv.org/abs/2603.05377) · [專案頁](https://boysun045.github.io/OpenFrontier-Project/) | ETH Zurich / Microsoft / Bonn | 把導航視為稀疏子目標辨識，用視覺 frontier 當語意錨點，不需稠密語意地圖與任務訓練；有實機部署 |  | [GitHub](https://github.com/cvg/OpenFrontier) | RSS 2026 |
+| 2026-02 | [LongNav-R1](https://arxiv.org/abs/2602.12351) | University of Michigan | 把導航改寫成 VLA 與環境的多輪對話，用線上多輪 RL 依不同 horizon 估優勢；有實機零微調驗證 | Qwen3-VL-2B 成功率 64.3% → 73.0%（4000 條 rollout） | [GitHub](https://github.com/UMich-CURLY/LongNav-R1) | RSS 2026 |
