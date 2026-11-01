@@ -50,8 +50,6 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 - [本月趨勢（2026-11）](#本月趨勢2026-11)
 - [VLN 與導航基礎模型](#vln-與導航基礎模型)
 - [局部導航與規劃（diffusion / world model / 探索）](#局部導航與規劃diffusion--world-model--探索)
-- [四足](docs/quadruped.md)
-- [輪足（雙足輪、四足輪）](docs/wheel-legged.md)
 - [SLAM 與定位](#slam-與定位)
 - [3D 場景重建（feed-forward、SfM、3DGS／NeRF）](#3d-場景重建feed-forwardsfm3dgsnerf)
 - [深度估計與 occupancy](#深度估計與-occupancy)
@@ -60,8 +58,11 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 - [3D 空間理解（3D grounding、空間推理 VLM、3D-LLM）](#3d-空間理解3d-grounding空間推理-vlm3d-llm)
 - [電腦視覺（偵測、分割、視覺基礎模型）](#電腦視覺偵測分割視覺基礎模型)
 - [模擬與 Real2Sim](#模擬與-real2sim)
-- [封存區](docs/archive.md)
 - [月報](#月報)
+- [四足](docs/quadruped.md)
+- [輪足（雙足輪、四足輪）](docs/wheel-legged.md)
+- [追蹤的實驗室](docs/labs.md)
+- [封存區](docs/archive.md)
 
 ## 本月趨勢（2026-11）
 
