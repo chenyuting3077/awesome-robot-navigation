@@ -59,8 +59,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 - [電腦視覺（偵測、分割、視覺基礎模型）](#電腦視覺偵測分割視覺基礎模型)
 - [模擬與 Real2Sim](#模擬與-real2sim)
 - [月報](#月報)
-- [四足](docs/quadruped.md)
-- [輪足（雙足輪、四足輪）](docs/wheel-legged.md)
+- [四足與輪足](docs/legged.md)
 - [追蹤的實驗室](docs/labs.md)
 - [封存區](docs/archive.md)
 

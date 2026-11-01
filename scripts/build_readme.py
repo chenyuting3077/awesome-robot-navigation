@@ -185,7 +185,7 @@ def main() -> None:
         problems, recent = body.split("## 最新論文", 1)
         problems = problems.replace("## 在解決的問題", "").strip()
         rows = [r for r in classics if r["topic"] == name]
-        h = "#" if name in PAGES else "##"
+        h = "##"
         parts = [f"{h} {title}", f"{h}# 在解決的問題", problems]
         if rows:
             parts.append(f"{h}# 重要論文（資料日期 {metrics['fetched']}）")
@@ -193,9 +193,11 @@ def main() -> None:
                 group = [r for r in rows if r["sub"] == sub]
                 parts += ([f"{h}## {sub}"] if sub else []) + [classics_table(group, metrics)]
         parts += [f"{h}# 最新論文", recent_table(recent, name, updated, "../" if name in PAGES else "")]
-        if name in PAGES:
-            (ROOT / "docs" / f"{name}.md").write_text(DOC_NOTE + "\n\n".join(parts) + "\n")
         sections.append((title, name, "\n\n".join(parts)))
+
+    legged = [(t, s) for t, n, s in sections if n in PAGES]
+    toc = "\n".join(f"- [{t}](#{anchor(t)})" for t, _ in legged)
+    (ROOT / "docs" / "legged.md").write_text(DOC_NOTE + "\n\n".join(["# 四足與輪足", toc] + [s for _, s in legged]) + "\n")
 
     archive = list(csv.DictReader((ROOT / "data" / "archive.csv").open()))
     parts = ["# 封存區", f"從重要論文移出但保留備查，規則見 [README](../README.md#怎樣算重要論文)，共 {len(archive)} 篇。"]
@@ -212,7 +214,7 @@ def main() -> None:
     # 順序跟正文一致：先列 README 內的主題，獨立頁面放後面，否則點到中間會跳離本頁
     out += [f"- [{t}](#{anchor(t)})" for t, n, _ in sections if n not in PAGES]
     out.append("- [月報](#月報)")
-    out += [f"- [{t}](docs/{n}.md)" for t, n, _ in sections if n in PAGES]
+    out.append("- [四足與輪足](docs/legged.md)")
     out.append("- [追蹤的實驗室](docs/labs.md)")
     out.append("- [封存區](docs/archive.md)\n")
     out.append(f"## 本月趨勢（{digests[0].stem}）\n\n{trend}\n")
