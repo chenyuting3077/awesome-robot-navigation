@@ -45,7 +45,7 @@
    | vision | cs.CV | "open-vocabulary detection", "open-vocabulary segmentation", "vision foundation model" |
    | real2sim | cs.RO, cs.CV | "real-to-sim", real2sim, "digital twin" AND robot, "Gaussian splatting" AND simulation |
 
-2. **補充來源**（WebSearch）：Science Robotics、RA-L、T-RO 新刊；當期 CoRL / RSS / ICRA / IROS / CVPR 接收論文。
+2. **補充來源**（WebSearch）：Science Robotics、T-RO、IJRR、RA-L、JFR、TPAMI、IJCV 新刊；當期 RSS / CoRL / ICRA / IROS / CVPR / ICCV / ECCV / 3DV / SIGGRAPH / NeurIPS / ICLR / ICML 接收論文。
 3. **篩選**：只有 arXiv、還沒正式刊登的論文，只收第 0 步名單內的企業與實驗室（官方 repo star ≥ 500 或使用者推薦的除外）；已被會議或期刊接收的不限機構。每主題每次最多收 5 篇，NVIDIA 的不佔名額。名額優先給第 0 步名單內的機構，其次依：有實機實驗 > 開源程式或權重 > 標準 benchmark 上宣稱 SOTA。純 benchmark 微幅改進、只在遙測或醫療影像上驗證的不收。機構以 arXiv 摘要頁或論文首頁的作者單位為準，「機構」欄要填。
 
 ## 得獎名單（擴充重要論文時查）
