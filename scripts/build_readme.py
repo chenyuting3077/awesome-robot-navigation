@@ -20,6 +20,8 @@ TOPICS = [
 ]
 PAGES = {"quadruped", "wheel-legged"}
 STAR_BAR = 500  # 收錄條件「Star」
+# 多個模型共用的套件 repo：star 不全屬於單篇論文，分級與排序時最多算到 STAR_BAR，表格仍顯示實際數字
+SHARED_REPOS = {"ultralytics/ultralytics"}
 HF_BAR = 20  # 收錄條件「HF」：約是 2026-10 候選中按讚數的前 15%
 
 HEADER = """# Robot Perception Survey
@@ -142,14 +144,18 @@ def paper_stats(r, metrics) -> tuple[int, int, int]:
     return year, p.get("citationCount") or 0, metrics["stars"].get(r["repo"]) or 0
 
 
+def ranked_stars(r, stars: int) -> int:
+    return min(stars, STAR_BAR) if r["repo"] in SHARED_REPOS else stars
+
+
 def classics_table(rows, metrics) -> str:
     items = []
     for r in rows:
         year, cites, stars = paper_stats(r, metrics)
         upvotes = metrics.get("hf", {}).get(r["id"]) or 0
-        items.append((r, year, cites, stars, upvotes, tier(year, cites, stars)))
+        items.append((r, year, cites, stars, upvotes, tier(year, cites, ranked_stars(r, stars))))
     order = {"奠基": 0, "主流": 1, "新興": 2}
-    items.sort(key=lambda x: (order[x[5]], -score(x[1], x[2], x[3])))
+    items.sort(key=lambda x: (order[x[5]], -score(x[1], x[2], ranked_stars(x[0], x[3]))))
 
     lines = ["| 分級 | 理由 | 年 | 論文 | 機構 | 重點 | 來源 | 引用 | Star |",
              "|---|---|---|---|---|---|---|---|---|"]
