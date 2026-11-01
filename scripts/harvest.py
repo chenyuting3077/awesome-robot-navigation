@@ -18,6 +18,9 @@ FIELDS = "title,year,citationCount,venue,externalIds"
 
 # 年份 -> 最低引用數；2026 年起的論文不看引用（太新），靠其他條件收錄
 THRESHOLD = {2021: 300, 2022: 300, 2023: 150, 2024: 80, 2025: 30}
+# 只用於撈候選：比 THRESHOLD 新的年份若不篩進來，當年度論文永遠進不了候選（YOLO26 因此漏收）。
+# 不加進 THRESHOLD，否則分級會把引用 120 的新論文直接算成奠基。
+NEWER_BAR = 30
 
 QUERIES = {
     "vln": ['"vision-and-language navigation"', '"vision-language navigation"', '"object goal navigation"',
@@ -110,7 +113,7 @@ def main():
             print(f"{topic} {k}/{len(sources)}：{label}", flush=True)
             for p in fn(arg):
                 year, cites = p.get("year"), p.get("citationCount") or 0
-                if year is None or cites < THRESHOLD.get(year, 10**9):
+                if year is None or cites < THRESHOLD.get(year, NEWER_BAR if year > max(THRESHOLD) else 10**9):
                     continue
                 aid = (p.get("externalIds") or {}).get("ArXiv")
                 key = aid or p.get("paperId")

@@ -21,4 +21,5 @@
 | 2026-05 | [Dr-BA](https://arxiv.org/abs/2605.07041) | University of Toronto | 直接用 2D 旋轉雷達強度影像做 BA，不先抽點雲，也能在既有地圖上做純雷達定位 | 超過 200 km 道路資料、5 條路線 | [GitHub](https://github.com/utiasASRL/dr_ba) | RSS 2026 |
 | 2026-05 | [FF-VIO-Init](https://arxiv.org/abs/2605.17327) | MBZUAI / HKUST (GZ) / Zhejiang | 單目 VIO 初始化改用 feed-forward 3D 模型預測點雲，不依賴視覺特徵對應 | 初始化資料長度通常低於 1.2 s、成功率超過 90% | [GitHub](https://github.com/Yuantai-Z/FF-VIO-Init) | RSS 2026 |
 | 2026-04 | [BIEVR-LIO](https://arxiv.org/abs/2604.14421) · [專案頁](https://patripfr.github.io/bievr-lio/) | ETH ASL / RSL | 幾何資訊貧乏場景，用 bump image 強化 voxel map，不需額外感測器 |  | [GitHub](https://github.com/ethz-asl/BIEVR-LIO) | RSS 2026 |
+| 2026-02 | [GrandTour](https://arxiv.org/abs/2602.18164) · [專案頁](https://grand-tour.leggedrobotics.com) | ETH 等 | 足式機器人多模態感知與 SLAM 資料集，作者稱是目前最大的開放足式資料集 |  | [GitHub](https://github.com/leggedrobotics/grand_tour_dataset) | arXiv |
 | 2026-01 | [VGGT-SLAM 2.0](https://arxiv.org/abs/2601.19887) | MIT SPARK | 新 factor graph 設計消除子地圖對齊的 15-DoF 漂移與平面退化；直接用 VGGT attention 層驗證回環，不需額外訓練 | TUM 位姿誤差比 VGGT-SLAM 低約 23%；Jetson Thor 地面機器人即時運行 | [GitHub](https://github.com/MIT-SPARK/VGGT-SLAM) | RSS 2026 |

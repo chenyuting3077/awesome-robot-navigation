@@ -181,3 +181,6 @@ spatial,2504.14151,Locate 3D,Meta FAIR,ICML 2025,facebookresearch/locate-3d,http
 det3d,2510.11565,SNAP,Northeastern / MathWorks,3DV 2026,,https://neu-vi.github.io/SNAP/,,獲獎,跨室內、室外、空拍點雲的互動式 3D 分割，同時支援點選與文字提示,,超過主題上限
 det3d,2512.17817,Chorus,Amsterdam / ETH / INSAIT,CVPR 2026,,https://gaussianworld.github.io/Chorus,,獲獎,從多個 2D 基礎模型蒸餾，學出 feed-forward 的 3DGS 場景編碼器，提供通用 3D 特徵,,超過主題上限
 spatial,2405.11442,PQ3D,Tsinghua / BIGAI,ECCV 2024,,https://pq3d.github.io,,,可提示查詢的統一 3D 視覺語言模型，同時吃點雲、多視角影像等多種場景表示,,超過主題上限
+real2sim,2502.08645,Re3Sim,SJTU / Shanghai AI Lab / HKU,ICRA 2026,OpenRobotLab/Re3Sim,http://xshenhan.github.io/Re3Sim/,,機構,3D 重建加神經渲染的照片級 real2sim 資料生成,,超過主題上限
+spatial,2311.18651,LL3DA,Fudan / Tencent PCG / NUS,CVPR 2024,Open3DA/LL3DA,https://ll3da.github.io/,,,直接吃點雲並接受點擊、框選等視覺提示的 3D 助理，做描述、問答與規劃,,超過主題上限
+det3d,2401.07745,MaskClustering,PKU / BAAI / Galbot,CVPR 2024,PKU-EPIC/MaskClustering,https://pku-epic.github.io/MaskClustering/,,,以視角共識率做遮罩圖分群的開放詞彙 3D 實例分割,,超過主題上限

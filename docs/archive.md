@@ -2,7 +2,7 @@
 
 # 封存區
 
-從重要論文移出但保留備查，規則見 [README](../README.md#怎樣算重要論文)，共 182 篇。
+從重要論文移出但保留備查，規則見 [README](../README.md#怎樣算重要論文)，共 185 篇。
 
 ## VLN 與導航基礎模型：新興滿兩年未達門檻
 
@@ -211,6 +211,7 @@
 
 | 分級 | 理由 | 年 | 論文 | 機構 | 重點 | 來源 | 引用 | Star |
 |---|---|---|---|---|---|---|---|---|
+| 主流 | 引用 | 2024 | [MaskClustering](https://arxiv.org/abs/2401.07745) · [專案頁](https://pku-epic.github.io/MaskClustering/) | PKU / BAAI / Galbot | 以視角共識率做遮罩圖分群的開放詞彙 3D 實例分割 | CVPR 2024 | 85 | [134](https://github.com/PKU-EPIC/MaskClustering) |
 | 新興 | 獲獎 | 2025 | [Chorus](https://arxiv.org/abs/2512.17817) · [專案頁](https://gaussianworld.github.io/Chorus) | Amsterdam / ETH / INSAIT | 從多個 2D 基礎模型蒸餾，學出 feed-forward 的 3DGS 場景編碼器，提供通用 3D 特徵 | CVPR 2026 | 13 | 未公開 |
 | 新興 | 獲獎 | 2025 | [SNAP](https://arxiv.org/abs/2510.11565) · [專案頁](https://neu-vi.github.io/SNAP/) | Northeastern / MathWorks | 跨室內、室外、空拍點雲的互動式 3D 分割，同時支援點選與文字提示 | 3DV 2026 | 0 | 未公開 |
 
@@ -218,6 +219,7 @@
 
 | 分級 | 理由 | 年 | 論文 | 機構 | 重點 | 來源 | 引用 | Star |
 |---|---|---|---|---|---|---|---|---|
+| 主流 | 引用 | 2023 | [LL3DA](https://arxiv.org/abs/2311.18651) · [專案頁](https://ll3da.github.io/) | Fudan / Tencent PCG / NUS | 直接吃點雲並接受點擊、框選等視覺提示的 3D 助理，做描述、問答與規劃 | CVPR 2024 | 301 | [321](https://github.com/Open3DA/LL3DA) |
 | 主流 | 引用 | 2025 | [Inst3D-LMM](https://arxiv.org/abs/2503.00513) | Zhejiang | 以實例為單位融合 2D 語意與 3D 幾何，一個模型做多種 3D 理解任務 | CVPR 2025 | 65 | [134](https://github.com/hanxunyu/Inst3D-LMM) |
 | 主流 | 引用 | 2025 | [G2VLM](https://arxiv.org/abs/2511.21688) · [專案頁](https://gordonhu608.github.io/g2vlm.github.io/) | Shanghai AI Lab / HKU 等 | 同一個 VLM 同時做 3D 重建與空間推理，幾何特徵直接支援問答 | arXiv | 49 | [362](https://github.com/InternRobotics/G2VLM) |
 | 主流 | 引用、HF | 2025 | [MindJourney](https://arxiv.org/abs/2507.12508) · [專案頁](https://umass-embodied-agi.github.io/MindJourney/) | UMass Amherst / JHU / Microsoft 等 | 推理時用影片 world model 想像換視角後的畫面，提升 VLM 空間推理，不需重新訓練 | NeurIPS 2025 | 60 | [155](https://github.com/UMass-Embodied-AGI/MindJourney) |
@@ -263,6 +265,7 @@
 
 | 分級 | 理由 | 年 | 論文 | 機構 | 重點 | 來源 | 引用 | Star |
 |---|---|---|---|---|---|---|---|---|
+| 主流 | 引用、機構 | 2025 | [Re3Sim](https://arxiv.org/abs/2502.08645) · [專案頁](http://xshenhan.github.io/Re3Sim/) | SJTU / Shanghai AI Lab / HKU | 3D 重建加神經渲染的照片級 real2sim 資料生成 | ICRA 2026 | 68 | [185](https://github.com/OpenRobotLab/Re3Sim) |
 | 主流 | 引用、機構 | 2024 | [ACDC](https://arxiv.org/abs/2410.07408) · [專案頁](https://digital-cousins.github.io) | Stanford | 用相似而非精確複製的數位表親場景訓練穩健策略 | CoRL 2024 | 154 | [255](https://github.com/cremebrule/digital-cousins) |
 | 主流 | 引用 | 2025 | [Vid2Sim](https://arxiv.org/abs/2501.06693) · [專案頁](https://metadriverse.github.io/vid2sim/) | UCLA / UIUC | 從影片重建可互動 3DGS 城市環境訓練導航 | CVPR 2025 | 53 | [295](https://github.com/Vid2Sim/Vid2Sim) |
 | 主流 | 引用 | 2024 | [Articulate-Anything](https://arxiv.org/abs/2410.13882) · [專案頁](https://articulate-anything.github.io/) | UPenn | VLM 生成程式碼並自我批評建立關節物件 | ICLR 2025 | 133 | [229](https://github.com/vlongle/articulate-anything) |

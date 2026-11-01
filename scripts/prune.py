@@ -37,7 +37,8 @@ def main() -> None:
     for r in rows:
         year, cites, stars = paper_stats(r, metrics)
         stars = ranked_stars(r, stars)
-        if set(r["tags"].split(";")) & KEEP or not year:
+        # 查不到引用時數據會變 0，不能當成低分
+        if set(r["tags"].split(";")) & KEEP or not year or not metrics["papers"].get(r["id"]):
             continue
         if tier(year, cites, stars) == "新興" and year <= now - GRACE and cites < LOW and stars < LOW:
             moved[id(r)] = STALE
@@ -46,7 +47,7 @@ def main() -> None:
     for topic, n in Counter(r["topic"] for r in capped).items():
         pool = []
         for r in rows:
-            if r["topic"] != topic or id(r) in moved or set(r["tags"].split(";")) & KEEP:
+            if r["topic"] != topic or id(r) in moved or set(r["tags"].split(";")) & KEEP or not metrics["papers"].get(r["id"]):
                 continue
             year, cites, stars = paper_stats(r, metrics)
             stars = ranked_stars(r, stars)

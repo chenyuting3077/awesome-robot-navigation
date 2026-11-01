@@ -3757,6 +3757,54 @@
    "year": 2026,
    "venue": "arXiv.org",
    "citationCount": 201
+  },
+  "2606.18112": {
+   "title": "Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System",
+   "year": 2026,
+   "venue": "arXiv.org",
+   "citationCount": 22
+  },
+  "2605.30280": {
+   "title": "Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments",
+   "year": 2026,
+   "venue": "arXiv.org",
+   "citationCount": 65
+  },
+  "2602.14979": {
+   "title": "RynnBrain: Open Embodied Foundation Models",
+   "year": 2026,
+   "venue": "arXiv.org",
+   "citationCount": 42
+  },
+  "2603.03269": {
+   "title": "LoGeR: Long-Context Geometric Reconstruction with Hybrid Memory",
+   "year": 2026,
+   "venue": "arXiv.org",
+   "citationCount": 42
+  },
+  "2601.02281": {
+   "title": "InfiniteVGGT: Visual Geometry Grounded Transformer for Endless Streams",
+   "year": 2026,
+   "venue": "arXiv.org",
+   "citationCount": 61
+  },
+  "2603.14482": {
+   "title": "V-JEPA 2.1: Unlocking Dense Features in Video Self-Supervised Learning",
+   "year": 2026,
+   "venue": "arXiv.org",
+   "citationCount": 157
+  },
+  "2603.03283": {
+   "title": "Utonia: Toward One Encoder for All Point Clouds",
+   "year": 2026,
+   "venue": "arXiv.org",
+   "citationCount": 35
+  },
+  "2605.00080": {
+   "title": "World Model for Robot Learning: A Comprehensive Survey",
+   "year": 2026,
+   "venue": "The international journal of robotics research",
+   "citationCount": 54
   }
  },
  "stars": {
@@ -4178,7 +4226,14 @@
   "zju3dv/LoFTR": 2977,
   "zju3dv/NeuralRecon": 2288,
   "zst1406217/VR-Robo": 196,
-  "ultralytics/ultralytics": 63016
+  "ultralytics/ultralytics": 63016,
+  "QwenLM/Qwen-RobotNav": 197,
+  "alibaba-damo-academy/RynnBrain": 900,
+  "Junyi42/LoGeR": 630,
+  "AutoLab-SAI-SJTU/InfiniteVGGT": 395,
+  "Pointcept/Utonia": 771,
+  "NTUMARS/Awesome-World-Model-for-Robotics-Policy": 873,
+  "facebookresearch/DepthContrast": 275
  },
  "hf": {
   "2207.04429": 0,
@@ -4787,7 +4842,15 @@
   "2607.20785": 11,
   "2607.10383": 87,
   "2610.33172": null,
-  "2606.03748": 25
+  "2606.03748": 25,
+  "2606.18112": 30,
+  "2605.30280": 144,
+  "2602.14979": 44,
+  "2603.03269": 53,
+  "2601.02281": 32,
+  "2603.14482": 39,
+  "2603.03283": 174,
+  "2605.00080": 16
  },
  "arxiv": {
   "2312.02010": {
@@ -7216,6 +7279,38 @@
   },
   "2606.03748": {
    "comments": "31 pages, 8 figures",
+   "journal_ref": ""
+  },
+  "2606.18112": {
+   "comments": "",
+   "journal_ref": ""
+  },
+  "2605.30280": {
+   "comments": "34 pages",
+   "journal_ref": ""
+  },
+  "2602.14979": {
+   "comments": "Homepage: https://alibaba-damo-academy.github.io/RynnBrain.github.io",
+   "journal_ref": ""
+  },
+  "2603.03269": {
+   "comments": "Project page: https://LoGeR-project.github.io/",
+   "journal_ref": ""
+  },
+  "2601.02281": {
+   "comments": "",
+   "journal_ref": ""
+  },
+  "2603.14482": {
+   "comments": "",
+   "journal_ref": ""
+  },
+  "2603.03283": {
+   "comments": "produced by Pointcept, project page: https://pointcept.github.io/Utonia",
+   "journal_ref": "International Conference on Machine Learning 2026"
+  },
+  "2605.00080": {
+   "comments": "43 pages, 6 figures",
    "journal_ref": ""
   }
  }
