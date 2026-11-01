@@ -51,7 +51,7 @@ def main() -> None:
             if year in THRESHOLD and tier(year, cites, stars) != "奠基":
                 pool.append((score(year, cites, stars), r))
         pool.sort(key=lambda x: x[0])
-        for score, r in pool[:max(0, n - CAP)]:
+        for _, r in pool[:max(0, n - CAP)]:
             moved[id(r)] = OVER
 
     for r in rows:
