@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""抓 data/classics.csv 與 archive.csv 每篇的引用數（Semantic Scholar）、GitHub star、HF 按讚數與 arXiv 備註，存到 data/metrics.json。
+"""抓重要論文、封存區與最新論文每篇的引用數（Semantic Scholar）、GitHub star、HF 按讚數與 arXiv 備註，存到 data/metrics.json。
 
 arXiv 的 Comments／journal_ref 給 check_data.py 核對刊登處的會議與年份。
 
@@ -17,6 +17,7 @@ import time
 import urllib.error
 from pathlib import Path
 
+from check_data import all_papers
 from enrich import arxiv_batch
 from net import fetch_json
 
@@ -68,12 +69,17 @@ def fetch_hf_upvotes(aid):
 
 def main():
     rows = [r for name in ("classics", "archive") for r in csv.DictReader((ROOT / "data" / f"{name}.csv").open())]
-    ids = [r["id"] for r in rows if r["id"]]  # 沒有 id 的（部落格、技術報告）不查引用
+    # 最新論文也查，check_data.py 才能提醒刊登處更新；沒有 id 的（部落格、技術報告）不查引用
+    ids = list(dict.fromkeys([r["id"] for r in rows if r["id"]] + [r["id"] for r in all_papers() if r["id"]]))
     print(f"Semantic Scholar：{len(ids)} 篇", flush=True)
     papers = fetch_papers(ids)
     repos = sorted({r["repo"] for r in rows if r["repo"]})
     print(f"GitHub star：{len(repos)} 個 repo", flush=True)
-    stars = {repo: fetch_stars(repo) for repo in repos}
+    stars = {}
+    for n, repo in enumerate(repos, 1):
+        stars[repo] = fetch_stars(repo)
+        if n % 50 == 0:
+            print(f"GitHub star {n}/{len(repos)}", flush=True)
     hf_ids = [i for i in ids if not i.startswith("DOI:")]
     hf = {}
     for n, i in enumerate(hf_ids, 1):

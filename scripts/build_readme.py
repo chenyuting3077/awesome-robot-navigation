@@ -30,7 +30,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 
 - 每週一、四由排程 agent 依 [update-survey](.claude/skills/update-survey/SKILL.md) 的流程搜尋新論文並開 PR，`build_readme.py` 通過後自動 merge。
 - 手動更新：在 repo 裡開 Claude Code，說「更新論文整理」。
-- 每個主題分三段：在解決的問題、重要論文（2021 年起，開創性的不限年份）、最新論文。
+- 每個主題分三段：在解決的問題、重要論文（2021 年起，開創性的不限年份）、最新論文（最近 3 個月，更早的留在主題檔）。
 - 程式碼標「未公開」：論文頁、arXiv 頁與 GitHub 搜尋都找不到作者釋出的官方程式碼（第三方重現不算）。
 
 ## 怎樣算重要論文
@@ -52,7 +52,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 為了控制篇數，符合下列條件的論文移到[封存區](docs/archive.md)，不刪除；標「推薦」「基準」的不封存。
 
 - 新興論文公開滿兩個年度，引用與 star 都仍未滿 100。
-- 主題超過 60 篇時，封存分數最低的。分數是「引用 ÷ 該年門檻」加「star ÷ 500」，奠基論文與當年度論文不納入淘汰。
+- 主題超過 30 篇時，封存分數最低的。分數是「引用 ÷ 該年門檻」加「star ÷ 500」，奠基論文與當年度論文不納入淘汰。
 
 ## 定期追蹤的來源
 
@@ -67,6 +67,25 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 - **會議**（接收論文公布時）：RSS、CoRL、ICRA、IROS、CVPR、ICCV、ECCV、3DV、SIGGRAPH、NeurIPS、ICLR、ICML
 """
 DOC_NOTE = "<!-- 本檔由 scripts/build_readme.py 產生，請改 topics/、data/ 後重跑 -->\n\n"
+
+
+def recent_table(latest: str, name: str, updated: str, prefix: str = "") -> str:
+    """只顯示最近 3 個月；「日期」多半是 arXiv 首次提交年月，晚被接收的論文可能一補進來就落在更早的主題檔。"""
+    y, m = int(updated[:4]), int(updated[5:7]) - 2
+    if m < 1:
+        y, m = y - 1, m + 12
+    cutoff = f"{y}-{m:02d}"
+    lines, hidden = [], 0
+    for line in latest.splitlines():
+        date = re.match(r"\| (\d{4}-\d{2}) \|", line)
+        if date and date[1] < cutoff:
+            hidden += 1
+        else:
+            lines.append(line)
+    text = "\n".join(lines).strip()
+    if hidden:
+        text += f"\n\n更早的 {hidden} 篇見 [topics/{name}.md]({prefix}topics/{name}.md)。"
+    return text
 
 
 def anchor(title: str) -> str:
@@ -141,12 +160,16 @@ def main() -> None:
     classics = list(csv.DictReader((ROOT / "data" / "classics.csv").open()))
     metrics = json.loads((ROOT / "data" / "metrics.json").read_text())
 
+    digests = sorted((ROOT / "digests").glob("*.md"), reverse=True)
+    latest = digests[0].read_text()
+    updated = re.search(r"最後更新：(\S+)", latest).group(1)
+
     sections = []
     for name in TOPICS:
         text = (ROOT / "topics" / f"{name}.md").read_text().strip()
         title, body = text.split("\n", 1)
         title = title.lstrip("# ").strip()
-        problems, latest = body.split("## 最新論文", 1)
+        problems, recent = body.split("## 最新論文", 1)
         problems = problems.replace("## 在解決的問題", "").strip()
         rows = [r for r in classics if r["topic"] == name]
         h = "#" if name in PAGES else "##"
@@ -156,7 +179,7 @@ def main() -> None:
             for sub in SUBS.get(name, [""]):
                 group = [r for r in rows if r["sub"] == sub]
                 parts += ([f"{h}## {sub}"] if sub else []) + [classics_table(group, metrics)]
-        parts += [f"{h}# 最新論文", latest.strip()]
+        parts += [f"{h}# 最新論文", recent_table(recent, name, updated, "../" if name in PAGES else "")]
         if name in PAGES:
             (ROOT / "docs" / f"{name}.md").write_text(DOC_NOTE + "\n\n".join(parts) + "\n")
         sections.append((title, name, "\n\n".join(parts)))
@@ -169,10 +192,7 @@ def main() -> None:
                       classics_table([r for r in archive if r["topic"] == name and r["reason"] == reason], metrics)]
     (ROOT / "docs" / "archive.md").write_text(DOC_NOTE + "\n\n".join(parts) + "\n")
 
-    digests =sorted((ROOT / "digests").glob("*.md"), reverse=True)
-    latest = digests[0].read_text()
     trend = latest.split("## 趨勢", 1)[1].split("\n## ", 1)[0].strip()
-    updated = re.search(r"最後更新：(\S+)", latest).group(1)
 
     out = [HEADER, f"最後更新：{updated}\n", "## 目錄\n"]
     out.append(f"- [本月趨勢（{digests[0].stem}）](#本月趨勢{anchor(digests[0].stem)})")

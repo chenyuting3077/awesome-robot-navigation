@@ -84,3 +84,151 @@ real2sim,2210.04932,NeRF2Real,DeepMind,ICRA 2023,,https://sites.google.com/view/
 det3d,2104.08383,Category-level Pose and Shape,MIT,RSS 2021,,,,獲獎,給類別 CAD 庫的主動形狀模型，以可驗證全域最優的凸鬆弛同時解物件位姿與形狀，對離群點穩健,,新興滿兩年未達門檻
 det3d,2204.07183,InterObject3D,ETH / RWTH Aachen,ICRA 2023,theodorakontogianni/InterObject3D,,,獲獎,使用者點擊迭代修正的互動式 3D 實例分割，可泛化到訓練外類別,,新興滿兩年未達門檻
 det3d,DOI:10.1109/ICRA57147.2024.10610562,HEGN,Siemens / TUM,ICRA 2024,,,,獲獎,階層式等變圖網路做含縮放的 9DoF 點雲配準，用於類別級位姿估計,,新興滿兩年未達門檻
+vln,2207.04429,LM-Nav,UC Berkeley,CoRL 2022,blazejosinski/lm_nav,https://sites.google.com/view/lmnav,,,用現成 LLM + VLM + ViNT 類導航模型組合，不需標註語言資料就能照指令走,,超過主題上限
+vln,2203.10421,CoW (CLIP on Wheels),Columbia,CVPR 2023,real-stanford/cow,https://cow.cs.columbia.edu/,,,把 CLIP 接上探索策略做 zero-shot 物件導航,,超過主題上限
+vln,2304.03047,ETPNav,UCAS / CASIA 等,TPAMI 2024,MarSaKi/ETPNav,,,,連續環境 VLN 用線上拓撲圖做高層規劃,,超過主題上限
+vln,2305.16986,NavGPT,Adelaide / ANU,AAAI 2024,GengzeZhou/NavGPT,,,,純 LLM 推理做 VLN，把觀測轉文字,,超過主題上限
+vln,2412.06224,Uni-NaVid,PKU,RSS 2025,jzhzhang/Uni-NaVid,https://pku-epic.github.io/Uni-NaVid/,,,一個 VLM 統一 VLN、物件導航、問答、跟人等導航任務,,超過主題上限
+slam,2208.04726,DPVO,Princeton,NeurIPS 2023,princeton-vl/DPVO,,,,稀疏 patch 的深度視覺里程計，比 DROID 輕量,視覺與慣性里程計、SLAM,超過主題上限
+slam,2308.00688,AnyLoc,CMU / IIIT,RA-L 2024,AnyLoc/AnyLoc,https://anyloc.github.io/,,,用基礎模型特徵做通用視覺地點辨識,地點辨識與重定位,超過主題上限
+vision,2205.06230,OWL-ViT,Google,ECCV 2022,google-research/scenic,,,,用 CLIP 式骨幹做開放詞彙偵測,,超過主題上限
+real2sim,2409.10161,SplatSim,CMU,ICRA 2025,qureshinomaan/SplatSim,https://splatsim.github.io,,,用 3DGS 取代模擬器渲染，縮小視覺 sim-to-real 差距,,超過主題上限
+vln,2110.13309,HAMT,Inria / ENS,NeurIPS 2021,cshizhe/VLN-HAMT,https://cshizhe.github.io/projects/vln_hamt.html,,,階層式 ViT 編碼完整全景歷史取代 RNN 記憶,,超過主題上限
+vln,2202.11742,DUET,Inria / ENS / IIIT Hyderabad,CVPR 2022,cshizhe/VLN-DUET,https://cshizhe.github.io/projects/vln_duet.html,,獲獎,線上拓撲圖做全域規劃，搭配局部細粒度跨模態推理,,超過主題上限
+vln,2301.13166,ESC,UC Santa Cruz / Samsung Research,ICML 2023,,,,,LLM 常識轉成軟性邏輯約束引導 frontier 探索,,超過主題上限
+vln,2410.08189,SG-Nav,Tsinghua / BUPT,NeurIPS 2024,bagh2178/SG-Nav,https://bagh2178.github.io/SG-Nav/,,,線上 3D 場景圖分層提示 LLM 做零樣本物件導航,,超過主題上限
+vln,2312.02010,NaviLLM,CUHK / Shanghai AI Lab,CVPR 2024,zd11024/NaviLLM,,,,schema 化提示讓單一 LLM 統一多種導航任務,,超過主題上限
+vln,2307.12907,GridMM,ICT-CAS / UCAS,ICCV 2023,MrZihan/GridMM,,,,動態成長的俯視網格記憶地圖結構化已訪環境,,超過主題上限
+vln,2401.07314,MapGPT,HKU / SYSU / Meituan,ACL 2024,chen-judge/MapGPT,https://chen-judge.github.io/MapGPT/,,,線上拓撲地圖轉成提示讓 GPT 做全域路徑規劃,,超過主題上限
+vln,2407.12366,NavGPT-2,Adelaide / Adobe / UNC 等,ECCV 2024,GengzeZhou/NavGPT-2,,,,凍結 LLM 的 VLM 特徵接拓撲圖策略，保留可解釋推理,,超過主題上限
+vln,2403.07376,NavCoT,SYSU / Huawei Noah's Ark,TPAMI 2025,expectorlin/NavCoT,,,,LLM 自我引導解耦推理（想像、篩選、預測）並參數高效微調,,超過主題上限
+vln,2402.10670,OpenFMNav,PKU / Notre Dame,NAACL 2024 Findings,yxKryptonite/OpenFMNav,https://yuxuank.com/OpenFMNav/,,,LLM 解析自由指令加 VLM 建語意地圖做開放集物件導航,,超過主題上限
+vln,2401.02695,VoroNav,PKU / Shanghai AI Lab / HKU,ICML 2024,,https://voro-nav.github.io,,,簡化 Voronoi 圖萃取探索路徑節點交給 LLM 決策,,超過主題上限
+vln,2509.12129,NavFoM,PKU / Galbot / USTC 等,ICLR 2026,,https://pku-epic.github.io/NavFoM-Web/,,,跨載具跨任務導航基礎模型，800 萬筆多機種資料訓練,,超過主題上限
+vln,2412.09082,LH-VLN,SYSU,CVPR 2025,HCPLab-SYSU/LH-VLN,https://hcplab-sysu.github.io/LH-VLN/,,,多階段長程 VLN 任務，含自動資料生成平台與基準,,超過主題上限
+vln,2407.05890,AO-Planner,HKU / SYSU / Meituan,AAAI 2025,chen-judge/AO-Planner,https://chen-judge.github.io/AO-Planner/,,,VLM 預測可行走路徑點，補上連續 VLN 底層控制,,超過主題上限
+vln,2409.18794,Open-Nav,Adelaide / SCUT,ICRA 2025,YanyuanQiao/Open-Nav,https://sites.google.com/view/opennav,,,開源 LLM 搭配時空 CoT 做連續環境零樣本 VLN,,超過主題上限
+vln,2403.14158,VER,Zhejiang,CVPR 2024,DefaultRui/VLN-VER,,,,多視角 2D 特徵聚合成 3D 體素表示環境,,超過主題上限
+vln,2507.04047,MTU3D,Tsinghua / BIGAI / BIT 等,ICCV 2025,MTU3D/MTU3D,https://mtu3d.github.io,,,3D 視覺定位與主動探索合一，支援多種目標模態,,超過主題上限
+vln,2506.17221,VLN-R1,Shanghai AI Lab / HKU,arXiv,Qi-Zhangyang/GPT4Scene-and-VLN-R1,https://vlnr1.github.io,,,LVLM 以 GRPO 強化微調直接輸出連續導航動作,,超過主題上限
+vln,2504.14478,ApexNav,HKUST(GZ) / SUSTech,RA-L 2025,SYSU-STAR/ApexNav,https://robotics-star.com/ApexNav,,,依語意線索強弱切換探索策略，目標中心融合抗誤檢,,超過主題上限
+vln,2503.02247,WMNav,CASIA / Wuhan Univ. / UTS,IROS 2025,B0B8K1ng/WMNavigation,https://b0b8k1ng.github.io/WMNav/,,獲獎,VLM 當世界模型預測決策結果並回饋策略,,超過主題上限
+vln,2509.25687,OmniNav,Alibaba / PKU,ICLR 2026,amap-cvlab/OmniNav,https://astra-amap.github.io/omninav.github.io/,,,單一架構統一指令、物件、點目標導航與探索,,超過主題上限
+vln,2507.13019,VLN-PE,Tongji / Shanghai AI Lab / SJTU,ICCV 2025,,https://crystalsixone.github.io/vln_pe.github.io/,,,支援人形、四足、輪式的物理真實 VLN 平台與評測,,超過主題上限
+vln,2506.09839,OctoNav,Beihang / NUS / PKU 等,CVPR 2026,buaa-colalab/OctoNav-R1,https://buaa-colalab.github.io/OctoNav,,,多模態多能力自由指令基準，加先思考再行動的 R1 模型,,超過主題上限
+vln,2505.11383,Dynam3D,NUS,NeurIPS 2025,MrZihan/Dynam3D,,,獲獎,動態分層 3D token 當 VLM 輸入，隨環境更新,,超過主題上限
+spatial,2309.12311,LLM-Grounder,Univ. of Michigan,ICRA 2024,sled-group/chat-with-nerf,https://chat-with-nerf.github.io/,,,LLM 當代理拆解查詢並呼叫工具做 3D 視覺定位,,超過主題上限
+slam,2103.12352,iMAP,Imperial,ICCV 2021,,,,,首次以單一 MLP 作為即時 RGB-D SLAM 的地圖,NeRF／3DGS 稠密 SLAM,超過主題上限
+slam,2311.11700,GS-SLAM,Shanghai AI Lab / HKUST / Fudan 等,CVPR 2024,,https://gs-slam.github.io/,,,首個用 3D Gaussian 表示的稠密 RGB-D SLAM,NeRF／3DGS 稠密 SLAM,超過主題上限
+slam,2103.01486,Patch-NetVLAD,QUT,CVPR 2021,QVPR/Patch-NetVLAD,,,,從 NetVLAD 殘差取多尺度局部描述子做地點辨識重排序,地點辨識與重定位,超過主題上限
+slam,2107.00822,F-LOAM,NTU,IROS 2021,wh200720041/floam,,,,兩階段失真補償取代迭代的快速 LiDAR 里程計,LiDAR、雷達與多感測器融合,超過主題上限
+slam,2210.13641,NeRF-SLAM,MIT SPARK,IROS 2023,ToniRV/NeRF-SLAM,,,,稠密單目 SLAM 提供位姿與深度不確定度即時訓練 NeRF,NeRF／3DGS 稠密 SLAM,超過主題上限
+slam,2304.14377,Co-SLAM,UCL,CVPR 2023,HengyiWang/Co-SLAM,https://hengyiwang.github.io/projects/CoSLAM,,,座標編碼與雜湊網格混合表示的神經 RGB-D SLAM,NeRF／3DGS 稠密 SLAM,超過主題上限
+slam,2103.07899,GVINS,HKUST,T-RO 2022,HKUST-Aerial-Robotics/GVINS,,,,GNSS 原始量測緊耦合視覺慣性的無漂移狀態估測,視覺與慣性里程計、SLAM,超過主題上限
+slam,2304.04278,Point-SLAM,ETH / KU Leuven / Univ. of Amsterdam,ICCV 2023,eriksandstroem/Point-SLAM,,,,依資訊密度動態佈點的神經點雲稠密 SLAM,NeRF／3DGS 稠密 SLAM,超過主題上限
+slam,2303.02190,MixVPR,Laval,WACV 2023,amaralibey/MixVPR,,,,以 MLP 特徵混合聚合全域描述子的視覺地點辨識,地點辨識與重定位,超過主題上限
+slam,2311.16728,Photo-SLAM,HKUST / SYSU,CVPR 2024,HuajianUP/Photo-SLAM,https://huajianup.github.io/research/Photo-SLAM/,,,特徵點定位搭配超原語 Gaussian 的即時寫實建圖,NeRF／3DGS 稠密 SLAM,超過主題上限
+slam,2302.03594,NICER-SLAM,ETH / MPI-IS / Lund 等,3DV 2024,cvg/nicer-slam,https://nicer-slam.github.io,,獲獎,僅用 RGB 並以單目先驗監督的神經隱式稠密 SLAM,NeRF／3DGS 稠密 SLAM,超過主題上限
+slam,2309.02436,GO-SLAM,Bologna,ICCV 2023,youmi-zym/GO-SLAM,https://youmi-zym.github.io/projects/GO-SLAM/,,,迴環與全域 BA 即時更新神經重建的稠密 SLAM,NeRF／3DGS 稠密 SLAM,超過主題上限
+slam,2311.15937,SALAD,Zaragoza,CVPR 2024,serizba/salad,,,,以最佳傳輸與 dustbin 重構 NetVLAD 聚合,地點辨識與重定位,超過主題上限
+slam,2301.06230,Swarm-SLAM,Polytechnique Montréal,RA-L 2024,MISTLab/Swarm-SLAM,https://lajoiepy.github.io/cslam_documentation/html/index.html,,,稀疏去中心化的多機器人協作 SLAM,多機器人與長期地圖,超過主題上限
+slam,2403.12550,GS-ICP SLAM,SKKU,ECCV 2024,Lab-of-AI-and-Robotics/GS_ICP_SLAM,,,,G-ICP 與 3DGS 共用 Gaussian 地圖的高速 SLAM,NeRF／3DGS 稠密 SLAM,超過主題上限
+slam,2401.09101,PIN-SLAM,Bonn,T-RO 2024,PRBonn/PIN_SLAM,,,,點式隱式神經地圖可隨迴環彈性變形的 LiDAR SLAM,LiDAR、雷達與多感測器融合,超過主題上限
+slam,2405.16544,Splat-SLAM,Google / ETH / Univ. of Amsterdam 等,CVPRW 2025,google-research/Splat-SLAM,,,,全域優化追蹤並隨之變形 Gaussian 地圖的純 RGB SLAM,NeRF／3DGS 稠密 SLAM,超過主題上限
+slam,2408.01654,DPV-SLAM,Princeton,ECCV 2024,princeton-vl/DPVO,,,,DPVO 加上迴環的單 GPU 低記憶體深度視覺 SLAM,視覺與慣性里程計、SLAM,超過主題上限
+slam,2402.13817,Khronos,MIT SPARK,RSS 2024,MIT-SPARK/Khronos,,,獲獎;機構,統一處理短期動態與長期變化的時空度量語意 SLAM,多機器人與長期地圖,超過主題上限
+slam,2502.17237,MegaLoc,PoliTo / Focoos AI,CVPRW 2025,gmberton/MegaLoc,,,,合併多資料集訓練的通用影像檢索定位模型,地點辨識與重定位,超過主題上限
+slam,2503.12660,KISS-SLAM,Bonn / Sapienza,IROS 2025,PRBonn/kiss-slam,,,,延續 KISS-ICP 免調參、泛化強的 LiDAR SLAM 基線,LiDAR、雷達與多感測器融合,超過主題上限
+slam,2103.09213,PixLoc,ETH / Chalmers / Microsoft 等,CVPR 2021,cvg/pixloc,https://psarlin.com/pixloc/,,,對齊多尺度深度特徵的場景無關相機定位,地點辨識與重定位,超過主題上限
+quadruped,2208.08373,Perceptive NMPC,ETH,T-RO 2023,,,,,以凸落腳區約束嵌入全身 NMPC 的感知式運動,,超過主題上限
+perception-3d,2203.11483,CREStereo,Megvii / Tencent 等,CVPR 2022,megvii-research/CREStereo,,,,階層式遞迴網路搭配自適應相關，適用實拍雙目,,超過主題上限
+perception-3d,2409.00638,IGEV++,HUST,TPAMI 2025,gangweix/igev-plusplus,,,,多範圍幾何編碼體積處理大視差與病態區域,,超過主題上限
+perception-3d,2501.02464,Depth Any Camera,Bosch / CMU / Simon Fraser 等,CVPR 2025,yuliangguo/depth_any_camera,https://yuliangguo.github.io/depth-any-camera,,,透視相機訓練即可泛化到魚眼與 360 度公制深度,,超過主題上限
+perception-3d,2505.10565,Prior Depth Anything,Zhejiang / HKU,arXiv,SpatialVision/Prior-Depth-Anything,https://prior-depth-anything.github.io/,,,融合任意稀疏公制先驗與相對深度預測補全深度,,超過主題上限
+perception-3d,2504.09540,EmbodiedOcc++,PKU,ACM MM 2025,PKUHaoWang/EmbodiedOcc2,https://pkuhaowang.github.io/EmbodiedOcc2/,,,平面正則與不確定性取樣改進室內高斯佔據預測,,超過主題上限
+perception-3d,2501.08643,MonSter++,HUST,TPAMI 2026,,,,,單眼深度先驗雙分支融合，統一雙目與多視角立體,,超過主題上限
+perception-3d,2506.14709,DiFuse-Net,Samsung Research India,IROS 2025,,,,獲獎,把 RGB 與手機雙像素（dual-pixel）分開編碼後以雙向視差注意力融合估深度,,超過主題上限
+perception-3d,2501.10357,Zero-Shot Scene Flow,NVIDIA / Brown,CVPR 2025,,https://research.nvidia.com/labs/lpr/zero_msf/,,獲獎,聯合估幾何與運動並大規模混合資料訓練，單目場景流首次能 zero-shot 泛化,,超過主題上限
+reconstruction,2312.04563,VGGSfM,Oxford VGG / Meta,CVPR 2024,facebookresearch/vggsfm,https://vggsfm.github.io/,,,全流程可微分的深度 SfM，取代增量式配對與三角化,SfM 與相機位姿,超過主題上限
+reconstruction,2104.00681,NeuralRecon,Zhejiang / SenseTime,CVPR 2021,zju3dv/NeuralRecon,https://zju3dv.github.io/neuralrecon/,,獲獎,直接增量重建 TSDF，不再逐幀估深度後融合,表面、TSDF 與點雲補全,超過主題上限
+reconstruction,2408.16061,Spann3R,UCL,3DV 2025,hengyiwang/spann3r,https://hengyiwang.github.io/projects/spanner,,獲獎,以空間記憶逐幀增量回歸 pointmap，免全域對齊,feed-forward 重建,超過主題上限
+reconstruction,2108.08291,PixSfM,ETH / Microsoft,ICCV 2021,cvg/pixel-perfect-sfm,https://psarlin.com/pixsfm/,,獲獎,以深度特徵度量精修關鍵點與 BA，提升 SfM 精度,SfM 與相機位姿,超過主題上限
+reconstruction,2410.24207,NoPoSplat,ETH / NVIDIA / Microsoft 等,ICLR 2025,cvg/NoPoSplat,https://noposplat.github.io/,,獲獎,免相機位姿、直接在標準空間預測 3D 高斯,3DGS／NeRF 表示與渲染,超過主題上限
+reconstruction,2403.17822,DN-Splatter,ETH / Tampere / Aalto 等,WACV 2025,maturk/dn-splatter,https://maturk.github.io/dn-splatter/,,,以深度與法向量先驗約束 3DGS 並直接抽網格,3DGS／NeRF 表示與渲染,超過主題上限
+reconstruction,2409.19152,MASt3R-SfM,Naver Labs Europe,3DV 2025,naver/mast3r,,,獲獎,以 MASt3R 匹配與檢索建構免調參的全整合 SfM,SfM 與相機位姿,超過主題上限
+reconstruction,2412.06974,MV-DUSt3R+,Meta / UIUC,CVPR 2025,facebookresearch/mvdust3r,https://mv-dust3rp.github.io/,,,單階段多視角同時重建，免兩兩配對後全域對齊,feed-forward 重建,超過主題上限
+reconstruction,2507.12462,SpatialTrackerV2,Zhejiang / Oxford / Ant Group 等,ICCV 2025,henry123-boy/SpaTrackerV2,https://spatialtracker.github.io,,,統一點追蹤、深度與相機運動的前向 3D 追蹤,動態與 4D,超過主題上限
+reconstruction,2507.02863,Point3R,Tsinghua,NeurIPS 2025,YkiWu/Point3R,https://ykiwu.github.io/Point3R/,,,以綁定 3D 位置的顯式指標記憶做串流重建,feed-forward 重建,超過主題上限
+reconstruction,2508.10893,STream3R,NTU / Shanghai AI Lab,ICLR 2026,NIRVANALAN/STream3R,https://nirvanalan.github.io/projects/stream3r/,,,以因果 Transformer 串流預測 pointmap,feed-forward 重建,超過主題上限
+reconstruction,2503.17316,Pow3R,Naver Labs / UCL,CVPR 2025,naver/pow3r,https://europe.naverlabs.com/pow3r,,,可選擇輸入內參、位姿、深度先驗的前向重建,feed-forward 重建,超過主題上限
+reconstruction,2510.10726,WorldMirror,Tencent / CUHK / Zhejiang,ICML 2026,Tencent-Hunyuan/HunyuanWorld-Mirror,https://3d-models.hunyuan.tencent.com/world/,,,可注入任意幾何先驗並同時輸出多種 3D 表示,feed-forward 重建,超過主題上限
+reconstruction,2507.18255,LONG3R,Shanghai AI Lab / Tsinghua / Shanghai Qi Zhi,ICCV 2025,zgchen33/LONG3R,https://zgchen33.github.io/LONG3R/,,,記憶閘控與雙源注意力支撐長序列串流重建,feed-forward 重建,超過主題上限
+reconstruction,2501.14914,Light3R-SfM,NVIDIA / Vector Institute / Univ. of Toronto,CVPR 2025,,,,,以可學習潛在全域對齊取代 BA 的前向 SfM,SfM 與相機位姿,超過主題上限
+reconstruction,2412.12507,3DGUT,NVIDIA / Univ. of Toronto,CVPR 2025,nv-tlabs/3dgrut,https://research.nvidia.com/labs/toronto-ai/3DGUT,,,以無跡變換投影高斯，支援畸變相機與二次光線,3DGS／NeRF 表示與渲染,超過主題上限
+reconstruction,2407.07090,3DGRT,NVIDIA / Univ. of Toronto,SIGGRAPH Asia 2024,nv-tlabs/3dgrut,https://gaussiantracer.github.io/,,,以 GPU 光線追蹤取代光柵化渲染 3D 高斯粒子,3DGS／NeRF 表示與渲染,超過主題上限
+reconstruction,2412.09401,SLAM3R,PKU / HKU / Aalto 等,CVPR 2025,PKU-VCL-3DV/SLAM3R,,,,前饋點圖回歸逐窗重建的即時單目稠密重建,feed-forward 重建,超過主題上限
+reconstruction,2505.00702,RayZer,UT Austin / Adobe / Cornell 等,ICCV 2025,,https://hwjiang1510.github.io/RayZer/,,獲獎,完全不用位姿或 3D 標註，自我預測相機後渲染新視角做自監督，訓練出大型視角合成模型,3DGS／NeRF 表示與渲染,超過主題上限
+reconstruction,2108.08839,PoinTr,Tsinghua,ICCV 2021,yuxumin/PoinTr,,,,把點雲補全改成集合到集合的翻譯，以幾何感知 transformer 由殘缺點雲生成缺漏部分,表面、TSDF 與點雲補全,超過主題上限
+reconstruction,2301.04545,AdaPoinTr,Tsinghua,TPAMI 2023,yuxumin/PoinTr,,,,PoinTr 加自適應查詢與去噪任務，補全更快更準，並延伸到場景級補全,表面、TSDF 與點雲補全,超過主題上限
+reconstruction,2108.04444,SnowflakeNet,Tsinghua / JD.com 等,ICCV 2021,,,,,以雪花式點反卷積逐步分裂點，skip-transformer 保留局部結構，補全細節更清楚,表面、TSDF 與點雲補全,超過主題上限
+reconstruction,2106.03452,Shape As Points,MPI-IS / ETH / Tübingen 等,NeurIPS 2021,autonomousvision/shape_as_points,https://pengsongyou.github.io/sap,,,可微分 Poisson 求解器把點雲轉成隱式表面，比神經隱式表示快且可端到端最佳化,表面、TSDF 與點雲補全,超過主題上限
+reconstruction,2503.16318,Dynamic Point Maps,Oxford VGG,ICCV 2025,,https://www.robots.ox.ac.uk/~vgg/research/dynamic-point-maps/,,,把 DUSt3R 的點圖擴展為帶時間的動態點圖，一次得到動態場景的幾何與運動,動態與 4D,超過主題上限
+vision,2404.19174,XFeat,UFMG / Google / Univ. Bourgogne 等,CVPR 2024,verlab/accelerated_features,,,,CPU 也能即時的輕量特徵偵測與匹配,,超過主題上限
+real2sim,2501.06693,Vid2Sim,UCLA / UIUC,CVPR 2025,Vid2Sim/Vid2Sim,https://metadriverse.github.io/vid2sim/,,,從影片重建可互動 3DGS 城市環境訓練導航,,超過主題上限
+vision,2403.04765,Efficient LoFTR,Zhejiang,CVPR 2024,zju3dv/EfficientLoFTR,https://zju3dv.github.io/efficientloftr/,,,聚合注意力讓半稠密匹配接近稀疏方法速度,,超過主題上限
+real2sim,2503.00370,Scalable Real2Sim,MIT,IROS 2025,nepfaff/scalable-real2sim,https://scalable-real2sim.github.io/,,機構,機器人抓放自動辨識幾何與慣性參數產生模擬資產,,超過主題上限
+real2sim,2510.20813,GSWorld,UCSD / UCLA / Meta,ICRA 2026,luccachiang/GSWorld,https://3dgsworld.github.io,,機構,GSDF 格式結合 3DGS 與物理引擎的閉環操作模擬,,超過主題上限
+real2sim,2503.08135,ArticulatedGS,USTC / NUDT,CVPR 2025,,,,,兩種關節狀態影像自監督重建關節物件 3DGS,,超過主題上限
+real2sim,2404.01440,DigitalTwinArt,NVIDIA / Stanford,CVPR 2024,NVlabs/DigitalTwinArt,https://nvlabs.github.io/DigitalTwinArt/,,,兩次 RGBD 掃描重建未知關節物件數位分身,,超過主題上限
+vision,2112.09106,RegionCLIP,Microsoft / UW-Madison,CVPR 2022,microsoft/RegionCLIP,,,,區域與文字對齊預訓練，用於開放詞彙偵測,,超過主題上限
+vision,2111.13680,GMFlow,Monash / Sydney / JD Explore,CVPR 2022,haofeixu/gmflow,,,獲獎,以全域匹配取代 cost volume 迴歸的光流,,超過主題上限
+vision,2306.09683,OWLv2,Google DeepMind,NeurIPS 2023,google-research/scenic,,,,網路圖文對自訓練偽標註，擴大開放詞彙偵測,,超過主題上限
+vision,2305.15404,RoMa,Linköping / ECUST / Chalmers,CVPR 2024,Parskatt/RoMa,https://parskatt.github.io/RoMa/,,,DINOv2 粗特徵加分類式回歸的穩健稠密匹配,,超過主題上限
+vision,2304.11968,Track Anything,SUSTech,arXiv,gaomingqi/Track-Anything,,,,SAM 結合 XMem 的互動式影片物件追蹤,,超過主題上限
+vision,2312.00863,EfficientSAM,Meta,CVPR 2024,yformer/EfficientSAM,https://yformer.github.io/efficient-sam/,,,以 SAM 特徵遮罩重建預訓練輕量分割模型,,超過主題上限
+vision,2202.00667,DKM,Linköping,CVPR 2023,Parskatt/DKM,https://parskatt.github.io/DKM/,,,核回歸全域匹配加深度引導細化的稠密匹配,,超過主題上限
+vision,2305.06558,SAM-Track,Zhejiang,arXiv,z-x-yang/Segment-and-Track-Anything,,,,SAM 結合 DeAOT 的多模態互動影片分割追蹤,,超過主題上限
+vision,2312.06709,AM-RADIO,NVIDIA,CVPR 2024,NVlabs/RADIO,,,,多教師蒸餾融合 CLIP、DINOv2、SAM 的單一骨幹,,超過主題上限
+vision,2410.11831,CoTracker3,Meta / Oxford,arXiv,facebookresearch/co-tracker,https://cotracker3.github.io/,,,以偽標籤在真實影片半監督訓練的簡化點追蹤,,超過主題上限
+vision,2411.11922,SAMURAI,UW,arXiv,yangchris11/samurai,https://yangchris11.github.io/samurai/,,,SAM 2 加運動感知記憶選擇的零樣本追蹤,,超過主題上限
+vision,2411.14347,DINO-X,IDEA,arXiv,IDEA-Research/DINO-X-API,,,,支援免提示的開放世界偵測與理解統一模型,,超過主題上限
+vision,2405.12979,OmniGlue,UT Austin / Google,CVPR 2024,google-research/omniglue,https://hwjiang1510.github.io/OmniGlue,,,用 DINOv2 引導關鍵點匹配，提升跨域泛化,,超過主題上限
+vision,2406.03459,LW-DETR,Baidu / Adelaide / Beihang 等,arXiv,Atten4Vis/LW-DETR,,,,ViT 編碼器加淺層解碼器，取代 YOLO 的即時 DETR,,超過主題上限
+vision,2412.07679,RADIOv2.5,NVIDIA,CVPR 2025,NVlabs/RADIO,,,,解決解析度模式切換並擴大規模的聚合骨幹,,超過主題上限
+vision,2407.20179,Theia,Stony Brook / The AI Institute,CoRL 2024,bdaiinstitute/theia,http://theia.theaiinstitute.com,,,蒸餾多個視覺基礎模型成機器人學習用小模型,,超過主題上限
+vision,2506.07310,AllTracker,Stanford / CMU / TRI 等,ICCV 2025,aharley/alltracker,https://alltracker.github.io,,,以多幀光流估計做高解析度全像素點追蹤,,超過主題上限
+vision,2509.20787,DEIMv2,Intellindust / Xiamen,arXiv,Intellindust-AI-Lab/DEIMv2,https://intellindust-ai-lab.github.io/projects/DEIMv2/,,,DEIM 接上 DINOv3 特徵，涵蓋 GPU 到行動端,,超過主題上限
+vision,2511.15706,RoMa v2,Linköping / Chalmers / Amsterdam 等,ECCV 2026,Parskatt/romav2,,,,改良架構與訓練，更快更準的稠密匹配,,超過主題上限
+vision,2501.07256,EdgeTAM,Meta / NTU,CVPR 2025,facebookresearch/EdgeTAM,,,,2D 空間感知器壓縮記憶，讓 SAM 2 手機即時,,超過主題上限
+vision,2510.25257,RT-DETRv4,PKU,ECCV 2026,RT-DETRs/RT-DETRv4,,,,訓練時蒸餾基礎模型特徵，推論零額外成本,,超過主題上限
+vision,2306.05422,OmniMotion,Cornell / Google / UC Berkeley,ICCV 2023,qianqianwang68/omnimotion,https://omnimotion.github.io/,,獲獎,測試時最佳化全域一致的準 3D 表示，對整段影片每個像素做長時距、跨遮擋追蹤,,超過主題上限
+vision,2405.14793,SEA-RAFT,Princeton,ECCV 2024,princeton-vl/SEA-RAFT,,,獲獎,改用混合 Laplace 損失、直接回歸初始光流並以剛體運動預訓練，比 RAFT 更快更準,,超過主題上限
+vision,2311.10988,OvSGTR,CASIA / PolyU,ECCV 2024,gpt4vision/OvSGTR,,,獲獎,物件與關係都開放詞彙的場景圖生成，以視覺概念對齊並保留知識避免遺忘,,超過主題上限
+vision,2512.04213,LAPA,Northeastern,3DV 2026,ostadabbas/Look-Around-and-Pay-Attention-LAPA-,https://ostadabbas.github.io/lapa.github.io/,,獲獎,端到端 transformer 同時做外觀匹配與幾何約束，多相機點追蹤不再拆成偵測、關聯、追蹤,,超過主題上限
+real2sim,2410.07408,ACDC,Stanford,CoRL 2024,cremebrule/digital-cousins,https://digital-cousins.github.io,,機構,用相似而非精確複製的數位表親場景訓練穩健策略,,超過主題上限
+real2sim,2410.13882,Articulate-Anything,UPenn,ICLR 2025,vlongle/articulate-anything,https://articulate-anything.github.io/,,,VLM 生成程式碼並自我批評建立關節物件,,超過主題上限
+real2sim,2510.20808,Reality Gap Review,UZH / NVIDIA / UW,ARCRAS 2026,,,,,整理 sim-to-real 落差來源與對策的綜述,,超過主題上限
+real2sim,2504.15278,DRAWER,UIUC / UW / AI2 等,CVPR 2025,xiahongchi/DRAWER,https://drawer-art.github.io/,,,單段影片轉成可互動關節的照片級室內環境,,超過主題上限
+real2sim,2505.02388,MetaScenes,BIGAI,CVPR 2025,meta-scenes/MetaScenes,https://meta-scenes.github.io/,,,自動把真實掃描物件替換成可模擬資產,,超過主題上限
+real2sim,2512.10675,Veo World Simulator,Google DeepMind,arXiv,,https://veo-robotics.github.io/,,,把 Veo 影片模型改成以動作為條件、多視角一致的世界模擬器，用來排序策略、測 OOD 泛化與紅隊找不安全行為；1600+ 次實機評估顯示預測與實際成功率高度相關,,超過主題上限
+slam,DOI:10.1109/LRA.2024.3349915,iG-LIO,Zhejiang,RA-L 2024,zijiechenrobotics/ig_lio,,,,增量 GICP 緊耦合 LIO，兼顧速度與精度,LiDAR、雷達與多感測器融合,超過主題上限
+slam,DOI:10.1109/TRO.2023.3323938,SLAM in Extreme Environments (SubT),NASA JPL / CMU / ETH 等,T-RO 2024,,,,,DARPA SubT 各隊 SLAM 系統與地下環境經驗總整理,資料集、綜述與工具,超過主題上限
+slam,2305.10854,MAC (Maximal Cliques),Northwestern Polytechnical,CVPR 2023,zhangxy0517/3D-Registration-with-Maximal-Cliques,,,獲獎,放寬最大團限制，從相容圖中挖出多個極大團產生位姿假設，點雲配準更穩,點雲配準,超過主題上限
+slam,2109.12979,CT-ICP,MINES ParisTech / Kitware,ICRA 2022,jedeschaud/ct_icp,,,獲獎,每幀以起訖兩個位姿連續插值處理掃描畸變，加上回環偵測組成完整 LiDAR SLAM,LiDAR、雷達與多感測器融合,超過主題上限
+slam,2409.09479,MAC-VO,CMU / SJTU,ICRA 2025,MAC-VO/MAC-VO,,,獲獎,學出度量感知的匹配不確定性，同時用來挑關鍵點與加權位姿圖殘差,視覺與慣性里程計、SLAM,超過主題上限
+slam,2202.06688,GeoTransformer,NUDT / TUM 等,CVPR 2022,qinzheng93/GeoTransformer,,,,以超點間的幾何結構編碼做無關鍵點匹配，低重疊配準不需 RANSAC 也很穩,點雲配準,超過主題上限
+quadruped,2104.04644,Fast and Efficient Gait Transitions,University of Washington / Google,CoRL 2021,yxyang/fast_and_efficient,https://sites.google.com/view/fast-and-efficient,,獲獎,高層策略以 ES 學步態選擇、低層 MPC 執行，只用能耗獎勵就自然長出隨速度切換步態,,超過主題上限
+quadruped,2203.15103,AMP for Locomotion,UC Berkeley / Google,IROS 2022,,,,獲獎,用對抗式動作先驗取代繁瑣的手調獎勵，四足實機學出自然且節能的步態,,超過主題上限
+quadruped,2103.14300,Robotic Guide Dog,UC Berkeley,ICRA 2021,,,,獲獎,四足以牽繩混合物理互動引導人通過狹窄雜亂空間，牽繩鬆緊納入規劃,,超過主題上限
+vln,2509.19480,OmniVLA,UC Berkeley / Toyota / Princeton,ICRA 2026,NHirose/OmniVLA,https://omnivla-nav.github.io/,,機構,語言、座標、影像多種目標模態共用的導航 VLA,,超過主題上限
+spatial,2312.08168,Chat-Scene,Zhejiang / Shanghai AI Lab / ByteDance,NeurIPS 2024,ZzZZCHS/Chat-Scene,,,,給場景中每個物件一個識別碼 token，讓 LLM 用識別碼指涉物件做 grounding 與問答,,超過主題上限
+spatial,2412.04383,SeeGround,HKUST(GZ) / NUS / A*STAR,CVPR 2025,iris0329/SeeGround,https://seeground.github.io/,,,零樣本 3D grounding：選視角渲染畫面加物件位置文字，交給 2D VLM 判斷,,超過主題上限
+spatial,2503.00513,Inst3D-LMM,Zhejiang,CVPR 2025,hanxunyu/Inst3D-LMM,,,,以實例為單位融合 2D 語意與 3D 幾何，一個模型做多種 3D 理解任務,,超過主題上限
+spatial,2507.12508,MindJourney,UMass Amherst / JHU / Microsoft 等,NeurIPS 2025,UMass-Embodied-AGI/MindJourney,https://umass-embodied-agi.github.io/MindJourney/,,,推理時用影片 world model 想像換視角後的畫面，提升 VLM 空間推理，不需重新訓練,,超過主題上限
+spatial,2511.21688,G2VLM,Shanghai AI Lab / HKU 等,arXiv,InternRobotics/G2VLM,https://gordonhu608.github.io/g2vlm.github.io/,,,同一個 VLM 同時做 3D 重建與空間推理，幾何特徵直接支援問答,,超過主題上限
+spatial,2505.22657,3DLLM-Mem,UCLA / Google Research,NeurIPS 2025,,https://3dllm-mem.github.io,,,給具身 3D LLM 長期時空記憶，在多房間任務中選擇性取用過去觀察,,超過主題上限
+spatial,2509.13317,SR-3D,UC San Diego / MIT / NVIDIA,ICLR 2026,AnjieCheng/SR-3D,https://www.anjiecheng.me/sr3d,,,在 2D 特徵加 3D 位置編碼，可在任一視角框選區域並跨視角推理,,超過主題上限
+spatial,2504.14151,Locate 3D,Meta FAIR,ICML 2025,facebookresearch/locate-3d,https://locate3d.atmeta.com/,,,以 3D-JEPA 自監督學習點雲特徵，依指代語句在真實 RGB-D 感測資料中定位物件，可上機器人,,超過主題上限
+det3d,2510.11565,SNAP,Northeastern / MathWorks,3DV 2026,,https://neu-vi.github.io/SNAP/,,獲獎,跨室內、室外、空拍點雲的互動式 3D 分割，同時支援點選與文字提示,,超過主題上限
+det3d,2512.17817,Chorus,Amsterdam / ETH / INSAIT,CVPR 2026,,https://gaussianworld.github.io/Chorus,,獲獎,從多個 2D 基礎模型蒸餾，學出 feed-forward 的 3DGS 場景編碼器，提供通用 3D 特徵,,超過主題上限
+spatial,2405.11442,PQ3D,Tsinghua / BIGAI,ECCV 2024,,https://pq3d.github.io,,,可提示查詢的統一 3D 視覺語言模型，同時吃點雲、多視角影像等多種場景表示,,超過主題上限

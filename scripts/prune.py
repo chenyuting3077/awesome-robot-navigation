@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_readme import ROOT, STAR_BAR, paper_stats, tier  # noqa: E402
 from harvest import THRESHOLD  # noqa: E402
 
-CAP = 60  # 2026-11 試算：只影響 SLAM、VLN 與 3D 重建
+CAP = 30  # 2026-11 試算：受保護論文讓電腦視覺、3D 重建略超過 30
 LOW = 100  # 規則一的引用與 star 門檻
 GRACE = 2  # 公開滿幾個年度才適用規則一
 KEEP = {"推薦", "基準"}
