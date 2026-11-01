@@ -105,6 +105,9 @@ def check_classics(topics, in_topics, errors):
             errors.append(f"{where}：tags 只能用 {'、'.join(sorted(TAGS))}，不能用 {'、'.join(sorted(bad))}")
         if "機構" in r["tags"].split(";") and not r["repo"]:
             errors.append(f"{where}：tag「機構」要求開源，但 repo 空白")
+    for r in csv.DictReader((ROOT / "data" / "archive.csv").open()):
+        if r["id"] and r["id"] in ids:
+            errors.append(f"archive.csv（{r['name']}）：id 同時在 classics.csv，移回時要從 archive.csv 刪除")
 
 
 def venue_warnings() -> list[str]:

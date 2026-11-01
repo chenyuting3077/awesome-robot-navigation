@@ -9,7 +9,7 @@ description: 更新這個論文整理 repo 時使用：定期（每週一、四�
 1. 上次更新日期看最新月報的「最後更新」。
 2. 依 `sources.md` 找新論文並篩選。
 3. 收錄的論文用 `python3 scripts/enrich.py 輸出.json <arXiv 編號...>` 一次補齊摘要、備註、HF 的程式碼／專案頁、機構。只看到標題、讀不到摘要的，「重點」只寫標題看得出的內容。
-4. 依主題加進 `topics/*.md` 的「最新論文」表，新的放最上面。已收過的（以 arXiv ID 或 DOI 判斷，含 `data/classics.csv`）不重複加；有新版本或被接收時更新原列。
+4. 依主題加進 `topics/*.md` 的「最新論文」表，新的放最上面。已收過的（以 arXiv ID 或 DOI 判斷，含 `data/classics.csv`、`data/archive.csv`）不重複加；有新版本或被接收時更新原列。
 5. 在 `digests/YYYY-MM.md`（當月，沒有就建立）加一段本次新增摘要，更新「最後更新」。新月報要有「## 趨勢」段落：2–4 點，觀察到的寫「觀察」，沒驗證的推論寫「推測」；之後列本月新增論文，連到主題檔。
 6. 跑 `python3 scripts/build_readme.py`。它會先跑 `scripts/check_data.py`，格式錯就不產生 README，依訊息修資料後重跑。
 7. 開 branch `update/YYYY-MM-DD`，commit，開 PR 到 main；不直接推 main。沒有新論文就不開 PR。
@@ -24,9 +24,10 @@ description: 更新這個論文整理 repo 時使用：定期（每週一、四�
 4. 「最新論文」中已達引用或 Star 條件的移到 `classics.csv`，並從主題檔刪除該列。
 5. 跑 `python3 scripts/fetch_metrics.py` 刷新引用數、star、HF 按讚數，再跑 `python3 scripts/check_data.py`，處理「刊登處待確認」的警告。
 6. 一項收錄條件都不符合的移出（條件見 README「怎樣算重要論文」，門檻在 `scripts/harvest.py` 的 `THRESHOLD`）。只有 arXiv 的論文須來自 `sources.md` 第 0 步名單內機構，首次公開超過一年仍只有 arXiv 的也移出；官方 repo star ≥ 500 或 `推薦` 的除外。移出前先確認有沒有已被接收但 venue 沒更新。
-7. 產生 README，開 PR。
+7. 跑 `python3 scripts/prune.py` 看會封存哪些論文，確認後加 `--apply`。封存前先查候選論文的官方 repo：2026-11 試算時 86 篇候選有 61 篇 repo 空白，其中 20 篇其實查得到，star 被誤算成 0。封存區論文的引用或 star 回升到條件內時，移回 `classics.csv`。
+8. 產生 README，開 PR。
 
-完成條件：PR 說明列出新增篇數、移出的論文與原因、哪些欄位沒查證。
+完成條件：PR 說明列出新增篇數、移出與封存的論文與原因、哪些欄位沒查證。
 
 ## 檔案格式
 

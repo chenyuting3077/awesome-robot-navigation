@@ -5,7 +5,6 @@ vln,2304.03047,ETPNav,UCAS / CASIA 等,TPAMI 2024,MarSaKi/ETPNav,,,,連續環境
 vln,2305.16986,NavGPT,Adelaide / ANU,AAAI 2024,GengzeZhou/NavGPT,,,,純 LLM 推理做 VLN，把觀測轉文字,
 vln,2312.03275,VLFM,Boston Dynamics AI Institute,ICRA 2024,bdaiinstitute/vlfm,http://naoki.io/vlfm,,獲獎;推薦,VLM 算語意價值地圖引導 frontier 探索，Spot 實機 zero-shot 物件導航,
 vln,2402.15852,NaVid,PKU,RSS 2024,jzhzhang/NaVid-VLN-CE,https://pku-epic.github.io/NaVid/,,,只用單眼 RGB 影片的 VLM 做 VLN，不需地圖與深度,
-vln,2407.07775,Mobility VLA,Google DeepMind,CoRL 2024,,,,,長脈絡 VLM 看導覽影片建拓撲圖，再照多模態指令導航,
 vln,2412.06224,Uni-NaVid,PKU,RSS 2025,jzhzhang/Uni-NaVid,https://pku-epic.github.io/Uni-NaVid/,,,一個 VLM 統一 VLN、物件導航、問答、跟人等導航任務,
 vln,2412.04453,NaVILA,UCSD / NVIDIA,RSS 2025,AnjieCheng/NaVILA,https://navila-bot.github.io/,,推薦,VLM 輸出中層語言動作，低層腿式運動策略執行,
 local-nav,2110.09460,FAR Planner,CMU,IROS 2022,MichaelFYang/far_planner,,,獲獎,未知環境中邊建可視圖邊規劃的快速路徑規劃,
@@ -34,9 +33,7 @@ quadruped,2309.05665,Robot Parkour Learning,Stanford / Shanghai Qi Zhi,CoRL 2023
 quadruped,2309.14341,Extreme Parkour,CMU,ICRA 2024,chengxuxin/extreme-parkour,https://extreme-parkour.github.io/,,,單一神經網路以深度相機做極限跑酷,
 quadruped,2401.17583,ABS,CMU,RSS 2024,LeCAR-Lab/ABS,https://agile-but-safe.github.io/,,獲獎,敏捷策略 + 學到的可達避碰價值函數，高速且安全,
 wheel-legged,2405.01792,Wheeled-Legged Urban Navigation,ETH,Science Robotics 2024,,,,,階層式 RL 導航 + 運動，都市公里級自主任務,
-wheel-legged,DOI:10.1109/ICRA46639.2022.9812199,Track-leg / Wheel-leg TrajOpt,Florida State,ICRA 2022,,,,獲獎,具平滑解析導數的軌跡最佳化，讓履帶腿、輪腿機器人規劃翻越大型障礙,
 slam,2007.11898,ORB-SLAM3,Zaragoza,T-RO 2021,UZ-SLAMLab/ORB_SLAM3,,,,視覺／視覺慣性／多地圖 SLAM 的標準基線,視覺與慣性里程計、SLAM
-slam,2106.14386,Kimera-Multi,MIT SPARK,T-RO 2022,MIT-SPARK/Kimera-Multi,,,,多機器人分散式度量-語意 SLAM,多機器人與長期地圖
 slam,2107.06829,FAST-LIO2,HKU MaRS,T-RO 2022,hku-mars/FAST_LIO,,,,直接點雲配準 + ikd-tree 的快速 LiDAR 慣性里程計,LiDAR、雷達與多感測器融合
 slam,2108.10869,DROID-SLAM,Princeton,NeurIPS 2021,princeton-vl/DROID-SLAM,,,,可微分 BA 的深度學習視覺 SLAM,視覺與慣性里程計、SLAM
 slam,2109.07982,R3LIVE,HKU MaRS,ICRA 2022,hku-mars/r3live,,,,LiDAR-慣性-視覺緊耦合，即時彩色地圖,LiDAR、雷達與多感測器融合
@@ -83,9 +80,7 @@ real2sim,2409.10161,SplatSim,CMU,ICRA 2025,qureshinomaan/SplatSim,https://splats
 real2sim,2501.03575,Cosmos,NVIDIA,arXiv,NVIDIA/Cosmos,https://research.nvidia.com/labs/dir/cosmos1/,,,物理 AI 的 world foundation model 平台,
 real2sim,2502.01536,VR-Robo,Tsinghua,RA-L 2025,zst1406217/VR-Robo,https://vr-robo.github.io/,,推薦,3DGS 重建場景做視覺導航與運動控制的 real-to-sim-to-real,
 vln,2110.13309,HAMT,Inria / ENS,NeurIPS 2021,cshizhe/VLN-HAMT,https://cshizhe.github.io/projects/vln_hamt.html,,,階層式 ViT 編碼完整全景歷史取代 RNN 記憶,
-vln,2206.12403,ZSON,Georgia Tech,NeurIPS 2022,gunagg/zson,,,,CLIP 目標嵌入讓 ImageNav 策略零樣本找物件,
 vln,2202.11742,DUET,Inria / ENS / IIIT Hyderabad,CVPR 2022,cshizhe/VLN-DUET,https://cshizhe.github.io/projects/vln_duet.html,,獲獎,線上拓撲圖做全域規劃，搭配局部細粒度跨模態推理,
-vln,2111.09888,EmbCLIP,AI2,CVPR 2022,allenai/embodied-clip,,,,只換 CLIP 視覺骨幹不加任務設計就超越多項導航基線,
 vln,2301.13166,ESC,UC Santa Cruz / Samsung Research,ICML 2023,,,,,LLM 常識轉成軟性邏輯約束引導 frontier 探索,
 vln,2410.08189,SG-Nav,Tsinghua / BUPT,NeurIPS 2024,bagh2178/SG-Nav,https://bagh2178.github.io/SG-Nav/,,,線上 3D 場景圖分層提示 LLM 做零樣本物件導航,
 vln,2312.02010,NaviLLM,CUHK / Shanghai AI Lab,CVPR 2024,zd11024/NaviLLM,,,,schema 化提示讓單一 LLM 統一多種導航任務,
@@ -93,9 +88,7 @@ vln,2307.12907,GridMM,ICT-CAS / UCAS,ICCV 2023,MrZihan/GridMM,,,,動態成長的
 vln,2307.15644,ScaleVLN,Shanghai AI Lab / Adelaide / UNC 等,ICCV 2023,wz0919/ScaleVLN,,,獲獎;基準,用 1200+ 場景合成 490 萬筆 VLN 訓練資料,
 vln,2507.05240,StreamVLN,Shanghai AI Lab / Zhejiang / SJTU 等,ICRA 2026,OpenRobotLab/StreamVLN,https://streamvln.github.io/,,機構,SlowFast 上下文加 KV cache 重用做串流 VLN,
 vln,2401.07314,MapGPT,HKU / SYSU / Meituan,ACL 2024,chen-judge/MapGPT,https://chen-judge.github.io/MapGPT/,,,線上拓撲地圖轉成提示讓 GPT 做全域路徑規劃,
-vln,2303.03480,LGX,UMD,RA-L 2024,vdorbala/LGX,,,,LLM 序列決策加開放詞彙偵測找語言描述的目標物,
 vln,2407.12366,NavGPT-2,Adelaide / Adobe / UNC 等,ECCV 2024,GengzeZhou/NavGPT-2,,,,凍結 LLM 的 VLM 特徵接拓撲圖策略，保留可解釋推理,
-vln,2309.10309,PixNav,Southeast Univ. / PKU / Shanghai AI Lab,ICRA 2024,wzcai99/Pixel-Navigator,https://sites.google.com/view/pixnav/,,,以像素為目標的導航技能銜接基礎模型與底層移動,
 vln,2403.07376,NavCoT,SYSU / Huawei Noah's Ark,TPAMI 2025,expectorlin/NavCoT,,,,LLM 自我引導解耦推理（想像、篩選、預測）並參數高效微調,
 vln,2509.22548,JanusVLN,Xi'an Jiaotong / Alibaba,ICLR 2026,MIV-XJTU/JanusVLN,https://miv-xjtu.github.io/JanusVLN.github.io/,,,語意與空間幾何拆成雙隱式記憶，固定大小免記憶膨脹,
 vln,2402.10670,OpenFMNav,PKU / Notre Dame,NAACL 2024 Findings,yxKryptonite/OpenFMNav,https://yuxuank.com/OpenFMNav/,,,LLM 解析自由指令加 VLM 建語意地圖做開放集物件導航,
@@ -108,12 +101,9 @@ vln,2412.09082,LH-VLN,SYSU,CVPR 2025,HCPLab-SYSU/LH-VLN,https://hcplab-sysu.gith
 vln,2407.05890,AO-Planner,HKU / SYSU / Meituan,AAAI 2025,chen-judge/AO-Planner,https://chen-judge.github.io/AO-Planner/,,,VLM 預測可行走路徑點，補上連續 VLN 底層控制,
 vln,2409.18794,Open-Nav,Adelaide / SCUT,ICRA 2025,YanyuanQiao/Open-Nav,https://sites.google.com/view/opennav,,,開源 LLM 搭配時空 CoT 做連續環境零樣本 VLN,
 vln,2403.14158,VER,Zhejiang,CVPR 2024,DefaultRui/VLN-VER,,,,多視角 2D 特徵聚合成 3D 體素表示環境,
-vln,2404.01943,HNR,ICT-CAS / UCAS,CVPR 2024,MrZihan/HNR-VLN,,,,神經輻射表示預測候選點未來特徵做前瞻探索,
 vln,2502.13451,MapNav,HKUST(GZ) / BAAI / Tsinghua,ACL 2025,linglingxiansen/MapNav,,,推薦,標註語意俯視地圖取代歷史影格當 VLM 記憶,
 vln,2512.08186,DualVLN,Shanghai AI Lab / Zhejiang / Tsinghua 等,arXiv,InternRobotics/InternNav,https://internrobotics.github.io/internvla-n1-dualvln.github.io/,,機構;推薦,VLM 慢速預測路徑點、輕量策略快速執行的雙系統 VLN,
 vln,2507.04047,MTU3D,Tsinghua / BIGAI / BIT 等,ICCV 2025,MTU3D/MTU3D,https://mtu3d.github.io,,,3D 視覺定位與主動探索合一，支援多種目標模態,
-vln,2406.20083,PoliFormer,AI2,CoRL 2024,allenai/PoliFormer,https://poliformer.allen.ai,,獲獎,大規模 RL 訓練 Transformer 策略，RGB 直接轉實機,
-vln,2404.10241,GOAT (causal VLN),Tongji,CVPR 2024,CrystalSixone/VLN-GOAT,,,,因果推論去除視覺、語言、歷史中的資料偏差,
 vln,2412.10137,CA-Nav,CASIA / UCAS,TPAMI 2025,Chenkehan21/CA-Nav-code,https://chenkehan21.github.io/CA-Nav-project/,,推薦,零樣本 VLN-CE 拆成約束感知的子指令完成流程,
 vln,2506.17221,VLN-R1,Shanghai AI Lab / HKU,arXiv,Qi-Zhangyang/GPT4Scene-and-VLN-R1,https://vlnr1.github.io,,,LVLM 以 GRPO 強化微調直接輸出連續導航動作,
 vln,2504.14478,ApexNav,HKUST(GZ) / SUSTech,RA-L 2025,SYSU-STAR/ApexNav,https://robotics-star.com/ApexNav,,,依語意線索強弱切換探索策略，目標中心融合抗誤檢,
@@ -122,12 +112,8 @@ vln,2506.23468,NavMorph,CASIA / UCAS,ICCV 2025,Feliciaxyao/NavMorph,,,推薦,隱
 vln,2509.25687,OmniNav,Alibaba / PKU,ICLR 2026,amap-cvlab/OmniNav,https://astra-amap.github.io/omninav.github.io/,,,單一架構統一指令、物件、點目標導航與探索,
 vln,2507.13019,VLN-PE,Tongji / Shanghai AI Lab / SJTU,ICCV 2025,,https://crystalsixone.github.io/vln_pe.github.io/,,,支援人形、四足、輪式的物理真實 VLN 平台與評測,
 vln,2506.09839,OctoNav,Beihang / NUS / PKU 等,CVPR 2026,buaa-colalab/OctoNav-R1,https://buaa-colalab.github.io/OctoNav,,,多模態多能力自由指令基準，加先思考再行動的 R1 模型,
-vln,2503.10069,SmartWay,Adelaide,IROS 2025,sxyxs/SmartWay-Code,https://sxyxs.github.io/smartway/,,,強化路徑點預測器加可回溯的 MLLM 導航器,
 vln,2505.11383,Dynam3D,NUS,NeurIPS 2025,MrZihan/Dynam3D,,,獲獎,動態分層 3D token 當 VLM 輸入，隨環境更新,
 vln,2508.10416,CorrectNav,PKU,AAAI 2026,owlet914/CorrectNav,,,推薦,從錯誤軌跡自動產生自我修正資料反覆後訓練,
-vln,2506.06487,BeliefMapNav,SJTU / UMich,NeurIPS 2025,ZiboKNOW/BeliefMapNav,,,,3D 體素信念地圖估計目標分布，結合序列路徑規劃,
-vln,2501.04279,OpenIN,BIT,RA-L 2025,,https://openin-nav.github.io,,,載體關係場景圖追蹤會移動的物件實例,
-vln,2311.06430,GOAT,UIUC / CMU / Georgia Tech 等,RSS 2024,,,,,多模態目標、終身記憶的通用導航系統，實機長時間部署,
 vln,2404.06609,GOAT-Bench,Georgia Tech / CMU / UIUC 等,CVPR 2024,Ram81/goat-bench,https://mukulkhanna.github.io/goat-bench,,基準,多模態目標的終身導航基準,
 vln,1711.07280,R2R,ANU / Adelaide / QUT 等,CVPR 2018,peteanderson80/Matterport3DSimulator,https://bringmeaspoon.org/,,基準;推薦,R2R 資料集與 Matterport3D 模擬器，開創 VLN,
 vln,2004.02857,VLN-CE,Oregon State / Georgia Tech / Meta,ECCV 2020,jacobkrantz/VLN-CE,https://jacobkrantz.github.io/vlnce,,基準;推薦,VLN 從導航圖移到連續環境底層動作,
@@ -155,7 +141,7 @@ semantic-map,2503.19199,OpenFunGraph,Tsinghua / ETH / Microsoft 等,CVPR 2025,Zh
 semantic-map,2504.06994,RayFronts,CMU,IROS 2025,RayFronts/RayFronts,https://rayfronts.github.io/,,機構,以語意射線前緣同時表示範圍內與超出範圍的語意,
 semantic-map,2503.07909,FunGraph,Univ. of Stuttgart / Bonn,IROS 2025,DennisRotondi/FunGraph,https://fungraph.github.io,,,偵測可操作部件的功能感知 3D 場景圖,
 semantic-map,2503.01646,OpenGS-SLAM,BIT,ICRA 2025,YOUNG-bit/open_semantic_slam,https://young-bit.github.io/opengs-github.github.io/,,,Gaussian 投票濺射的開放集合物件級語意 SLAM,
-slam,2402.13255,NeRF/3DGS SLAM Survey,Bologna / ETH / Univ. of Amsterdam 等,T-RO 2026,,,,,NeRF 與 3DGS 在 SLAM 應用的綜述,資料集、綜述與工具
+slam,2402.13255,NeRF/3DGS SLAM Survey,Bologna / ETH / Univ. of Amsterdam 等,T-RO 2026,doongli/awesome-implicit-nerf-slam,,,,NeRF 與 3DGS 在 SLAM 應用的綜述,資料集、綜述與工具
 slam,2103.12352,iMAP,Imperial,ICCV 2021,,,,,首次以單一 MLP 作為即時 RGB-D SLAM 的地圖,NeRF／3DGS 稠密 SLAM
 slam,2311.11700,GS-SLAM,Shanghai AI Lab / HKUST / Fudan 等,CVPR 2024,,https://gs-slam.github.io/,,,首個用 3D Gaussian 表示的稠密 RGB-D SLAM,NeRF／3DGS 稠密 SLAM
 slam,2104.10831,LVI-SAM,MIT / Stevens,ICRA 2021,TixiaoShan/LVI-SAM,,,,因子圖緊耦合 LiDAR、視覺與慣性的里程計,LiDAR、雷達與多感測器融合
@@ -165,12 +151,9 @@ slam,2107.00822,F-LOAM,NTU,IROS 2021,wh200720041/floam,,,,兩階段失真補償�
 slam,2210.13641,NeRF-SLAM,MIT SPARK,IROS 2023,ToniRV/NeRF-SLAM,,,,稠密單目 SLAM 提供位姿與深度不確定度即時訓練 NeRF,NeRF／3DGS 稠密 SLAM
 slam,2304.14377,Co-SLAM,UCL,CVPR 2023,HengyiWang/Co-SLAM,https://hengyiwang.github.io/projects/CoSLAM,,,座標編碼與雜湊網格混合表示的神經 RGB-D SLAM,NeRF／3DGS 稠密 SLAM
 slam,2103.07899,GVINS,HKUST,T-RO 2022,HKUST-Aerial-Robotics/GVINS,,,,GNSS 原始量測緊耦合視覺慣性的無漂移狀態估測,視覺與慣性里程計、SLAM
-slam,2207.00254,Active SLAM Survey,Zaragoza / MIT SPARK / UCSD 等,T-RO 2023,,,,,主動 SLAM 與多機器人協作探索的綜述,資料集、綜述與工具
-slam,2109.13494,Scan Context++,KAIST / NAVER LABS / SNU,T-RO 2022,gisbi-kim/scancontext_tro,,,機構,對旋轉與橫向位移穩健的 LiDAR 結構地點描述子,地點辨識與重定位
 slam,2304.04278,Point-SLAM,ETH / KU Leuven / Univ. of Amsterdam,ICCV 2023,eriksandstroem/Point-SLAM,,,,依資訊密度動態佈點的神經點雲稠密 SLAM,NeRF／3DGS 稠密 SLAM
 slam,2303.02190,MixVPR,Laval,WACV 2023,amaralibey/MixVPR,,,,以 MLP 特徵混合聚合全域描述子的視覺地點辨識,地點辨識與重定位
 slam,2112.13659,M2DGR,SJTU,RA-L 2022,SJTU-ViSYS/M2DGR,,,基準,地面機器人多感測器多場景 SLAM 資料集,資料集、綜述與工具
-slam,2211.11704,ESLAM,Idiap / EPFL / ams OSRAM,CVPR 2023,idiap/ESLAM,https://www.idiap.ch/paper/eslam/,,,多尺度軸對齊特徵平面表示 SDF 的高效稠密 SLAM,NeRF／3DGS 稠密 SLAM
 slam,2311.16728,Photo-SLAM,HKUST / SYSU,CVPR 2024,HuajianUP/Photo-SLAM,https://huajianup.github.io/research/Photo-SLAM/,,,特徵點定位搭配超原語 Gaussian 的即時寫實建圖,NeRF／3DGS 稠密 SLAM
 slam,2312.10070,Gaussian-SLAM,Univ. of Amsterdam,arXiv,VladimirYugay/Gaussian-SLAM,https://vladimiryugay.github.io/gaussian_slam,,,子地圖組織 3D Gaussian 的可擴展寫實 RGB-D SLAM,NeRF／3DGS 稠密 SLAM
 slam,2302.03594,NICER-SLAM,ETH / MPI-IS / Lund 等,3DV 2024,cvg/nicer-slam,https://nicer-slam.github.io,,獲獎,僅用 RGB 並以單目先驗監督的神經隱式稠密 SLAM,NeRF／3DGS 稠密 SLAM
@@ -178,34 +161,18 @@ slam,2309.02436,GO-SLAM,Bologna,ICCV 2023,youmi-zym/GO-SLAM,https://youmi-zym.gi
 slam,2311.15937,SALAD,Zaragoza,CVPR 2024,serizba/salad,,,,以最佳傳輸與 dustbin 重構 NetVLAD 聚合,地點辨識與重定位
 slam,2301.06230,Swarm-SLAM,Polytechnique Montréal,RA-L 2024,MISTLab/Swarm-SLAM,https://lajoiepy.github.io/cslam_documentation/html/index.html,,,稀疏去中心化的多機器人協作 SLAM,多機器人與長期地圖
 slam,2402.03246,SGS-SLAM,DUT / Univ. of Tokyo / Columbia 等,ECCV 2024,ShuhongLL/SGS-SLAM,,,,多通道優化外觀幾何語意的 Gaussian 語意 SLAM,NeRF／3DGS 稠密 SLAM
-slam,2308.10832,EigenPlaces,PoliTo,ICCV 2023,gmberton/EigenPlaces,,,,依主成分方向分群取多視角訓練的視角穩健 VPR,地點辨識與重定位
-slam,2304.03410,R2Former,ByteDance / UCF,CVPR 2023,bytedance/R2Former,,,,單一 Transformer 統一檢索與重排序的地點辨識,地點辨識與重定位
-slam,2312.17487,LiDAR Odometry Survey,SNU,Intelligent Service Robotics 2024,,,,,依感測器融合方式分類的 LiDAR 里程計綜述,資料集、綜述與工具
 slam,2507.16443,VGGT-Long,Nankai / Nanjing Univ.,ICRA 2026,DengKaiCQ/VGGT-Long,,,,分塊、迴環、對齊讓 VGGT 擴展到公里級序列,視覺與慣性里程計、SLAM
 slam,2403.12550,GS-ICP SLAM,SKKU,ECCV 2024,Lab-of-AI-and-Robotics/GS_ICP_SLAM,,,,G-ICP 與 3DGS 共用 Gaussian 地圖的高速 SLAM,NeRF／3DGS 稠密 SLAM
 slam,2401.09101,PIN-SLAM,Bonn,T-RO 2024,PRBonn/PIN_SLAM,,,,點式隱式神經地圖可隨迴環彈性變形的 LiDAR SLAM,LiDAR、雷達與多感測器融合
 slam,2408.03520,AirSLAM,NTU / Univ. at Buffalo 等,T-RO 2025,sair-lab/AirSLAM,https://sairlab.org/airslam/,,,學習式點線特徵搭配傳統後端的抗光照視覺 SLAM,視覺與慣性里程計、SLAM
 slam,2405.16544,Splat-SLAM,Google / ETH / Univ. of Amsterdam 等,CVPRW 2025,google-research/Splat-SLAM,,,,全域優化追蹤並隨之變形 Gaussian 地圖的純 RGB SLAM,NeRF／3DGS 稠密 SLAM
-slam,2402.19231,CricaVPR,Tsinghua / Peng Cheng Lab / UCAS,CVPR 2024,Lu-Feng/CricaVPR,,,,批次內跨影像注意力學習相關性感知的 VPR 表示,地點辨識與重定位
 slam,2408.01654,DPV-SLAM,Princeton,ECCV 2024,princeton-vl/DPVO,,,,DPVO 加上迴環的單 GPU 低記憶體深度視覺 SLAM,視覺與慣性里程計、SLAM
-slam,2408.10154,LoopSplat,Stanford / Univ. of Amsterdam / ETH,3DV 2025,GradientSpaces/LoopSplat,https://loopsplat.github.io/,,,直接配準 3DGS 子地圖做迴環的 Gaussian SLAM,NeRF／3DGS 稠密 SLAM
-slam,2405.07364,BoQ,Laval,CVPR 2024,amaralibey/bag-of-queries,,,,以一組可學習全域查詢聚合特徵的單階段 VPR,地點辨識與重定位
-slam,2403.16095,CG-SLAM,Zhejiang,ECCV 2024,hjr37/CG-SLAM,https://zju3dv.github.io/cg-slam,,,不確定度感知且幾何一致的 Gaussian 場 RGB-D SLAM,NeRF／3DGS 稠密 SLAM
-slam,2402.14505,SelaVPR,Tsinghua / Peng Cheng Lab / UCAS,ICLR 2024,Lu-Feng/SelaVPR,,,,以輕量 adapter 做全域與局部調適的基礎模型 VPR,地點辨識與重定位
 slam,2403.11496,MCD,NTU / KTH 等,CVPR 2024,,,,基準,跨歐亞三校園多感測器且含語意標註的資料集,資料集、綜述與工具
 slam,2504.03886,WildGS-SLAM,ETH / Microsoft / Stanford,CVPR 2025,GradientSpaces/WildGS-SLAM,https://wildgs-slam.github.io/,,,DINOv2 不確定度圖剔除動態物的單目 3DGS SLAM,NeRF／3DGS 稠密 SLAM
 slam,2402.13817,Khronos,MIT SPARK,RSS 2024,MIT-SPARK/Khronos,,,獲獎;機構,統一處理短期動態與長期變化的時空度量語意 SLAM,多機器人與長期地圖
 slam,2502.17237,MegaLoc,PoliTo / Focoos AI,CVPRW 2025,gmberton/MegaLoc,,,,合併多資料集訓練的通用影像檢索定位模型,地點辨識與重定位
-slam,2401.14857,LIV-GaussMap,HKUST / HKUST (GZ) 等,RA-L 2024,sheng00125/LIV-GaussMap,,,,LiDAR 慣性視覺融合的即時 Gaussian 輻射場建圖,NeRF／3DGS 稠密 SLAM
 real2sim,2505.10696,TartanGround,ETH RSL / CMU 等,IROS 2025,castacks/tartanairpy,https://tartanair.org/tartanground,,基準,大規模模擬地面機器人感知與導航資料集,
-slam,2507.08364,Ground-Fusion++,Chongqing / Nankai / ZJUT 等,IROS 2025,sjtuyinjie/Ground-Fusion2,,,,GNSS、RGB-D、LiDAR、IMU、輪速的模組化融合,LiDAR、雷達與多感測器融合
 slam,2503.12660,KISS-SLAM,Bonn / Sapienza,IROS 2025,PRBonn/kiss-slam,,,,延續 KISS-ICP 免調參、泛化強的 LiDAR SLAM 基線,LiDAR、雷達與多感測器融合
-slam,2501.08672,GS-LIVO,HKUST / HKU MaRS / SJTU,T-RO 2025,HKUST-Aerial-Robotics/GS-LIVO,,,機構,可在嵌入式即時運行的 LiDAR 慣性視覺 Gaussian 建圖,NeRF／3DGS 稠密 SLAM
-slam,2501.08286,VINGS-Mono,Fudan,T-RO 2025,Fudan-MAGIC-Lab/VINGS-Mono,https://vings-mono.github.io/,,,視覺慣性單目 Gaussian SLAM 擴展到公里級戶外,NeRF／3DGS 稠密 SLAM
-slam,2510.04612,OKVIS2-X,TUM,T-RO 2025,ethz-mrl/OKVIS2-X,,,,可選配稠密深度、LiDAR 與 GNSS 的關鍵幀 VI-SLAM,視覺與慣性里程計、SLAM
-slam,2507.03737,S3PO-GS,HKUST (GZ),ICCV 2025,3DAgentWorld/S3PO-GS,https://3dagentworld.github.io/S3PO-GS/,,,以 3DGS 點圖錨定追蹤避免尺度漂移的戶外單目 SLAM,NeRF／3DGS 稠密 SLAM
-slam,2502.15633,OpenGS-SLAM (outdoor),HKUST (GZ),ICRA 2025,3DAgentWorld/OpenGS-SLAM,https://3dagentworld.github.io/opengs-slam/,,,點圖回歸加自適應尺度的戶外純 RGB Gaussian SLAM,NeRF／3DGS 稠密 SLAM
-slam,2503.05077,Adaptive-LIO,未確認,IoT-J 2025,chengwei0427/Adaptive-LIO,,,,依環境自適應分段與地圖解析度的 LiDAR 慣性里程計,LiDAR、雷達與多感測器融合
 slam,2103.09213,PixLoc,ETH / Chalmers / Microsoft 等,CVPR 2021,cvg/pixloc,https://psarlin.com/pixloc/,,,對齊多尺度深度特徵的場景無關相機定位,地點辨識與重定位
 slam,2409.12190,BAE,Univ. at Buffalo / Georgia Tech / Purdue 等,T-RO 2026,pypose/bae,https://pypose.org/bae/,,推薦,PyTorch eager 模式下的 GPU 稀疏 BA 函式庫,資料集、綜述與工具
 perception-3d,2307.10984,Metric3D,DJI / Tencent / Zhejiang 等,ICCV 2023,YvanYin/Metric3D,https://jugghm.github.io/Metric3Dv2/,,,正規相機空間轉換解決焦距歧義的零樣本公制深度,
@@ -247,8 +214,6 @@ perception-3d,2501.08643,MonSter++,HUST,TPAMI 2026,,,,,單眼深度先驗雙分�
 perception-3d,2601.17895,LingBot-Depth,Robbyant (Ant Group),ECCV 2026,Robbyant/lingbot-depth,https://technology.robbyant.com/lingbot-depth,,推薦,把感測器深度缺陷當遮罩訊號做深度補全,
 perception-3d,2604.18336,GlassRecon,HKUST / HKU / SUSTech / ASTRI,IROS 2026,jarvisyjw/GlassRecon,https://jarvisyjw.github.io/GlassRecon/,,獲獎;推薦,免訓練，用局部 RANSAC 把深度基礎模型對齊到感測器深度，避開玻璃區的錯誤量測並補回公制尺度,
 perception-3d,2506.14709,DiFuse-Net,Samsung Research India,IROS 2025,,,,獲獎,把 RGB 與手機雙像素（dual-pixel）分開編碼後以雙向視差注意力融合估深度,
-perception-3d,2110.15367,Neural Disparity Refinement,Bologna,3DV 2021,,https://cvlab-unibo.github.io/neural-disparity-refinement-web,,獲獎,連續式視差精修網路，可輸出任意解析度，適合手機上高低解析度不對稱的雙目,
-perception-3d,2101.04777,Binary TTC,NVIDIA / UCSB,CVPR 2021,,,,獲獎,把碰撞時間估計改成逐像素二元分類（是否在時限內碰撞），單目、免校正即可當時間柵欄,
 perception-3d,2012.09365,LeReS,Adelaide / Adobe,CVPR 2021,,,,獲獎,先估到尺度與平移未定的深度，再以點雲網路補回位移與焦距，從單張影像還原 3D 場景形狀,
 perception-3d,2501.10357,Zero-Shot Scene Flow,NVIDIA / Brown,CVPR 2025,,https://research.nvidia.com/labs/lpr/zero_msf/,,獲獎,聯合估幾何與運動並大規模混合資料訓練，單目場景流首次能 zero-shot 泛化,
 perception-3d,2602.22667,Indoor Open-Vocab Occupancy,HKUST(GZ),CVPR 2026,,,,獲獎,針對室內密集幾何與細粒度語意，從單目影像預測開放詞彙 3D occupancy,
@@ -300,10 +265,7 @@ reconstruction,2409.06765,gsplat,UC Berkeley,JMLR 2025,nerfstudio-project/gsplat
 reconstruction,2412.09401,SLAM3R,PKU / HKU / Aalto 等,CVPR 2025,PKU-VCL-3DV/SLAM3R,,,,前饋點圖回歸逐窗重建的即時單目稠密重建,feed-forward 重建
 reconstruction,2109.00512,CO3D,Meta / UCL,ICCV 2021,facebookresearch/co3d,,,獲獎;基準,大規模真實物件多視角影片資料集，含相機位姿與點雲，用於類別級 3D 重建評估,資料集與綜述
 reconstruction,2505.00702,RayZer,UT Austin / Adobe / Cornell 等,ICCV 2025,,https://hwjiang1510.github.io/RayZer/,,獲獎,完全不用位姿或 3D 標註，自我預測相機後渲染新視角做自監督，訓練出大型視角合成模型,3DGS／NeRF 表示與渲染
-reconstruction,2503.07353,Anisotropic Rotation Averaging,Lund / Chalmers,ICCV 2025,,,,獲獎,把量測的各向異性不確定性放進旋轉平均，並給出可驗證全域最優的鬆弛解,SfM 與相機位姿
 reconstruction,2604.05182,LSRM,Meta Reality Labs,ECCV 2026,,,,獲獎,大幅擴大 transformer 上下文中的物件與影像 token，讓 feed-forward 物件重建逼近稠密最佳化品質,feed-forward 重建
-reconstruction,2505.04612,FastMap,TTIC / Toyota Research Institute,3DV 2026,,https://jiahao.ai/fastmap,,獲獎,只用一階最佳化的全域 SfM，GPU 上比 COLMAP、GLOMAP 快約 10 倍、位姿精度相當,SfM 與相機位姿
-reconstruction,2112.03424,Learning to Solve Hard Minimal Problems,Georgia Tech / CTU Prague,CVPR 2022,,,,獲獎,學習挑選起始問題解對做同倫延拓，只算出需要的那個解，大幅加速難的最小問題求解,SfM 與相機位姿
 reconstruction,2605.15195,VGGT-Ω,Meta / Oxford VGG,CVPR 2026,,https://vggt-omega.github.io/,,獲獎,驗證 feed-forward 重建品質隨模型與資料規模可預測地提升，並擴展到動態場景,feed-forward 重建
 reconstruction,2602.21963,Global-Aware Edge Prioritization,CTU Prague / ETH,CVPR 2026,,,,獲獎,SfM 位姿圖初始化時考慮全域一致性來挑選候選邊，取代只看 kNN 檢索,SfM 與相機位姿
 reconstruction,2305.19590,NKSR,NVIDIA,CVPR 2023,nv-tlabs/nksr,https://research.nvidia.com/labs/toronto-ai/NKSR/,,推薦,以神經核場從帶雜訊的大規模點雲重建表面，稀疏體素加梯度擬合，可一次處理整個場景並泛化到未見過的資料,表面、TSDF 與點雲補全
@@ -312,7 +274,6 @@ reconstruction,2301.04545,AdaPoinTr,Tsinghua,TPAMI 2023,yuxumin/PoinTr,,,,PoinTr
 reconstruction,2108.04444,SnowflakeNet,Tsinghua / JD.com 等,ICCV 2021,,,,,以雪花式點反卷積逐步分裂點，skip-transformer 保留局部結構，補全細節更清楚,表面、TSDF 與點雲補全
 reconstruction,2106.03452,Shape As Points,MPI-IS / ETH / Tübingen 等,NeurIPS 2021,autonomousvision/shape_as_points,https://pengsongyou.github.io/sap,,,可微分 Poisson 求解器把點雲轉成隱式表面，比神經隱式表示快且可端到端最佳化,表面、TSDF 與點雲補全
 reconstruction,2406.06521,PGSR,Zhejiang / SenseTime,TVCG 2024,,https://zju3dv.github.io/pgsr/,,,把高斯壓成平面並加多視角幾何約束，3DGS 得到高精度表面且保留快速訓練,3DGS／NeRF 表示與渲染
-reconstruction,2503.14558,SuperPC,University at Buffalo,CVPR 2025,,,,,單一 diffusion 模型同時處理點雲補全、上採樣、去噪與上色，避免各任務串接誤差,表面、TSDF 與點雲補全
 reconstruction,2503.16318,Dynamic Point Maps,Oxford VGG,ICCV 2025,,https://www.robots.ox.ac.uk/~vgg/research/dynamic-point-maps/,,,把 DUSt3R 的點圖擴展為帶時間的動態點圖，一次得到動態場景的幾何與運動,動態與 4D
 reconstruction,2311.00626,nvblox,NVIDIA / ETH,ICRA 2024,nvidia-isaac/nvblox,https://nvidia-isaac.github.io/nvblox,,推薦,GPU 加速的增量式 TSDF／ESDF 建圖，即時產出供路徑規劃用的距離場,表面、TSDF 與點雲補全
 reconstruction,2610.30340,Foundation4D,NVIDIA,NVIDIA Research、arXiv,,https://research.nvidia.com/labs/sil/projects/foundation4d/,,推薦,多相機行車影片共用時空分解注意力骨幹，一次 feed-forward 出深度、3D 偵測、語意 occupancy 與高斯重建，預測的幾何與軌跡可當無 LiDAR 的 NuRec 重建先驗,動態與 4D
@@ -382,12 +343,11 @@ vision,2607.12065,Day-to-Night Agri Translation,Kennesaw State / Lincoln,IROS 20
 vision,2103.14030,Swin Transformer,Microsoft Research Asia,ICCV 2021,,,,獲獎,移位視窗的階層式 ViT，計算量隨解析度線性成長，可當偵測、分割通用骨幹,
 vision,2306.05422,OmniMotion,Cornell / Google / UC Berkeley,ICCV 2023,qianqianwang68/omnimotion,https://omnimotion.github.io/,,獲獎,測試時最佳化全域一致的準 3D 表示，對整段影片每個像素做長時距、跨遮擋追蹤,
 vision,2405.14793,SEA-RAFT,Princeton,ECCV 2024,princeton-vl/SEA-RAFT,,,獲獎,改用混合 Laplace 損失、直接回歸初始光流並以剛體運動預訓練，比 RAFT 更快更準,
-vision,2311.10988,OvSGTR,CASIA / PolyU,ECCV 2024,,,,獲獎,物件與關係都開放詞彙的場景圖生成，以視覺概念對齊並保留知識避免遺忘,
+vision,2311.10988,OvSGTR,CASIA / PolyU,ECCV 2024,gpt4vision/OvSGTR,,,獲獎,物件與關係都開放詞彙的場景圖生成，以視覺概念對齊並保留知識避免遺忘,
 vision,2512.04213,LAPA,Northeastern,3DV 2026,ostadabbas/Look-Around-and-Pay-Attention-LAPA-,https://ostadabbas.github.io/lapa.github.io/,,獲獎,端到端 transformer 同時做外觀匹配與幾何約束，多相機點追蹤不再拆成偵測、關聯、追蹤,
 vision,2409.17146,Molmo,AI2 / University of Washington,CVPR 2025,allenai/molmo,,,獲獎,不蒸餾私有 VLM，全靠人工收集的 PixMo 資料訓練開放 VLM，並能以點指出物件位置,
 vision,2601.10611,Molmo2,AI2,CVPR 2026,allenai/molmo2,,,獲獎,把 Molmo 延伸到影片理解與時空 grounding，資料與權重全開放,
 vision,2603.07060,GuideTWSI,UMass Amherst / UT Austin / Maine,ICRA 2026,,,,獲獎;基準,合成加真實的導盲磚分割資料集，用於視障者導航輔助,
-vision,DOI:10.1109/ICRA57147.2024.10611342,Evidential OOD Segmentation,MIT / ARL,ICRA 2024,,,,獲獎,不需 OOD 樣本，以證據式深度學習估計語意分割的逐像素不確定性，偵測未知障礙,
 vision,2601.18923,DeFM,ETH RSL / NVIDIA / UC Berkeley,T-RO 2026,leggedrobotics/defm,https://de-fm.github.io/,,推薦,DINO 式自蒸餾只在 6000 萬張深度圖上預訓練，加保留公制尺度的三通道正規化，再蒸餾成 3M 參數 CNN，凍結即可接導航、運動與操作策略,
 real2sim,2405.05941,SIMPLER,UCSD / Stanford / Google DeepMind 等,CoRL 2024,simpler-env/SimplerEnv,https://simpler-env.github.io/,,基準;機構,縮小視覺與控制差距，用模擬評估真實操作策略,
 real2sim,2410.00425,ManiSkill3,UCSD / Hillbot,arXiv,haosulab/ManiSkill,http://maniskill.ai/,,基準,GPU 平行模擬與渲染的通用操作平台,
@@ -406,81 +366,39 @@ local-nav,2010.11561,FUEL,HKUST,RA-L 2021,HKUST-Aerial-Robotics/FUEL,,,推薦,�
 slam,DOI:10.1109/LRA.2022.3152830,Faster-LIO,HKU / Idriverplus 等,RA-L 2022,gaoxiang12/faster-lio,,,,以平行稀疏增量體素取代 ikd-tree，LIO 更快,LiDAR、雷達與多感測器融合
 slam,DOI:10.1002/aisy.202200459,Point-LIO,HKU MaRS,Advanced Intelligent Systems 2023,hku-mars/Point-LIO,,,,逐點更新的高頻寬 LIO，可承受劇烈運動與 IMU 飽和,LiDAR、雷達與多感測器融合
 slam,DOI:10.1109/LRA.2024.3349915,iG-LIO,Zhejiang,RA-L 2024,zijiechenrobotics/ig_lio,,,,增量 GICP 緊耦合 LIO，兼顧速度與精度,LiDAR、雷達與多感測器融合
-slam,DOI:10.1109/TRO.2024.3353076,BTC,HKU MaRS,T-RO 2024,hku-mars/btc_descriptor,,,,二值 + 三角形組合描述子的 3D LiDAR 地點辨識,地點辨識與重定位
 slam,DOI:10.1109/TRO.2023.3323938,SLAM in Extreme Environments (SubT),NASA JPL / CMU / ETH 等,T-RO 2024,,,,,DARPA SubT 各隊 SLAM 系統與地下環境經驗總整理,資料集、綜述與工具
 slam,DOI:10.1007/s10462-025-11187-w,LiDAR-IMU-Camera Fusion SLAM Review,未確認,Artificial Intelligence Review 2025,,,,推薦,LiDAR、IMU、相機融合 SLAM 的系統性綜述,資料集、綜述與工具
 reconstruction,2606.00307,ScaRF-SLAM,Oxford ORI / Georgia Tech,RA-L 2026,ori-drs/ScaRF-SLAM,,,機構;推薦,定位交給傳統視覺 SLAM，feed-forward 幾何模型只做深度與稠密重建，再以跨幀與子地圖的尺度一致性最佳化串起來；單目、雙目、多相機、有無 IMU 都能套,feed-forward 重建
 slam,2412.04463,MegaSaM,Google DeepMind / UC Berkeley / Univ. of Michigan,CVPR 2025,mega-sam/mega-sam,https://mega-sam.github.io/,,獲獎,動態影片也能穩定估計相機與深度的 SLAM 系統,視覺與慣性里程計、SLAM
-slam,2502.11461,Doppler Correspondence,UNIST / KAIST,RSS 2025,,,,獲獎,用 4D LiDAR／雷達的 Doppler 速度直接建立對應，掃描匹配不需迭代，在隧道、惡劣天氣更穩,LiDAR、雷達與多感測器融合
-slam,2103.15317,Ground Encoding,CMU,IROS 2021,,,,獲獎,把透地雷達訊號學成因子圖量測模型，不需事前地圖或 GPS 就能定位,LiDAR、雷達與多感測器融合
-slam,2203.05698,Localizability Estimation,ETH RSL,IROS 2022,,,,獲獎,從點雲直接學習各方向的可定位性，隧道等退化場景提前偵測並調整 LiDAR 定位,LiDAR、雷達與多感測器融合
-slam,2303.04658,Semantic Object Map Localization,MIT,IROS 2023,,,,獲獎,以物件語意地圖做跨視角配準，不依賴道路特徵，在非都市環境做全域定位與重定位,地點辨識與重定位
-slam,2504.14516,Back on Track,TUM / Oxford / Microsoft,ICCV 2025,,https://wrchen530.github.io/projects/batrack/,,獲獎,用 3D 點追蹤把動態點的運動拆成相機與物體分量，讓 BA 能直接處理動態影片,視覺與慣性里程計、SLAM
 slam,2305.10854,MAC (Maximal Cliques),Northwestern Polytechnical,CVPR 2023,zhangxy0517/3D-Registration-with-Maximal-Cliques,,,獲獎,放寬最大團限制，從相容圖中挖出多個極大團產生位姿假設，點雲配準更穩,點雲配準
-slam,2211.12826,Data-driven Event Feature Tracking,UZH RPG,CVPR 2023、TPAMI 2025,,,,獲獎,第一個資料驅動的事件相機特徵追蹤器，有無影像幀都能用，自監督適應真實資料,視覺與慣性里程計、SLAM
-slam,2512.09373,FUSER,NTU / Nanjing / Nankai / Alibaba,CVPR 2026,,,,獲獎,一次處理所有掃描直接回歸全域位姿，免成對匹配，再以 SE(3)^N diffusion 精修,點雲配準
 slam,2012.10133,CodeVIO,Zhejiang / Delaware,ICRA 2021,,,,獲獎,把可最佳化的稠密深度 code 緊耦合進 VIO，同時輸出狀態估計與稠密深度,視覺與慣性里程計、SLAM
 slam,2102.05965,VIODE,EPFL / Tokyo,RA-L 2021,,,,獲獎;基準,模擬無人機在漸增動態物體場景中的 VIO 資料集，專測動態環境穩健度,資料集、綜述與工具
-slam,2102.11261,Unsupervised LiDAR Features,University of Toronto,RA-L 2021,,,,獲獎,在高斯變分推論框架內非監督學習 LiDAR 特徵，與軌跡估計共用單一目標,LiDAR、雷達與多感測器融合
 slam,2011.06838,Multi-Modal Landmark LVIO,Oxford DRS,RA-L 2021,,,,獲獎,從 LiDAR 抽線與平面基元，與視覺、慣性在同一因子圖緊耦合做里程計,LiDAR、雷達與多感測器融合
-slam,2109.12979,CT-ICP,MINES ParisTech / Kitware,ICRA 2022,,,,獲獎,每幀以起訖兩個位姿連續插值處理掃描畸變，加上回環偵測組成完整 LiDAR SLAM,LiDAR、雷達與多感測器融合
-slam,2303.04032,GMCR,TUM / Glasgow / Radboud,ICRA 2023,,,,獲獎,以圖式最大共識估計做點雲配準，在高離群比例下仍穩健,點雲配準
-slam,2311.09525,NGEL-SLAM,Zhejiang,ICRA 2024,,,,獲獎,特徵式追蹤加回環確保全域一致，多個神經隱式子地圖做低延遲稠密建圖,NeRF／3DGS 稠密 SLAM
-slam,2310.12320,MESA,CMU,ICRA 2024,,,,獲獎,在流形上的共識 ADMM 後端，多機器人非同步分散式最佳化 SLAM,多機器人與長期地圖
-slam,2409.09479,MAC-VO,CMU / SJTU,ICRA 2025,,,,獲獎,學出度量感知的匹配不確定性，同時用來挑關鍵點與加權位姿圖殘差,視覺與慣性里程計、SLAM
-slam,2502.08093,Ground-Optimized 4D Radar-Inertial Odometry,SNU,ICRA 2025,,,,獲獎,地面最佳化的雜訊濾除，加上以高斯過程連續積分速度的雷達慣性里程計,LiDAR、雷達與多感測器融合
+slam,2109.12979,CT-ICP,MINES ParisTech / Kitware,ICRA 2022,jedeschaud/ct_icp,,,獲獎,每幀以起訖兩個位姿連續插值處理掃描畸變，加上回環偵測組成完整 LiDAR SLAM,LiDAR、雷達與多感測器融合
+slam,2409.09479,MAC-VO,CMU / SJTU,ICRA 2025,MAC-VO/MAC-VO,,,獲獎,學出度量感知的匹配不確定性，同時用來挑關鍵點與加權位姿圖殘差,視覺與慣性里程計、SLAM
 slam,2603.06205,KISS-IMU,Inha University,ICRA 2026,,https://sparolab.github.io/research/kiss_imu,,獲獎,不需真值的自監督慣性里程計，以運動平衡學習與不確定性感知推論提升泛化,視覺與慣性里程計、SLAM
-slam,DOI:10.1109/IROS55552.2023.10341898,Cross-View Place Recognition,University of Maryland,IROS 2023,,,,獲獎,保留視覺、空間、幾何資訊的語意地點辨識，用於空地協同的跨視角跨模態定位,地點辨識與重定位
-quadruped,DOI:10.1109/IROS55552.2023.10342061,Multi-IMU Proprioceptive Odometry,CMU,IROS 2023,,,,獲獎,在每條小腿加裝 IMU，以 EKF 融合做低漂移的腿式本體感覺里程計,
-slam,DOI:10.1109/LRA.2021.3057572,Interval-Based Visual-LiDAR Fusion,Leibniz University Hannover,RA-L 2021,,,,獲獎,以區間分析保守建模 LiDAR 距離指派給影像特徵的不確定性,LiDAR、雷達與多感測器融合
-slam,DOI:10.1109/ICRA46639.2022.9812133,EDPLVO,Meituan / UNC / CMU,ICRA 2022,,,,獲獎,把共線約束有效納入直接法，點線並用的高效直接視覺里程計,視覺與慣性里程計、SLAM
-slam,DOI:10.1109/ICRA48891.2023.10161538,iMODE,Imperial,ICRA 2023,,,,獲獎,以稀疏 SLAM 位姿與深度監督，即時從頭訓練單目稠密語意神經場,NeRF／3DGS 稠密 SLAM
-slam,DOI:10.1109/ICRA57147.2024.10611697,Censible,Caltech / JPL,ICRA 2024,,,,獲獎,行星車全域定位框架，取代人工比對軌道影像,地點辨識與重定位
-slam,DOI:10.1109/ICRA57147.2024.10610916,Square-Root Filter VINS,University of Delaware,ICRA 2024,,,,獲獎,改用平方根共變異數濾波，在嵌入式裝置上更快且數值更穩,視覺與慣性里程計、SLAM
 slam,2202.06688,GeoTransformer,NUDT / TUM 等,CVPR 2022,qinzheng93/GeoTransformer,,,,以超點間的幾何結構編碼做無關鍵點匹配，低重疊配準不需 RANSAC 也很穩,點雲配準
-slam,2103.05465,PointDSC,HKUST / CityU,CVPR 2021,,,,,把空間一致性做成可學習的離群點剔除，提升特徵式點雲配準的穩健度,點雲配準
-slam,2110.14076,CoFiNet,NUDT / TUM / Siemens,NeurIPS 2021,,,,,由粗到細的對應：先在超點層級匹配再細化到點，不依賴重複性關鍵點,點雲配準
-slam,2203.14517,REGTR,NUS,CVPR 2022,,,,,用 transformer 直接輸出對應點，免最近鄰匹配與 RANSAC，端到端點雲配準,點雲配準
 quadruped,DOI:10.1126/scirobotics.ade2256,Locomotion on Deformable Terrain,KAIST,Science Robotics 2023,,,,,在沙地等可變形地形上的四足 RL 運動，模擬可變形接觸,
 quadruped,2104.04644,Fast and Efficient Gait Transitions,University of Washington / Google,CoRL 2021,yxyang/fast_and_efficient,https://sites.google.com/view/fast-and-efficient,,獲獎,高層策略以 ES 學步態選擇、低層 MPC 執行，只用能耗獎勵就自然長出隨速度切換步態,
 quadruped,2505.20829,Unified Force-Position Policy,BUPT / BIGAI,CoRL 2025,,https://unified-force.github.io/,,獲獎,不靠力感測器，單一策略同時建模接觸力與位置控制，用於四足帶手臂的接觸型移動操作,
 quadruped,2509.23745,LocoFormer,Skild AI,CoRL 2025,,,,獲獎,在程序生成的大量機體上做長上下文 RL，測試時靠歷史自行適應未見過的腿式與輪式機體,
 quadruped,2203.15103,AMP for Locomotion,UC Berkeley / Google,IROS 2022,,,,獲獎,用對抗式動作先驗取代繁瑣的手調獎勵，四足實機學出自然且節能的步態,
-quadruped,2207.13224,PI-ARS,Google Research,IROS 2022,,https://kuanghuei.github.io/piars,,獲獎,以預測資訊表示壓縮視覺輸入，讓演化策略能訓練較大的視覺步行策略,
-quadruped,2208.01160,Quadruped Soccer Shooting,UC Berkeley / Mila,IROS 2022,,,,獲獎,階層式 RL：高層規劃踢球軌跡、低層追蹤，四足實機精準把球踢向指定目標,
-quadruped,2409.17731,Quadruped Ladder Climbing,ETH RSL,IROS 2025,,https://sites.google.com/leggedrobotics.com/climbingladders,,獲獎,特製鉤爪加上 RL 策略，四足實機可靠爬工業爬梯,
 quadruped,2609.29092,DAWN,KOREATECH,IROS 2026,,https://dawn-parkour.github.io/,,獲獎,在 world model 裡學習去除深度雜訊，跑酷策略不需手調深度濾波器,
 quadruped,2103.14300,Robotic Guide Dog,UC Berkeley,ICRA 2021,,,,獲獎,四足以牽繩混合物理互動引導人通過狹窄雜亂空間，牽繩鬆緊納入規劃,
-quadruped,2110.02799,Mini Cheetah Optimal Landing,MIT / UMass Amherst,ICRA 2022,,,,獲獎,不預設接觸序列，即時最佳化落地姿勢與反作用力，從各種墜落狀態恢復,
-quadruped,2211.06917,Distributed DDPC Collaborative Legged,Virginia Tech / Caltech,ICRA 2023,,,,獲獎,以行為系統理論建模多台互相拘束的四足，分散式資料驅動預測控制協同行走,
-quadruped,2209.07503,Motion Primitive Graph,Caltech,ICRA 2023,,,,獲獎,在動作基元圖上規劃，依擾動即時切換步態基元，提升腿式機器人穩健性,
-quadruped,2310.03581,Resilient Legged Local Navigation,ETH RSL,ICRA 2024,,,,獲獎,把感知失效建模成看不見的障礙與坑洞，RL 局部導航策略學會靠本體感覺應變,
-quadruped,2403.00187,Confined-Space Legged Locomotion,ETH RSL,ICRA 2024,,,,獲獎,以 3D 體素表示輸入 RL 策略，四足能調整姿態鑽過狹窄空間,
-quadruped,2410.00572,Leader Following Quadruped,ETH RSL,ICRA 2025,,,,獲獎,四足以視覺追蹤領隊者並同時避障，免手動遙控跟隨,
-quadruped,DOI:10.1109/IROS55552.2023.10341665,Steep Planetary Terrain Locomotion,ETH Zurich,IROS 2023,,,,獲獎,針對行星陡坡與鬆軟地形的四足行走策略,
 local-nav,2409.15634,NavRL,CMU,RA-L 2025,Zhefan-Xu/NavRL,,,推薦,PPO + 安全護盾的動態環境導航（原為無人機，方法可用於地面）,
-local-nav,2307.03015,Sequential Neural Barriers,（論文未列單位）,IROS 2023,,,,獲獎,依序學習神經控制障壁函數，動態障礙物數量增加時仍能擴展且對分布漂移較穩,
 local-nav,2503.01474,Arm-Pushing Interactive Navigation,HKUST(GZ) / HKUST,IROS 2025,,,,獲獎,腿式機械臂學習用手臂推開障礙物，在窄空間開出較短路徑,
-local-nav,2409.15671,Hiking Trail Navigation,West Virginia University,IROS 2025,,,,獲獎,語意分割判斷步道、幾何分析判斷可通行，必要時可離開步道,
 local-nav,2002.05700,BADGR,UC Berkeley,RA-L 2021,,https://sites.google.com/view/badgr,,獲獎,從實機自動收集的經驗自監督學習導航，不靠幾何地圖，能學出高草可通行等語意,
 local-nav,2111.06482,Legged-Aerial Subterranean Exploration,NTNU,ICRA 2022,,,,獲獎,四足與無人機協同探索地下環境，以圖式規劃與通訊感知的資料交換分配探索,
 local-nav,2205.01791,TartanDrive,CMU AirLab,ICRA 2022,castacks/tartan_drive,,,獲獎;基準,ATV 越野駕駛約 20 萬筆、7 種感測器的資料集，用於學習越野動力學模型,
 local-nav,2502.15162,Realm,Chongqing / Sichuan / I2R,ICRA 2025,,,,獲獎,未知環境中直接以感測資料建立視線連通約束，多機器人導航時保持彼此可見,
-local-nav,DOI:10.1109/ICRA46639.2022.9812090,Confidence-based Nav under Occlusion,KAIST,ICRA 2022,,,,獲獎,感測器被髒污遮擋時，以信心度驅動 RL 主動探索確保可見度,
 vln,2108.11544,VLN Survey and Taxonomy,未確認,Neural Computing and Applications 2024,,,,推薦,VLN 任務分類與方法綜述,
-vln,2503.08007,MoRE,Zhejiang / Westlake / Monash 等,ICRA 2025,,,,,多 LoRA 專家 VLA 搭配 RL 微調，用混合品質資料,
 vln,2509.19480,OmniVLA,UC Berkeley / Toyota / Princeton,ICRA 2026,NHirose/OmniVLA,https://omnivla-nav.github.io/,,機構,語言、座標、影像多種目標模態共用的導航 VLA,
-vln,2202.11271,ViKiNG,UC Berkeley,RSS 2022,,https://sites.google.com/view/viking-release,,獲獎,學習式局部可通行性加上衛星圖、路網等地理提示做啟發式搜尋，實機走到公里級目標,
 vln,2005.02878,3D-MOS (Multi-Resolution POMDP),Brown / MIT,IROS 2021,,,,獲獎,多解析度八叉樹信念的 POMDP，在 3D 空間有效率地搜尋多個目標物件,
 vln,2607.14586,SoftNav,Shandong / Zhejiang,IROS 2026,,,,獲獎,3D 場景改以 embedding token 直接注入 VLM，取代轉成文字描述,
-vln,2511.21135,SocialNav,Amap Alibaba,CVPR 2026,,https://amap-eai.github.io/SocialNav/,,獲獎,「大腦-動作」階層架構，以 700 萬筆 SocNav 資料訓練遵守社會規範的導航基礎模型,
-vln,2409.18800,MiniVLN,CASIA,ICRA 2025,,,,獲獎,兩階段漸進式知識蒸餾，小模型保有 VLN 表現以利部署,
-vln,DOI:10.1109/IROS55552.2023.10342509,Dynamic Navigation Goal from Dialogue,Shanghai Inst. of Tech. / Tsinghua 等,IROS 2023,,,,獲獎,從自然語言對話中抽取會移動的目標（如人）的位置作為導航目標,
 real2sim,,World Labs Atlas,World Labs,部落格 2026,,,https://www.worldlabs.ai/blog/atlas,推薦,文字／影像／影片／3D 通用模型，可從手機影片重建場景並生成模擬用 RGB-D,
 real2sim,2606.28276,SimFoundry,NVIDIA / Stanford / Georgia Tech / UT Austin 等,NVIDIA Research、arXiv,NVlabs/SimFoundry,https://research.nvidia.com/labs/gear/simfoundry/,,推薦,單支真實場景影片自動拆成遮罩、深度、2D→3D 物件網格與 3DGS 背景並做物理檢查，各模組可隨基礎模型替換，另生成 digital cousins 擴增訓練,
 real2sim,2610.11215,GATOR,NVIDIA / Simon Fraser,NVIDIA Research、arXiv,,https://research.nvidia.com/labs/lpr/gator/,,推薦,從雜亂場景的隨手拍照片生成完整物件與場景相對位姿，再由 agent 在 Blender 編輯網格、只保留與原圖相符的修改，免重訓生成器,
 real2sim,2310.13724,Habitat 3.0,Meta,ICLR 2024,facebookresearch/habitat-lab,http://aihabitat.org/habitat3,,基準,加入人形化身與真人在環的人機協作模擬平台,
-real2sim,2210.04932,NeRF2Real,DeepMind,ICRA 2023,,https://sites.google.com/view/nerf2real/home,,獲獎,手機影片建 NeRF 取得接觸幾何與新視角渲染，在模擬中訓練視覺策略後轉移到實機,
 spatial,2401.12168,SpatialVLM,Google DeepMind / Google Research,CVPR 2024,,https://spatial-vlm.github.io/,,,用網路圖片加深度與物件偵測自動合成大規模 3D 空間問答，讓 VLM 能回答距離、大小等定量問題,
 spatial,2307.12981,3D-LLM,UCLA / UMass Amherst / MIT-IBM Watson AI Lab,NeurIPS 2023,UMass-Embodied-AGI/3D-LLM,https://vis-www.cs.umass.edu/3dllm/,,,把多視角 2D 特徵提升成 3D 特徵輸入 LLM，一個模型做 3D 問答、描述、grounding,
 spatial,2112.10482,ScanQA,Kyoto Univ. / RIKEN AIP,CVPR 2022,ATR-DBI/ScanQA,,,基準,提出 3D 問答任務與資料集：在室內掃描上回答空間問題並定位相關物件,
@@ -531,12 +449,9 @@ det3d,2203.01509,SoftGroup,KAIST,CVPR 2022,thangvubk/SoftGroup,,,,點雲 3D 實�
 det3d,2207.10660,Omni3D / Cube R-CNN,Meta AI,CVPR 2023,facebookresearch/omni3d,https://garrickbrazil.com/omni3d,,基準,整合室內外多資料集的單張影像 3D 偵測基準，Cube R-CNN 跨相機與場景通用,
 det3d,2210.03105,Mask3D,RWTH Aachen / ETH / NVIDIA,ICRA 2023,JonasSchult/Mask3D,https://jonasschult.github.io/Mask3D/,,,以 Transformer 實例查詢直接預測 3D 實例遮罩，不需手工分群,
 det3d,2211.15654,OpenScene,ETH / Google,CVPR 2023,pengsongyou/openscene,https://pengsongyou.github.io/openscene,,,零樣本開放詞彙 3D 場景理解,
-det3d,2104.08383,Category-level Pose and Shape,MIT,RSS 2021,,,,獲獎,給類別 CAD 庫的主動形狀模型，以可驗證全域最優的凸鬆弛同時解物件位姿與形狀，對離群點穩健,
 det3d,2510.11565,SNAP,Northeastern / MathWorks,3DV 2026,,https://neu-vi.github.io/SNAP/,,獲獎,跨室內、室外、空拍點雲的互動式 3D 分割，同時支援點選與文字提示,
 det3d,2203.13254,EPro-PnP,Tongji / Alibaba,CVPR 2022,tjiiv-cprg/EPro-PnP,,,獲獎,把 PnP 輸出改成位姿機率分布，使 2D-3D 對應能端到端學習，用於單目物件位姿估計,
 det3d,2512.17817,Chorus,Amsterdam / ETH / INSAIT,CVPR 2026,,https://gaussianworld.github.io/Chorus,,獲獎,從多個 2D 基礎模型蒸餾，學出 feed-forward 的 3DGS 場景編碼器，提供通用 3D 特徵,
-det3d,2204.07183,InterObject3D,ETH / RWTH Aachen,ICRA 2023,,,,獲獎,使用者點擊迭代修正的互動式 3D 實例分割，可泛化到訓練外類別,
-det3d,DOI:10.1109/ICRA57147.2024.10610562,HEGN,Siemens / TUM,ICRA 2024,,,,獲獎,階層式等變圖網路做含縮放的 9DoF 點雲配準，用於類別級位姿估計,
 det3d,2312.10035,Point Transformer V3,HKU / Shanghai AI Lab / MIT 等,CVPR 2024,Pointcept/PointTransformerV3,,,,用序列化取代精確鄰域搜尋，換取大感受野與速度，以規模取勝的點雲骨幹,
 det3d,2206.04670,PointNeXt,KAUST / Microsoft,NeurIPS 2022,guochengqian/pointnext,https://guochengqian.github.io/PointNeXt/,,,只改訓練策略與縮放就讓 PointNet++ 追上新架構，提供強而簡單的點雲基線,
 det3d,2111.14819,Point-BERT,Tsinghua / PKU / BAAI,CVPR 2022,,https://point-bert.ivg-research.xyz,,,把 BERT 遮罩建模搬到點雲，以離散 token 做點雲 transformer 預訓練,

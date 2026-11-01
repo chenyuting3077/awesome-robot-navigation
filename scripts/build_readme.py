@@ -49,6 +49,11 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 
 候選由 `scripts/harvest.py` 依主題關鍵字從 Semantic Scholar 撈出，再人工確認相關性；頂會得獎名單另外逐一查官網補收。只有 arXiv 預印本的，只收[定期追蹤的來源](#定期追蹤的來源)名單內機構的論文，且首次公開超過一年仍未刊登就移出；官方 repo star ≥ 500 或人工推薦的除外。分級：**奠基** 引用達門檻 4 倍、star ≥ 10k，或 2021 年前的開創性論文；**主流** 達引用或 Star 條件；其餘（只符合獲獎、基準、機構、推薦）為**新興**。「年」是 arXiv 首次公開年份，「來源」是正式刊登的會議或期刊。
 
+為了控制篇數，符合下列條件的論文移到[封存區](docs/archive.md)，不刪除；標「推薦」「基準」的不封存。
+
+- 新興論文公開滿兩個年度，引用與 star 都仍未滿 100。
+- 主題超過 60 篇時，封存分數最低的。分數是「引用 ÷ 該年門檻」加「star ÷ 500」，奠基論文與當年度論文不納入淘汰。
+
 ## 定期追蹤的來源
 
 完整查法與關鍵字見 [sources.md](.claude/skills/update-survey/sources.md)。
@@ -105,13 +110,16 @@ def paper_link(r) -> str:
     return link + (f" · [專案頁]({r['project']})" if r["project"] else "")
 
 
+def paper_stats(r, metrics) -> tuple[int, int, int]:
+    p = metrics["papers"].get(r["id"]) or {}
+    year = p.get("year") or (int("20" + r["id"][:2]) if r["id"][:2].isdigit() else 0)
+    return year, p.get("citationCount") or 0, metrics["stars"].get(r["repo"]) or 0
+
+
 def classics_table(rows, metrics) -> str:
     items = []
     for r in rows:
-        p = metrics["papers"].get(r["id"]) or {}
-        cites = p.get("citationCount") or 0
-        year = p.get("year") or (int("20" + r["id"][:2]) if r["id"][:2].isdigit() else 0)
-        stars = metrics["stars"].get(r["repo"]) or 0
+        year, cites, stars = paper_stats(r, metrics)
         upvotes = metrics.get("hf", {}).get(r["id"]) or 0
         items.append((r, year, cites, stars, upvotes, tier(year, cites, stars)))
     order = {"奠基": 0, "主流": 1, "新興": 2}
@@ -153,7 +161,15 @@ def main() -> None:
             (ROOT / "docs" / f"{name}.md").write_text(DOC_NOTE + "\n\n".join(parts) + "\n")
         sections.append((title, name, "\n\n".join(parts)))
 
-    digests = sorted((ROOT / "digests").glob("*.md"), reverse=True)
+    archive = list(csv.DictReader((ROOT / "data" / "archive.csv").open()))
+    parts = ["# 封存區", f"從重要論文移出但保留備查，規則見 [README](../README.md#怎樣算重要論文)，共 {len(archive)} 篇。"]
+    for title, name, _ in sections:
+        for reason in sorted({r["reason"] for r in archive if r["topic"] == name}):
+            parts += [f"## {title}：{reason}",
+                      classics_table([r for r in archive if r["topic"] == name and r["reason"] == reason], metrics)]
+    (ROOT / "docs" / "archive.md").write_text(DOC_NOTE + "\n\n".join(parts) + "\n")
+
+    digests =sorted((ROOT / "digests").glob("*.md"), reverse=True)
     latest = digests[0].read_text()
     trend = latest.split("## 趨勢", 1)[1].split("\n## ", 1)[0].strip()
     updated = re.search(r"最後更新：(\S+)", latest).group(1)
@@ -161,6 +177,7 @@ def main() -> None:
     out = [HEADER, f"最後更新：{updated}\n", "## 目錄\n"]
     out.append(f"- [本月趨勢（{digests[0].stem}）](#本月趨勢{anchor(digests[0].stem)})")
     out += [f"- [{t}](docs/{n}.md)" if n in PAGES else f"- [{t}](#{anchor(t)})" for t, n, _ in sections]
+    out.append("- [封存區](docs/archive.md)")
     out.append("- [月報](#月報)\n")
     out.append(f"## 本月趨勢（{digests[0].stem}）\n\n{trend}\n")
     out += [f"{s}\n" for _, n, s in sections if n not in PAGES]
