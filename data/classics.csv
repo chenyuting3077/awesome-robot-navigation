@@ -213,6 +213,7 @@ real2sim,2503.03751,GEN3C,NVIDIA / Toronto / Vector,CVPR 2025,nv-tlabs/GEN3C,htt
 real2sim,2509.19296,Lyra,NVIDIA / Toronto / Vector 等,arXiv,nv-tlabs/lyra,https://research.nvidia.com/labs/toronto-ai/lyra/,,,影片擴散模型自蒸餾成 3DGS 場景生成,
 vision,2207.02696,YOLOv7,Academia Sinica,CVPR 2023,WongKinYiu/yolov7,,,,E-ELAN 架構加重參數化訓練技巧的即時偵測器,
 vision,2405.14458,YOLOv10,Tsinghua,NeurIPS 2024,THU-MIG/yolov10,,,,一致雙重標籤分配，免 NMS 的端到端 YOLO,
+vision,2606.03748,YOLO26,Ultralytics,arXiv,ultralytics/ultralytics,https://docs.ultralytics.com/models/yolo26/,,推薦,雙頭架構原生免 NMS、移除 DFL，並用混合優化器與小物件標籤分配同時涵蓋偵測、分割、姿態等任務；COCO mAP 40.9–57.5，T4 TensorRT 1.7–11.8 ms；程式碼為 AGPL-3.0,
 vision,2104.00680,LoFTR,Zhejiang / SenseTime,CVPR 2021,zju3dv/LoFTR,https://zju3dv.github.io/loftr/,,,無偵測器的 Transformer 粗到細半稠密匹配,
 vision,2104.13921,ViLD,Google / NVIDIA,ICLR 2022,,,,,把 CLIP 知識蒸餾到偵測器做開放詞彙偵測,
 vision,2304.06718,SEEM,UW-Madison / Microsoft / HKUST,NeurIPS 2023,UX-Decoder/Segment-Everything-Everywhere-All-At-Once,,,,點框文字音訊等多種提示統一的互動分割,

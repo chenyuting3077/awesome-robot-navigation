@@ -14,7 +14,7 @@ from collections import Counter
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_readme import ROOT, paper_stats, score, tier  # noqa: E402
+from build_readme import ROOT, paper_stats, ranked_stars, score, tier  # noqa: E402
 from harvest import THRESHOLD  # noqa: E402
 
 CAP = 30  # 2026-11 試算：受保護論文讓電腦視覺、3D 重建略超過 30
@@ -36,6 +36,7 @@ def main() -> None:
     moved = {}
     for r in rows:
         year, cites, stars = paper_stats(r, metrics)
+        stars = ranked_stars(r, stars)
         if set(r["tags"].split(";")) & KEEP or not year:
             continue
         if tier(year, cites, stars) == "新興" and year <= now - GRACE and cites < LOW and stars < LOW:
@@ -48,6 +49,7 @@ def main() -> None:
             if r["topic"] != topic or id(r) in moved or set(r["tags"].split(";")) & KEEP:
                 continue
             year, cites, stars = paper_stats(r, metrics)
+            stars = ranked_stars(r, stars)
             if year in THRESHOLD and tier(year, cites, stars) != "奠基":
                 pool.append((score(year, cites, stars), r))
         pool.sort(key=lambda x: x[0])

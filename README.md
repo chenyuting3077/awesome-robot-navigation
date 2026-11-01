@@ -644,6 +644,7 @@ AMR、四足、輪足機器人的導航、視覺、3D 感知、SLAM 與 Real2Sim
 | 主流 | 引用、Star、知名 | 2024 | [CoTracker3](https://arxiv.org/abs/2410.11831) · [專案頁](https://cotracker3.github.io/) | Meta / Oxford | 以偽標籤在真實影片半監督訓練的簡化點追蹤 | arXiv | 197 | [5,183](https://github.com/facebookresearch/co-tracker) |
 | 主流 | 引用、Star、知名 | 2023 | [OWLv2](https://arxiv.org/abs/2306.09683) | Google DeepMind | 網路圖文對自訓練偽標註，擴大開放詞彙偵測 | NeurIPS 2023 | 519 | [3,847](https://github.com/google-research/scenic) |
 | 主流 | 引用、Star、知名 | 2022 | [OWL-ViT](https://arxiv.org/abs/2205.06230) | Google | 用 CLIP 式骨幹做開放詞彙偵測 | ECCV 2022 | 471 | [3,847](https://github.com/google-research/scenic) |
+| 主流 | Star、HF、推薦 | 2026 | [YOLO26](https://arxiv.org/abs/2606.03748) · [專案頁](https://docs.ultralytics.com/models/yolo26/) | Ultralytics | 雙頭架構原生免 NMS、移除 DFL，並用混合優化器與小物件標籤分配同時涵蓋偵測、分割、姿態等任務；COCO mAP 40.9–57.5，T4 TensorRT 1.7–11.8 ms；程式碼為 AGPL-3.0 | arXiv | 201 | [63,016](https://github.com/ultralytics/ultralytics) |
 | 主流 | 引用、Star、知名 | 2023 | [EfficientSAM](https://arxiv.org/abs/2312.00863) · [專案頁](https://yformer.github.io/efficient-sam/) | Meta | 以 SAM 特徵遮罩重建預訓練輕量分割模型 | CVPR 2024 | 334 | [2,499](https://github.com/yformer/EfficientSAM) |
 | 主流 | Star、HF、獲獎 | 2026 | [Molmo2](https://arxiv.org/abs/2601.10611) | AI2 | 把 Molmo 延伸到影片理解與時空 grounding，資料與權重全開放 | CVPR 2026 | 170 | [753](https://github.com/allenai/molmo2) |
 | 主流 | 引用、Star、知名 | 2024 | [XFeat](https://arxiv.org/abs/2404.19174) | UFMG / Google / Univ. Bourgogne 等 | CPU 也能即時的輕量特徵偵測與匹配 | CVPR 2024 | 275 | [1,758](https://github.com/verlab/accelerated_features) |
