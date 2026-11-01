@@ -209,9 +209,12 @@ def main() -> None:
 
     out = [HEADER, f"最後更新：{updated}\n", "## 目錄\n"]
     out.append(f"- [本月趨勢（{digests[0].stem}）](#本月趨勢{anchor(digests[0].stem)})")
-    out += [f"- [{t}](docs/{n}.md)" if n in PAGES else f"- [{t}](#{anchor(t)})" for t, n, _ in sections]
-    out.append("- [封存區](docs/archive.md)")
-    out.append("- [月報](#月報)\n")
+    # 順序跟正文一致：先列 README 內的主題，獨立頁面放後面，否則點到中間會跳離本頁
+    out += [f"- [{t}](#{anchor(t)})" for t, n, _ in sections if n not in PAGES]
+    out.append("- [月報](#月報)")
+    out += [f"- [{t}](docs/{n}.md)" for t, n, _ in sections if n in PAGES]
+    out.append("- [追蹤的實驗室](docs/labs.md)")
+    out.append("- [封存區](docs/archive.md)\n")
     out.append(f"## 本月趨勢（{digests[0].stem}）\n\n{trend}\n")
     out += [f"{s}\n" for _, n, s in sections if n not in PAGES]
     out.append("## 月報\n")
